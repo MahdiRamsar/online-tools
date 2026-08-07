@@ -1,285 +1,293 @@
-/* ===== CSS Variables / Theme ===== */
-:root {
-  --bg: #f0f4f8;
-  --bg-card: #ffffff;
-  --bg-header: #ffffff;
-  --bg-input: #f8fafc;
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #dbeafe;
-  --secondary: #0ea5e9;
-  --accent: #06b6d4;
-  --success: #16a34a;
-  --warning: #d97706;
-  --error: #dc2626;
-  --shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
-  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.1), 0 4px 10px -4px rgba(0,0,0,0.05);
-  --radius: 12px;
-  --radius-sm: 8px;
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-fa: "Vazirmatn", "Segoe UI", Tahoma, system-ui, sans-serif;
-}
-
-[data-theme="dark"] {
-  --bg: #0f172a;
-  --bg-card: #1e293b;
-  --bg-header: #1e293b;
-  --bg-input: #334155;
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --border: #334155;
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
-  --primary-light: #1e3a5f;
-  --secondary: #0ea5e9;
-  --accent: #22d3ee;
-  --success: #22c55e;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
-  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.4), 0 4px 10px -4px rgba(0,0,0,0.3);
-}
-
-/* ===== Reset ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: var(--font);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-[lang="fa"] body, [lang="fa"] { font-family: var(--font-fa); }
-button, input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
-button { cursor: pointer; border: none; background: none; }
-a { color: var(--primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-input, select, textarea {
-  background: var(--bg-input); border: 1px solid var(--border);
-  border-radius: var(--radius-sm); padding: 10px 12px; width: 100%;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-input:focus, select:focus, textarea:focus {
-  outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light);
-}
-textarea { resize: vertical; }
-
-/* ===== Header ===== */
-#site-header {
-  background: var(--bg-header); border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow);
-  transition: background 0.3s, border-color 0.3s;
-}
-.header-inner {
-  max-width: 1280px; margin: 0 auto; padding: 0 16px;
-  display: flex; align-items: center; gap: 12px; height: 60px;
-}
-.logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.2rem; color: var(--text); white-space: nowrap; }
-.logo:hover { text-decoration: none; }
-.logo-icon { font-size: 1.4rem; }
-.main-nav { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: thin; }
-.nav-item {
-  padding: 8px 14px; border-radius: var(--radius-sm); white-space: nowrap;
-  color: var(--text-muted); font-size: 0.9rem; transition: all 0.2s;
-}
-.nav-item:hover { background: var(--primary-light); color: var(--primary); }
-.nav-item.active { background: var(--primary); color: #fff; }
-.header-controls { display: flex; align-items: center; gap: 10px; }
-.lang-switcher { display: flex; align-items: center; gap: 4px; font-size: 0.85rem; }
-.lang-btn { padding: 4px 8px; border-radius: 6px; color: var(--text-muted); transition: all 0.2s; }
-.lang-btn:hover { background: var(--primary-light); color: var(--primary); }
-.lang-btn.active { color: var(--primary); font-weight: 600; }
-.lang-sep { color: var(--border); }
-.theme-toggle { font-size: 1.2rem; padding: 4px 8px; border-radius: 8px; transition: transform 0.3s; }
-.theme-toggle:hover { transform: rotate(20deg); }
-.menu-toggle { display: none; flex-direction: column; gap: 4px; padding: 6px; }
-.menu-toggle span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-.menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.menu-toggle.open span:nth-child(2) { opacity: 0; }
-.menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-/* ===== Main / Sections ===== */
-main { flex: 1; max-width: 1280px; margin: 0 auto; width: 100%; padding: 24px 16px; }
-.tool-section { display: none; animation: fadeIn 0.3s ease; }
-.tool-section.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-.card {
-  background: var(--bg-card); border-radius: var(--radius); padding: 28px;
-  box-shadow: var(--shadow-lg); max-width: 880px; margin: 0 auto;
-  transition: background 0.3s, box-shadow 0.3s;
-}
-.card h1 { font-size: 1.6rem; margin-bottom: 8px; font-weight: 700; }
-.card h2 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; }
-.tool-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; line-height: 1.6; }
-
-/* ===== Home ===== */
-.home-hero { text-align: center; padding: 40px 0; }
-.home-hero h1 { font-size: 2rem; margin-bottom: 16px; font-weight: 700; }
-.home-desc { color: var(--text-muted); font-size: 1.05rem; max-width: 640px; margin: 0 auto 12px; }
-.home-hint { color: var(--primary); font-size: 0.95rem; margin-bottom: 32px; }
-.home-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
-.home-card {
-  background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 20px; text-align: center; cursor: pointer; transition: all 0.3s; box-shadow: var(--shadow);
-}
-.home-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
-.home-card .hc-icon { font-size: 2rem; margin-bottom: 8px; }
-.home-card .hc-title { font-weight: 600; margin-bottom: 4px; color: var(--text); }
-.home-card .hc-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
-
-/* ===== Buttons ===== */
-.btn-primary {
-  background: var(--primary); color: #fff; padding: 10px 24px;
-  border-radius: var(--radius-sm); font-weight: 600; transition: all 0.2s; display: inline-block;
-}
-.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: var(--shadow); }
-.btn-primary:active { transform: translateY(0); }
-.btn-secondary {
-  background: var(--bg-input); color: var(--text); border: 1px solid var(--border);
-  padding: 10px 24px; border-radius: var(--radius-sm); font-weight: 600; transition: all 0.2s; display: inline-block;
-}
-.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
-.btn-icon {
-  background: var(--bg-input); border: 1px solid var(--border); padding: 10px 16px;
-  border-radius: var(--radius-sm); transition: all 0.2s; font-size: 0.9rem;
-}
-.btn-icon:hover { border-color: var(--primary); color: var(--primary); }
-.btn-icon.copied { background: var(--success); color: #fff; border-color: var(--success); }
-
-/* ===== Calculator ===== */
-.calc-history { font-size: 0.85rem; color: var(--text-muted); min-height: 24px; text-align: end; padding: 0 8px; }
-.calc-display {
-  background: var(--bg-input); border-radius: var(--radius-sm); padding: 16px 20px;
-  font-size: 2rem; font-weight: 600; text-align: end; margin-bottom: 12px;
-  overflow: hidden; min-height: 64px; display: flex; align-items: center; justify-content: flex-end;
-}
-.calc-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.calc-btn {
-  background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 16px; font-size: 1.2rem; font-weight: 600; transition: all 0.15s; text-align: center;
-}
-.calc-btn:hover { background: var(--primary-light); border-color: var(--primary); }
-.calc-btn:active { transform: scale(0.95); }
-.calc-btn.fn { color: var(--error); }
-.calc-btn.op { color: var(--primary); background: var(--primary-light); border-color: var(--primary-light); }
-.calc-btn.op:hover { background: var(--primary); color: #fff; }
-.calc-btn.eq { background: var(--primary); color: #fff; border-color: var(--primary); grid-column: span 2; }
-.calc-btn.eq:hover { background: var(--primary-hover); }
-.calc-btn.zero { grid-column: span 1; }
-
-/* ===== Date Converter ===== */
-.date-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-.date-panel { background: var(--bg-input); border-radius: var(--radius); padding: 20px; border: 1px solid var(--border); }
-.date-inputs { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 8px; margin-bottom: 12px; }
-.date-inputs select { width: 100%; }
-.result-box {
-  background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-sm);
-  padding: 16px; font-size: 1.1rem; font-weight: 600; text-align: center; min-height: 56px;
-  display: flex; align-items: center; justify-content: center; color: var(--primary);
-}
-
-/* ===== Password ===== */
-.pwd-output-row { display: flex; gap: 8px; margin-bottom: 16px; }
-.pwd-output-row input { font-family: monospace; font-size: 1.1rem; letter-spacing: 1px; }
-.pwd-controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-.pwd-controls label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-.pwd-controls input[type="range"] { width: 100%; accent-color: var(--primary); }
-.pwd-controls input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); }
-.pwd-strength-wrap { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 0.9rem; }
-.pwd-bar { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
-.pwd-bar-fill { height: 100%; width: 0; transition: width 0.3s, background 0.3s; border-radius: 4px; }
-
-/* ===== Unit Converter ===== */
-.unit-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
-.unit-tab { padding: 8px 20px; border-radius: var(--radius-sm); background: var(--bg-input); border: 1px solid var(--border); color: var(--text-muted); transition: all 0.2s; }
-.unit-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-.unit-row { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
-.unit-field { flex: 1; min-width: 180px; display: flex; flex-direction: column; gap: 6px; }
-.unit-field label { font-size: 0.85rem; color: var(--text-muted); }
-.unit-arrow { font-size: 1.5rem; color: var(--primary); padding-bottom: 10px; }
-
-/* ===== Counter ===== */
-.counter-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-top: 16px; }
-.stat { background: var(--bg-input); border-radius: var(--radius-sm); padding: 16px; text-align: center; border: 1px solid var(--border); }
-.stat span:first-child { display: block; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
-.stat span:last-child { font-size: 0.8rem; color: var(--text-muted); }
-
-/* ===== QR ===== */
-#qrCanvas { display: block; margin: 20px auto; border: 8px solid #fff; border-radius: 8px; max-width: 100%; }
-[data-theme="dark"] #qrCanvas { border-color: var(--bg-card); }
-
-/* ===== Dropzone ===== */
-.dropzone {
-  border: 2px dashed var(--border); border-radius: var(--radius); padding: 40px 20px;
-  text-align: center; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
-  margin-bottom: 16px; font-size: 0.95rem;
-}
-.dropzone:hover, .dropzone.dragover { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
-.preview-wrap { margin: 16px 0; text-align: center; }
-.preview-wrap img { max-width: 100%; max-height: 300px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
-.preview-wrap .file-list { text-align: start; list-style: none; padding: 0; }
-.preview-wrap .file-list li { padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
-
-/* ===== Inline row ===== */
-.inline-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
-.inline-row label { font-size: 0.9rem; color: var(--text-muted); white-space: nowrap; }
-.inline-row select { width: auto; min-width: 120px; }
-
-/* ===== Spinner ===== */
-.spinner {
-  width: 40px; height: 40px; border: 4px solid var(--border);
-  border-top-color: var(--primary); border-radius: 50%;
-  margin: 20px auto; animation: spin 0.8s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.hidden { display: none !important; }
-.warn-note { background: var(--warning); color: #fff; padding: 10px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; margin-bottom: 16px; }
-
-/* ===== PDF panels ===== */
-.pdf-panel { margin-top: 8px; }
-
-/* ===== Footer ===== */
-#site-footer { background: var(--bg-header); border-top: 1px solid var(--border); margin-top: auto; transition: background 0.3s, border-color 0.3s; }
-.footer-inner { max-width: 1280px; margin: 0 auto; padding: 24px 16px; text-align: center; }
-.footer-brand { font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-.footer-nav { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
-.footer-copy { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
-.footer-made { font-size: 0.85rem; color: var(--text-muted); }
-
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .date-panels { grid-template-columns: 1fr; }
-  .menu-toggle { display: flex; }
-  .main-nav {
-    display: none; position: absolute; top: 60px; left: 0; right: 0;
-    background: var(--bg-header); border-bottom: 1px solid var(--border);
-    flex-direction: column; padding: 12px 16px; gap: 4px; max-height: 70vh; overflow-y: auto;
-    box-shadow: var(--shadow-lg);
+{
+  "fa": {
+    "site_title": "ابزارک‌های هوشمند",
+    "site_subtitle": "مجموعه ابزارهای آنلاین رایگان",
+    "nav_home": "خانه",
+    "nav_calculator": "ماشین‌حساب",
+    "nav_date_converter": "مبدل تاریخ",
+    "nav_password": "رمز عبور",
+    "nav_units": "مبدل واحدها",
+    "nav_counter": "شمارشگر متن",
+    "nav_qr": "ساخت QR",
+    "nav_number2word": "عدد به حروف",
+    "nav_ocr": "عکس به متن (OCR)",
+    "nav_imgconvert": "تبدیل فرمت عکس",
+    "nav_pdf": "تبدیل PDF",
+    "nav_dataconvert": "تبدیل داده",
+    "nav_heic": "تبدیل HEIC",
+    "nav_video2gif": "ویدیو به GIF",
+    "theme_toggle": "تغییر تم",
+    "lang_fa": "فارسی",
+    "lang_en": "English",
+    "footer_about": "درباره ما",
+    "footer_contact": "تماس با ما",
+    "footer_privacy": "حریم خصوصی",
+    "footer_rights": "تمامی حقوق محفوظ است.",
+    "footer_made_with": "ساخته‌شده با ❤ برای کاربران فارسی‌زبان",
+    "generate": "تولید",
+    "copy": "کپی",
+    "copied": "کپی شد!",
+    "download": "دانلود",
+    "clear": "پاک‌کردن",
+    "convert": "تبدیل",
+    "result": "نتیجه",
+    "upload_file": "فایل را اینجا بکشید یا کلیک کنید",
+    "select_file": "انتخاب فایل",
+    "processing": "در حال پردازش...",
+    "drop_here": "فایل را اینجا رها کنید",
+    "strength_weak": "ضعیف",
+    "strength_medium": "متوسط",
+    "strength_strong": "قوی",
+    "calc_display": "۰",
+    "calc_history": "تاریخچه عملیات",
+    "date_solar": "تاریخ شمسی",
+    "date_gregorian": "تاریخ میلادی",
+    "date_year": "سال",
+    "date_month": "ماه",
+    "date_day": "روز",
+    "date_to_gregorian": "شمسی به میلادی",
+    "date_to_solar": "میلادی به شمسی",
+    "pwd_length": "طول رمز: ",
+    "pwd_uppercase": "حروف بزرگ (A-Z)",
+    "pwd_lowercase": "حروف کوچک (a-z)",
+    "pwd_numbers": "اعداد (0-9)",
+    "pwd_symbols": "علائم ویژه (!@#$)",
+    "pwd_strength": "قدرت رمز",
+    "units_length": "طول",
+    "units_weight": "وزن",
+    "units_from": "از",
+    "units_to": "به",
+    "units_meter": "متر",
+    "units_foot": "فوت",
+    "units_cm": "سانتی‌متر",
+    "units_inch": "اینچ",
+    "units_km": "کیلومتر",
+    "units_mile": "مایل",
+    "units_kg": "کیلوگرم",
+    "units_lb": "پوند",
+    "units_gram": "گرم",
+    "units_oz": "اونس",
+    "counter_chars": "کاراکترها",
+    "counter_chars_nospace": "بدون فاصله",
+    "counter_words": "کلمات",
+    "counter_sentences": "جملات",
+    "counter_paragraphs": "پاراگراف‌ها",
+    "qr_input": "متن یا لینک را وارد کنید",
+    "qr_generate": "تولید QR",
+    "qr_download": "دانلود QR (PNG)",
+    "n2w_input": "عدد را وارد کنید (تا ۱۲ رقم)",
+    "ocr_upload": "عکس حاوی متن را آپلود کنید",
+    "ocr_warning": "هشدار: برای اولین بار ممکن است چند ثانیه طول بکشد تا کتابخانه OCR بارگذاری شود.",
+    "ocr_extracted": "متن استخراج‌شده",
+    "imgconv_upload": "عکس را آپلود کنید",
+    "imgconv_target": "فرمت مقصد",
+    "pdf_to_img": "PDF به عکس",
+    "img_to_pdf": "عکس به PDF",
+    "pdf_upload": "فایل PDF را آپلود کنید",
+    "pdf_img_upload": "عکس‌ها را آپلود کنید (چند انتخاب)",
+    "pdf_format": "فرمت خروجی",
+    "data_input": "داده ورودی",
+    "data_from": "فرمت ورودی",
+    "data_to": "فرمت خروجی",
+    "heic_upload": "عکس HEIC/HEIF (آیفون) را آپلود کنید",
+    "vid_upload": "فایل ویدیویی را آپلود کنید (MP4, WebM)",
+    "vid_start": "ثانیه شروع",
+    "vid_duration": "مدت (ثانیه)",
+    "vid_fps": "فریم بر ثانیه",
+    "vid_convert": "تبدیل به GIF",
+    "err_no_file": "لطفاً یک فایل انتخاب کنید.",
+    "err_invalid": "فایل نامعتبر است.",
+    "err_number": "لطفاً یک عدد معتبر وارد کنید.",
+    "err_too_large": "فایل بیش از حد بزرگ است.",
+    "home_title": "به ابزارک‌های هوشمند خوش آمدید",
+    "home_desc": "مجموعه‌ای از ۱۳ ابزار آنلاین رایگان که بدون نیاز به نصب، مستقیماً در مرورگر شما اجرا می‌شوند. همه ابزارها به صورت کامل دو زبانه (فارسی و انگلیسی) هستند.",
+    "home_explore": "ابزارها را از منوی بالا انتخاب کنید.",
+    "tool_calc_desc": "ماشین‌حساب استاندارد با پشتیبانی از چهار عمل اصلی، درصد و تاریخچه عملیات. مناسب محاسبات روزمره.",
+    "tool_date_desc": "تبدیل تاریخ شمسی به میلادی و برعکس با الگوریتم داخلی. نام ماه‌ها به فارسی نمایش داده می‌شود.",
+    "tool_pwd_desc": "تولید رمز عبور قوی با طول دلخواه و امکان انتخاب نوع کاراکترها. نمایش قدرت رمز به صورت نوار رنگی.",
+    "tool_units_desc": "مبدل واحدهای طول و وزن با تبدیل لحظه‌ای. شامل متر، فوت، کیلومتر، مایل، کیلوگرم و پوند.",
+    "tool_counter_desc": "شمارش لحظه‌ای کاراکترها، کلمات، جملات و پاراگراف‌ها. مناسب شمارش متن مقالات و پست‌ها.",
+    "tool_qr_desc": "ساخت QR Code از متن یا لینک با امکان دانلود به صورت تصویر PNG. کاملاً آفلاین و بدون ارسال داده به سرور.",
+    "tool_n2w_desc": "تبدیل اعداد به حروف فارسی تا ۱۲ رقم. مناسب برای چک و اسناد مالی که نیاز به نوشتن عدد به حروف دارند.",
+    "tool_ocr_desc": "استخراج متن از عکس با استفاده از فناوری OCR در مرورگر. از فرمت‌های JPG، PNG و WebP پشتیبانی می‌کند.",
+    "tool_imgconv_desc": "تبدیل فرمت عکس‌ها به یکدیگر (PNG، JPG، WebP، AVIF، BMP) با Canvas API. بدون نیاز به آپلود به سرور.",
+    "tool_pdf_desc": "تبدیل PDF به عکس و بالعکس. صفحات PDF را به PNG/JPG تبدیل کنید یا از عکس‌ها PDF بسازید.",
+    "tool_data_desc": "تبدیل بین فرمت‌های CSV، JSON، XML و YAML. مناسب تبدیل داده‌ها بین سیستم‌های مختلف.",
+    "tool_heic_desc": "تبدیل عکس‌های HEIC آیفون به فرمت‌های استاندارد JPG، PNG و WebP. بدون افت کیفیت.",
+    "tool_vid_desc": "تبدیل ویدیو به GIF متحرک یا استخراج فریم‌ها به صورت تصویر. پردازش کامل در مرورگر.",
+    "seo_home_title": "ابزارک‌های هوشمند | ابزارهای آنلاین رایگان",
+    "seo_home_desc": "مجموعه ۱۳ ابزار آنلاین رایگان: ماشین‌حساب، مبدل تاریخ، ساخت QR، OCR، تبدیل عکس و PDF. کاملاً دو زبانه و بدون نیاز به نصب.",
+    "seo_calc_title": "ماشین‌حساب آنلاین رایگان | ابزارک‌های هوشمند",
+    "seo_calc_desc": "ماشین‌حساب استاندارد آنلاین با چهار عمل اصلی، درصد و تاریخچه عملیات. رایگان و بدون نیاز به نصب.",
+    "seo_date_title": "مبدل تاریخ شمسی میلادی آنلاین | ابزارک‌های هوشمند",
+    "seo_date_desc": "تبدیل آنلاین تاریخ شمسی به میلادی و برعکس با الگوریتم دقیق. نمایش نام ماه‌ها به فارسی.",
+    "seo_pwd_title": "تولیدکننده رمز عبور قوی آنلاین | ابزارک‌های هوشمند",
+    "seo_pwd_desc": "ساخت رمز عبور قوی و امن با طول دلخواه و انواع کاراکترها. نمایش قدرت رمز به صورت نوار رنگی.",
+    "seo_units_title": "مبدل واحدهای طول و وزن آنلاین | ابزارک‌های هوشمند",
+    "seo_units_desc": "تبدیل آنلاین واحدهای طول و وزن: متر به فوت، کیلومتر به مایل، کیلوگرم به پوند. تبدیل لحظه‌ای.",
+    "seo_counter_title": "شمارشگر کاراکتر و کلمات آنلاین | ابزارک‌های هوشمند",
+    "seo_counter_desc": "شمارش آنلاین کاراکتر، کلمه، جمله و پاراگراف در متن. مناسب شمارش متن مقالات و شبکه‌های اجتماعی.",
+    "seo_qr_title": "ساخت QR Code آنلاین رایگان | ابزارک‌های هوشمند",
+    "seo_qr_desc": "ساخت QR Code از متن یا لینک با امکان دانلود PNG. کاملاً آفلاین و رایگان، بدون ارسال داده به سرور.",
+    "seo_n2w_title": "تبدیل اعداد به حروف فارسی آنلاین | ابزارک‌های هوشمند",
+    "seo_n2w_desc": "تبدیل اعداد به حروف فارسی تا ۱۲ رقم. مناسب برای چک و اسناد مالی. رایگان و آنلاین.",
+    "seo_ocr_title": "تبدیل عکس به متن OCR آنلاین | ابزارک‌های هوشمند",
+    "seo_ocr_desc": "استخراج متن از عکس با OCR در مرورگر. پشتیبانی از JPG، PNG و WebP. بدون آپلود به سرور.",
+    "seo_imgconv_title": "تبدیل فرمت عکس آنلاین | ابزارک‌های هوشمند",
+    "seo_imgconv_desc": "تبدیل آنلاین فرمت عکس به PNG، JPG، WebP، AVIF و BMP. پردازش در مرورگر، بدون آپلود به سرور.",
+    "seo_pdf_title": "تبدیل PDF به عکس و عکس به PDF | ابزارک‌های هوشمند",
+    "seo_pdf_desc": "تبدیل صفحات PDF به عکس PNG/JPG و ساخت PDF از چند عکس. پردازش کامل در مرورگر.",
+    "seo_data_title": "مبدل CSV JSON XML YAML | ابزارک‌های هوشمند",
+    "seo_data_desc": "تبدیل آنلاین بین فرمت‌های داده CSV، JSON، XML و YAML. رایگان و بدون نیاز به نصب نرم‌افزار.",
+    "seo_heic_title": "تبدیل HEIC به JPG PNG آنلاین | ابزارک‌های هوشمند",
+    "seo_heic_desc": "تبدیل عکس‌های HEIC آیفون به JPG، PNG و WebP. بدون افت کیفیت و بدون آپلود به سرور.",
+    "seo_vid_title": "تبدیل ویدیو به GIF آنلاین | ابزارک‌های هوشمند",
+    "seo_vid_desc": "تبدیل ویدیو MP4 و WebM به GIF متحرک یا استخراج فریم‌ها. پردازش کامل در مرورگر."
+  },
+  "en": {
+    "site_title": "Smart Tools",
+    "site_subtitle": "Free Online Tools Collection",
+    "nav_home": "Home",
+    "nav_calculator": "Calculator",
+    "nav_date_converter": "Date Converter",
+    "nav_password": "Password Generator",
+    "nav_units": "Unit Converter",
+    "nav_counter": "Text Counter",
+    "nav_qr": "QR Generator",
+    "nav_number2word": "Number to Words",
+    "nav_ocr": "Image to Text (OCR)",
+    "nav_imgconvert": "Image Converter",
+    "nav_pdf": "PDF Tools",
+    "nav_dataconvert": "Data Converter",
+    "nav_heic": "HEIC Converter",
+    "nav_video2gif": "Video to GIF",
+    "theme_toggle": "Toggle Theme",
+    "lang_fa": "فارسی",
+    "lang_en": "English",
+    "footer_about": "About",
+    "footer_contact": "Contact",
+    "footer_privacy": "Privacy",
+    "footer_rights": "All rights reserved.",
+    "footer_made_with": "Made with ❤ for everyone",
+    "generate": "Generate",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "download": "Download",
+    "clear": "Clear",
+    "convert": "Convert",
+    "result": "Result",
+    "upload_file": "Drag a file here or click to select",
+    "select_file": "Select File",
+    "processing": "Processing...",
+    "drop_here": "Drop file here",
+    "strength_weak": "Weak",
+    "strength_medium": "Medium",
+    "strength_strong": "Strong",
+    "calc_display": "0",
+    "calc_history": "Operation History",
+    "date_solar": "Solar (Jalali) Date",
+    "date_gregorian": "Gregorian Date",
+    "date_year": "Year",
+    "date_month": "Month",
+    "date_day": "Day",
+    "date_to_gregorian": "Solar → Gregorian",
+    "date_to_solar": "Gregorian → Solar",
+    "pwd_length": "Password length: ",
+    "pwd_uppercase": "Uppercase (A-Z)",
+    "pwd_lowercase": "Lowercase (a-z)",
+    "pwd_numbers": "Numbers (0-9)",
+    "pwd_symbols": "Symbols (!@#$)",
+    "pwd_strength": "Password strength",
+    "units_length": "Length",
+    "units_weight": "Weight",
+    "units_from": "From",
+    "units_to": "To",
+    "units_meter": "Meter",
+    "units_foot": "Foot",
+    "units_cm": "Centimeter",
+    "units_inch": "Inch",
+    "units_km": "Kilometer",
+    "units_mile": "Mile",
+    "units_kg": "Kilogram",
+    "units_lb": "Pound",
+    "units_gram": "Gram",
+    "units_oz": "Ounce",
+    "counter_chars": "Characters",
+    "counter_chars_nospace": "No spaces",
+    "counter_words": "Words",
+    "counter_sentences": "Sentences",
+    "counter_paragraphs": "Paragraphs",
+    "qr_input": "Enter text or link",
+    "qr_generate": "Generate QR",
+    "qr_download": "Download QR (PNG)",
+    "n2w_input": "Enter a number (up to 12 digits)",
+    "ocr_upload": "Upload an image containing text",
+    "ocr_warning": "Warning: The first time may take a few seconds to load the OCR library.",
+    "ocr_extracted": "Extracted text",
+    "imgconv_upload": "Upload an image",
+    "imgconv_target": "Target format",
+    "pdf_to_img": "PDF to Image",
+    "img_to_pdf": "Image to PDF",
+    "pdf_upload": "Upload a PDF file",
+    "pdf_img_upload": "Upload images (multiple selection)",
+    "pdf_format": "Output format",
+    "data_input": "Input data",
+    "data_from": "Input format",
+    "data_to": "Output format",
+    "heic_upload": "Upload a HEIC/HEIF image (iPhone)",
+    "vid_upload": "Upload a video file (MP4, WebM)",
+    "vid_start": "Start second",
+    "vid_duration": "Duration (seconds)",
+    "vid_fps": "Frames per second",
+    "vid_convert": "Convert to GIF",
+    "err_no_file": "Please select a file.",
+    "err_invalid": "Invalid file.",
+    "err_number": "Please enter a valid number.",
+    "err_too_large": "File is too large.",
+    "home_title": "Welcome to Smart Tools",
+    "home_desc": "A collection of 13 free online tools that run directly in your browser without installation. All tools are fully bilingual (Persian and English).",
+    "home_explore": "Select tools from the menu above.",
+    "tool_calc_desc": "Standard calculator with four basic operations, percentage, and operation history. Suitable for daily calculations.",
+    "tool_date_desc": "Convert between Solar (Jalali) and Gregorian dates with a built-in algorithm. Month names shown in Persian.",
+    "tool_pwd_desc": "Generate strong passwords with custom length and character types. Password strength shown as a colored bar.",
+    "tool_units_desc": "Convert length and weight units instantly. Includes meter, foot, kilometer, mile, kilogram, and pound.",
+    "tool_counter_desc": "Live count of characters, words, sentences, and paragraphs. Great for counting article and post text.",
+    "tool_qr_desc": "Generate QR Codes from text or links and download as PNG. Fully offline with no data sent to servers.",
+    "tool_n2w_desc": "Convert numbers to Persian words up to 12 digits. Useful for checks and financial documents.",
+    "tool_ocr_desc": "Extract text from images using in-browser OCR technology. Supports JPG, PNG, and WebP formats.",
+    "tool_imgconv_desc": "Convert images between formats (PNG, JPG, WebP, AVIF, BMP) using the Canvas API. No server upload needed.",
+    "tool_pdf_desc": "Convert PDF to images and vice versa. Turn PDF pages into PNG/JPG or build a PDF from multiple images.",
+    "tool_data_desc": "Convert between CSV, JSON, XML, and YAML formats. Useful for moving data between different systems.",
+    "tool_heic_desc": "Convert iPhone HEIC photos to standard JPG, PNG, and WebP formats without quality loss.",
+    "tool_vid_desc": "Convert videos to animated GIFs or extract frames as images. Full processing in the browser.",
+    "seo_home_title": "Smart Tools | Free Online Tools",
+    "seo_home_desc": "Collection of 13 free online tools: calculator, date converter, QR generator, OCR, image and PDF converters. Fully bilingual, no install.",
+    "seo_calc_title": "Free Online Calculator | Smart Tools",
+    "seo_calc_desc": "Standard online calculator with basic operations, percentage, and history. Free, no installation required.",
+    "seo_date_title": "Online Jalali Gregorian Date Converter | Smart Tools",
+    "seo_seo_desc": "Convert Jalali to Gregorian dates and vice versa with an accurate algorithm. Month names in Persian.",
+    "seo_date_desc": "Convert Jalali to Gregorian dates and vice versa with an accurate algorithm. Month names in Persian.",
+    "seo_pwd_title": "Online Strong Password Generator | Smart Tools",
+    "seo_pwd_desc": "Create strong and secure passwords with custom length and character types. Strength shown as colored bar.",
+    "seo_units_title": "Online Length and Weight Converter | Smart Tools",
+    "seo_units_desc": "Online unit conversion for length and weight: meter to foot, km to mile, kg to pound. Instant conversion.",
+    "seo_counter_title": "Online Character and Word Counter | Smart Tools",
+    "seo_counter_desc": "Online counting of characters, words, sentences, and paragraphs. Great for articles and social media.",
+    "seo_qr_title": "Free Online QR Code Generator | Smart Tools",
+    "seo_qr_desc": "Generate QR Codes from text or links and download as PNG. Fully offline and free, no data sent to servers.",
+    "seo_n2w_title": "Online Number to Persian Words | Smart Tools",
+    "seo_n2w_desc": "Convert numbers to Persian words up to 12 digits. Useful for checks and financial documents. Free online.",
+    "seo_ocr_title": "Online Image to Text OCR | Smart Tools",
+    "seo_ocr_desc": "Extract text from images with in-browser OCR. Supports JPG, PNG, and WebP. No server upload.",
+    "seo_imgconv_title": "Online Image Format Converter | Smart Tools",
+    "seo_imgconv_desc": "Online image conversion to PNG, JPG, WebP, AVIF, and BMP. Processed in browser, no server upload.",
+    "seo_pdf_title": "PDF to Image and Image to PDF | Smart Tools",
+    "seo_pdf_desc": "Convert PDF pages to PNG/JPG images and build a PDF from multiple images. Full in-browser processing.",
+    "seo_data_title": "CSV JSON XML YAML Converter | Smart Tools",
+    "seo_data_desc": "Online conversion between CSV, JSON, XML, and YAML data formats. Free, no software install needed.",
+    "seo_heic_title": "HEIC to JPG PNG Converter Online | Smart Tools",
+    "seo_heic_desc": "Convert iPhone HEIC photos to JPG, PNG, and WebP. No quality loss, no server upload.",
+    "seo_vid_title": "Online Video to GIF Converter | Smart Tools",
+    "seo_vid_desc": "Convert MP4 and WebM videos to animated GIFs or extract frames. Full in-browser processing."
   }
-  .main-nav.open { display: flex; }
-  .nav-item { text-align: start; width: 100%; }
-  .header-inner { flex-wrap: wrap; height: auto; padding: 10px 16px; gap: 8px; }
-  .logo { flex: 1; }
-  .header-controls { order: 3; }
-}
-@media (max-width: 600px) {
-  .card { padding: 18px; }
-  .card h1 { font-size: 1.3rem; }
-  .home-hero h1 { font-size: 1.5rem; }
-  .calc-buttons { grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .calc-btn { padding: 12px; font-size: 1rem; }
-  .calc-display { font-size: 1.5rem; }
-  .counter-stats { grid-template-columns: repeat(2, 1fr); }
-  .home-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-  .lang-switcher { font-size: 0.8rem; }
-  .unit-row { flex-direction: column; align-items: stretch; }
-  .unit-arrow { text-align: center; transform: rotate(90deg); padding: 0; }
 }
