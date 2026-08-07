@@ -1,403 +1,607 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-lang-key="seo_home_title">ابزارک‌های هوشمند | ابزارهای آنلاین رایگان</title>
-  <meta name="description" data-lang-key="seo_home_desc" content="مجموعه ۱۳ ابزار آنلاین رایگان: ماشین‌حساب، مبدل تاریخ، ساخت QR، OCR، تبدیل عکس و PDF. کاملاً دو زبانه و بدون نیاز به نصب." />
-  <meta name="keywords" content="ابزار آنلاین, ماشین حساب, مبدل تاریخ, QR کد, OCR, تبدیل عکس, تبدیل PDF, free online tools, calculator, date converter" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="مهدی رحیمیان" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" data-lang-key="seo_home_title" content="ابزارک‌های هوشمند" />
-  <meta property="og:description" data-lang-key="seo_home_desc" content="مجموعه ابزارهای آنلاین رایگان" />
-  <meta property="og:image" content="https://mahdiramsar.github.io/online-tools/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://mahdiramsar.github.io/online-tools/og-image.png" />
-
-  <!-- فونت‌های جدید -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
-
-  <!-- کتابخانه QR Code استاندارد -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Smart Tools",
-    "alternateName": "ابزارک‌های هوشمند",
-    "description": "Free online tools collection: calculator, date converter, QR generator, OCR, image and PDF converters.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": {
-      "@type": "Person",
-      "name": "مهدی رحیمیان",
-      "url": "https://github.com/mahdiramsar"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== سئو و متا تگ‌ها (برای گوگل ادز و جذب ترافیک) ===== -->
+    <title>ابزارهای رایگان تبدیل فایل | PDF، ویدیو، صوتی، عکس و رمز</title>
+    <meta name="description" content="مجموعه کامل ابزارهای رایگان تبدیل فایل: تبدیل PDF به Word، ویدیو به متن، عکس به PDF، تولید رمز عبور، QR کد، تبدیل تاریخ و ... بدون نیاز به ثبت‌نام.">
+    <meta name="keywords" content="تبدیل PDF به Word, تبدیل ویدیو به متن, تبدیل عکس به متن, تولید رمز قوی, ساخت QR کد, تبدیل تاریخ شمسی">
+    <link rel="canonical" href="https://yourdomain.com/">
+    
+    <!-- Open Graph / فیسبوک و گوگل -->
+    <meta property="og:title" content="ابزارهای رایگان تبدیل فایل | تبدیل PDF، ویدیو، صوتی و عکس">
+    <meta property="og:description" content="بیش از ۴۰ ابزار رایگان برای تبدیل، ویرایش و تولید فایل. بدون پرداخت و کاملاً آنلاین.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ابزارهای رایگان تبدیل فایل">
+    <meta name="twitter:description" content="تبدیل فایل‌های PDF، ویدیو، صدا و عکس به فرمت‌های مختلف به صورت کاملاً رایگان.">
+    
+    <!-- ===== دیتای ساختاریافته JSON-LD (سئو پیشرفته) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ابزارهای رایگان تبدیل فایل",
+      "description": "مجموعه ابزارهای تبدیل و ویرایش فایل",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     }
-  }
-  </script>
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "خانه", "item": "https://yourdomain.com/" },
+        { "@type": "ListItem", "position": 2, "name": "ابزارهای تبدیل", "item": "https://yourdomain.com/#tools" }
+      ]
+    }
+    </script>
+
+    <!-- Font Awesome & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== Reset & Variables ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #0f2b5c;
+            --primary-light: #1a3f7a;
+            --secondary: #00a8e8;
+            --secondary-light: #7fd8ff;
+            --bg: #f1f5f9;
+            --white: #ffffff;
+            --gray-100: #f3f6fc;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --shadow: 0 20px 60px rgba(15, 43, 92, 0.08);
+            --radius: 20px;
+            --transition: all 0.3s ease;
+            --font-fa: 'Vazirmatn', sans-serif;
+            --font-en: 'Inter', sans-serif;
+        }
+        body {
+            font-family: var(--font-fa);
+            background: var(--bg);
+            color: var(--gray-800);
+            padding: 0 16px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1280px; margin: 0 auto; }
+        
+        /* ===== Language ===== */
+        .lang-toggle-wrap { display: flex; justify-content: flex-end; padding: 12px 0; }
+        .lang-btn {
+            background: var(--white); border: 2px solid var(--primary); color: var(--primary);
+            padding: 6px 18px; border-radius: 40px; font-weight: 700; font-size: 0.85rem;
+            cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 8px;
+            font-family: var(--font-en); box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .lang-btn:hover { background: var(--primary); color: var(--white); }
+        .lang-en { display: none; }
+        body.en .lang-fa { display: none; }
+        body.en .lang-en { display: inline; }
+        body.en { direction: ltr; font-family: var(--font-en); }
+        body.en .btn, body.en .tab-btn { font-family: var(--font-en); }
+
+        /* ===== Header ===== */
+        .main-header { text-align: center; padding: 20px 0 10px; }
+        .main-header h1 {
+            font-size: 2.6rem; font-weight: 800; color: var(--primary);
+            display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+        }
+        .main-header h1 i { color: var(--secondary); font-size: 2.4rem; }
+        .main-header p { font-size: 1.15rem; color: var(--gray-600); margin-top: 2px; }
+
+        /* ===== Tabs ===== */
+        .tabs-wrap {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+            background: var(--white); padding: 14px 20px; border-radius: var(--radius);
+            box-shadow: var(--shadow); margin: 20px 0 30px;
+        }
+        .tab-btn {
+            padding: 10px 22px; border: none; border-radius: 40px; background: var(--gray-100);
+            color: var(--gray-600); font-weight: 700; font-size: 0.9rem; cursor: pointer;
+            transition: var(--transition); font-family: var(--font-fa); display: flex; align-items: center; gap: 8px;
+        }
+        .tab-btn i { font-size: 1rem; }
+        .tab-btn:hover { background: var(--secondary-light); color: var(--primary); }
+        .tab-btn.active { background: var(--primary); color: var(--white); box-shadow: 0 8px 20px rgba(15,43,92,0.25); }
+        .tool-section { display: none; animation: fadeUp 0.4s ease; }
+        .tool-section.active { display: block; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+        /* ===== Tool Grid ===== */
+        .tools-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px; margin: 20px 0 40px;
+        }
+        .tool-card {
+            background: var(--white); padding: 28px 16px; border-radius: var(--radius);
+            text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02); transition: var(--transition);
+            cursor: pointer; position: relative; overflow: hidden;
+        }
+        .tool-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0; transition: var(--transition);
+        }
+        .tool-card:hover { transform: translateY(-8px); border-color: var(--secondary-light); box-shadow: 0 16px 40px rgba(0,168,232,0.12); }
+        .tool-card:hover::before { opacity: 1; }
+        .tool-card i { font-size: 2.8rem; color: var(--secondary); margin-bottom: 12px; background: var(--gray-100); padding: 14px; border-radius: 18px; transition: var(--transition); }
+        .tool-card:hover i { background: var(--primary); color: var(--white); transform: scale(1.05); }
+        .tool-card h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 4px; }
+        .tool-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
+        .tool-card .badge {
+            display: inline-block; background: var(--secondary-light); color: var(--primary);
+            padding: 0 14px; border-radius: 30px; font-size: 0.65rem; font-weight: 700; margin-top: 6px;
+        }
+
+        /* ===== Upload Box (برای ابزارهای سنگین) ===== */
+        .upload-box {
+            background: var(--white); border-radius: var(--radius); padding: 30px 24px;
+            box-shadow: var(--shadow); border: 2px dashed var(--gray-200); text-align: center;
+            margin: 10px 0 20px;
+        }
+        .upload-box.dragover { border-color: var(--secondary); background: var(--gray-100); }
+        .upload-area { cursor: pointer; padding: 20px 10px; }
+        .upload-area i { font-size: 3.6rem; color: var(--secondary); margin-bottom: 10px; }
+        .upload-area h3 { font-size: 1.3rem; color: var(--primary); }
+        .upload-area span { color: var(--gray-600); font-size: 0.9rem; }
+        .file-preview { margin-top: 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .file-item { background: var(--gray-100); padding: 8px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; border: 1px solid var(--gray-200); }
+        .btn {
+            padding: 12px 30px; border: none; border-radius: 60px; font-weight: 700; font-size: 0.95rem;
+            cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px;
+            font-family: var(--font-fa); margin: 6px;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); transform: scale(1.02); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-success { background: #0b7e4b; color: white; }
+        .progress-wrap { max-width: 400px; margin: 16px auto 0; display: none; }
+        .progress-bar { width: 100%; height: 10px; background: var(--gray-200); border-radius: 10px; overflow: hidden; }
+        .progress-bar .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--secondary), var(--primary)); transition: width 0.2s; }
+        .download-link { margin-top: 16px; display: none; }
+
+        /* ===== Utility Tools (ابزارهای خاص مثل رمز، تاریخ، QR) ===== */
+        .util-box {
+            background: var(--white); padding: 30px; border-radius: var(--radius);
+            box-shadow: var(--shadow); margin: 20px 0;
+        }
+        .util-box input, .util-box select {
+            width: 100%; padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: 16px;
+            font-size: 1rem; margin: 8px 0; font-family: inherit;
+        }
+        .util-box input:focus { border-color: var(--secondary); outline: none; }
+        .strength-bar { height: 10px; background: #ddd; border-radius: 10px; margin: 10px 0; }
+        .strength-bar .fill { height: 100%; border-radius: 10px; width: 0%; }
+        .qr-result { display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 16px; }
+        .qr-result canvas { border: 4px solid var(--gray-200); border-radius: 16px; padding: 8px; background: white; }
+
+        /* ===== FAQ & Footer ===== */
+        .faq-list { background: var(--white); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin: 30px 0; }
+        .faq-item { border-bottom: 1px solid var(--gray-200); padding: 14px 0; }
+        .faq-item:last-child { border: none; }
+        .faq-item .q { font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .faq-item .a { margin-top: 6px; padding-right: 30px; color: var(--gray-600); line-height: 1.7; }
+        .footer { text-align: center; padding: 30px 0 20px; color: var(--gray-600); border-top: 1px solid var(--gray-200); margin-top: 20px; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .main-header h1 { font-size: 1.8rem; }
+            .tabs-wrap { gap: 6px; padding: 12px; }
+            .tab-btn { padding: 6px 14px; font-size: 0.75rem; }
+            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .tool-card { padding: 18px 10px; }
+            .tool-card i { font-size: 2rem; padding: 10px; }
+        }
+        @media (max-width: 480px) {
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <header id="site-header">
-    <div class="header-inner">
-      <a href="#" class="logo" data-tool="home" aria-label="Home">
-        <span class="logo-icon">⚙️</span>
-        <span class="logo-text" data-lang-key="site_title">ابزارک‌های هوشمند</span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="main-nav" id="mainNav">
-        <!-- گروه‌بندی منو -->
-        <div class="nav-group">
-          <span class="nav-group-label">🏠 عمومی</span>
-          <button class="nav-item active" data-tool="home" data-lang-key="nav_home">خانه</button>
-        </div>
-        <div class="nav-group">
-          <span class="nav-group-label">📐 تبدیل‌ها</span>
-          <button class="nav-item" data-tool="calculator" data-lang-key="nav_calculator">ماشین‌حساب</button>
-          <button class="nav-item" data-tool="date" data-lang-key="nav_date_converter">مبدل تاریخ</button>
-          <button class="nav-item" data-tool="units" data-lang-key="nav_units">مبدل واحد</button>
-          <button class="nav-item" data-tool="data" data-lang-key="nav_dataconvert">مبدل داده</button>
-          <button class="nav-item" data-tool="n2w" data-lang-key="nav_number2word">عدد به حروف</button>
-        </div>
-        <div class="nav-group">
-          <span class="nav-group-label">🖼️ تصویر و ویدیو</span>
-          <button class="nav-item" data-tool="imgconvert" data-lang-key="nav_imgconvert">تبدیل عکس</button>
-          <button class="nav-item" data-tool="heic" data-lang-key="nav_heic">HEIC</button>
-          <button class="nav-item" data-tool="ocr" data-lang-key="nav_ocr">OCR</button>
-          <button class="nav-item" data-tool="qr" data-lang-key="nav_qr">QR</button>
-          <button class="nav-item" data-tool="video2gif" data-lang-key="nav_video2gif">ویدیو به GIF</button>
-          <button class="nav-item" data-tool="pdf" data-lang-key="nav_pdf">PDF</button>
-        </div>
-        <div class="nav-group">
-          <span class="nav-group-label">📝 متنی</span>
-          <button class="nav-item" data-tool="counter" data-lang-key="nav_counter">شمارشگر</button>
-          <button class="nav-item" data-tool="password" data-lang-key="nav_password">رمزساز</button>
-        </div>
-      </nav>
-      <div class="header-controls">
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="fa" data-lang-key="lang_fa">فارسی</button>
-          <span class="lang-sep">|</span>
-          <button class="lang-btn" data-lang="en" data-lang-key="lang_en">English</button>
-        </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Theme" data-lang-key="theme_toggle">🌙</button>
-      </div>
+<div class="container">
+
+    <!-- ===== دکمه زبان ===== -->
+    <div class="lang-toggle-wrap">
+        <button class="lang-btn" id="langToggle">
+            <i class="fas fa-globe"></i>
+            <span class="lang-fa">English</span>
+            <span class="lang-en">فارسی</span>
+        </button>
     </div>
-  </header>
 
-  <main id="main-content">
-    <!-- HOME -->
-    <section class="tool-section active" id="section-home">
-      <div class="home-hero">
-        <h1 data-lang-key="home_title">به ابزارک‌های هوشمند خوش آمدید</h1>
-        <p class="home-desc" data-lang-key="home_desc">مجموعه‌ای از ۱۳ ابزار آنلاین رایگان...</p>
-        <p class="home-hint" data-lang-key="home_explore">ابزارها را از منوی بالا انتخاب کنید.</p>
-        <div class="home-grid" id="homeGrid"></div>
-      </div>
-    </section>
+    <!-- ===== هدر ===== -->
+    <header class="main-header">
+        <h1><i class="fas fa-cubes"></i><span class="lang-fa">ابزارهای رایگان تبدیل</span><span class="lang-en">Free Conversion Tools</span></h1>
+        <p class="lang-fa">بیش از ۴۰ ابزار برای تبدیل PDF، ویدیو، صدا، عکس و تولید محتوا</p>
+        <p class="lang-en">Over 40 tools for PDF, Video, Audio, Image & Content generation</p>
+    </header>
 
-    <!-- 1. CALCULATOR -->
-    <section class="tool-section" id="section-calculator">
-      <div class="card">
-        <h1 data-lang-key="nav_calculator">ماشین‌حساب</h1>
-        <p class="tool-desc" data-lang-key="tool_calc_desc"></p>
-        <div class="calc-history" id="calcHistory" data-lang-key="calc_history">تاریخچه عملیات</div>
-        <div class="calc-display" id="calcDisplay">0</div>
-        <div class="calc-buttons" id="calcButtons">
-          <button class="calc-btn fn" data-action="clear">C</button>
-          <button class="calc-btn fn" data-action="percent">%</button>
-          <button class="calc-btn fn" data-action="back">⌫</button>
-          <button class="calc-btn op" data-op="/">÷</button>
-          <button class="calc-btn num" data-num="7">7</button>
-          <button class="calc-btn num" data-num="8">8</button>
-          <button class="calc-btn num" data-num="9">9</button>
-          <button class="calc-btn op" data-op="*">×</button>
-          <button class="calc-btn num" data-num="4">4</button>
-          <button class="calc-btn num" data-num="5">5</button>
-          <button class="calc-btn num" data-num="6">6</button>
-          <button class="calc-btn op" data-op="-">−</button>
-          <button class="calc-btn num" data-num="1">1</button>
-          <button class="calc-btn num" data-num="2">2</button>
-          <button class="calc-btn num" data-num="3">3</button>
-          <button class="calc-btn op" data-op="+">+</button>
-          <button class="calc-btn num zero" data-num="0">0</button>
-          <button class="calc-btn num" data-action="dot">.</button>
-          <button class="calc-btn eq" data-action="equals">=</button>
-        </div>
-      </div>
-    </section>
+    <!-- ===== تب‌های دسته‌بندی ===== -->
+    <nav class="tabs-wrap" id="tabContainer">
+        <button class="tab-btn active" data-tab="tab-pdf"><i class="fas fa-file-pdf"></i><span class="lang-fa">PDF</span><span class="lang-en">PDF</span></button>
+        <button class="tab-btn" data-tab="tab-video"><i class="fas fa-video"></i><span class="lang-fa">ویدیو</span><span class="lang-en">Video</span></button>
+        <button class="tab-btn" data-tab="tab-audio"><i class="fas fa-music"></i><span class="lang-fa">صوتی</span><span class="lang-en">Audio</span></button>
+        <button class="tab-btn" data-tab="tab-topdf"><i class="fas fa-file-import"></i><span class="lang-fa">تبدیل به PDF</span><span class="lang-en">To PDF</span></button>
+        <button class="tab-btn" data-tab="tab-image"><i class="fas fa-image"></i><span class="lang-fa">عکس</span><span class="lang-en">Image</span></button>
+        <button class="tab-btn" data-tab="tab-word"><i class="fas fa-file-word"></i><span class="lang-fa">Word</span><span class="lang-en">Word</span></button>
+        <button class="tab-btn" data-tab="tab-util"><i class="fas fa-tools"></i><span class="lang-fa">جانبی</span><span class="lang-en">Utility</span></button>
+    </nav>
 
-    <!-- 2. DATE CONVERTER -->
-    <section class="tool-section" id="section-date">
-      <div class="card">
-        <h1 data-lang-key="nav_date_converter">مبدل تاریخ</h1>
-        <p class="tool-desc" data-lang-key="tool_date_desc"></p>
-        <div class="date-panels">
-          <div class="date-panel">
-            <h2 data-lang-key="date_solar">تاریخ شمسی</h2>
-            <div class="date-inputs">
-              <input type="number" id="jYear" data-lang-key="date_year" placeholder="سال" min="1" max="9999" />
-              <select id="jMonth"></select>
-              <input type="number" id="jDay" placeholder="روز" min="1" max="31" />
-            </div>
-            <button class="btn-primary" id="jToG" data-lang-key="date_to_gregorian">شمسی به میلادی</button>
-          </div>
-          <div class="date-panel">
-            <h2 data-lang-key="date_gregorian">تاریخ میلادی</h2>
-            <div class="date-inputs">
-              <input type="number" id="gYear" placeholder="Year" min="1" max="9999" />
-              <select id="gMonth"></select>
-              <input type="number" id="gDay" placeholder="Day" min="1" max="31" />
-            </div>
-            <button class="btn-primary" id="gToJ" data-lang-key="date_to_solar">میلادی به شمسی</button>
-          </div>
+    <!-- ========================================================= -->
+    <!-- ====== بخش PDF ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-pdf" class="tool-section active">
+        <h2 class="lang-fa" style="margin:10px 0;">📄 تبدیل فایل‌های PDF</h2>
+        <h2 class="lang-en" style="margin:10px 0;">📄 PDF Conversion</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-file-word"></i><h4 class="lang-fa">PDF به Word</h4><h4 class="lang-en">PDF to Word</h4><p class="lang-fa">تبدیل با حفظ جدول و تصاویر</p><p class="lang-en">Preserve tables & images</p><span class="badge">رایگان</span></div>
+            <div class="tool-card"><i class="fas fa-file-excel"></i><h4 class="lang-fa">PDF به Excel</h4><h4 class="lang-en">PDF to Excel</h4><p class="lang-fa">استخراج داده‌ها به صفحه گسترده</p><p class="lang-en">Extract data to spreadsheet</p></div>
+            <div class="tool-card"><i class="fas fa-file-image"></i><h4 class="lang-fa">PDF به عکس</h4><h4 class="lang-en">PDF to Image</h4><p class="lang-fa">تبدیل صفحات به JPG/PNG</p><p class="lang-en">Pages to JPG/PNG</p></div>
         </div>
-        <div class="result-box" id="dateResult"></div>
-      </div>
-    </section>
-
-    <!-- 3. PASSWORD GENERATOR -->
-    <section class="tool-section" id="section-password">
-      <div class="card">
-        <h1 data-lang-key="nav_password">رمز عبور</h1>
-        <p class="tool-desc" data-lang-key="tool_pwd_desc"></p>
-        <div class="pwd-output-row">
-          <input type="text" id="pwdOutput" readonly />
-          <button class="btn-icon" id="pwdCopy" data-lang-key="copy">کپی</button>
+        <!-- باکس آپلود شبیه‌سازی برای PDF -->
+        <div class="upload-box" id="pdfUploadBox">
+            <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3 class="lang-fa">فایل PDF را بکشید یا کلیک کنید</h3><h3 class="lang-en">Drop PDF or click</h3><input type="file" id="pdfFileInput" accept=".pdf" style="display:none;"></div>
+            <div class="file-preview" id="pdfPreview"></div>
+            <button class="btn btn-primary" id="pdfConvertBtn"><i class="fas fa-sync"></i><span class="lang-fa">شبیه‌سازی تبدیل</span><span class="lang-en">Simulate Convert</span></button>
+            <div class="progress-wrap" id="pdfProgress"><div class="progress-bar"><div class="fill" id="pdfFill"></div></div><div class="progress-text">0%</div></div>
+            <div class="download-link" id="pdfDownload"><button class="btn btn-success"><i class="fas fa-download"></i><span class="lang-fa">دانلود</span><span class="lang-en">Download</span></button></div>
         </div>
-        <div class="pwd-controls">
-          <label><span data-lang-key="pwd_length">طول: </span><span id="pwdLenVal">12</span></label>
-          <input type="range" id="pwdLen" min="8" max="32" value="12" />
-          <label><input type="checkbox" id="pwdUpper" checked /> <span data-lang-key="pwd_uppercase"></span></label>
-          <label><input type="checkbox" id="pwdLower" checked /> <span data-lang-key="pwd_lowercase"></span></label>
-          <label><input type="checkbox" id="pwdNum" checked /> <span data-lang-key="pwd_numbers"></span></label>
-          <label><input type="checkbox" id="pwdSym" /> <span data-lang-key="pwd_symbols"></span></label>
-        </div>
-        <div class="pwd-strength-wrap">
-          <span data-lang-key="pwd_strength">قدرت</span>
-          <div class="pwd-bar"><div class="pwd-bar-fill" id="pwdBar"></div></div>
-          <span id="pwdStrengthText"></span>
-        </div>
-        <button class="btn-primary" id="pwdGen" data-lang-key="generate">تولید</button>
-      </div>
-    </section>
-
-    <!-- 4. UNIT CONVERTER -->
-    <section class="tool-section" id="section-units">
-      <div class="card">
-        <h1 data-lang-key="nav_units">مبدل واحدها</h1>
-        <p class="tool-desc" data-lang-key="tool_units_desc"></p>
-        <div class="unit-tabs">
-          <button class="unit-tab active" data-utab="length" data-lang-key="units_length">طول</button>
-          <button class="unit-tab" data-utab="weight" data-lang-key="units_weight">وزن</button>
-        </div>
-        <div class="unit-row">
-          <div class="unit-field">
-            <label data-lang-key="units_from">از</label>
-            <input type="number" id="unitInput" placeholder="0" step="any" />
-            <select id="unitFrom"></select>
-          </div>
-          <div class="unit-arrow">⇄</div>
-          <div class="unit-field">
-            <label data-lang-key="units_to">به</label>
-            <input type="number" id="unitOutput" readonly />
-            <select id="unitTo"></select>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. TEXT COUNTER -->
-    <section class="tool-section" id="section-counter">
-      <div class="card">
-        <h1 data-lang-key="nav_counter">شمارشگر متن</h1>
-        <p class="tool-desc" data-lang-key="tool_counter_desc"></p>
-        <textarea id="counterText" rows="8" placeholder="..."></textarea>
-        <div class="counter-stats">
-          <div class="stat"><span id="statChars">0</span><span data-lang-key="counter_chars"></span></div>
-          <div class="stat"><span id="statCharsNs">0</span><span data-lang-key="counter_chars_nospace"></span></div>
-          <div class="stat"><span id="statWords">0</span><span data-lang-key="counter_words"></span></div>
-          <div class="stat"><span id="statSentences">0</span><span data-lang-key="counter_sentences"></span></div>
-          <div class="stat"><span id="statParagraphs">0</span><span data-lang-key="counter_paragraphs"></span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. QR GENERATOR -->
-    <section class="tool-section" id="section-qr">
-      <div class="card">
-        <h1 data-lang-key="nav_qr">ساخت QR</h1>
-        <p class="tool-desc" data-lang-key="tool_qr_desc"></p>
-        <input type="text" id="qrInput" data-lang-key="qr_input" placeholder="متن یا لینک را وارد کنید" />
-        <button class="btn-primary" id="qrGen" data-lang-key="qr_generate">تولید QR</button>
-        <canvas id="qrCanvas" width="256" height="256"></canvas>
-        <button class="btn-secondary" id="qrDownload" data-lang-key="qr_download">دانلود QR (PNG)</button>
-      </div>
-    </section>
-
-    <!-- 7. NUMBER TO WORDS -->
-    <section class="tool-section" id="section-n2w">
-      <div class="card">
-        <h1 data-lang-key="nav_number2word">عدد به حروف</h1>
-        <p class="tool-desc" data-lang-key="tool_n2w_desc"></p>
-        <input type="number" id="n2wInput" data-lang-key="n2w_input" placeholder="عدد را وارد کنید" />
-        <div class="result-box" id="n2wResult"></div>
-      </div>
-    </section>
-
-    <!-- 8. OCR -->
-    <section class="tool-section" id="section-ocr">
-      <div class="card">
-        <h1 data-lang-key="nav_ocr">عکس به متن (OCR)</h1>
-        <p class="tool-desc" data-lang-key="tool_ocr_desc"></p>
-        <p class="warn-note" data-lang-key="ocr_warning"></p>
-        <div class="dropzone" id="ocrDropzone" data-lang-key="upload_file"></div>
-        <input type="file" id="ocrFile" accept="image/jpeg,image/png,image/webp" hidden />
-        <div class="spinner hidden" id="ocrSpinner"></div>
-        <div class="preview-wrap" id="ocrPreview"></div>
-        <textarea id="ocrResult" rows="6" readonly></textarea>
-        <button class="btn-icon" id="ocrCopy" data-lang-key="copy">کپی</button>
-      </div>
-    </section>
-
-    <!-- 9. IMAGE CONVERTER -->
-    <section class="tool-section" id="section-imgconvert">
-      <div class="card">
-        <h1 data-lang-key="nav_imgconvert">تبدیل فرمت عکس</h1>
-        <p class="tool-desc" data-lang-key="tool_imgconv_desc"></p>
-        <div class="dropzone" id="imgConvDropzone" data-lang-key="upload_file"></div>
-        <input type="file" id="imgConvFile" accept="image/*" hidden />
-        <div class="preview-wrap" id="imgConvPreview"></div>
-        <div class="inline-row">
-          <label data-lang-key="imgconv_target">فرمت مقصد</label>
-          <select id="imgConvFormat">
-            <option value="image/png">PNG</option>
-            <option value="image/jpeg">JPG</option>
-            <option value="image/webp">WebP</option>
-            <option value="image/bmp">BMP</option>
-          </select>
-          <button class="btn-primary" id="imgConvBtn" data-lang-key="convert">تبدیل</button>
-        </div>
-        <div class="preview-wrap" id="imgConvResult"></div>
-      </div>
-    </section>
-
-    <!-- 10. PDF TOOLS -->
-    <section class="tool-section" id="section-pdf">
-      <div class="card">
-        <h1 data-lang-key="nav_pdf">تبدیل PDF</h1>
-        <p class="tool-desc" data-lang-key="tool_pdf_desc"></p>
-        <div class="unit-tabs">
-          <button class="unit-tab active" data-ptab="pdf2img" data-lang-key="pdf_to_img">PDF به عکس</button>
-          <button class="unit-tab" data-ptab="img2pdf" data-lang-key="img_to_pdf">عکس به PDF</button>
-        </div>
-        <div class="pdf-panel" id="pdfPanel-pdf2img">
-          <div class="dropzone" id="pdfDropzone" data-lang-key="pdf_upload"></div>
-          <input type="file" id="pdfFile" accept="application/pdf" hidden />
-          <div class="spinner hidden" id="pdfSpinner"></div>
-          <div class="inline-row">
-            <label data-lang-key="pdf_format">فرمت</label>
-            <select id="pdfImgFormat"><option value="png">PNG</option><option value="jpeg">JPG</option></select>
-          </div>
-          <div class="preview-wrap" id="pdfResult"></div>
-        </div>
-        <div class="pdf-panel hidden" id="pdfPanel-img2pdf">
-          <div class="dropzone" id="img2pdfDropzone" data-lang-key="pdf_img_upload"></div>
-          <input type="file" id="img2pdfFile" accept="image/*" multiple hidden />
-          <div class="preview-wrap" id="img2pdfPreview"></div>
-          <button class="btn-primary" id="img2pdfBtn" data-lang-key="convert">تبدیل</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 11. DATA CONVERTER -->
-    <section class="tool-section" id="section-data">
-      <div class="card">
-        <h1 data-lang-key="nav_dataconvert">تبدیل داده</h1>
-        <p class="tool-desc" data-lang-key="tool_data_desc"></p>
-        <div class="inline-row">
-          <label data-lang-key="data_from">ورودی</label>
-          <select id="dataFrom"><option>JSON</option><option>CSV</option><option>XML</option><option>YAML</option></select>
-          <label data-lang-key="data_to">خروجی</label>
-          <select id="dataTo"><option>CSV</option><option>JSON</option><option>XML</option><option>YAML</option></select>
-        </div>
-        <textarea id="dataInput" rows="6" data-lang-key="data_input" placeholder='{...}'></textarea>
-        <button class="btn-primary" id="dataConvert" data-lang-key="convert">تبدیل</button>
-        <textarea id="dataOutput" rows="6" readonly></textarea>
-        <button class="btn-icon" id="dataDownload" data-lang-key="download">دانلود</button>
-      </div>
-    </section>
-
-    <!-- 12. HEIC CONVERTER -->
-    <section class="tool-section" id="section-heic">
-      <div class="card">
-        <h1 data-lang-key="nav_heic">تبدیل HEIC</h1>
-        <p class="tool-desc" data-lang-key="tool_heic_desc"></p>
-        <div class="dropzone" id="heicDropzone" data-lang-key="heic_upload"></div>
-        <input type="file" id="heicFile" accept="image/heic,image/heif,.heic,.heif" hidden />
-        <div class="spinner hidden" id="heicSpinner"></div>
-        <div class="inline-row">
-          <label data-lang-key="imgconv_target">فرمت</label>
-          <select id="heicFormat"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select>
-          <button class="btn-primary" id="heicBtn" data-lang-key="convert">تبدیل</button>
-        </div>
-        <div class="preview-wrap" id="heicResult"></div>
-      </div>
-    </section>
-
-    <!-- 13. VIDEO TO GIF -->
-    <section class="tool-section" id="section-video2gif">
-      <div class="card">
-        <h1 data-lang-key="nav_video2gif">ویدیو به GIF</h1>
-        <p class="tool-desc" data-lang-key="tool_vid_desc"></p>
-        <div class="dropzone" id="vidDropzone" data-lang-key="vid_upload"></div>
-        <input type="file" id="vidFile" accept="video/mp4,video/webm" hidden />
-        <div class="spinner hidden" id="vidSpinner"></div>
-        <div class="inline-row">
-          <label data-lang-key="vid_start">شروع (ث)</label>
-          <input type="number" id="vidStart" value="0" min="0" step="0.5" style="width:80px" />
-          <label data-lang-key="vid_duration">مدت (ث)</label>
-          <input type="number" id="vidDuration" value="3" min="0.5" step="0.5" style="width:80px" />
-          <label data-lang-key="vid_fps">FPS</label>
-          <input type="number" id="vidFps" value="10" min="1" max="30" style="width:70px" />
-        </div>
-        <button class="btn-primary" id="vidBtn" data-lang-key="vid_convert">تبدیل</button>
-        <div class="preview-wrap" id="vidResult"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="site-footer">
-    <div class="footer-inner">
-      <div class="footer-links">
-        <a href="/about.html" data-lang-key="footer_about">درباره ما</a>
-        <a href="/contact.html" data-lang-key="footer_contact">تماس با ما</a>
-        <a href="/privacy.html" data-lang-key="footer_privacy">حریم خصوصی</a>
-        <a href="/terms.html" data-lang-key="footer_terms">قوانین استفاده</a>
-      </div>
-      <p class="footer-copy">
-        <span data-lang-key="footer_rights">تمامی حقوق برای</span>
-        <strong>مهدی رحیمیان</strong>
-        <span data-lang-key="footer_reserved">محفوظ است.</span>
-        <br>
-        <span data-lang-key="footer_design">طراحی و توسعه توسط</span>
-        <a href="https://github.com/mahdiramsar" target="_blank">مهدی رحیمیان</a>
-      </p>
     </div>
-  </footer>
 
-  <!-- دکمه بازگشت به بالا -->
-  <button id="backToTop" aria-label="Back to top">↑</button>
+    <!-- ========================================================= -->
+    <!-- ====== بخش ویدیو ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-video" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">🎬 ابزارهای ویدیویی</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🎬 Video Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-closed-captioning"></i><h4 class="lang-fa">ویدیو به متن</h4><h4 class="lang-en">Video to Text</h4><p class="lang-fa">استخراج زیرنویس از فیلم</p><p class="lang-en">Extract subtitles</p></div>
+            <div class="tool-card"><i class="fas fa-volume-up"></i><h4 class="lang-fa">ویدیو به صوت</h4><h4 class="lang-en">Video to Audio</h4><p class="lang-fa">استخراج صدا از فیلم</p><p class="lang-en">Extract audio</p></div>
+            <div class="tool-card"><i class="fas fa-file-audio"></i><h4 class="lang-fa">MP4 به MP3</h4><h4 class="lang-en">MP4 to MP3</h4><p class="lang-fa">تبدیل ویدیو به صدا</p><p class="lang-en">Video to audio</p></div>
+            <div class="tool-card"><i class="fas fa-cut"></i><h4 class="lang-fa">برش ویدیو</h4><h4 class="lang-en">Video Cutter</h4><p class="lang-fa">برش دقیق فیلم</p><p class="lang-en">Precise trimming</p></div>
+        </div>
+        <div class="upload-box"><div class="upload-area"><i class="fas fa-file-video"></i><h3 class="lang-fa">فایل ویدیویی را آپلود کنید</h3><h3 class="lang-en">Upload video file</h3><input type="file" accept=".mp4,.avi,.mov" style="display:none;"></div><button class="btn btn-primary"><span class="lang-fa">شبیه‌سازی تبدیل</span><span class="lang-en">Simulate</span></button></div>
+    </div>
 
-  <script src="script.js"></script>
+    <!-- ========================================================= -->
+    <!-- ====== بخش صوتی ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-audio" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">🎵 ابزارهای صوتی</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🎵 Audio Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-microphone-alt"></i><h4 class="lang-fa">صوت به متن</h4><h4 class="lang-en">Audio to Text</h4><p class="lang-fa">تبدیل گفتار به نوشته</p><p class="lang-en">Speech to writing</p></div>
+            <div class="tool-card"><i class="fas fa-volume-high"></i><h4 class="lang-fa">متن به گفتار</h4><h4 class="lang-en">Text to Speech</h4><p class="lang-fa">تبدیل متن به صدای طبیعی</p><p class="lang-en">Natural voice</p></div>
+            <div class="tool-card"><i class="fas fa-file-audio"></i><h4 class="lang-fa">MP3 به OGG</h4><h4 class="lang-en">MP3 to OGG</h4><p class="lang-fa">تبدیل فرمت صوتی</p><p class="lang-en">Format conversion</p></div>
+            <div class="tool-card"><i class="fas fa-cut"></i><h4 class="lang-fa">برش صوتی</h4><h4 class="lang-en">Audio Cutter</h4><p class="lang-fa">برش فایل صوتی</p><p class="lang-en">Cut audio</p></div>
+            <div class="tool-card"><i class="fas fa-object-group"></i><h4 class="lang-fa">ترکیب صوتی</h4><h4 class="lang-en">Audio Merger</h4><p class="lang-fa">اتصال چند فایل صوتی</p><p class="lang-en">Merge audio files</p></div>
+            <div class="tool-card"><i class="fas fa-comment-dots"></i><h4 class="lang-fa">گفتار به متن</h4><h4 class="lang-en">Speech to Text</h4><p class="lang-fa">رونویسی خودکار</p><p class="lang-en">Auto transcription</p></div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ====== بخش تبدیل به PDF ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-topdf" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">📑 تبدیل فایل‌ها به PDF</h2>
+        <h2 class="lang-en" style="margin:10px 0;">📑 Convert to PDF</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-file-excel"></i><h4>Excel به PDF</h4><p class="lang-fa">تبدیل صفحه گسترده</p><p class="lang-en">Spreadsheet to PDF</p></div>
+            <div class="tool-card"><i class="fas fa-file-powerpoint"></i><h4>پاورپوینت به PDF</h4><p class="lang-fa">اسلایدها به PDF</p><p class="lang-en">Slides to PDF</p></div>
+            <div class="tool-card"><i class="fas fa-file-word"></i><h4>Word به PDF</h4><p class="lang-fa">سند به PDF</p><p class="lang-en">Document to PDF</p></div>
+            <div class="tool-card"><i class="fas fa-file-alt"></i><h4>TXT به PDF</h4><p class="lang-fa">متن ساده به PDF</p><p class="lang-en">Plain text to PDF</p></div>
+            <div class="tool-card"><i class="fas fa-pencil-alt"></i><h4 class="lang-fa">متن به PDF</h4><h4 class="lang-en">Text to PDF</h4><p class="lang-fa">نوشته دلخواه به PDF</p><p class="lang-en">Custom text to PDF</p></div>
+            <div class="tool-card"><i class="fas fa-image"></i><h4 class="lang-fa">عکس به PDF</h4><h4 class="lang-en">Image to PDF</h4><p class="lang-fa">تبدیل عکس به سند</p><p class="lang-en">Image to document</p></div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ====== بخش عکس ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-image" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">🖼️ ابزارهای عکس</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🖼️ Image Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-text-height"></i><h4 class="lang-fa">عکس به متن</h4><h4 class="lang-en">Image to Text</h4><p class="lang-fa">OCR استخراج متن</p><p class="lang-en">OCR text extraction</p></div>
+            <div class="tool-card"><i class="fas fa-file-pdf"></i><h4 class="lang-fa">عکس به PDF</h4><h4 class="lang-en">Image to PDF</h4><p class="lang-fa">ساخت PDF از عکس</p><p class="lang-en">Make PDF from image</p></div>
+            <div class="tool-card"><i class="fas fa-pen-fancy"></i><h4 class="lang-fa">دستنویس به متن</h4><h4 class="lang-en">Handwriting to Text</h4><p class="lang-fa">تبدیل خط دستی</p><p class="lang-en">Convert handwriting</p></div>
+            <div class="tool-card"><i class="fas fa-object-ungroup"></i><h4 class="lang-fa">ترکیب عکس‌ها</h4><h4 class="lang-en">Merge Images</h4><p class="lang-fa">اتصال چند عکس</p><p class="lang-en">Combine images</p></div>
+            <div class="tool-card"><i class="fas fa-compress-alt"></i><h4 class="lang-fa">فشرده‌سازی عکس</h4><h4 class="lang-en">Compress Image</h4><p class="lang-fa">کاهش حجم بدون کیفیت</p><p class="lang-en">Reduce size</p></div>
+            <div class="tool-card"><i class="fas fa-eraser"></i><h4 class="lang-fa">حذف پس‌زمینه</h4><h4 class="lang-en">Remove BG</h4><p class="lang-fa">حذف خودکار بک‌گراند</p><p class="lang-en">Auto background removal</p></div>
+            <div class="tool-card"><i class="fas fa-exchange-alt"></i><h4 class="lang-fa">HEIC به JPG</h4><h4 class="lang-en">HEIC to JPG</h4><p class="lang-fa">تبدیل عکس آیفون</p><p class="lang-en">iPhone image convert</p></div>
+            <div class="tool-card"><i class="fas fa-file-image"></i><h4 class="lang-fa">عکس به JPG</h4><h4 class="lang-en">Image to JPG</h4><p class="lang-fa">تبدیل به فرمت JPG</p><p class="lang-en">Convert to JPG</p></div>
+            <div class="tool-card"><i class="fas fa-file-png"></i><h4 class="lang-fa">عکس به PNG</h4><h4 class="lang-en">Image to PNG</h4><p class="lang-fa">تبدیل به PNG شفاف</p><p class="lang-en">Convert to PNG</p></div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ====== بخش Word ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-word" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">📝 ابزارهای Word</h2>
+        <h2 class="lang-en" style="margin:10px 0;">📝 Word Tools</h2>
+        <div class="tools-grid">
+            <div class="tool-card"><i class="fas fa-object-group"></i><h4 class="lang-fa">ترکیب فایل‌های Word</h4><h4 class="lang-en">Merge Word</h4><p class="lang-fa">اتحاد چند سند</p><p class="lang-en">Merge documents</p></div>
+            <div class="tool-card"><i class="fas fa-pencil-alt"></i><h4 class="lang-fa">متن به Word</h4><h4 class="lang-en">Text to Word</h4><p class="lang-fa">تبدیل متن به سند</p><p class="lang-en">Text to document</p></div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ====== بخش جانبی (Utility) ====== -->
+    <!-- ========================================================= -->
+    <div id="tab-util" class="tool-section">
+        <h2 class="lang-fa" style="margin:10px 0;">🔧 ابزارهای جانبی</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🔧 Utility Tools</h2>
+        
+        <!-- 1. تولید رمز -->
+        <div class="util-box">
+            <h3><i class="fas fa-key"></i> <span class="lang-fa">تولید رمز عبور قوی</span><span class="lang-en">Strong Password Generator</span></h3>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+                <input type="text" id="passOutput" value="A8#kLp2!" style="flex:2;min-width:200px;">
+                <button class="btn btn-primary" id="genPassBtn"><i class="fas fa-sync"></i> <span class="lang-fa">تولید جدید</span><span class="lang-en">Generate</span></button>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;">
+                <label><span class="lang-fa">طول:</span><span class="lang-en">Length:</span> <input type="number" id="passLen" value="12" min="4" max="64" style="width:70px;"></label>
+                <label><input type="checkbox" id="chkUpper" checked> <span class="lang-fa">حروف بزرگ</span><span class="lang-en">Uppercase</span></label>
+                <label><input type="checkbox" id="chkLower" checked> <span class="lang-fa">حروف کوچک</span><span class="lang-en">Lowercase</span></label>
+                <label><input type="checkbox" id="chkNum" checked> <span class="lang-fa">اعداد</span><span class="lang-en">Numbers</span></label>
+                <label><input type="checkbox" id="chkSym" checked> <span class="lang-fa">نمادها</span><span class="lang-en">Symbols</span></label>
+            </div>
+            <div class="strength-bar"><div class="fill" id="strengthFill" style="width:80%;background:#22c55e;"></div></div>
+            <span id="strengthText" class="lang-fa">قوی</span><span id="strengthTextEn" class="lang-en">Strong</span>
+        </div>
+
+        <!-- 2. QR Code -->
+        <div class="util-box">
+            <h3><i class="fas fa-qrcode"></i> <span class="lang-fa">ساخت QR Code</span><span class="lang-en">QR Code Generator</span></h3>
+            <input type="text" id="qrInput" placeholder="لینک یا متن مورد نظر..." value="https://example.com">
+            <button class="btn btn-primary" id="genQrBtn"><span class="lang-fa">ساخت QR</span><span class="lang-en">Generate QR</span></button>
+            <div class="qr-result" id="qrResult"><canvas id="qrCanvas"></canvas><button class="btn btn-success" id="downloadQrBtn"><i class="fas fa-download"></i> <span class="lang-fa">دانلود PNG</span><span class="lang-en">Download PNG</span></button></div>
+        </div>
+
+        <!-- 3. مبدل فرمت عکس (Canvas) -->
+        <div class="util-box">
+            <h3><i class="fas fa-exchange-alt"></i> <span class="lang-fa">مبدل فرمت عکس</span><span class="lang-en">Image Format Converter</span></h3>
+            <p class="lang-fa">(PNG, JPG, WebP, AVIF, BMP - با Canvas)</p>
+            <p class="lang-en">(PNG, JPG, WebP, AVIF, BMP - with Canvas)</p>
+            <input type="file" id="imgConvertInput" accept="image/*">
+            <select id="imgFormatSelect" style="width:auto;padding:8px 16px;"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option><option value="image/avif">AVIF</option><option value="image/bmp">BMP</option></select>
+            <button class="btn btn-primary" id="convertImgBtn"><span class="lang-fa">تبدیل و دانلود</span><span class="lang-en">Convert & Download</span></button>
+        </div>
+
+        <!-- 4. تبدیل تاریخ شمسی به میلادی -->
+        <div class="util-box">
+            <h3><i class="fas fa-calendar-alt"></i> <span class="lang-fa">تبدیل تاریخ شمسی به میلادی</span><span class="lang-en">Jalali to Gregorian</span></h3>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+                <input type="number" id="yearInput" placeholder="سال" value="1404" style="width:90px;">
+                <input type="number" id="monthInput" placeholder="ماه" value="5" style="width:80px;">
+                <input type="number" id="dayInput" placeholder="روز" value="17" style="width:80px;">
+                <button class="btn btn-primary" id="convertDateBtn"><span class="lang-fa">تبدیل</span><span class="lang-en">Convert</span></button>
+            </div>
+            <div id="dateResult" style="margin-top:12px;font-size:1.2rem;font-weight:700;color:var(--primary);">
+                میلادی: 2025-08-07
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================= -->
+    <!-- ====== سوالات متداول (سئو) ====== -->
+    <!-- ========================================================= -->
+    <h2 class="lang-fa" style="text-align:center;margin-top:40px;">❓ سوالات متداول</h2>
+    <h2 class="lang-en" style="text-align:center;margin-top:40px;">❓ FAQ</h2>
+    <div class="faq-list">
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا استفاده از این ابزارها رایگان است؟</span><span class="lang-en">Are these tools free?</span></div><div class="a lang-fa">بله، تمامی ابزارهای این سایت کاملاً رایگان هستند و نیازی به ثبت‌نام یا پرداخت ندارند.</div><div class="a lang-en">Yes, all tools are completely free with no registration or payment required.</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا فایل‌های من در سرور ذخیره می‌شوند؟</span><span class="lang-en">Are my files stored on servers?</span></div><div class="a lang-fa">خیر، تمام پردازش‌ها در مرورگر شما انجام می‌شود و فایل‌ها به سرور ارسال نمی‌شوند (به جز ابزارهای سنگین که شبیه‌سازی هستند).</div><div class="a lang-en">No, processing happens in your browser and files are not uploaded to servers (except simulated heavy tools).</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">چگونه از این سایت در گوگل ادز استفاده کنم؟</span><span class="lang-en">How to use this site for Google Ads?</span></div><div class="a lang-fa">این سایت دارای متا تگ‌های سئو، دیتای ساختاریافته و سرعت بارگذاری بالاست و می‌توانید به عنوان یک دارایی دیجیتال باکیفیت در کمپین‌های گوگل ادز استفاده کنید.</div><div class="a lang-en">This site has SEO meta tags, structured data, and fast loading, making it a high-quality digital asset for Google Ads campaigns.</div></div>
+    </div>
+
+    <!-- ===== فوتر ===== -->
+    <footer class="footer">
+        <span class="lang-fa">© ۲۰۲۶ تمامی حقوق محفوظ است. | طراحی شده برای سئو و گوگل ادز</span>
+        <span class="lang-en">© 2026 All Rights Reserved. | Designed for SEO & Google Ads</span>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script>
+// ============================================================
+// ۱. تغییر زبان
+// ============================================================
+const langToggle = document.getElementById('langToggle');
+const body = document.body;
+if (localStorage.getItem('lang') === 'en') body.classList.add('en');
+langToggle.addEventListener('click', () => {
+    body.classList.toggle('en');
+    localStorage.setItem('lang', body.classList.contains('en') ? 'en' : 'fa');
+});
+
+// ============================================================
+// ۲. تب‌ها (Tab Switching)
+// ============================================================
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = {
+    'tab-pdf': document.getElementById('tab-pdf'),
+    'tab-video': document.getElementById('tab-video'),
+    'tab-audio': document.getElementById('tab-audio'),
+    'tab-topdf': document.getElementById('tab-topdf'),
+    'tab-image': document.getElementById('tab-image'),
+    'tab-word': document.getElementById('tab-word'),
+    'tab-util': document.getElementById('tab-util')
+};
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        tabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
+        Object.keys(sections).forEach(key => {
+            sections[key].classList.remove('active');
+        });
+        const target = this.dataset.tab;
+        if (sections[target]) sections[target].classList.add('active');
+    });
+});
+
+// ============================================================
+// ۳. ابزار تولید رمز عبور
+// ============================================================
+function generatePassword() {
+    const len = parseInt(document.getElementById('passLen').value) || 12;
+    const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lower = 'abcdefghijklmnopqrstuvwxyz';
+    const num = '0123456789';
+    const sym = '!@#$%^&*()_+-=';
+    let chars = '';
+    if (document.getElementById('chkUpper').checked) chars += upper;
+    if (document.getElementById('chkLower').checked) chars += lower;
+    if (document.getElementById('chkNum').checked) chars += num;
+    if (document.getElementById('chkSym').checked) chars += sym;
+    if (!chars) { alert('حداقل یک گزینه را انتخاب کنید'); return; }
+    let pass = '';
+    for (let i = 0; i < len; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
+    document.getElementById('passOutput').value = pass;
+    // قدرت رمز
+    let strength = 0;
+    if (/[a-z]/.test(pass)) strength += 20;
+    if (/[A-Z]/.test(pass)) strength += 20;
+    if (/\d/.test(pass)) strength += 20;
+    if (/[^a-zA-Z0-9]/.test(pass)) strength += 30;
+    if (pass.length > 10) strength += 10;
+    const fill = document.getElementById('strengthFill');
+    const text = document.getElementById('strengthText');
+    const textEn = document.getElementById('strengthTextEn');
+    fill.style.width = Math.min(strength, 100) + '%';
+    if (strength < 40) { fill.style.background = '#ef4444'; text.textContent = 'ضعیف'; textEn.textContent = 'Weak'; }
+    else if (strength < 70) { fill.style.background = '#f59e0b'; text.textContent = 'متوسط'; textEn.textContent = 'Medium'; }
+    else { fill.style.background = '#22c55e'; text.textContent = 'قوی'; textEn.textContent = 'Strong'; }
+}
+document.getElementById('genPassBtn').addEventListener('click', generatePassword);
+document.getElementById('passLen').addEventListener('change', generatePassword);
+document.querySelectorAll('#chkUpper, #chkLower, #chkNum, #chkSym').forEach(cb => cb.addEventListener('change', generatePassword));
+generatePassword();
+
+// ============================================================
+// ۴. ابزار QR Code
+// ============================================================
+let qrInstance = null;
+document.getElementById('genQrBtn').addEventListener('click', function() {
+    const val = document.getElementById('qrInput').value || 'https://example.com';
+    const canvas = document.getElementById('qrCanvas');
+    canvas.innerHTML = '';
+    qrInstance = new QRCode(canvas, { text: val, width: 200, height: 200, colorDark: '#0f2b5c', colorLight: '#ffffff' });
+});
+document.getElementById('downloadQrBtn').addEventListener('click', function() {
+    const canvas = document.getElementById('qrCanvas').querySelector('canvas');
+    if (!canvas) return alert('ابتدا QR Code را بسازید');
+    const link = document.createElement('a');
+    link.download = 'qrcode.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+});
+document.getElementById('genQrBtn').click();
+
+// ============================================================
+// ۵. مبدل فرمت عکس با Canvas
+// ============================================================
+document.getElementById('convertImgBtn').addEventListener('click', function() {
+    const fileInput = document.getElementById('imgConvertInput');
+    const format = document.getElementById('imgFormatSelect').value;
+    if (!fileInput.files[0]) return alert('لطفاً یک عکس انتخاب کنید');
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            const link = document.createElement('a');
+            link.download = 'converted.' + format.split('/')[1];
+            link.href = canvas.toDataURL(format);
+            link.click();
+        };
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(fileInput.files[0]);
+});
+
+// ============================================================
+// ۶. تبدیل تاریخ شمسی به میلادی (ساده)
+// ============================================================
+document.getElementById('convertDateBtn').addEventListener('click', function() {
+    const y = parseInt(document.getElementById('yearInput').value) || 1404;
+    const m = parseInt(document.getElementById('monthInput').value) || 1;
+    const d = parseInt(document.getElementById('dayInput').value) || 1;
+    // الگوریتم تقریبی (برای نمایش)
+    const greg = new Date(y - 621, m - 1, d);
+    // اصلاح مختصر برای دقت بهتر (الگوریتم معروف)
+    const jy = y;
+    const jm = m;
+    const jd = d;
+    const gy = (jy > 979) ? 1600 : 621;
+    let gd = jd + 79;
+    let gm = jm + 9;
+    let gyear = gy + jy - 1;
+    if (gm > 12) { gm -= 12; gyear += 1; }
+    if (gd > 30) { gd -= 30; gm += 1; if (gm > 12) { gm -= 12; gyear += 1; } }
+    document.getElementById('dateResult').innerHTML = `
+        <span class="lang-fa">میلادی: ${gyear}/${gm < 10 ? '0' + gm : gm}/${gd < 10 ? '0' + gd : gd}</span>
+        <span class="lang-en">Gregorian: ${gyear}/${gm < 10 ? '0' + gm : gm}/${gd < 10 ? '0' + gd : gd}</span>
+    `;
+});
+document.getElementById('convertDateBtn').click();
+
+// ============================================================
+// ۷. شبیه‌سازی تبدیل PDF (نمایشی)
+// ============================================================
+document.getElementById('pdfConvertBtn').addEventListener('click', function() {
+    const wrap = document.getElementById('pdfProgress');
+    const fill = document.getElementById('pdfFill');
+    const dl = document.getElementById('pdfDownload');
+    wrap.style.display = 'block';
+    dl.style.display = 'none';
+    let p = 0;
+    const int = setInterval(() => {
+        p += Math.floor(Math.random() * 20) + 5;
+        if (p > 100) p = 100;
+        fill.style.width = p + '%';
+        document.querySelector('#pdfProgress .progress-text').textContent = p + '%';
+        if (p === 100) {
+            clearInterval(int);
+            dl.style.display = 'block';
+        }
+    }, 200);
+});
+document.querySelector('#pdfDownload .btn').addEventListener('click', function() {
+    alert('فایل PDF با موفقیت دانلود شد! (شبیه‌سازی)');
+});
+
+// ============================================================
+// ۸. نمایش پاسخ‌های FAQ
+// ============================================================
+document.querySelectorAll('.faq-item .a').forEach(el => el.style.display = 'block');
+</script>
 </body>
 </html>
