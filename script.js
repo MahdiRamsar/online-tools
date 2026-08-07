@@ -1,349 +1,1444 @@
-'use strict';
+/* ============================================================
+   Smart Tools — Vanilla JS
+   Bilingual (FA/EN) online tools, fully static, no framework.
+   ============================================================ */
 
-// ===== TRANSLATIONS =====
-var T = {
-en:{logo:"Smart Tools",nav_home:"Home",nav_ocr:"OCR",nav_img:"Images",nav_pdf:"PDF",nav_pass:"Password",nav_calc:"Calculator",nav_qr:"QR Code",nav_date:"Date",nav_unit:"Units",nav_char:"Counter",nav_num:"Numbers",hero_title:"Free Online Tools Platform",hero_desc:"All tools run 100% in your browser. No data is sent to any server.",t_ocr:"Image to Text (OCR)",t_ocr_d:"Extract text from images using AI-powered OCR.",t_img:"Image Converter",t_img_d:"Convert JPG, PNG, WebP, BMP formats instantly.",t_pdf:"PDF Tools",t_pdf_d:"PDF to image, image to PDF, text extraction.",t_pass:"Password Generator",t_pass_d:"Create strong secure passwords with strength meter.",t_calc:"Calculator",t_calc_d:"Standard calculator with history and percentage.",t_qr:"QR Code Generator",t_qr_d:"Generate QR codes from text or URLs.",t_date:"Date Converter",t_date_d:"Convert Jalali to Gregorian and vice versa.",t_unit:"Unit Converter",t_unit_d:"Convert length and weight units instantly.",t_char:"Character Counter",t_char_d:"Count characters, words, sentences live.",t_num:"Number to Words",t_num_d:"Convert numbers to Persian/English words.",ocr_title:"📄 Image to Text (OCR)",ocr_drop:"Click or drag image here",ocr_start:"Start OCR",ocr_result:"Result:",copy:"Copy",download_txt:"Download TXT",img_title:"🖼️ Image Format Converter",img_drop:"Click or drag images here",quality:"Quality:",convert_all:"Convert All",pdf_title:"📑 PDF Tools",tab_img2pdf:"Image → PDF",tab_pdf2img:"PDF → Image",img2pdf_drop:"Select images to combine into PDF",create_pdf:"Create PDF",pdf2img_drop:"Select a PDF file",convert_to_img:"Convert to Images",pass_title:"🔐 Password Generator",length:"Length:",generate:"🔄 Generate",calc_title:"🧮 Calculator",qr_title:"📱 QR Code Generator",qr_gen:"Generate QR",qr_dl:"⬇️ Download PNG",date_title:"📅 Date Converter",j2g:"Jalali → Gregorian",g2j:"Gregorian → Jalali",convert:"Convert",unit_title:"📐 Unit Converter",tab_length:"Length",tab_weight:"Weight",char_title:"📝 Character Counter",chars:"Characters",chars_ns:"No Spaces",words:"Words",sentences:"Sentences",paras:"Paragraphs",read_time:"Min Read",num_title:"🔢 Number to Words",f_about:"About",f_contact:"Contact",f_privacy:"Privacy"},
-fa:{logo:"ابزارهای هوشمند",nav_home:"خانه",nav_ocr:"OCR",nav_img:"تصاویر",nav_pdf:"PDF",nav_pass:"رمز عبور",nav_calc:"ماشین حساب",nav_qr:"QR Code",nav_date:"تاریخ",nav_unit:"واحدها",nav_char:"شمارنده",nav_num:"اعداد",hero_title:"پلتفرم ابزارهای آنلاین رایگان",hero_desc:"تمام ابزارها ۱۰۰٪ در مرورگر شما اجرا می‌شوند. هیچ داده‌ای به سرور ارسال نمی‌شود.",t_ocr:"تبدیل عکس به متن (OCR)",t_ocr_d:"استخراج متن از تصاویر با هوش مصنوعی.",t_img:"مبدل فرمت تصویر",t_img_d:"تبدیل JPG، PNG، WebP، BMP به یکدیگر.",t_pdf:"ابزارهای PDF",t_pdf_d:"تبدیل PDF به عکس، عکس به PDF، استخراج متن.",t_pass:"تولید رمز عبور",t_pass_d:"ایجاد رمزهای قوی با نشانگر قدرت.",t_calc:"ماشین حساب",t_calc_d:"ماشین حساب استاندارد با تاریخچه.",t_qr:"تولید QR Code",t_qr_d:"تولید کد QR از متن یا لینک.",t_date:"مبدل تاریخ",t_date_d:"تبدیل تاریخ شمسی به میلادی و بالعکس.",t_unit:"مبدل واحد",t_unit_d:"تبدیل واحدهای طول و وزن.",t_char:"شمارنده کاراکتر",t_char_d:"شمارش زنده کاراکتر، کلمه، جمله.",t_num:"عدد به حروف",t_num_d:"تبدیل اعداد به حروف فارسی/انگلیسی.",ocr_title:"📄 تبدیل عکس به متن (OCR)",ocr_drop:"کلیک کنید یا عکس را اینجا بکشید",ocr_start:"شروع OCR",ocr_result:"نتیجه:",copy:"کپی",download_txt:"دانلود TXT",img_title:"🖼️ مبدل فرمت تصویر",img_drop:"کلیک کنید یا تصاویر را بکشید",quality:"کیفیت:",convert_all:"تبدیل همه",pdf_title:"📑 ابزارهای PDF",tab_img2pdf:"عکس ← PDF",tab_pdf2img:"PDF ← عکس",img2pdf_drop:"تصاویر را برای ساخت PDF انتخاب کنید",create_pdf:"ساخت PDF",pdf2img_drop:"فایل PDF را انتخاب کنید",convert_to_img:"تبدیل به تصاویر",pass_title:"🔐 تولید رمز عبور",length:"طول:",generate:"🔄 تولید",calc_title:"🧮 ماشین حساب",qr_title:"📱 تولید QR Code",qr_gen:"تولید QR",qr_dl:"⬇️ دانلود PNG",date_title:"📅 مبدل تاریخ",j2g:"شمسی ← میلادی",g2j:"میلادی ← شمسی",convert:"تبدیل",unit_title:"📐 مبدل واحد",tab_length:"طول",tab_weight:"وزن",char_title:"📝 شمارنده کاراکتر",chars:"کاراکتر",chars_ns:"بدون فاصله",words:"کلمات",sentences:"جملات",paras:"پاراگراف",read_time:"دقیقه مطالعه",num_title:"🔢 عدد به حروف",f_about:"درباره ما",f_contact:"تماس",f_privacy:"حریم خصوصی"}
-};
-var lang = localStorage.getItem('lang') || 'en';
+(function () {
+  "use strict";
 
-function applyLang(){
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-        var k = el.getAttribute('data-i18n');
-        if(T[lang][k]) el.textContent = T[lang][k];
+  /* ===== State ===== */
+  let translations = {};
+  let currentLang = localStorage.getItem("lang") || "fa";
+  let currentTool = "home";
+
+  /* ===== Tool registry for SEO & home grid ===== */
+  const tools = [
+    { id: "calculator",  icon: "🔢", seoKey: "seo_calc_title",    descKey: "tool_calc_desc" },
+    { id: "date",        icon: "📅", seoKey: "seo_date_title",    descKey: "tool_date_desc" },
+    { id: "password",    icon: "🔐", seoKey: "seo_pwd_title",     descKey: "tool_pwd_desc" },
+    { id: "units",       icon: "📏", seoKey: "seo_units_title",   descKey: "tool_units_desc" },
+    { id: "counter",     icon: "📝", seoKey: "seo_counter_title", descKey: "tool_counter_desc" },
+    { id: "qr",          icon: "📱", seoKey: "seo_qr_title",      descKey: "tool_qr_desc" },
+    { id: "n2w",         icon: "🔢", seoKey: "seo_n2w_title",     descKey: "tool_n2w_desc" },
+    { id: "ocr",         icon: "🔍", seoKey: "seo_ocr_title",     descKey: "tool_ocr_desc" },
+    { id: "imgconvert",  icon: "🖼️", seoKey: "seo_imgconv_title", descKey: "tool_imgconv_desc" },
+    { id: "pdf",         icon: "📄", seoKey: "seo_pdf_title",     descKey: "tool_pdf_desc" },
+    { id: "data",        icon: "🔄", seoKey: "seo_data_title",    descKey: "tool_data_desc" },
+    { id: "heic",        icon: "📷", seoKey: "seo_heic_title",    descKey: "tool_heic_desc" },
+    { id: "video2gif",   icon: "🎬", seoKey: "seo_vid_title",     descKey: "tool_vid_desc" }
+  ];
+
+  /* ===== i18n =========================================================== */
+
+  async function loadTranslations() {
+    try {
+      const res = await fetch("translations.json");
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      translations = await res.json();
+    } catch (e) {
+      console.error("Failed to load translations:", e);
+    }
+  }
+
+  function t(key) {
+    return (translations[currentLang] && translations[currentLang][key]) || key;
+  }
+
+  function applyTranslations() {
+    document.querySelectorAll("[data-lang-key]").forEach(function (el) {
+      const key = el.getAttribute("data-lang-key");
+      const val = t(key);
+      if (val && val !== key) {
+        if (el.tagName === "INPUT" && el.hasAttribute("placeholder")) {
+          el.setAttribute("placeholder", val);
+        } else if (el.tagName === "INPUT" && el.hasAttribute("data-lang-key") && el.type !== "button") {
+          // leave value fields alone unless they're placeholders
+        } else {
+          el.textContent = val;
+        }
+      }
     });
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang==='fa'?'rtl':'ltr';
-    document.querySelector('.lang-text').textContent = lang==='en'?'FA':'EN';
-}
+    // Update lang/dir
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === "fa" ? "rtl" : "ltr";
+    // Active language button
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-lang") === currentLang);
+    });
+    // Rebuild dynamic selects
+    populateMonthSelects();
+    populateUnitSelects();
+    buildHomeGrid();
+    updateSEO(currentTool);
+  }
 
-// ===== INIT =====
-document.addEventListener('DOMContentLoaded', function(){
-    applyLang();
-    initTheme();
-    initNav();
+  function switchLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("lang", currentLang);
+    applyTranslations();
+  }
+
+  /* ===== Theme ========================================================== */
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    const btn = document.getElementById("themeToggle");
+    if (btn) btn.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  }
+
+  /* ===== Navigation ===================================================== */
+
+  function showTool(toolId) {
+    currentTool = toolId;
+    document.querySelectorAll(".tool-section").forEach(function (s) {
+      s.classList.toggle("active", s.id === "section-" + toolId);
+    });
+    document.querySelectorAll(".nav-item").forEach(function (n) {
+      n.classList.toggle("active", n.getAttribute("data-tool") === toolId);
+    });
+    updateSEO(toolId);
+    window.scrollTo(0, 0);
+    // Close mobile menu
+    const nav = document.getElementById("mainNav");
+    const toggle = document.getElementById("menuToggle");
+    nav.classList.remove("open");
+    toggle.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+
+  function updateSEO(toolId) {
+    const titleEl = document.querySelector("title");
+    const descEl = document.querySelector('meta[name="description"]');
+    if (toolId === "home") {
+      titleEl.textContent = t("seo_home_title");
+      descEl.setAttribute("content", t("seo_home_desc"));
+    } else {
+      const tool = tools.find(function (x) { return x.id === toolId; });
+      if (tool) {
+        titleEl.textContent = t(tool.seoKey);
+        const descKey = tool.seoKey.replace("_title", "_desc");
+        descEl.setAttribute("content", t(descKey));
+      }
+    }
+  }
+
+  /* ===== Home grid ====================================================== */
+
+  function buildHomeGrid() {
+    const grid = document.getElementById("homeGrid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    tools.forEach(function (tool) {
+      const card = document.createElement("div");
+      card.className = "home-card";
+      card.setAttribute("data-tool", tool.id);
+      card.innerHTML =
+        '<div class="hc-icon">' + tool.icon + "</div>" +
+        '<div class="hc-title">' + t("nav_" + tool.id) + "</div>" +
+        '<div class="hc-desc">' + t(tool.descKey) + "</div>";
+      card.addEventListener("click", function () { showTool(tool.id); });
+      grid.appendChild(card);
+    });
+  }
+
+  /* ===== 1. Calculator ================================================== */
+
+  function initCalculator() {
+    const display = document.getElementById("calcDisplay");
+    const history = document.getElementById("calcHistory");
+    let current = "0";
+    let prev = null;
+    let op = null;
+    let justEvaluated = false;
+
+    function render() { display.textContent = current; }
+
+    function inputNum(n) {
+      if (justEvaluated) { current = "0"; justEvaluated = false; }
+      if (current === "0") current = n;
+      else current += n;
+      render();
+    }
+
+    function inputDot() {
+      if (justEvaluated) { current = "0"; justEvaluated = false; }
+      if (current.indexOf(".") === -1) current += ".";
+      render();
+    }
+
+    function setOp(nextOp) {
+      if (op && !justEvaluated) { doEquals(); }
+      prev = parseFloat(current);
+      op = nextOp;
+      justEvaluated = true;
+      const sym = { "+": "+", "-": "−", "*": "×", "/": "÷" }[nextOp] || nextOp;
+      history.textContent = prev + " " + sym;
+    }
+
+    function doEquals() {
+      if (op === null || prev === null) return;
+      const next = parseFloat(current);
+      let result;
+      switch (op) {
+        case "+": result = prev + next; break;
+        case "-": result = prev - next; break;
+        case "*": result = prev * next; break;
+        case "/": result = next === 0 ? 0 : prev / next; break;
+        default: return;
+      }
+      result = Math.round(result * 1e10) / 1e10;
+      history.textContent = prev + " " + ({ "+": "+", "-": "−", "*": "×", "/": "÷" }[op]) + " " + next + " =";
+      current = String(result);
+      prev = null;
+      op = null;
+      justEvaluated = true;
+      render();
+    }
+
+    function clearAll() { current = "0"; prev = null; op = null; justEvaluated = false; history.textContent = t("calc_history"); render(); }
+    function backspace() { if (current.length > 1) current = current.slice(0, -1); else current = "0"; render(); }
+    function percent() { current = String(parseFloat(current) / 100); render(); }
+
+    document.getElementById("calcButtons").addEventListener("click", function (e) {
+      const btn = e.target.closest(".calc-btn");
+      if (!btn) return;
+      if (btn.dataset.num !== undefined) { inputNum(btn.dataset.num); return; }
+      const action = btn.dataset.action;
+      if (action === "dot") inputDot();
+      else if (action === "clear") clearAll();
+      else if (action === "back") backspace();
+      else if (action === "percent") percent();
+      else if (action === "equals") doEquals();
+      if (btn.dataset.op !== undefined) setOp(btn.dataset.op);
+    });
+
+    // Keyboard support
+    document.addEventListener("keydown", function (e) {
+      if (currentTool !== "calculator") return;
+      const k = e.key;
+      if (/^[0-9]$/.test(k)) inputNum(k);
+      else if (k === ".") inputDot();
+      else if (k === "+" || k === "-" || k === "*" || k === "/") setOp(k);
+      else if (k === "Enter" || k === "=") { e.preventDefault(); doEquals(); }
+      else if (k === "Backspace") backspace();
+      else if (k === "Escape") clearAll();
+      else if (k === "%") percent();
+    });
+  }
+
+  /* ===== 2. Date Converter (Jalali <-> Gregorian) ======================= */
+
+  // Jalali month names (Persian)
+  const jalaliMonthsFa = ["فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
+  const gregorianMonthsEn = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+  function div(a, b) { return Math.floor(a / b); }
+
+  function jalaliToGregorian(jy, jm, jd) {
+    jy = jy - 979;
+    let gy = (jy > 0) ? 1600 : 1599;
+    const days = (365 * jy) + (div(jy, 33) * 8) + div((jy % 33) + 3, 4) + 78 + jd + (jm < 7 ? (jm - 1) * 31 : ((jm - 7) * 30) + 186);
+    gy += 400 * div(days, 146097);
+    let rem = days % 146097;
+    if (rem > 36524) { gy += 100 * div(--rem, 36524); rem = rem % 36524; }
+    gy += 4 * div(rem, 1461);
+    rem = rem % 1461;
+    if (rem > 365) { gy += div(rem - 1, 365); rem = (rem - 1) % 365; }
+    let sal_a = rem + 1;
+    const g_d_m = [0,31,((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0)?29:28,31,30,31,30,31,31,30,31,30,31];
+    let gm = 0, gd = 0;
+    for (gm = 0; gm < 13; gm++) { if (sal_a <= g_d_m[gm]) break; sal_a -= g_d_m[gm]; }
+    gd = sal_a;
+    return { y: gy, m: gm, d: gd };
+  }
+
+  function gregorianToJalali(gy, gm, gd) {
+    const g_d_m = [0,31,((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0)?29:28,31,30,31,30,31,31,30,31,30,31];
+    let jy = (gy <= 1600) ? 0 : 979;
+    let days = gd + (gy > 1600 ? (gy - 1601) * 365 + div(gy - 1601, 4) - div(gy - 1601, 100) + div(gy - 1601, 400) : 0);
+    for (let i = 1; i < gm; i++) { days += g_d_m[i]; }
+    gy = (gy <= 1600) ? gy - 621 : gy - 1600;
+    days += 365 * gy + div(gy, 33) * 8 + div((gy % 33) + 3, 4);
+    let jy2 = (jy === 0) ? 979 + div(days, 12053) : jy + div(days, 12053);
+    days = days % 12053;
+    jy = jy2;
+    const jm = (days < 186) ? 1 + div(days, 31) : 7 + div(days - 186, 30);
+    const jd = 1 + ((days < 186) ? (days % 31) : ((days - 186) % 30));
+    return { y: jy, m: jm, d: jd };
+  }
+
+  function isLeapJalali(jy) {
+    const breaks = [-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2132,2174,2312,2412,2535,2608];
+    let jp = breaks[0], jm = breaks[0], jump = 0;
+    for (let i = 1; i <= 19; i++) { jm = breaks[i]; jump = jm - jp; if (jy < jm) break; jp = jm; }
+    let n = jy - jp;
+    if (n < jump) { if (jump - n < 6) n = n - jump + div(jump + 4, 33) * 33; let leap = div(n + 1, 4) - div(n + 4, 33); if ((n + 1) % 4 === 0 && ((n + 1) % 33) % 4 !== 0) leap++; return leap > 0; }
+    return false;
+  }
+
+  function populateMonthSelects() {
+    const jSel = document.getElementById("jMonth");
+    const gSel = document.getElementById("gMonth");
+    if (!jSel || !gSel) return;
+    const jPrev = jSel.selectedIndex;
+    const gPrev = gSel.selectedIndex;
+    jSel.innerHTML = "";
+    gSel.innerHTML = "";
+    for (let i = 0; i < 12; i++) {
+      jSel.appendChild(new Option(jalaliMonthsFa[i], i + 1));
+      gSel.appendChild(new Option(gregorianMonthsEn[i], i + 1));
+    }
+    if (jPrev >= 0) jSel.selectedIndex = jPrev; else jSel.selectedIndex = 0;
+    if (gPrev >= 0) gSel.selectedIndex = gPrev; else gSel.selectedIndex = 0;
+  }
+
+  function initDateConverter() {
+    document.getElementById("jToG").addEventListener("click", function () {
+      const y = parseInt(document.getElementById("jYear").value, 10);
+      const m = parseInt(document.getElementById("jMonth").value, 10);
+      const d = parseInt(document.getElementById("jDay").value, 10);
+      if (!y || !m || !d) { document.getElementById("dateResult").textContent = t("err_number"); return; }
+      const r = jalaliToGregorian(y, m, d);
+      document.getElementById("dateResult").textContent =
+        r.d + " " + gregorianMonthsEn[r.m - 1] + " " + r.y +
+        "  (" + r.y + "/" + String(r.m).padStart(2,"0") + "/" + String(r.d).padStart(2,"0") + ")";
+    });
+    document.getElementById("gToJ").addEventListener("click", function () {
+      const y = parseInt(document.getElementById("gYear").value, 10);
+      const m = parseInt(document.getElementById("gMonth").value, 10);
+      const d = parseInt(document.getElementById("gDay").value, 10);
+      if (!y || !m || !d) { document.getElementById("dateResult").textContent = t("err_number"); return; }
+      const r = gregorianToJalali(y, m, d);
+      document.getElementById("dateResult").textContent =
+        r.d + " " + jalaliMonthsFa[r.m - 1] + " " + r.y +
+        "  (" + r.y + "/" + String(r.m).padStart(2,"0") + "/" + String(r.d).padStart(2,"0") + ")";
+    });
+  }
+
+  /* ===== 3. Password Generator ========================================== */
+
+  function initPasswordGenerator() {
+    const lenSlider = document.getElementById("pwdLen");
+    const lenVal = document.getElementById("pwdLenVal");
+    const output = document.getElementById("pwdOutput");
+    const bar = document.getElementById("pwdBar");
+    const strengthText = document.getElementById("pwdStrengthText");
+
+    lenSlider.addEventListener("input", function () { lenVal.textContent = lenSlider.value; });
+
+    function generate() {
+      const len = parseInt(lenSlider.value, 10);
+      let charset = "";
+      if (document.getElementById("pwdUpper").checked) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      if (document.getElementById("pwdLower").checked) charset += "abcdefghijklmnopqrstuvwxyz";
+      if (document.getElementById("pwdNum").checked) charset += "0123456789";
+      if (document.getElementById("pwdSym").checked) charset += "!@#$%^&*()_+-=[]{}|;:,.<>?";
+      if (!charset) { output.value = ""; return; }
+      const arr = new Uint32Array(len);
+      crypto.getRandomValues(arr);
+      let pwd = "";
+      for (let i = 0; i < len; i++) pwd += charset[arr[i] % charset.length];
+      output.value = pwd;
+      updateStrength(pwd);
+    }
+
+    function updateStrength(pwd) {
+      let score = 0;
+      if (pwd.length >= 8) score++;
+      if (pwd.length >= 12) score++;
+      if (pwd.length >= 16) score++;
+      if (/[a-z]/.test(pwd) && /[A-Z]/.test(pwd)) score++;
+      if (/[0-9]/.test(pwd)) score++;
+      if (/[^a-zA-Z0-9]/.test(pwd)) score++;
+      let pct, color, label;
+      if (score <= 2) { pct = 33; color = "var(--error)"; label = t("strength_weak"); }
+      else if (score <= 4) { pct = 66; color = "var(--warning)"; label = t("strength_medium"); }
+      else { pct = 100; color = "var(--success)"; label = t("strength_strong"); }
+      bar.style.width = pct + "%";
+      bar.style.background = color;
+      strengthText.textContent = label;
+      strengthText.style.color = color;
+    }
+
+    document.getElementById("pwdGen").addEventListener("click", generate);
+    document.getElementById("pwdCopy").addEventListener("click", function () {
+      if (output.value) { navigator.clipboard.writeText(output.value); flashCopy(this); }
+    });
+    generate();
+  }
+
+  /* ===== 4. Unit Converter ============================================== */
+
+  const unitData = {
+    length: {
+      units: { "units_meter": 1, "units_foot": 3.28084, "units_cm": 100, "units_inch": 39.3701, "units_km": 0.001, "units_mile": 0.000621371 },
+      base: 1 // meter
+    },
+    weight: {
+      units: { "units_kg": 1, "units_lb": 2.20462, "units_gram": 1000, "units_oz": 35.274 },
+      base: 1 // kg
+    }
+  };
+  let currentUTab = "length";
+
+  function populateUnitSelects() {
+    const from = document.getElementById("unitFrom");
+    const to = document.getElementById("unitTo");
+    if (!from || !to) return;
+    const data = unitData[currentUTab];
+    const fPrev = from.selectedIndex, tPrev = to.selectedIndex;
+    from.innerHTML = ""; to.innerHTML = "";
+    Object.keys(data.units).forEach(function (key) {
+      from.appendChild(new Option(t(key), key));
+      to.appendChild(new Option(t(key), key));
+    });
+    from.selectedIndex = fPrev >= 0 ? fPrev : 0;
+    to.selectedIndex = tPrev >= 0 ? tPrev : 1;
+    convertUnits();
+  }
+
+  function convertUnits() {
+    const input = parseFloat(document.getElementById("unitInput").value);
+    const fromKey = document.getElementById("unitFrom").value;
+    const toKey = document.getElementById("unitTo").value;
+    if (isNaN(input)) { document.getElementById("unitOutput").value = ""; return; }
+    const data = unitData[currentUTab];
+    // convert input -> base, then base -> output
+    const inFactor = data.units[fromKey];
+    const outFactor = data.units[toKey];
+    const baseVal = input / inFactor;
+    const result = baseVal * outFactor;
+    document.getElementById("unitOutput").value = (Math.round(result * 1000) / 1000).toString();
+  }
+
+  function initUnitConverter() {
+    document.querySelectorAll(".unit-tab").forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll(".unit-tab").forEach(function (x) { x.classList.remove("active"); });
+        tab.classList.add("active");
+        currentUTab = tab.getAttribute("data-utab");
+        populateUnitSelects();
+      });
+    });
+    document.getElementById("unitInput").addEventListener("input", convertUnits);
+    document.getElementById("unitFrom").addEventListener("change", convertUnits);
+    document.getElementById("unitTo").addEventListener("change", convertUnits);
+  }
+
+  /* ===== 5. Text Counter ================================================ */
+
+  function initCounter() {
+    const textarea = document.getElementById("counterText");
+    textarea.addEventListener("input", function () {
+      const text = textarea.value;
+      const chars = text.length;
+      const charsNs = text.replace(/\s/g, "").length;
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      const sentences = text.trim() ? (text.match(/[.!?。]+/g) || []).length || (words > 0 ? 1 : 0) : 0;
+      const paragraphs = text.trim() ? text.split(/\n+/).filter(function (p) { return p.trim(); }).length : 0;
+      document.getElementById("statChars").textContent = chars;
+      document.getElementById("statCharsNs").textContent = charsNs;
+      document.getElementById("statWords").textContent = words;
+      document.getElementById("statSentences").textContent = sentences;
+      document.getElementById("statParagraphs").textContent = paragraphs;
+    });
+  }
+
+  /* ===== 6. QR Code Generator (pure JS, no library) ===================== */
+
+  function initQR() {
+    document.getElementById("qrGen").addEventListener("click", generateQR);
+    document.getElementById("qrDownload").addEventListener("click", function () {
+      const canvas = document.getElementById("qrCanvas");
+      const a = document.createElement("a");
+      a.download = "qr-code.png";
+      a.href = canvas.toDataURL("image/png");
+      a.click();
+    });
+  }
+
+  // Minimal QR Code generator (Version 1-10, byte mode, L correction)
+  // Based on the QR Code standard (ISO/IEC 18004). Self-contained, no deps.
+  // Supports up to ~213 alphanumeric/154 byte chars at version 10-L.
+
+  /* --- QR core implementation --- */
+  // (embedded compact QR encoder)
+  var QRCode = (function () {
+    // GF(256) tables
+    var EXP = new Array(256), LOG = new Array(256);
+    (function () {
+      var x = 1;
+      for (var i = 0; i < 256; i++) { EXP[i] = x; LOG[x] = i; x <<= 1; if (x & 0x100) x ^= 0x11d; }
+    })();
+    function gmul(a, b) { if (a === 0 || b === 0) return 0; return EXP[(LOG[a] + LOG[b]) % 255]; }
+
+    // Galois polynomial division for Reed-Solomon
+    function rsGenPoly(deg) {
+      var poly = [1];
+      for (var i = 0; i < deg; i++) {
+        var newPoly = new Array(poly.length + 1).fill(0);
+        for (var j = 0; j < poly.length; j++) {
+          newPoly[j] ^= poly[j];
+          newPoly[j + 1] ^= gmul(poly[j], EXP[i]);
+        }
+        poly = newPoly;
+      }
+      return poly;
+    }
+    function rsEncode(data, ecLen) {
+      var gen = rsGenPoly(ecLen);
+      var result = data.concat(new Array(ecLen).fill(0));
+      for (var i = 0; i < data.length; i++) {
+        var coef = result[i];
+        if (coef === 0) continue;
+        for (var j = 1; j < gen.length; j++) { result[i + j] ^= gmul(gen[j], coef); }
+      }
+      return result.slice(data.length);
+    }
+
+    // Version data: [version, totalCodewords, ecCodewordsPerBlock, numBlocksGroup1, dataCodewordsPerBlockG1, numBlocksGroup2, dataCodewordsPerBlockG2]
+    // For EC level L only.
+    var versions = {
+      1:[1,26,7,1,19,0,0], 2:[2,44,10,1,34,0,0], 3:[3,70,15,1,55,0,0],
+      4:[4,100,20,1,80,0,0], 5:[5,134,26,1,108,0,0], 6:[6,172,36,2,68,0,0],
+      7:[7,196,40,2,78,0,0], 8:[8,242,48,2,97,0,0], 9:[9,292,60,2,116,0,0],
+      10:[10,346,72,2,130,2,131]
+    };
+
+    function selectVersion(byteLen) {
+      // byte mode: 4 bits mode + 8/16 bits length + data
+      for (var v = 1; v <= 10; v++) {
+        var d = versions[v];
+        var dataCap = d[3]*d[4] + d[5]*d[6];
+        var lenBits = v <= 9 ? 8 : 16;
+        if (byteLen + Math.ceil((4 + lenBits) / 8) <= dataCap) return v;
+      }
+      return -1;
+    }
+
+    function buildMatrix(version, finalBits) {
+      var size = 17 + 4 * version;
+      var m = [];
+      for (var i = 0; i < size; i++) m.push(new Array(size).fill(null));
+
+      // Finder patterns
+      function placeFinder(r, c) {
+        for (var dr = -1; dr <= 7; dr++) for (var dc = -1; dc <= 7; dc++) {
+          var rr = r + dr, cc = c + dc;
+          if (rr < 0 || rr >= size || cc < 0 || cc >= size) continue;
+          if (dr >= 0 && dr <= 6 && dc >= 0 && dc <= 6) {
+            var border = (dr === 0 || dr === 6 || dc === 0 || dc === 6);
+            var center = (dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4);
+            m[rr][cc] = (border || center) ? 1 : 0;
+          } else { m[rr][cc] = 0; }
+        }
+      }
+      placeFinder(0, 0); placeFinder(0, size - 7); placeFinder(size - 7, 0);
+
+      // Alignment patterns (versions 2-10)
+      var alignPos = {
+        2:[6,18], 3:[6,22], 4:[6,26], 5:[6,30], 6:[6,34],
+        7:[6,22,38], 8:[6,24,42], 9:[6,26,46], 10:[6,28,50]
+      };
+      if (version >= 2) {
+        var pos = alignPos[version];
+        for (var i = 0; i < pos.length; i++) for (var j = 0; j < pos.length; j++) {
+          if ((i === 0 && j === 0) || (i === 0 && j === pos.length-1) || (i === pos.length-1 && j === 0)) continue;
+          var r = pos[i], c = pos[j];
+          for (var dr = -2; dr <= 2; dr++) for (var dc = -2; dc <= 2; dc++) {
+            var border = (Math.abs(dr) === 2 || Math.abs(dc) === 2);
+            var center = (dr === 0 && dc === 0);
+            m[r+dr][c+dc] = (border || center) ? 1 : 0;
+          }
+        }
+      }
+
+      // Timing patterns
+      for (var i = 8; i < size - 8; i++) { m[6][i] = (i % 2 === 0) ? 1 : 0; m[i][6] = (i % 2 === 0) ? 1 : 0; }
+
+      // Dark module
+      m[size - 8][8] = 1;
+
+      // Format info placeholders (will be filled)
+      for (var i = 0; i < 9; i++) {
+        if (m[8][i] === null && i !== 6) m[8][i] = 0;
+        if (m[i][8] === null && i !== 6) m[i][8] = 0;
+      }
+      for (var i = 0; i < 8; i++) {
+        if (m[8][size - 1 - i] === null) m[8][size - 1 - i] = 0;
+        if (m[size - 1 - i][8] === null) m[size - 1 - i][8] = 0;
+      }
+
+      // Place data bits
+      var bitIdx = 0;
+      var upward = true;
+      for (var col = size - 1; col > 0; col -= 2) {
+        if (col === 6) col--; // skip timing column
+        for (var i = 0; i < size; i++) {
+          var row = upward ? (size - 1 - i) : i;
+          for (var j = 0; j < 2; j++) {
+            var c = col - j;
+            if (m[row][c] === null) {
+              var bit = 0;
+              if (bitIdx < finalBits.length) bit = finalBits[bitIdx++];
+              m[row][c] = bit;
+            }
+          }
+        }
+        upward = !upward;
+      }
+
+      // Apply mask pattern 0 (i+j) % 2 === 0
+      function mask(r, c) { return ((r + c) % 2) === 0; }
+      for (var r = 0; r < size; r++) for (var c = 0; c < size; c++) {
+        if (m[r][c] === null) continue;
+        // Don't mask function patterns — check if it's a data module
+        // Simple approach: mask everything then re-place function patterns
+      }
+
+      // Better: re-derive function modules and only mask data
+      // For simplicity, we mask all non-null then restore function patterns
+      // Actually let's do it properly — track which are data
+      // (Rebuild with mask applied during placement)
+      // For now, re-place with mask:
+      var m2 = [];
+      for (var i = 0; i < size; i++) { m2.push(new Array(size).fill(null)); }
+      // Copy function pattern positions
+      for (var r = 0; r < size; r++) for (var c = 0; c < size; c++) {
+        // Function patterns are already set (not null) in m
+        // We need to know which are data — redo placement
+      }
+      // Simplified: just use m with mask applied only to data modules
+      // Re-identify data modules by re-running placement logic
+      // Rebuild matrix properly:
+      m2 = buildWithMask(version, finalBits, mask);
+      return m2;
+    }
+
+    function buildWithMask(version, finalBits, maskFn) {
+      var size = 17 + 4 * version;
+      var m = [];
+      for (var i = 0; i < size; i++) m.push(new Array(size).fill(null));
+
+      function placeFinder(r, c) {
+        for (var dr = -1; dr <= 7; dr++) for (var dc = -1; dc <= 7; dc++) {
+          var rr = r + dr, cc = c + dc;
+          if (rr < 0 || rr >= size || cc < 0 || cc >= size) continue;
+          if (dr >= 0 && dr <= 6 && dc >= 0 && dc <= 6) {
+            var border = (dr === 0 || dr === 6 || dc === 0 || dc === 6);
+            var center = (dr >= 2 && dr <= 4 && dc >= 2 && dc <= 4);
+            m[rr][cc] = (border || center) ? 1 : 0;
+          } else { m[rr][cc] = 0; }
+        }
+      }
+      placeFinder(0, 0); placeFinder(0, size - 7); placeFinder(size - 7, 0);
+
+      if (version >= 2) {
+        var alignPos = {2:[6,18],3:[6,22],4:[6,26],5:[6,30],6:[6,34],7:[6,22,38],8:[6,24,42],9:[6,26,46],10:[6,28,50]};
+        var pos = alignPos[version];
+        for (var i = 0; i < pos.length; i++) for (var j = 0; j < pos.length; j++) {
+          if ((i===0&&j===0)||(i===0&&j===pos.length-1)||(i===pos.length-1&&j===0)) continue;
+          var r = pos[i], c = pos[j];
+          for (var dr = -2; dr <= 2; dr++) for (var dc = -2; dc <= 2; dc++) {
+            var border = (Math.abs(dr)===2||Math.abs(dc)===2);
+            var center = (dr===0&&dc===0);
+            m[r+dr][c+dc] = (border||center)?1:0;
+          }
+        }
+      }
+      for (var i = 8; i < size - 8; i++) { m[6][i] = (i%2===0)?1:0; m[i][6] = (i%2===0)?1:0; }
+      m[size-8][8] = 1;
+
+      // Mark format info areas as reserved (non-data)
+      var reserved = [];
+      for (var i = 0; i < 9; i++) { if (i !== 6) { reserved.push([8, i]); reserved.push([i, 8]); } }
+      for (var i = 0; i < 8; i++) { reserved.push([8, size-1-i]); reserved.push([size-1-i, 8]); }
+      var resSet = {};
+      reserved.forEach(function (p) { resSet[p[0]+","+p[1]] = true; });
+
+      // Place data with mask
+      var bitIdx = 0;
+      var upward = true;
+      for (var col = size - 1; col > 0; col -= 2) {
+        if (col === 6) col--;
+        for (var i = 0; i < size; i++) {
+          var row = upward ? (size-1-i) : i;
+          for (var j = 0; j < 2; j++) {
+            var c = col - j;
+            if (m[row][c] === null && !resSet[row+","+c]) {
+              var bit = 0;
+              if (bitIdx < finalBits.length) bit = finalBits[bitIdx++];
+              if (maskFn(row, c)) bit = bit ^ 1;
+              m[row][c] = bit;
+            }
+          }
+        }
+        upward = !upward;
+      }
+
+      // Format info for EC level L, mask 0
+      // Format bits: 01 (L) + 000 (mask 0) = 01000, XOR with 0x5412
+      var formatBits = 0x5412 ^ 0b01000; // 1010100000100101
+      for (var i = 0; i < 15; i++) {
+        var bit = (formatBits >> (14 - i)) & 1;
+        // Place around top-left
+        if (i < 6) m[8][i] = bit;
+        else if (i < 8) m[8][i + 1] = bit;
+        else if (i < 9) m[7][8] = bit;
+        else m[14 - i][8] = bit;
+        // Place around top-right and bottom-left
+        if (i < 8) m[size - 1 - i][8] = bit;
+        else m[8][size - 15 + i] = bit;
+      }
+
+      return m;
+    }
+
+    function generate(text) {
+      var bytes = [];
+      for (var i = 0; i < text.length; i++) {
+        var c = text.charCodeAt(i);
+        if (c < 128) bytes.push(c);
+        else if (c < 2048) { bytes.push(0xc0 | (c >> 6)); bytes.push(0x80 | (c & 0x3f)); }
+        else { bytes.push(0xe0 | (c >> 12)); bytes.push(0x80 | ((c >> 6) & 0x3f)); bytes.push(0x80 | (c & 0x3f)); }
+      }
+      var version = selectVersion(bytes.length);
+      if (version < 0) return null;
+
+      var vd = versions[version];
+      var dataCap = vd[3]*vd[4] + vd[5]*vd[6];
+      var totalCodewords = vd[1];
+      var ecLen = vd[2];
+
+      // Build bit stream
+      var bits = [];
+      function pushBits(val, len) { for (var i = len - 1; i >= 0; i--) bits.push((val >> i) & 1); }
+      pushBits(0b0100, 4); // byte mode
+      var lenBits = version <= 9 ? 8 : 16;
+      pushBits(bytes.length, lenBits);
+      for (var i = 0; i < bytes.length; i++) pushBits(bytes[i], 8);
+
+      // Add terminator (up to 4 zero bits)
+      var targetBits = dataCap * 8;
+      while (bits.length < targetBits && bits.length < targetBits + 4) bits.push(0);
+
+      // Pad to byte boundary
+      while (bits.length % 8 !== 0) bits.push(0);
+
+      // Convert to bytes
+      var dataBytes = [];
+      for (var i = 0; i < bits.length; i += 8) {
+        var b = 0;
+        for (var j = 0; j < 8; j++) b = (b << 1) | bits[i + j];
+        dataBytes.push(b);
+      }
+
+      // Pad bytes
+      var padBytes = [0xEC, 0x11];
+      var pi = 0;
+      while (dataBytes.length < dataCap) { dataBytes.push(padBytes[pi % 2]); pi++; }
+
+      // Split into blocks
+      var blocks = [];
+      var idx = 0;
+      for (var g = 0; g < vd[3]; g++) { blocks.push(dataBytes.slice(idx, idx + vd[4])); idx += vd[4]; }
+      for (var g = 0; g < vd[5]; g++) { blocks.push(dataBytes.slice(idx, idx + vd[6])); idx += vd[6]; }
+
+      // Generate EC for each block
+      var ecBlocks = blocks.map(function (b) { return rsEncode(b, ecLen); });
+
+      // Interleave data
+      var maxData = Math.max.apply(null, blocks.map(function (b) { return b.length; }));
+      var interleaved = [];
+      for (var i = 0; i < maxData; i++) for (var b = 0; b < blocks.length; b++) if (i < blocks[b].length) interleaved.push(blocks[b][i]);
+      // Interleave EC
+      for (var i = 0; i < ecLen; i++) for (var b = 0; b < ecBlocks.length; b++) interleaved.push(ecBlocks[b][i]);
+
+      // Convert to bits
+      var finalBits = [];
+      for (var i = 0; i < interleaved.length; i++) for (var j = 7; j >= 0; j--) finalBits.push((interleaved[i] >> j) & 1);
+
+      var matrix = buildWithMask(version, finalBits, function (r, c) { return ((r + c) % 2) === 0; });
+      return matrix;
+    }
+
+    return { generate: generate };
+  })();
+
+  function generateQR() {
+    const text = document.getElementById("qrInput").value.trim();
+    const canvas = document.getElementById("qrCanvas");
+    const ctx = canvas.getContext("2d");
+    if (!text) { ctx.clearRect(0, 0, canvas.width, canvas.height); return; }
+    const matrix = QRCode.generate(text);
+    if (!matrix) { ctx.clearRect(0, 0, canvas.width, canvas.height); return; }
+    const size = matrix.length;
+    const cellSize = Math.floor(canvas.width / (size + 2));
+    const offset = Math.floor((canvas.width - cellSize * size) / 2);
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#000000";
+    for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) {
+      if (matrix[r][c]) ctx.fillRect(offset + c * cellSize, offset + r * cellSize, cellSize, cellSize);
+    }
+  }
+
+  /* ===== 7. Number to Words (Persian) =================================== */
+
+  function numberToPersianWords(num) {
+    if (num === 0) return "صفر";
+    const onesFa = ["", "یک", "دو", "سه", "چهار", "پنج", "شش", "هفت", "هشت", "نه"];
+    const tensFa = ["", "ده", "بیست", "سی", "چهل", "پنجاه", "شصت", "هفتاد", "هشتاد", "نود"];
+    const teensFa = ["ده", "یازده", "دوازده", "سیزده", "چهارده", "پانزده", "شانزده", "هفده", "هجده", "نوزده"];
+    const scalesFa = ["", "هزار", "میلیون", "میلیارد", "هزار میلیارد"];
+
+    function threeDigits(n) {
+      let result = "";
+      const h = Math.floor(n / 100);
+      const rem = n % 100;
+      const t = Math.floor(rem / 10);
+      const o = rem % 10;
+      if (h > 0) result += onesFa[h] + " صد";
+      if (rem > 0) {
+        if (result) result += " و ";
+        if (rem < 10) result += onesFa[rem];
+        else if (rem < 20) result += teensFa[rem - 10];
+        else result += tensFa[t] + (o > 0 ? " و " + onesFa[o] : "");
+      }
+      return result;
+    }
+
+    if (num < 0) return "منفی " + numberToPersianWords(-num);
+    let result = "";
+    let scaleIdx = 0;
+    while (num > 0) {
+      const chunk = num % 1000;
+      if (chunk > 0) {
+        const chunkWords = threeDigits(chunk);
+        result = chunkWords + (scalesFa[scaleIdx] ? " " + scalesFa[scaleIdx] : "") + (result ? " و " + result : "");
+      }
+      num = Math.floor(num / 1000);
+      scaleIdx++;
+    }
+    return result;
+  }
+
+  function initNumberToWords() {
+    document.getElementById("n2wInput").addEventListener("input", function () {
+      const val = parseInt(this.value, 10);
+      const result = document.getElementById("n2wResult");
+      if (isNaN(val) || this.value.trim() === "") { result.textContent = ""; return; }
+      if (this.value.replace("-", "").length > 12) { result.textContent = "حداکثر ۱۲ رقم"; return; }
+      result.textContent = numberToPersianWords(val);
+    });
+  }
+
+  /* ===== 8. OCR (Tesseract.js via CDN) ================================== */
+
+  function initOCR() {
+    const dz = document.getElementById("ocrDropzone");
+    const fileInput = document.getElementById("ocrFile");
+    setupDropzone(dz, fileInput, function (file) {
+      if (!file || !file.type.startsWith("image/")) return;
+      runOCR(file);
+    });
+    document.getElementById("ocrCopy").addEventListener("click", function () {
+      const ta = document.getElementById("ocrResult");
+      if (ta.value) { navigator.clipboard.writeText(ta.value); flashCopy(this); }
+    });
+  }
+
+  function runOCR(file) {
+    const spinner = document.getElementById("ocrSpinner");
+    const result = document.getElementById("ocrResult");
+    const preview = document.getElementById("ocrPreview");
+    spinner.classList.remove("hidden");
+    result.value = "";
+    preview.innerHTML = "";
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    img.alt = "OCR preview";
+    preview.appendChild(img);
+
+    // Load Tesseract.js from CDN (cdnjs)
+    // Source: https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js
+    if (typeof Tesseract === "undefined") {
+      const script = document.createElement("script");
+      script.src = "https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js";
+      script.onload = function () { doOCR(file); };
+      script.onerror = function () { spinner.classList.add("hidden"); result.value = "Error loading OCR library."; };
+      document.head.appendChild(script);
+    } else {
+      doOCR(file);
+    }
+  }
+
+  function doOCR(file) {
+    const spinner = document.getElementById("ocrSpinner");
+    const result = document.getElementById("ocrResult");
+    Tesseract.recognize(file, "eng")
+      .then(function (res) { result.value = res.data.text.trim(); })
+      .catch(function (e) { result.value = "Error: " + e.message; })
+      .finally(function () { spinner.classList.add("hidden"); });
+  }
+
+  /* ===== 9. Image Format Converter (Canvas API) ========================= */
+
+  function initImageConverter() {
+    let currentFile = null;
+    const dz = document.getElementById("imgConvDropzone");
+    const fileInput = document.getElementById("imgConvFile");
+    const preview = document.getElementById("imgConvPreview");
+
+    setupDropzone(dz, fileInput, function (file) {
+      if (!file || !file.type.startsWith("image/")) return;
+      currentFile = file;
+      preview.innerHTML = "";
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(file);
+      img.alt = "preview";
+      preview.appendChild(img);
+    });
+
+    document.getElementById("imgConvBtn").addEventListener("click", function () {
+      if (!currentFile) { alert(t("err_no_file")); return; }
+      const format = document.getElementById("imgConvFormat").value;
+      const result = document.getElementById("imgConvResult");
+      result.innerHTML = "";
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        const ext = format === "image/jpeg" ? "jpg" : format.split("/")[1];
+        canvas.toBlob(function (blob) {
+          const url = URL.createObjectURL(blob);
+          const previewImg = document.createElement("img");
+          previewImg.src = url; previewImg.alt = "converted";
+          result.appendChild(previewImg);
+          const dl = document.createElement("button");
+          dl.className = "btn-secondary";
+          dl.textContent = t("download");
+          dl.addEventListener("click", function () { downloadBlob(blob, "converted." + ext); });
+          result.appendChild(dl);
+        }, format);
+      };
+      img.src = URL.createObjectURL(currentFile);
+    });
+  }
+
+  /* ===== 10. PDF Tools (PDF.js + jsPDF via CDN) ========================= */
+
+  function initPDFTools() {
+    // Tab switching
+    document.querySelectorAll('[data-ptab]').forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        document.querySelectorAll('[data-ptab]').forEach(function (x) { x.classList.remove("active"); });
+        tab.classList.add("active");
+        const ptab = tab.getAttribute("data-ptab");
+        document.getElementById("pdfPanel-pdf2img").classList.toggle("hidden", ptab !== "pdf2img");
+        document.getElementById("pdfPanel-img2pdf").classList.toggle("hidden", ptab !== "img2pdf");
+      });
+    });
+
+    // PDF to Image
+    let pdfFile = null;
+    const pdfDz = document.getElementById("pdfDropzone");
+    const pdfInput = document.getElementById("pdfFile");
+    setupDropzone(pdfDz, pdfInput, function (file) {
+      if (!file || file.type !== "application/pdf") return;
+      pdfFile = file;
+    });
+
+    // We convert on file selection
+    pdfInput.addEventListener("change", function () {
+      if (pdfInput.files && pdfInput.files[0]) { pdfFile = pdfInput.files[0]; convertPDFtoImage(); }
+    });
+    pdfDz.addEventListener("drop", function (e) {
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) { pdfFile = e.dataTransfer.files[0]; convertPDFtoImage(); }
+    });
+
+    function convertPDFtoImage() {
+      if (!pdfFile) return;
+      const spinner = document.getElementById("pdfSpinner");
+      const result = document.getElementById("pdfResult");
+      const format = document.getElementById("pdfImgFormat").value;
+      spinner.classList.remove("hidden");
+      result.innerHTML = "";
+
+      // Load PDF.js from CDN (cdnjs)
+      // Source: https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs
+      if (!window.pdfjsLib) {
+        const script = document.createElement("script");
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+        script.onload = function () {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+          doConvert();
+        };
+        document.head.appendChild(script);
+      } else { doConvert(); }
+
+      function doConvert() {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          window.pdfjsLib.getDocument({ data: e.target.result }).promise.then(function (pdf) {
+            const numPages = pdf.numPages;
+            const pagesPromises = [];
+            for (let i = 1; i <= numPages && i <= 20; i++) {
+              pagesPromises.push(pdf.getPage(i).then(function (page) {
+                const viewport = page.getViewport({ scale: 2 });
+                const canvas = document.createElement("canvas");
+                canvas.width = viewport.width; canvas.height = viewport.height;
+                const ctx = canvas.getContext("2d");
+                return page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
+                  return new Promise(function (resolve) {
+                    canvas.toBlob(function (blob) {
+                      const url = URL.createObjectURL(blob);
+                      const wrap = document.createElement("div");
+                      wrap.style.marginBottom = "12px";
+                      const img = document.createElement("img");
+                      img.src = url; img.alt = "page " + i;
+                      const dl = document.createElement("button");
+                      dl.className = "btn-secondary"; dl.textContent = t("download") + " (p" + i + ")";
+                      dl.addEventListener("click", function () { downloadBlob(blob, "page-" + i + "." + (format === "png" ? "png" : "jpg")); });
+                      wrap.appendChild(img); wrap.appendChild(dl);
+                      result.appendChild(wrap);
+                      resolve();
+                    }, format === "png" ? "image/png" : "image/jpeg", 0.92);
+                  });
+                });
+              }));
+            }
+            Promise.all(pagesPromises).then(function () { spinner.classList.add("hidden"); });
+          }).catch(function (err) { spinner.classList.add("hidden"); result.innerHTML = "Error: " + err.message; });
+        };
+        reader.readAsArrayBuffer(pdfFile);
+      }
+    }
+
+    // Image to PDF
+    let img2pdfFiles = [];
+    const i2pDz = document.getElementById("img2pdfDropzone");
+    const i2pInput = document.getElementById("img2pdfFile");
+    const i2pPreview = document.getElementById("img2pdfPreview");
+
+    setupDropzone(i2pDz, i2pInput, function (files) {
+      img2pdfFiles = Array.isArray(files) ? files : [files];
+      i2pPreview.innerHTML = "";
+      const ul = document.createElement("ul");
+      ul.className = "file-list";
+      img2pdfFiles.forEach(function (f, i) {
+        const li = document.createElement("li");
+        li.textContent = (i + 1) + ". " + f.name + " (" + formatBytes(f.size) + ")";
+        ul.appendChild(li);
+      });
+      i2pPreview.appendChild(ul);
+    }, true);
+
+    document.getElementById("img2pdfBtn").addEventListener("click", function () {
+      if (!img2pdfFiles.length) { alert(t("err_no_file")); return; }
+      // Load jsPDF from CDN
+      // Source: https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js
+      if (!window.jspdf) {
+        const script = document.createElement("script");
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+        script.onload = createPDFFromImages;
+        document.head.appendChild(script);
+      } else { createPDFFromImages(); }
+    });
+
+    function createPDFFromImages() {
+      const { jsPDF } = window.jspdf;
+      let pdf = null;
+      let processed = 0;
+
+      img2pdfFiles.forEach(function (file, idx) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const img = new Image();
+          img.onload = function () {
+            const w = img.naturalWidth, h = img.naturalHeight;
+            const orientation = w > h ? "landscape" : "portrait";
+            if (!pdf) pdf = new jsPDF(orientation, "px", [w, h]);
+            else { pdf.addPage([w, h], orientation); }
+            const fmt = file.type === "image/png" ? "PNG" : "JPEG";
+            pdf.addImage(e.target.result, fmt, 0, 0, w, h);
+            processed++;
+            if (processed === img2pdfFiles.length) {
+              pdf.save("converted.pdf");
+            }
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+  }
+
+  /* ===== 11. Data Converter (CSV/JSON/XML/YAML) ========================= */
+
+  function initDataConverter() {
+    document.getElementById("dataConvert").addEventListener("click", function () {
+      const input = document.getElementById("dataInput").value.trim();
+      const from = document.getElementById("dataFrom").value;
+      const to = document.getElementById("dataTo").value;
+      const output = document.getElementById("dataOutput");
+      if (!input) { output.value = ""; return; }
+      try {
+        let data;
+        // Parse input
+        if (from === "JSON") data = JSON.parse(input);
+        else if (from === "CSV") data = csvToJson(input);
+        else if (from === "XML") data = xmlToJson(input);
+        else if (from === "YAML") data = yamlToJson(input);
+        // Convert output
+        let result;
+        if (to === "JSON") result = JSON.stringify(data, null, 2);
+        else if (to === "CSV") result = jsonToCsv(data);
+        else if (to === "XML") result = jsonToXml(data);
+        else if (to === "YAML") result = jsonToYaml(data, 0);
+        output.value = result;
+      } catch (e) { output.value = "Error: " + e.message; }
+    });
+
+    document.getElementById("dataDownload").addEventListener("click", function () {
+      const output = document.getElementById("dataOutput").value;
+      const to = document.getElementById("dataTo").value.toLowerCase();
+      if (!output) return;
+      const blob = new Blob([output], { type: "text/plain" });
+      downloadBlob(blob, "converted." + to);
+    });
+  }
+
+  function csvToJson(csv) {
+    const lines = csv.trim().split(/\r?\n/);
+    if (!lines.length) return [];
+    const headers = lines[0].split(",").map(function (h) { return h.trim(); });
+    const result = [];
+    for (let i = 1; i < lines.length; i++) {
+      const vals = lines[i].split(",").map(function (v) { return v.trim(); });
+      const obj = {};
+      headers.forEach(function (h, j) { obj[h] = vals[j] || ""; });
+      result.push(obj);
+    }
+    return result;
+  }
+  function jsonToCsv(data) {
+    if (!Array.isArray(data)) data = [data];
+    if (!data.length) return "";
+    const headers = Object.keys(data[0]);
+    let csv = headers.join(",");
+    data.forEach(function (row) {
+      csv += "\n" + headers.map(function (h) { return JSON.stringify(row[h] || ""); }).join(",");
+    });
+    return csv;
+  }
+  function xmlToJson(xmlStr) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xmlStr, "text/xml");
+    function nodeToObj(node) {
+      const obj = {};
+      if (node.attributes && node.attributes.length) {
+        for (let i = 0; i < node.attributes.length; i++) obj["@" + node.attributes[i].name] = node.attributes[i].value;
+      }
+      if (node.childNodes && node.childNodes.length) {
+        node.childNodes.forEach(function (child) {
+          if (child.nodeType === 3) { if (child.nodeValue.trim()) obj["#text"] = child.nodeValue.trim(); }
+          else if (child.nodeType === 1) {
+            const childObj = nodeToObj(child);
+            if (obj[child.nodeName]) { if (!Array.isArray(obj[child.nodeName])) obj[child.nodeName] = [obj[child.nodeName]]; obj[child.nodeName].push(childObj); }
+            else obj[child.nodeName] = childObj;
+          }
+        });
+      }
+      return obj;
+    }
+    return nodeToObj(doc.documentElement);
+  }
+  function jsonToXml(data) {
+    let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    function build(obj, name, indent) {
+      if (name === undefined) name = "root";
+      let s = indent + "<" + name;
+      let attrs = "", content = "";
+      if (obj && typeof obj === "object") {
+        Object.keys(obj).forEach(function (k) {
+          if (k.startsWith("@")) attrs += " " + k.slice(1) + '="' + obj[k] + '"';
+          else if (k === "#text") content = obj[k];
+          else if (Array.isArray(obj[k])) obj[k].forEach(function (item) { content += "\n" + build(item, k, indent + "  "); });
+          else if (typeof obj[k] === "object") content += "\n" + build(obj[k], k, indent + "  ");
+          else content += "\n" + indent + "  <" + k + ">" + obj[k] + "</" + k + ">";
+        });
+        if (content) content += "\n" + indent;
+      } else { content = obj !== undefined ? obj : ""; }
+      s += attrs + ">" + content + "</" + name + ">";
+      return s;
+    }
+    xml += build(data, "root", "");
+    return xml;
+  }
+  function yamlToJson(yamlStr) {
+    // Lightweight YAML parser for simple key: value
+    const lines = yamlStr.split(/\r?\n/);
+    const result = {};
+    lines.forEach(function (line) {
+      const m = line.match(/^(\s*)(\w+):\s*(.*)$/);
+      if (m && !m[1]) { if (m[3]) result[m[2]] = m[3]; }
+    });
+    return result;
+  }
+  function jsonToYaml(obj, indent) {
+    if (indent === undefined) indent = 0;
+    let yaml = "";
+    const pad = "  ".repeat(indent);
+    if (Array.isArray(obj)) {
+      obj.forEach(function (item) {
+        if (typeof item === "object") { yaml += pad + "-\n" + jsonToYaml(item, indent + 1); }
+        else yaml += pad + "- " + item + "\n";
+      });
+    } else if (typeof obj === "object" && obj) {
+      Object.keys(obj).forEach(function (k) {
+        if (typeof obj[k] === "object") { yaml += pad + k + ":\n" + jsonToYaml(obj[k], indent + 1); }
+        else yaml += pad + k + ": " + obj[k] + "\n";
+      });
+    } else { yaml += pad + obj + "\n"; }
+    return yaml;
+  }
+
+  /* ===== 12. HEIC Converter (heic2any via CDN) ========================== */
+
+  function initHEIC() {
+    let heicFile = null;
+    const dz = document.getElementById("heicDropzone");
+    const fileInput = document.getElementById("heicFile");
+    const preview = document.getElementById("heicResult");
+
+    setupDropzone(dz, fileInput, function (file) { heicFile = file; });
+
+    document.getElementById("heicBtn").addEventListener("click", function () {
+      if (!heicFile) { alert(t("err_no_file")); return; }
+      const format = document.getElementById("heicFormat").value;
+      const spinner = document.getElementById("heicSpinner");
+      spinner.classList.remove("hidden");
+      preview.innerHTML = "";
+
+      // Load heic2any from CDN
+      // Source: https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js
+      if (!window.heic2any) {
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js";
+        script.onload = doConvert;
+        script.onerror = function () { spinner.classList.add("hidden"); alert("Error loading HEIC library."); };
+        document.head.appendChild(script);
+      } else { doConvert(); }
+
+      function doConvert() {
+        window.heic2any({ blob: heicFile, toType: format, quality: 0.9 })
+          .then(function (blob) {
+            const url = URL.createObjectURL(blob);
+            const img = document.createElement("img");
+            img.src = url; img.alt = "converted";
+            preview.appendChild(img);
+            const ext = format === "image/jpeg" ? "jpg" : format.split("/")[1];
+            const dl = document.createElement("button");
+            dl.className = "btn-secondary"; dl.textContent = t("download");
+            dl.addEventListener("click", function () { downloadBlob(blob, "converted." + ext); });
+            preview.appendChild(dl);
+          })
+          .catch(function (e) { alert("Error: " + e.message); })
+          .finally(function () { spinner.classList.add("hidden"); });
+      }
+    });
+  }
+
+  /* ===== 13. Video to GIF (Canvas + GIF encoder) ======================== */
+
+  function initVideo2GIF() {
+    let videoFile = null;
+    const dz = document.getElementById("vidDropzone");
+    const fileInput = document.getElementById("vidFile");
+    const result = document.getElementById("vidResult");
+
+    setupDropzone(dz, fileInput, function (file) { videoFile = file; });
+
+    document.getElementById("vidBtn").addEventListener("click", function () {
+      if (!videoFile) { alert(t("err_no_file")); return; }
+      const spinner = document.getElementById("vidSpinner");
+      spinner.classList.remove("hidden");
+      result.innerHTML = "";
+
+      const startSec = parseFloat(document.getElementById("vidStart").value) || 0;
+      const duration = parseFloat(document.getElementById("vidDuration").value) || 3;
+      const fps = Math.min(30, Math.max(1, parseInt(document.getElementById("vidFps").value, 10) || 10));
+      const maxFrames = Math.min(60, Math.ceil(duration * fps));
+
+      const video = document.createElement("video");
+      video.muted = true; video.playsInline = true;
+      video.src = URL.createObjectURL(videoFile);
+
+      video.addEventListener("loadeddata", function () {
+        const canvas = document.createElement("canvas");
+        const scale = Math.min(1, 400 / video.videoWidth);
+        canvas.width = Math.round(video.videoWidth * scale);
+        canvas.height = Math.round(video.videoHeight * scale);
+        const ctx = canvas.getContext("2d");
+        const frames = [];
+        let frameIdx = 0;
+
+        function captureFrame() {
+          if (frameIdx >= maxFrames) { buildGIF(frames, canvas.width, canvas.height, fps); return; }
+          const time = startSec + (frameIdx / fps);
+          if (time >= video.duration) { buildGIF(frames, canvas.width, canvas.height, fps); return; }
+          video.currentTime = time;
+        }
+
+        video.addEventListener("seeked", function () {
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+          frames.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+          frameIdx++;
+          setTimeout(captureFrame, 10);
+        });
+
+        captureFrame();
+      });
+
+      function buildGIF(frames, w, h, fpsVal) {
+        if (!frames.length) { spinner.classList.add("hidden"); return; }
+        // Use GIF.js from CDN
+        // Source: https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js
+        if (!window.GIF) {
+          const script = document.createElement("script");
+          script.src = "https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js";
+          script.onload = function () { doBuild(); };
+          document.head.appendChild(script);
+        } else { doBuild(); }
+
+        function doBuild() {
+          const gif = new window.GIF({ workers: 2, quality: 10, width: w, height: h, workerScript: "https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.worker.js" });
+          frames.forEach(function (f) { gif.addFrame(f, { delay: Math.round(1000 / fpsVal) }); });
+          gif.on("finished", function (blob) {
+            const url = URL.createObjectURL(blob);
+            const img = document.createElement("img");
+            img.src = url; img.alt = "gif result";
+            result.appendChild(img);
+            const dl = document.createElement("button");
+            dl.className = "btn-secondary"; dl.textContent = t("download") + " (GIF)";
+            dl.addEventListener("click", function () { downloadBlob(blob, "converted.gif"); });
+            result.appendChild(dl);
+            spinner.classList.add("hidden");
+          });
+          gif.render();
+        }
+      }
+    });
+  }
+
+  /* ===== Utilities ====================================================== */
+
+  function setupDropzone(dz, input, callback, multiple) {
+    dz.addEventListener("click", function () { input.click(); });
+    dz.addEventListener("dragover", function (e) { e.preventDefault(); dz.classList.add("dragover"); });
+    dz.addEventListener("dragleave", function () { dz.classList.remove("dragover"); });
+    dz.addEventListener("drop", function (e) {
+      e.preventDefault(); dz.classList.remove("dragover");
+      const files = e.dataTransfer.files;
+      if (files && files.length) callback(multiple ? Array.from(files) : files[0]);
+    });
+    input.addEventListener("change", function () {
+      if (multiple && input.files) callback(Array.from(input.files));
+      else if (input.files && input.files[0]) callback(input.files[0]);
+    });
+  }
+
+  function downloadBlob(blob, filename) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function () { URL.revokeObjectURL(url); }, 100);
+  }
+
+  function formatBytes(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1048576) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / 1048576).toFixed(1) + " MB";
+  }
+
+  function flashCopy(btn) {
+    const orig = btn.textContent;
+    btn.textContent = t("copied");
+    btn.classList.add("copied");
+    setTimeout(function () { btn.textContent = orig; btn.classList.remove("copied"); }, 1500);
+  }
+
+  /* ===== Init =========================================================== */
+
+  async function init() {
+    // Theme
+    const savedTheme = localStorage.getItem("theme") || "light";
+    applyTheme(savedTheme);
+
+    // Translations
+    await loadTranslations();
+    applyTranslations();
+
+    // Navigation
+    document.querySelectorAll("[data-tool]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        showTool(el.getAttribute("data-tool"));
+      });
+    });
+
+    // Language buttons
+    document.querySelectorAll(".lang-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () { switchLanguage(btn.getAttribute("data-lang")); });
+    });
+
+    // Theme toggle
+    document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+
+    // Mobile menu
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    menuToggle.addEventListener("click", function () {
+      const open = mainNav.classList.toggle("open");
+      menuToggle.classList.toggle("open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Init all tools
+    initCalculator();
+    initDateConverter();
+    initPasswordGenerator();
+    initUnitConverter();
+    initCounter();
+    initQR();
+    initNumberToWords();
     initOCR();
     initImageConverter();
-    initPDF();
-    initPassword();
-    initCalculator();
-    initQR();
-    initDateConverter();
-    initUnitConverter();
-    initCharCounter();
-    initNumberToWords();
-    initFooter();
-});
+    initPDFTools();
+    initDataConverter();
+    initHEIC();
+    initVideo2GIF();
 
-// ===== THEME =====
-function initTheme(){
-    var btn = document.getElementById('themeToggle');
-    if(localStorage.getItem('theme')==='dark'){document.body.classList.add('dark-mode');document.body.classList.remove('light-mode');btn.querySelector('.theme-icon').textContent='☀️';}
-    btn.onclick=function(){document.body.classList.toggle('dark-mode');document.body.classList.toggle('light-mode');var d=document.body.classList.contains('dark-mode');btn.querySelector('.theme-icon').textContent=d?'☀️':'🌙';localStorage.setItem('theme',d?'dark':'light');};
-}
+    // Show home
+    showTool("home");
+  }
 
-// ===== NAVIGATION =====
-function initNav(){
-    var hamburger=document.getElementById('hamburger'),nav=document.getElementById('mainNav');
-    hamburger.onclick=function(){nav.classList.toggle('show');hamburger.classList.toggle('open');};
-    document.getElementById('langToggle').onclick=function(){lang=lang==='en'?'fa':'en';localStorage.setItem('lang',lang);applyLang();};
-    document.getElementById('logoBtn').onclick=function(){showSection('home');};
-    document.querySelectorAll('.nav-btn').forEach(function(b){b.onclick=function(){showSection(this.getAttribute('data-tool'));};});
-    document.querySelectorAll('.tool-card').forEach(function(c){c.onclick=function(){showSection(this.getAttribute('data-tool'));};});
-}
-
-function showSection(id){
-    document.querySelectorAll('.tool-section').forEach(function(s){s.classList.remove('active');});
-    document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.remove('active');});
-    var sec=document.getElementById(id);if(sec)sec.classList.add('active');
-    var btn=document.querySelector('.nav-btn[data-tool="'+id+'"]');if(btn)btn.classList.add('active');
-    document.getElementById('mainNav').classList.remove('show');
-    document.getElementById('hamburger').classList.remove('open');
-    window.scrollTo({top:0,behavior:'smooth'});
-}
-
-// ===== OCR =====
-function initOCR(){
-    var area=document.getElementById('ocrUploadArea'),input=document.getElementById('ocrFileInput'),preview=document.getElementById('ocrPreview');
-    area.onclick=function(){input.click();};
-    area.ondragover=function(e){e.preventDefault();};
-    area.ondrop=function(e){e.preventDefault();if(e.dataTransfer.files[0])loadOCRImage(e.dataTransfer.files[0]);};
-    input.onchange=function(){if(this.files[0])loadOCRImage(this.files[0]);};
-    function loadOCRImage(f){var r=new FileReader();r.onload=function(e){preview.src=e.target.result;preview.style.display='block';};r.readAsDataURL(f);}
-    document.getElementById('ocrStartBtn').onclick=function(){
-        if(!input.files[0]){alert(lang==='fa'?'ابتدا یک عکس انتخاب کنید':'Please select an image first');return;}
-        var prog=document.getElementById('ocrProgress'),fill=document.getElementById('ocrProgressFill'),txt=document.getElementById('ocrProgressText');
-        prog.style.display='block';fill.style.width='10%';txt.textContent='Loading OCR engine...';
-        Tesseract.recognize(input.files[0],document.getElementById('ocrLang').value,{logger:function(m){if(m.status==='recognizing text'){fill.style.width=Math.round(m.progress*100)+'%';txt.textContent=Math.round(m.progress*100)+'%';}}})
-        .then(function(result){fill.style.width='100%';txt.textContent='Done!';setTimeout(function(){prog.style.display='none';document.getElementById('ocrResult').style.display='block';document.getElementById('ocrOutput').value=result.data.text;},500);})
-        .catch(function(err){txt.textContent='Error: '+err.message;fill.style.width='0%';fill.style.background='#ef4444';});
-    };
-    document.getElementById('ocrCopyBtn').onclick=function(){var t=document.getElementById('ocrOutput');t.select();document.execCommand('copy');alert('Copied!');};
-    document.getElementById('ocrDlBtn').onclick=function(){var b=new Blob([document.getElementById('ocrOutput').value],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ocr-result.txt';a.click();};
-}
-
-// ===== IMAGE CONVERTER =====
-function initImageConverter(){
-    var area=document.getElementById('imgUploadArea'),input=document.getElementById('imgFileInput'),grid=document.getElementById('imgPreviewGrid');
-    var files=[];
-    area.onclick=function(){input.click();};
-    area.ondragover=function(e){e.preventDefault();};
-    area.ondrop=function(e){e.preventDefault();loadImages(e.dataTransfer.files);};
-    input.onchange=function(){loadImages(this.files);};
-    document.getElementById('imgQuality').oninput=function(){document.getElementById('imgQualVal').textContent=this.value;};
-    function loadImages(fl){files=Array.from(fl);grid.innerHTML='';files.forEach(function(f){var r=new FileReader();r.onload=function(e){var img=document.createElement('img');img.src=e.target.result;grid.appendChild(img);};r.readAsDataURL(f);});}
-    document.getElementById('imgConvertBtn').onclick=function(){
-        if(!files.length){alert(lang==='fa'?'ابتدا تصاویر انتخاب کنید':'Select images first');return;}
-        var fmt=document.getElementById('imgOutFormat').value,qual=parseInt(document.getElementById('imgQuality').value)/100;
-        var res=document.getElementById('imgResults');res.innerHTML='';
-        files.forEach(function(f,i){
-            var img=new Image();var r=new FileReader();
-            r.onload=function(e){img.src=e.target.result;};
-            img.onload=function(){
-                var c=document.createElement('canvas');c.width=img.width;c.height=img.height;
-                c.getContext('2d').drawImage(img,0,0);
-                c.toBlob(function(blob){
-                    var url=URL.createObjectURL(blob);
-                    var ext=fmt.split('/')[1];
-                    var name=f.name.replace(/\.[^.]+$/,'')+'.'+ext;
-                    var div=document.createElement('div');div.className='result-box';div.style.marginTop='.5rem';
-                    div.innerHTML='<span>'+name+' ('+(blob.size/1024).toFixed(1)+' KB)</span> <a href="'+url+'" download="'+name+'" class="btn-secondary" style="margin-left:.5rem">⬇️</a>';
-                    res.appendChild(div);
-                },fmt,qual);
-            };
-            r.readAsDataURL(f);
-        });
-    };
-}
-
-// ===== PDF =====
-function initPDF(){
-    document.querySelectorAll('.tab-btn').forEach(function(btn){
-        btn.onclick=function(){
-            var parent=this.closest('.card');
-            parent.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
-            parent.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
-            this.classList.add('active');
-            document.getElementById('panel-'+this.getAttribute('data-tab')).classList.add('active');
-        };
-    });
-    // Image to PDF
-    var img2pdfArea=document.getElementById('img2pdfUploadArea'),img2pdfInput=document.getElementById('img2pdfInput');
-    img2pdfArea.onclick=function(){img2pdfInput.click();};
-    document.getElementById('img2pdfBtn').onclick=function(){
-        if(!img2pdfInput.files.length){alert('Select images first');return;}
-        var doc=new jspdf.jsPDF();var files=Array.from(img2pdfInput.files);var done=0;
-        files.forEach(function(f,i){
-            var r=new FileReader();
-            r.onload=function(e){
-                var img=new Image();
-                img.onload=function(){
-                    if(i>0)doc.addPage();
-                    var pw=doc.internal.pageSize.getWidth(),ph=doc.internal.pageSize.getHeight();
-                    var ratio=Math.min(pw/img.width,ph/img.height);
-                    var w=img.width*ratio,h=img.height*ratio;
-                    doc.addImage(e.target.result,'JPEG',(pw-w)/2,(ph-h)/2,w,h);
-                    done++;
-                    if(done===files.length){doc.save('output.pdf');alert('PDF created!');}
-                };
-                img.src=e.target.result;
-            };
-            r.readAsDataURL(f);
-        });
-    };
-    // PDF to Image
-    var pdf2imgArea=document.getElementById('pdf2imgUploadArea'),pdf2imgInput=document.getElementById('pdf2imgInput');
-    pdf2imgArea.onclick=function(){pdf2imgInput.click();};
-    document.getElementById('pdf2imgBtn').onclick=function(){
-        if(!pdf2imgInput.files[0]){alert('Select a PDF first');return;}
-        var res=document.getElementById('pdf2imgResults');res.innerHTML='<p>Converting...</p>';
-        var reader=new FileReader();
-        reader.onload=function(e){
-            var typedArray=new Uint8Array(e.target.result);
-            pdfjsLib.getDocument(typedArray).promise.then(function(pdf){
-                res.innerHTML='';
-                for(var i=1;i<=Math.min(pdf.numPages,10);i++){
-                    (function(pageNum){
-                        pdf.getPage(pageNum).then(function(page){
-                            var viewport=page.getViewport({scale:2});
-                            var canvas=document.createElement('canvas');
-                            canvas.width=viewport.width;canvas.height=viewport.height;
-                            var ctx=canvas.getContext('2d');
-                            page.render({canvasContext:ctx,viewport:viewport}).promise.then(function(){
-                                var url=canvas.toDataURL('image/png');
-                                var div=document.createElement('div');div.className='result-box';div.style.marginTop='.5rem';
-                                div.innerHTML='<span>Page '+pageNum+'</span> <a href="'+url+'" download="page-'+pageNum+'.png" class="btn-secondary">⬇️ Download</a>';
-                                res.appendChild(div);
-                            });
-                        });
-                    })(i);
-                }
-            });
-        };
-        reader.readAsArrayBuffer(pdf2imgInput.files[0]);
-    };
-}
-
-// ===== PASSWORD =====
-function initPassword(){
-    var lenSlider=document.getElementById('passLen'),lenVal=document.getElementById('passLenVal');
-    lenSlider.oninput=function(){lenVal.textContent=this.value;};
-    document.getElementById('passGenBtn').onclick=generatePass;
-    document.getElementById('passCopyBtn').onclick=function(){
-        var p=document.getElementById('passDisplay');
-        if(p.value){navigator.clipboard.writeText(p.value).then(function(){alert('Copied!');});}
-    };
-    function generatePass(){
-        var len=parseInt(lenSlider.value),chars='',pool='';
-        if(document.getElementById('chkUpper').checked){pool+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';}
-        if(document.getElementById('chkLower').checked){pool+='abcdefghijklmnopqrstuvwxyz';}
-        if(document.getElementById('chkNums').checked){pool+='0123456789';}
-        if(document.getElementById('chkSyms').checked){pool+='!@#$%^&*()_+-=[]{}|;:,.<>?';}
-        if(!pool){document.getElementById('passDisplay').value='Select at least one type!';return;}
-        var arr=new Uint32Array(len);crypto.getRandomValues(arr);
-        var pass='';for(var i=0;i<len;i++){pass+=pool[arr[i]%pool.length];}
-        document.getElementById('passDisplay').value=pass;
-        var score=0;if(len>=12)score++;if(len>=20)score++;if(/[A-Z]/.test(pass))score++;if(/[a-z]/.test(pass))score++;if(/[0-9]/.test(pass))score++;if(/[^A-Za-z0-9]/.test(pass))score++;
-        var fill=document.getElementById('strengthFill'),txt=document.getElementById('strengthText');
-        var pct=Math.min(score/6*100,100);
-        fill.style.width=pct+'%';
-        fill.style.background=pct<40?'#ef4444':pct<70?'#f59e0b':'#10b981';
-        txt.textContent=pct<40?'Weak':pct<70?'Medium':'Strong';
-        txt.style.color=fill.style.background;
-    }
-    generatePass();
-}
-
-// ===== CALCULATOR =====
-function initCalculator(){
-    var display=document.getElementById('calcDisplay'),history=document.getElementById('calcHistory');
-    var current='0',prev='',op=null,reset=false;
-    function update(){display.textContent=current.length>12?parseFloat(current).toExponential(5):current;}
-    document.querySelectorAll('.c-btn').forEach(function(btn){
-        btn.onclick=function(){
-            var val=this.getAttribute('data-val'),action=this.getAttribute('data-action');
-            if(val!==null&&!action){
-                if(reset){current=val;reset=false;}else{current=current==='0'?val:current+val;}
-            }else if(val==='.'){
-                if(reset){current='0.';reset=false;}else if(!current.includes('.')){current+='.';}
-            }else if(action==='op'){
-                if(op&&!reset)calc();
-                prev=current;op=val;reset=true;
-                history.textContent=prev+' '+{'/':'÷','*':'×','-':'−','+':'+'}[val];
-            }else if(action==='equals'){calc();}
-            else if(action==='clear'){current='0';prev='';op=null;reset=false;history.textContent='';}
-            else if(action==='delete'){current=current.length>1?current.slice(0,-1):'0';}
-            else if(action==='percent'){current=String(parseFloat(current)/100);}
-            update();
-        };
-    });
-    function calc(){
-        if(!op||reset)return;
-        var a=parseFloat(prev),b=parseFloat(current),r;
-        switch(op){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b===0?'Error':a/b;break;}
-        history.textContent=prev+' '+op+' '+current+' =';
-        current=String(Math.round(r*1e10)/1e10);op=null;reset=true;
-    }
-}
-
-// ===== QR CODE =====
-function initQR(){
-    document.getElementById('qrGenBtn').onclick=function(){
-        var text=document.getElementById('qrInput').value.trim();
-        if(!text){alert(lang==='fa'?'متنی وارد کنید':'Enter text or URL');return;}
-        var canvas=document.getElementById('qrCanvas'),ctx=canvas.getContext('2d');
-        var qr=qrcode(0,'M');
-        qr.addData(text);
-        qr.make();
-        var count=qr.getModuleCount(),cellSize=Math.floor(256/(count+2)),offset=Math.floor((256-cellSize*count)/2);
-        canvas.width=256;canvas.height=256;
-        ctx.fillStyle='#ffffff';ctx.fillRect(0,0,256,256);
-        ctx.fillStyle='#000000';
-        for(var r=0;r<count;r++){for(var c=0;c<count;c++){if(qr.isDark(r,c)){ctx.fillRect(offset+c*cellSize,offset+r*cellSize,cellSize,cellSize);}}}
-        document.getElementById('qrDlBtn').style.display='inline-flex';
-    };
-    document.getElementById('qrDlBtn').onclick=function(){
-        var a=document.createElement('a');a.download='qrcode.png';a.href=document.getElementById('qrCanvas').toDataURL('image/png');a.click();
-    };
-}
-
-// ===== DATE CONVERTER =====
-function initDateConverter(){
-    var jMonths=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
-    var gMonths=['January','February','March','April','May','June','July','August','September','October','November','December'];
-    function j2g(jy,jm,jd){jy+=1595;var days=-355668+(365*jy)+(Math.floor(jy/33)*8)+Math.floor(((jy%33)+3)/4)+jd+((jm<7)?(jm-1)*31:((jm-7)*30)+186);var gy=400*Math.floor(days/146097);days%=146097;if(days>36524){gy+=100*Math.floor(--days/36524);days%=36524;if(days>=365)days++;}gy+=4*Math.floor(days/1461);days%=1461;if(days>365){gy+=Math.floor((days-1)/365);days=(days-1)%365;}var gd=days+1;var sal=[0,31,((gy%4===0&&gy%100!==0)||(gy%400===0))?29:28,31,30,31,30,31,31,30,31,30,31];var gm;for(gm=0;gm<13&&gd>sal[gm];gm++)gd-=sal[gm];return{y:gy,m:gm,d:gd};}
-    function g2j(gy,gm,gd){var gdm=[0,31,59,90,120,151,181,212,243,273,304,334];var jy=(gy<=1600)?0:979;gy-=(gy<=1600)?621:1600;var gy2=(gm>2)?(gy+1):gy;var days=(365*gy)+Math.floor((gy2+3)/4)-Math.floor((gy2+99)/100)+Math.floor((gy2+399)/400)-80+gd+gdm[gm-1];jy+=33*Math.floor(days/12053);days%=12053;jy+=4*Math.floor(days/1461);days%=1461;if(days>365){jy+=Math.floor((days-1)/365);days=(days-1)%365;}var jm=(days<186)?1+Math.floor(days/31):7+Math.floor((days-186)/30);var jd=1+((days<186)?(days%31):((days-186)%30));return{y:jy,m:jm,d:jd};}
-    document.getElementById('j2gBtn').onclick=function(){
-        var jy=parseInt(document.getElementById('jy').value),jm=parseInt(document.getElementById('jm').value),jd=parseInt(document.getElementById('jd').value);
-        if(!jy||!jm||!jd){document.getElementById('j2gResult').textContent='⚠️ Invalid';return;}
-        var r=j2g(jy,jm,jd);
-        document.getElementById('j2gResult').textContent=jd+' '+jMonths[jm-1]+' '+jy+' → '+r.d+' '+gMonths[r.m-1]+' '+r.y;
-    };
-    document.getElementById('g2jBtn').onclick=function(){
-        var gy=parseInt(document.getElementById('gy').value),gm=parseInt(document.getElementById('gm').value),gd=parseInt(document.getElementById('gd').value);
-        if(!gy||!gm||!gd){document.getElementById('g2jResult').textContent='⚠️ Invalid';return;}
-        var r=g2j(gy,gm,gd);
-        document.getElementById('g2jResult').textContent=gd+' '+gMonths[gm-1]+' '+gy+' → '+r.d+' '+jMonths[r.m-1]+' '+r.y;
-    };
-}
-
-// ===== UNIT CONVERTER =====
-function initUnitConverter(){
-    var lenToM={m:1,cm:0.01,km:1000,ft:0.3048,'in':0.0254,mi:1609.344};
-    var wgtToKg={kg:1,g:0.001,lb:0.453592,oz:0.0283495};
-    function convLen(){var v=parseFloat(document.getElementById('lenInput').value);if(isNaN(v)){document.getElementById('lenOutput').value='';return;}var from=document.getElementById('lenFrom').value,to=document.getElementById('lenTo').value;var result=(v*lenToM[from])/lenToM[to];document.getElementById('lenOutput').value=result.toFixed(3);}
-    function convWgt(){var v=parseFloat(document.getElementById('wgtInput').value);if(isNaN(v)){document.getElementById('wgtOutput').value='';return;}var from=document.getElementById('wgtFrom').value,to=document.getElementById('wgtTo').value;var result=(v*wgtToKg[from])/wgtToKg[to];document.getElementById('wgtOutput').value=result.toFixed(3);}
-    document.getElementById('lenInput').oninput=convLen;
-    document.getElementById('lenFrom').onchange=convLen;
-    document.getElementById('lenTo').onchange=convLen;
-    document.getElementById('wgtInput').oninput=convWgt;
-    document.getElementById('wgtFrom').onchange=convWgt;
-    document.getElementById('wgtTo').onchange=convWgt;
-    convLen();convWgt();
-}
-
-// ===== CHAR COUNTER =====
-function initCharCounter(){
-    var ta=document.getElementById('charText');
-    ta.oninput=function(){
-        var t=this.value;
-        document.getElementById('cChars').textContent=t.length;
-        document.getElementById('cCharsNS').textContent=t.replace(/\s/g,'').length;
-        var words=t.trim()?t.trim().split(/\s+/).length:0;
-        document.getElementById('cWords').textContent=words;
-        document.getElementById('cSentences').textContent=t.trim()?t.split(/[.!?؟]+/).filter(function(s){return s.trim().length>0;}).length:0;
-        document.getElementById('cParas').textContent=t.trim()?t.split(/\n\n+/).filter(function(p){return p.trim().length>0;}).length:0;
-        document.getElementById('cReadTime').textContent=Math.ceil(words/200);
-    };
-}
-
-// ===== NUMBER TO WORDS =====
-function initNumberToWords(){
-    document.getElementById('numConvertBtn').onclick=function(){
-        var input=document.getElementById('numInput').value.replace(/[^0-9]/g,'');
-        if(!input){document.getElementById('numResult').textContent='⚠️ Enter a number';return;}
-        if(input.length>12){document.getElementById('numResult').textContent='⚠️ Max 12 digits';return;}
-        document.getElementById('numResult').textContent=numToFa(input);
-    };
-    function numToFa(num){
-        if(num==='0')return'صفر';
-        var ones=['','یک','دو','سه','چهار','پنج','شش','هفت','هشت','نه'];
-        var teens=['ده','یازده','دوازده','سیزده','چهارده','پانزده','شانزده','هفده','هجده','نوزده'];
-        var tens=['','','بیست','سی','چهل','پنجاه','شصت','هفتاد','هشتاد','نود'];
-        var hundreds=['','یکصد','دویست','سیصد','چهارصد','پانصد','ششصد','هفتصد','هشتصد','نهصد'];
-        var scales=['',' هزار',' میلیون',' میلیارد'];
-        function three(n){var r='',h=Math.floor(n/100),rem=n%100,t=Math.floor(rem/10),o=rem%10;if(h)r+=hundreds[h];if(rem>=10&&rem<20){if(r)r+=' و ';r+=teens[rem-10];}else{if(t){if(r)r+=' و ';r+=tens[t];}if(o){if(r)r+=' و ';r+=ones[o];}}return r;}
-        while(num.length%3!==0)num='0'+num;
-        var groups=[],result='',si=num.length/3-1;
-        for(var i=0;i<num.length;i+=3)groups.push(num.substring(i,i+3));
-        for(var g=0;g<groups.length;g++){var gv=parseInt(groups[g]);if(gv>0){if(result)result+=' و ';result+=three(gv)+scales[si];}si--;}
-        return result;
-    }
-}
-
-// ===== FOOTER =====
-function initFooter(){
-    document.getElementById('aboutLink').onclick=function(e){e.preventDefault();alert(lang==='fa'?'ابزارهای هوشمند - مجموعه ابزارهای آنلاین رایگان':'Smart Tools - Free Online Tools Platform');};
-    document.getElementById('contactLink').onclick=function(e){e.preventDefault();alert(lang==='fa'?'ایمیل: support@smarttools.com':'Email: support@smarttools.com');};
-    document.getElementById('privacyLink').onclick=function(e){e.preventDefault();alert(lang==='fa'?'هیچ داده‌ای به سرور ارسال نمی‌شود.':'No data is sent to any server. All processing is local.');};
-}
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
