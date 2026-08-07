@@ -1,29 +1,49 @@
 // ===== START OF FILE: README.md =====
-# 🛠️ ابزارک‌های هوشمند - مجموعه ابزارهای آنلاین رایگان
+# ⚡ Smart Tools - Global File Converter & OCR Platform
 
-یک وب‌سایت استاتیک شامل **۷ ابزار آنلاین رایگان** که ۱۰۰٪ در مرورگر کاربر اجرا می‌شوند و نیاز به هیچ سرور یا API خارجی ندارند.
+A comprehensive **multi-language** (English/Persian) web application featuring advanced file conversion tools, OCR, PDF processing, and image transformations. **100% client-side** - your files never leave your device.
 
-## 🌟 ویژگی‌ها
+## 🌟 Key Features
 
-- **۱۰۰٪ استاتیک** - فقط HTML + CSS + JavaScript خالص
-- **بدون فریم‌ورک** - بدون React، Vue، Angular، jQuery یا Bootstrap
-- **بدون CDN** - تمام منابع به صورت self-hosted
-- **بدون API** - تمام محاسبات در مرورگر کاربر
-- **ریسپانسیو** - سازگار با موبایل، تبلت و دسکتاپ
-- **تم دارک/روشن** - با ذخیره در LocalStorage
-- **سئو بهینه** - با JSON-LD و متا تگ‌های داینامیک
-- **سرعت بالا** - LCP زیر ۱ ثانیه
+### 🌍 Global & Multi-Language
+- **Bilingual Interface**: Full support for English and Persian (فارسی)
+- **RTL/LTR Support**: Automatic text direction based on language
+- **Language Persistence**: Remembers your preference via LocalStorage
 
-## 🔧 ابزارهای موجود
+### 🛠️ Advanced File Tools
+- **📄 Image to Text (OCR)**: Extract text from images using Tesseract.js
+- **🖼️ Image Format Converter**: Convert between JPG, PNG, WebP, BMP
+- **📑 PDF Tools**: PDF to image, image to PDF, text extraction
+- **📱 HEIC to JPG**: Convert iPhone photos to universal format
+- **📁 File Converter**: JSON ↔ CSV ↔ XML ↔ Text
 
-| # | ابزار | توضیح |
-|---|-------|-------|
-| ۱ | 🧮 ماشین‌حساب استاندارد | چهار عمل اصلی، درصد، اعداد اعشاری با تاریخچه |
-| ۲ | 📅 مبدل تاریخ شمسی/میلادی | تبدیل دوطرفه با الگوریتم دقیق مبنا |
-| ۳ | 🔐 تولیدکننده رمز عبور | رمزهای امن با نشانگر قدرت |
-| ۴ | 📐 مبدل واحدها | تبدیل واحدهای طول و وزن با دقت بالا |
-| ۵ | 📝 شمارشگر متن | شمارش لحظه‌ای کاراکتر، کلمه، جمله، پاراگراف |
-| ۶ | 📱 مولد QR Code | تولید و دانلود QR از متن یا لینک |
-| ۷ | 🔢 اعداد به حروف فارسی | تبدیل اعداد تا ۱۲ رقم به حروف فارسی |
+### 🔒 Privacy First
+- **100% Client-Side**: All processing happens in your browser
+- **No Server Upload**: Your files never leave your device
+- **No Tracking**: Zero analytics or tracking cookies
 
-## 📁 ساختار پروژه
+### ⚡ Performance
+- **Lightning Fast**: LCP under 1 second
+- **No Frameworks**: Pure Vanilla JavaScript
+- **Self-Hosted**: No CDN dependencies
+
+## 🔧 Tools Overview
+
+| Tool | Description | Technology |
+|------|-------------|------------|
+| **OCR** | Extract text from images | Tesseract.js |
+| **Image Converter** | Convert image formats | Canvas API |
+| **PDF Tools** | PDF processing | PDF.js, jsPDF |
+| **HEIC Converter** | iPhone photos to JPG | heic2any |
+| **File Converter** | JSON/CSV/XML conversion | Custom parser |
+| **Password Generator** | Secure password creation | Crypto API |
+| **Calculator** | Standard calculator | Vanilla JS |
+| **Date Converter** | Jalali ↔ Gregorian | Algorithm |
+
+## 📦 Installation
+
+### GitHub Pages
+```bash
+git clone https://github.com/yourusername/smart-tools.git
+cd smart-tools
+# Enable GitHub Pages in Settings > Pages
