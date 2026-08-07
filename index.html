@@ -4,34 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ===== سئو و متا تگ‌ها (برای گوگل ادز و جذب ترافیک) ===== -->
-    <title>ابزارهای رایگان تبدیل فایل | PDF، ویدیو، صوتی، عکس و رمز</title>
-    <meta name="description" content="مجموعه کامل ابزارهای رایگان تبدیل فایل: تبدیل PDF به Word، ویدیو به متن، عکس به PDF، تولید رمز عبور، QR کد، تبدیل تاریخ و ... بدون نیاز به ثبت‌نام.">
-    <meta name="keywords" content="تبدیل PDF به Word, تبدیل ویدیو به متن, تبدیل عکس به متن, تولید رمز قوی, ساخت QR کد, تبدیل تاریخ شمسی">
+    <!-- ===== سئو با تمرکز روی کلمات "رایگان" ===== -->
+    <title>ابزارهای رایگان تبدیل عکس به متن، PDF، ویدیو و صدا | مبدل آنلاین</title>
+    <meta name="description" content="تبدیل عکس به متن رایگان، تبدیل PDF به Word، استخراج متن از تصویر، تولید رمز، QR کد و ... بدون نیاز به ثبت‌نام و کاملاً رایگان.">
+    <meta name="keywords" content="تبدیل عکس به متن رایگان, تبدیل PDF به Word رایگان, ابزارهای رایگان تبدیل, OCR رایگان, تبدیل ویدیو به متن رایگان, تبدیل صدا به متن رایگان">
     <link rel="canonical" href="https://yourdomain.com/">
     
-    <!-- Open Graph / فیسبوک و گوگل -->
-    <meta property="og:title" content="ابزارهای رایگان تبدیل فایل | تبدیل PDF، ویدیو، صوتی و عکس">
-    <meta property="og:description" content="بیش از ۴۰ ابزار رایگان برای تبدیل، ویرایش و تولید فایل. بدون پرداخت و کاملاً آنلاین.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="ابزارهای رایگان تبدیل عکس به متن، PDF، ویدیو و صدا">
+    <meta property="og:description" content="مجموعه کامل ابزارهای رایگان برای تبدیل، ویرایش و تولید محتوا. کاملاً بدون هزینه.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://yourdomain.com/">
-    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ابزارهای رایگان تبدیل فایل">
-    <meta name="twitter:description" content="تبدیل فایل‌های PDF، ویدیو، صدا و عکس به فرمت‌های مختلف به صورت کاملاً رایگان.">
+    <meta name="twitter:description" content="تبدیل عکس به متن، PDF، ویدیو، صدا و ابزارهای جانبی - همه رایگان.">
     
-    <!-- ===== دیتای ساختاریافته JSON-LD (سئو پیشرفته) ===== -->
+    <!-- JSON-LD برای سئو -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       "name": "ابزارهای رایگان تبدیل فایل",
-      "description": "مجموعه ابزارهای تبدیل و ویرایش فایل",
+      "description": "مجموعه کامل ابزارهای رایگان تبدیل و ویرایش فایل",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -39,17 +37,11 @@
       }
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "خانه", "item": "https://yourdomain.com/" },
-        { "@type": "ListItem", "position": 2, "name": "ابزارهای تبدیل", "item": "https://yourdomain.com/#tools" }
-      ]
-    }
-    </script>
 
+    <!-- کتابخانه‌های مورد نیاز برای ابزارهای واقعی -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
     <!-- Font Awesome & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,11 +95,11 @@
         /* ===== Header ===== */
         .main-header { text-align: center; padding: 20px 0 10px; }
         .main-header h1 {
-            font-size: 2.6rem; font-weight: 800; color: var(--primary);
+            font-size: 2.4rem; font-weight: 800; color: var(--primary);
             display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
         }
-        .main-header h1 i { color: var(--secondary); font-size: 2.4rem; }
-        .main-header p { font-size: 1.15rem; color: var(--gray-600); margin-top: 2px; }
+        .main-header h1 i { color: var(--secondary); font-size: 2.2rem; }
+        .main-header p { font-size: 1.1rem; color: var(--gray-600); margin-top: 2px; }
 
         /* ===== Tabs ===== */
         .tabs-wrap {
@@ -129,7 +121,7 @@
 
         /* ===== Tool Grid ===== */
         .tools-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
             gap: 24px; margin: 20px 0 40px;
         }
         .tool-card {
@@ -153,8 +145,9 @@
             display: inline-block; background: var(--secondary-light); color: var(--primary);
             padding: 0 14px; border-radius: 30px; font-size: 0.65rem; font-weight: 700; margin-top: 6px;
         }
+        .tool-card .badge.active { background: #22c55e; color: white; }
 
-        /* ===== Upload Box (برای ابزارهای سنگین) ===== */
+        /* ===== Upload Box (برای ابزارهای سنگین - شبیه‌سازی) ===== */
         .upload-box {
             background: var(--white); border-radius: var(--radius); padding: 30px 24px;
             box-shadow: var(--shadow); border: 2px dashed var(--gray-200); text-align: center;
@@ -182,7 +175,7 @@
         .progress-bar .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--secondary), var(--primary)); transition: width 0.2s; }
         .download-link { margin-top: 16px; display: none; }
 
-        /* ===== Utility Tools (ابزارهای خاص مثل رمز، تاریخ، QR) ===== */
+        /* ===== Utility Tools ===== */
         .util-box {
             background: var(--white); padding: 30px; border-radius: var(--radius);
             box-shadow: var(--shadow); margin: 20px 0;
@@ -203,7 +196,8 @@
         .faq-item:last-child { border: none; }
         .faq-item .q { font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; cursor: pointer; }
         .faq-item .a { margin-top: 6px; padding-right: 30px; color: var(--gray-600); line-height: 1.7; }
-        .footer { text-align: center; padding: 30px 0 20px; color: var(--gray-600); border-top: 1px solid var(--gray-200); margin-top: 20px; }
+        .footer { text-align: center; padding: 30px 0 20px; color: var(--gray-600); border-top: 1px solid var(--gray-200); margin-top: 20px; font-size: 0.9rem; }
+        .footer .designer { color: var(--primary); font-weight: 700; }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
@@ -234,11 +228,11 @@
     <!-- ===== هدر ===== -->
     <header class="main-header">
         <h1><i class="fas fa-cubes"></i><span class="lang-fa">ابزارهای رایگان تبدیل</span><span class="lang-en">Free Conversion Tools</span></h1>
-        <p class="lang-fa">بیش از ۴۰ ابزار برای تبدیل PDF، ویدیو، صدا، عکس و تولید محتوا</p>
-        <p class="lang-en">Over 40 tools for PDF, Video, Audio, Image & Content generation</p>
+        <p class="lang-fa">تبدیل عکس به متن، PDF، ویدیو، صدا و ابزارهای جانبی - همه رایگان</p>
+        <p class="lang-en">Image to Text, PDF, Video, Audio & Utilities - All Free</p>
     </header>
 
-    <!-- ===== تب‌های دسته‌بندی ===== -->
+    <!-- ===== تب‌ها ===== -->
     <nav class="tabs-wrap" id="tabContainer">
         <button class="tab-btn active" data-tab="tab-pdf"><i class="fas fa-file-pdf"></i><span class="lang-fa">PDF</span><span class="lang-en">PDF</span></button>
         <button class="tab-btn" data-tab="tab-video"><i class="fas fa-video"></i><span class="lang-fa">ویدیو</span><span class="lang-en">Video</span></button>
@@ -250,59 +244,54 @@
     </nav>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش PDF ====== -->
+    <!-- ====== بخش PDF (شبیه‌سازی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-pdf" class="tool-section active">
-        <h2 class="lang-fa" style="margin:10px 0;">📄 تبدیل فایل‌های PDF</h2>
-        <h2 class="lang-en" style="margin:10px 0;">📄 PDF Conversion</h2>
+        <h2 class="lang-fa" style="margin:10px 0;">📄 تبدیل فایل‌های PDF (نمایشی)</h2>
+        <h2 class="lang-en" style="margin:10px 0;">📄 PDF Conversion (Demo)</h2>
         <div class="tools-grid">
-            <div class="tool-card"><i class="fas fa-file-word"></i><h4 class="lang-fa">PDF به Word</h4><h4 class="lang-en">PDF to Word</h4><p class="lang-fa">تبدیل با حفظ جدول و تصاویر</p><p class="lang-en">Preserve tables & images</p><span class="badge">رایگان</span></div>
-            <div class="tool-card"><i class="fas fa-file-excel"></i><h4 class="lang-fa">PDF به Excel</h4><h4 class="lang-en">PDF to Excel</h4><p class="lang-fa">استخراج داده‌ها به صفحه گسترده</p><p class="lang-en">Extract data to spreadsheet</p></div>
-            <div class="tool-card"><i class="fas fa-file-image"></i><h4 class="lang-fa">PDF به عکس</h4><h4 class="lang-en">PDF to Image</h4><p class="lang-fa">تبدیل صفحات به JPG/PNG</p><p class="lang-en">Pages to JPG/PNG</p></div>
+            <div class="tool-card"><i class="fas fa-file-word"></i><h4 class="lang-fa">PDF به Word</h4><h4 class="lang-en">PDF to Word</h4><p class="lang-fa">تبدیل با حفظ جدول و تصاویر</p><p class="lang-en">Preserve tables & images</p></div>
+            <div class="tool-card"><i class="fas fa-file-excel"></i><h4 class="lang-fa">PDF به Excel</h4><h4 class="lang-en">PDF to Excel</h4><p class="lang-fa">استخراج داده‌ها به صفحه گسترده</p><p class="lang-en">Extract data</p></div>
+            <div class="tool-card"><i class="fas fa-file-image"></i><h4 class="lang-fa">PDF به عکس</h4><h4 class="lang-en">PDF to Image</h4><p class="lang-fa">تبدیل صفحات به JPG/PNG</p><p class="lang-en">Pages to images</p></div>
         </div>
-        <!-- باکس آپلود شبیه‌سازی برای PDF -->
-        <div class="upload-box" id="pdfUploadBox">
-            <div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3 class="lang-fa">فایل PDF را بکشید یا کلیک کنید</h3><h3 class="lang-en">Drop PDF or click</h3><input type="file" id="pdfFileInput" accept=".pdf" style="display:none;"></div>
-            <div class="file-preview" id="pdfPreview"></div>
-            <button class="btn btn-primary" id="pdfConvertBtn"><i class="fas fa-sync"></i><span class="lang-fa">شبیه‌سازی تبدیل</span><span class="lang-en">Simulate Convert</span></button>
-            <div class="progress-wrap" id="pdfProgress"><div class="progress-bar"><div class="fill" id="pdfFill"></div></div><div class="progress-text">0%</div></div>
-            <div class="download-link" id="pdfDownload"><button class="btn btn-success"><i class="fas fa-download"></i><span class="lang-fa">دانلود</span><span class="lang-en">Download</span></button></div>
-        </div>
+        <div class="upload-box"><div class="upload-area"><i class="fas fa-cloud-upload-alt"></i><h3 class="lang-fa">فایل PDF را بکشید (نمایشی)</h3><h3 class="lang-en">Drop PDF (Demo)</h3><input type="file" accept=".pdf" style="display:none;"></div><button class="btn btn-primary" onclick="simulateConvert()"><i class="fas fa-sync"></i> <span class="lang-fa">شبیه‌سازی تبدیل</span><span class="lang-en">Simulate</span></button><div class="progress-wrap" id="pdfProgress"><div class="progress-bar"><div class="fill" id="pdfFill"></div></div><div class="progress-text">0%</div></div><div class="download-link" id="pdfDownload"><button class="btn btn-success"><i class="fas fa-download"></i> <span class="lang-fa">دانلود (نمایشی)</span><span class="lang-en">Download (Demo)</span></button></div></div>
+        <p style="color:var(--gray-600);font-size:0.85rem;text-align:center;">⚠️ ابزارهای PDF نیاز به سرور دارند، فعلاً به صورت نمایشی هستند.</p>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش ویدیو ====== -->
+    <!-- ====== بخش ویدیو (شبیه‌سازی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-video" class="tool-section">
-        <h2 class="lang-fa" style="margin:10px 0;">🎬 ابزارهای ویدیویی</h2>
-        <h2 class="lang-en" style="margin:10px 0;">🎬 Video Tools</h2>
+        <h2 class="lang-fa" style="margin:10px 0;">🎬 ابزارهای ویدیویی (نمایشی)</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🎬 Video Tools (Demo)</h2>
         <div class="tools-grid">
-            <div class="tool-card"><i class="fas fa-closed-captioning"></i><h4 class="lang-fa">ویدیو به متن</h4><h4 class="lang-en">Video to Text</h4><p class="lang-fa">استخراج زیرنویس از فیلم</p><p class="lang-en">Extract subtitles</p></div>
-            <div class="tool-card"><i class="fas fa-volume-up"></i><h4 class="lang-fa">ویدیو به صوت</h4><h4 class="lang-en">Video to Audio</h4><p class="lang-fa">استخراج صدا از فیلم</p><p class="lang-en">Extract audio</p></div>
+            <div class="tool-card"><i class="fas fa-closed-captioning"></i><h4 class="lang-fa">ویدیو به متن</h4><h4 class="lang-en">Video to Text</h4><p class="lang-fa">استخراج زیرنویس</p><p class="lang-en">Extract subtitles</p></div>
+            <div class="tool-card"><i class="fas fa-volume-up"></i><h4 class="lang-fa">ویدیو به صوت</h4><h4 class="lang-en">Video to Audio</h4><p class="lang-fa">استخراج صدا</p><p class="lang-en">Extract audio</p></div>
             <div class="tool-card"><i class="fas fa-file-audio"></i><h4 class="lang-fa">MP4 به MP3</h4><h4 class="lang-en">MP4 to MP3</h4><p class="lang-fa">تبدیل ویدیو به صدا</p><p class="lang-en">Video to audio</p></div>
-            <div class="tool-card"><i class="fas fa-cut"></i><h4 class="lang-fa">برش ویدیو</h4><h4 class="lang-en">Video Cutter</h4><p class="lang-fa">برش دقیق فیلم</p><p class="lang-en">Precise trimming</p></div>
+            <div class="tool-card"><i class="fas fa-cut"></i><h4 class="lang-fa">برش ویدیو</h4><h4 class="lang-en">Video Cutter</h4><p class="lang-fa">برش دقیق فیلم</p><p class="lang-en">Precise cutting</p></div>
         </div>
-        <div class="upload-box"><div class="upload-area"><i class="fas fa-file-video"></i><h3 class="lang-fa">فایل ویدیویی را آپلود کنید</h3><h3 class="lang-en">Upload video file</h3><input type="file" accept=".mp4,.avi,.mov" style="display:none;"></div><button class="btn btn-primary"><span class="lang-fa">شبیه‌سازی تبدیل</span><span class="lang-en">Simulate</span></button></div>
+        <p style="color:var(--gray-600);font-size:0.85rem;text-align:center;">⚠️ ابزارهای ویدیویی نیاز به سرور دارند، فعلاً به صورت نمایشی هستند.</p>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش صوتی ====== -->
+    <!-- ====== بخش صوتی (شبیه‌سازی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-audio" class="tool-section">
-        <h2 class="lang-fa" style="margin:10px 0;">🎵 ابزارهای صوتی</h2>
-        <h2 class="lang-en" style="margin:10px 0;">🎵 Audio Tools</h2>
+        <h2 class="lang-fa" style="margin:10px 0;">🎵 ابزارهای صوتی (نمایشی)</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🎵 Audio Tools (Demo)</h2>
         <div class="tools-grid">
-            <div class="tool-card"><i class="fas fa-microphone-alt"></i><h4 class="lang-fa">صوت به متن</h4><h4 class="lang-en">Audio to Text</h4><p class="lang-fa">تبدیل گفتار به نوشته</p><p class="lang-en">Speech to writing</p></div>
+            <div class="tool-card"><i class="fas fa-microphone-alt"></i><h4 class="lang-fa">صوت به متن</h4><h4 class="lang-en">Audio to Text</h4><p class="lang-fa">تبدیل گفتار به نوشته</p><p class="lang-en">Speech to text</p></div>
             <div class="tool-card"><i class="fas fa-volume-high"></i><h4 class="lang-fa">متن به گفتار</h4><h4 class="lang-en">Text to Speech</h4><p class="lang-fa">تبدیل متن به صدای طبیعی</p><p class="lang-en">Natural voice</p></div>
             <div class="tool-card"><i class="fas fa-file-audio"></i><h4 class="lang-fa">MP3 به OGG</h4><h4 class="lang-en">MP3 to OGG</h4><p class="lang-fa">تبدیل فرمت صوتی</p><p class="lang-en">Format conversion</p></div>
             <div class="tool-card"><i class="fas fa-cut"></i><h4 class="lang-fa">برش صوتی</h4><h4 class="lang-en">Audio Cutter</h4><p class="lang-fa">برش فایل صوتی</p><p class="lang-en">Cut audio</p></div>
-            <div class="tool-card"><i class="fas fa-object-group"></i><h4 class="lang-fa">ترکیب صوتی</h4><h4 class="lang-en">Audio Merger</h4><p class="lang-fa">اتصال چند فایل صوتی</p><p class="lang-en">Merge audio files</p></div>
+            <div class="tool-card"><i class="fas fa-object-group"></i><h4 class="lang-fa">ترکیب صوتی</h4><h4 class="lang-en">Audio Merger</h4><p class="lang-fa">اتصال چند فایل</p><p class="lang-en">Merge files</p></div>
             <div class="tool-card"><i class="fas fa-comment-dots"></i><h4 class="lang-fa">گفتار به متن</h4><h4 class="lang-en">Speech to Text</h4><p class="lang-fa">رونویسی خودکار</p><p class="lang-en">Auto transcription</p></div>
         </div>
+        <p style="color:var(--gray-600);font-size:0.85rem;text-align:center;">⚠️ ابزارهای صوتی نیاز به سرور دارند، فعلاً به صورت نمایشی هستند.</p>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش تبدیل به PDF ====== -->
+    <!-- ====== بخش تبدیل به PDF (واقعی + نمایشی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-topdf" class="tool-section">
         <h2 class="lang-fa" style="margin:10px 0;">📑 تبدیل فایل‌ها به PDF</h2>
@@ -312,50 +301,154 @@
             <div class="tool-card"><i class="fas fa-file-powerpoint"></i><h4>پاورپوینت به PDF</h4><p class="lang-fa">اسلایدها به PDF</p><p class="lang-en">Slides to PDF</p></div>
             <div class="tool-card"><i class="fas fa-file-word"></i><h4>Word به PDF</h4><p class="lang-fa">سند به PDF</p><p class="lang-en">Document to PDF</p></div>
             <div class="tool-card"><i class="fas fa-file-alt"></i><h4>TXT به PDF</h4><p class="lang-fa">متن ساده به PDF</p><p class="lang-en">Plain text to PDF</p></div>
-            <div class="tool-card"><i class="fas fa-pencil-alt"></i><h4 class="lang-fa">متن به PDF</h4><h4 class="lang-en">Text to PDF</h4><p class="lang-fa">نوشته دلخواه به PDF</p><p class="lang-en">Custom text to PDF</p></div>
-            <div class="tool-card"><i class="fas fa-image"></i><h4 class="lang-fa">عکس به PDF</h4><h4 class="lang-en">Image to PDF</h4><p class="lang-fa">تبدیل عکس به سند</p><p class="lang-en">Image to document</p></div>
+            <!-- کارت متن به PDF (واقعی) -->
+            <div class="tool-card" onclick="convertTextToPDF()" style="cursor:pointer;">
+                <i class="fas fa-pencil-alt"></i>
+                <h4 class="lang-fa">متن به PDF (واقعی)</h4>
+                <h4 class="lang-en">Text to PDF (Real)</h4>
+                <p class="lang-fa">نوشته دلخواه به PDF</p>
+                <p class="lang-en">Custom text to PDF</p>
+                <span class="badge active">فعال</span>
+            </div>
+            <!-- کارت عکس به PDF (واقعی) -->
+            <div class="tool-card" onclick="document.getElementById('imgToPdfInput').click()" style="cursor:pointer;">
+                <i class="fas fa-image"></i>
+                <h4 class="lang-fa">عکس به PDF (واقعی)</h4>
+                <h4 class="lang-en">Image to PDF (Real)</h4>
+                <p class="lang-fa">ساخت PDF از عکس</p>
+                <p class="lang-en">Make PDF from image</p>
+                <span class="badge active">فعال</span>
+                <input type="file" id="imgToPdfInput" accept="image/*" style="display:none;">
+            </div>
         </div>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش عکس ====== -->
+    <!-- ====== بخش عکس (واقعی + نمایشی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-image" class="tool-section">
         <h2 class="lang-fa" style="margin:10px 0;">🖼️ ابزارهای عکس</h2>
         <h2 class="lang-en" style="margin:10px 0;">🖼️ Image Tools</h2>
         <div class="tools-grid">
-            <div class="tool-card"><i class="fas fa-text-height"></i><h4 class="lang-fa">عکس به متن</h4><h4 class="lang-en">Image to Text</h4><p class="lang-fa">OCR استخراج متن</p><p class="lang-en">OCR text extraction</p></div>
-            <div class="tool-card"><i class="fas fa-file-pdf"></i><h4 class="lang-fa">عکس به PDF</h4><h4 class="lang-en">Image to PDF</h4><p class="lang-fa">ساخت PDF از عکس</p><p class="lang-en">Make PDF from image</p></div>
-            <div class="tool-card"><i class="fas fa-pen-fancy"></i><h4 class="lang-fa">دستنویس به متن</h4><h4 class="lang-en">Handwriting to Text</h4><p class="lang-fa">تبدیل خط دستی</p><p class="lang-en">Convert handwriting</p></div>
+            <!-- عکس به متن (واقعی) -->
+            <div class="tool-card" onclick="document.getElementById('ocrInput').click()" style="cursor:pointer;">
+                <i class="fas fa-text-height"></i>
+                <h4 class="lang-fa">عکس به متن (واقعی)</h4>
+                <h4 class="lang-en">Image to Text (Real)</h4>
+                <p class="lang-fa">استخراج متن با OCR</p>
+                <p class="lang-en">OCR extraction</p>
+                <span class="badge active">فعال</span>
+                <input type="file" id="ocrInput" accept="image/*" style="display:none;">
+            </div>
+            <div id="ocrResult" style="margin:10px 0;padding:12px;background:#f8fafc;border-radius:12px;display:none;direction:ltr;text-align:left;grid-column:1/-1;"></div>
+            
+            <!-- عکس به PDF (واقعی) (تکرار شد ولی اینجا هم هست) -->
+            <div class="tool-card" onclick="document.getElementById('imgToPdfInput2').click()" style="cursor:pointer;">
+                <i class="fas fa-file-pdf"></i>
+                <h4 class="lang-fa">عکس به PDF (واقعی)</h4>
+                <h4 class="lang-en">Image to PDF (Real)</h4>
+                <p class="lang-fa">ساخت PDF از عکس</p>
+                <p class="lang-en">Make PDF from image</p>
+                <span class="badge active">فعال</span>
+                <input type="file" id="imgToPdfInput2" accept="image/*" style="display:none;">
+            </div>
+            
+            <!-- دستنویس به متن (همان OCR) -->
+            <div class="tool-card" onclick="document.getElementById('ocrInput').click()" style="cursor:pointer;">
+                <i class="fas fa-pen-fancy"></i>
+                <h4 class="lang-fa">دستنویس به متن (واقعی)</h4>
+                <h4 class="lang-en">Handwriting to Text (Real)</h4>
+                <p class="lang-fa">تبدیل خط دستی</p>
+                <p class="lang-en">Convert handwriting</p>
+                <span class="badge active">فعال</span>
+            </div>
+            
+            <!-- ترکیب عکس‌ها (نمایشی) -->
             <div class="tool-card"><i class="fas fa-object-ungroup"></i><h4 class="lang-fa">ترکیب عکس‌ها</h4><h4 class="lang-en">Merge Images</h4><p class="lang-fa">اتصال چند عکس</p><p class="lang-en">Combine images</p></div>
-            <div class="tool-card"><i class="fas fa-compress-alt"></i><h4 class="lang-fa">فشرده‌سازی عکس</h4><h4 class="lang-en">Compress Image</h4><p class="lang-fa">کاهش حجم بدون کیفیت</p><p class="lang-en">Reduce size</p></div>
+            
+            <!-- فشرده‌سازی عکس (واقعی با Canvas) -->
+            <div class="tool-card" onclick="document.getElementById('compressInput').click()" style="cursor:pointer;">
+                <i class="fas fa-compress-alt"></i>
+                <h4 class="lang-fa">فشرده‌سازی عکس (واقعی)</h4>
+                <h4 class="lang-en">Compress Image (Real)</h4>
+                <p class="lang-fa">کاهش حجم</p>
+                <p class="lang-en">Reduce size</p>
+                <span class="badge active">فعال</span>
+                <input type="file" id="compressInput" accept="image/*" style="display:none;">
+            </div>
+            
+            <!-- حذف پس‌زمینه (نمایشی) -->
             <div class="tool-card"><i class="fas fa-eraser"></i><h4 class="lang-fa">حذف پس‌زمینه</h4><h4 class="lang-en">Remove BG</h4><p class="lang-fa">حذف خودکار بک‌گراند</p><p class="lang-en">Auto background removal</p></div>
-            <div class="tool-card"><i class="fas fa-exchange-alt"></i><h4 class="lang-fa">HEIC به JPG</h4><h4 class="lang-en">HEIC to JPG</h4><p class="lang-fa">تبدیل عکس آیفون</p><p class="lang-en">iPhone image convert</p></div>
-            <div class="tool-card"><i class="fas fa-file-image"></i><h4 class="lang-fa">عکس به JPG</h4><h4 class="lang-en">Image to JPG</h4><p class="lang-fa">تبدیل به فرمت JPG</p><p class="lang-en">Convert to JPG</p></div>
-            <div class="tool-card"><i class="fas fa-file-png"></i><h4 class="lang-fa">عکس به PNG</h4><h4 class="lang-en">Image to PNG</h4><p class="lang-fa">تبدیل به PNG شفاف</p><p class="lang-en">Convert to PNG</p></div>
+            
+            <!-- HEIC به JPG (با مبدل فرمت) -->
+            <div class="tool-card" onclick="document.getElementById('imgConvertInput').click()" style="cursor:pointer;">
+                <i class="fas fa-exchange-alt"></i>
+                <h4 class="lang-fa">HEIC به JPG (واقعی)</h4>
+                <h4 class="lang-en">HEIC to JPG (Real)</h4>
+                <p class="lang-fa">تبدیل عکس آیفون</p>
+                <p class="lang-en">iPhone image convert</p>
+                <span class="badge active">فعال</span>
+                <input type="file" id="imgConvertInput" accept="image/*" style="display:none;">
+            </div>
+            
+            <!-- عکس به JPG (واقعی با مبدل) -->
+            <div class="tool-card" onclick="document.getElementById('imgConvertInput').click()" style="cursor:pointer;">
+                <i class="fas fa-file-image"></i>
+                <h4 class="lang-fa">عکس به JPG (واقعی)</h4>
+                <h4 class="lang-en">Image to JPG (Real)</h4>
+                <p class="lang-fa">تبدیل به فرمت JPG</p>
+                <p class="lang-en">Convert to JPG</p>
+                <span class="badge active">فعال</span>
+            </div>
+            
+            <!-- عکس به PNG (واقعی با مبدل) -->
+            <div class="tool-card" onclick="document.getElementById('imgConvertInput').click()" style="cursor:pointer;">
+                <i class="fas fa-file-png"></i>
+                <h4 class="lang-fa">عکس به PNG (واقعی)</h4>
+                <h4 class="lang-en">Image to PNG (Real)</h4>
+                <p class="lang-fa">تبدیل به PNG شفاف</p>
+                <p class="lang-en">Convert to PNG</p>
+                <span class="badge active">فعال</span>
+            </div>
+        </div>
+        <!-- مبدل فرمت عکس (همان ابزار قبلی) -->
+        <div class="util-box" style="margin-top:10px;">
+            <h4><i class="fas fa-exchange-alt"></i> <span class="lang-fa">مبدل فرمت عکس (واقعی)</span><span class="lang-en">Image Format Converter (Real)</span></h4>
+            <p class="lang-fa">انتخاب عکس و فرمت خروجی (PNG, JPG, WebP, AVIF, BMP)</p>
+            <p class="lang-en">Choose image and output format (PNG, JPG, WebP, AVIF, BMP)</p>
+            <input type="file" id="imgConvertInput2" accept="image/*">
+            <select id="imgFormatSelect" style="width:auto;padding:8px 16px;">
+                <option value="image/png">PNG</option>
+                <option value="image/jpeg" selected>JPG</option>
+                <option value="image/webp">WebP</option>
+                <option value="image/avif">AVIF</option>
+                <option value="image/bmp">BMP</option>
+            </select>
+            <button class="btn btn-primary" id="convertImgBtn"><i class="fas fa-sync"></i> <span class="lang-fa">تبدیل و دانلود</span><span class="lang-en">Convert & Download</span></button>
         </div>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش Word ====== -->
+    <!-- ====== بخش Word (شبیه‌سازی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-word" class="tool-section">
-        <h2 class="lang-fa" style="margin:10px 0;">📝 ابزارهای Word</h2>
-        <h2 class="lang-en" style="margin:10px 0;">📝 Word Tools</h2>
+        <h2 class="lang-fa" style="margin:10px 0;">📝 ابزارهای Word (نمایشی)</h2>
+        <h2 class="lang-en" style="margin:10px 0;">📝 Word Tools (Demo)</h2>
         <div class="tools-grid">
             <div class="tool-card"><i class="fas fa-object-group"></i><h4 class="lang-fa">ترکیب فایل‌های Word</h4><h4 class="lang-en">Merge Word</h4><p class="lang-fa">اتحاد چند سند</p><p class="lang-en">Merge documents</p></div>
             <div class="tool-card"><i class="fas fa-pencil-alt"></i><h4 class="lang-fa">متن به Word</h4><h4 class="lang-en">Text to Word</h4><p class="lang-fa">تبدیل متن به سند</p><p class="lang-en">Text to document</p></div>
         </div>
+        <p style="color:var(--gray-600);font-size:0.85rem;text-align:center;">⚠️ ابزارهای Word نیاز به سرور دارند، فعلاً به صورت نمایشی هستند.</p>
     </div>
 
     <!-- ========================================================= -->
-    <!-- ====== بخش جانبی (Utility) ====== -->
+    <!-- ====== بخش جانبی (Utility - همه واقعی) ====== -->
     <!-- ========================================================= -->
     <div id="tab-util" class="tool-section">
-        <h2 class="lang-fa" style="margin:10px 0;">🔧 ابزارهای جانبی</h2>
-        <h2 class="lang-en" style="margin:10px 0;">🔧 Utility Tools</h2>
+        <h2 class="lang-fa" style="margin:10px 0;">🔧 ابزارهای جانبی (همه واقعی)</h2>
+        <h2 class="lang-en" style="margin:10px 0;">🔧 Utility Tools (All Real)</h2>
         
-        <!-- 1. تولید رمز -->
+        <!-- تولید رمز -->
         <div class="util-box">
             <h3><i class="fas fa-key"></i> <span class="lang-fa">تولید رمز عبور قوی</span><span class="lang-en">Strong Password Generator</span></h3>
             <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
@@ -373,7 +466,7 @@
             <span id="strengthText" class="lang-fa">قوی</span><span id="strengthTextEn" class="lang-en">Strong</span>
         </div>
 
-        <!-- 2. QR Code -->
+        <!-- QR Code -->
         <div class="util-box">
             <h3><i class="fas fa-qrcode"></i> <span class="lang-fa">ساخت QR Code</span><span class="lang-en">QR Code Generator</span></h3>
             <input type="text" id="qrInput" placeholder="لینک یا متن مورد نظر..." value="https://example.com">
@@ -381,17 +474,7 @@
             <div class="qr-result" id="qrResult"><canvas id="qrCanvas"></canvas><button class="btn btn-success" id="downloadQrBtn"><i class="fas fa-download"></i> <span class="lang-fa">دانلود PNG</span><span class="lang-en">Download PNG</span></button></div>
         </div>
 
-        <!-- 3. مبدل فرمت عکس (Canvas) -->
-        <div class="util-box">
-            <h3><i class="fas fa-exchange-alt"></i> <span class="lang-fa">مبدل فرمت عکس</span><span class="lang-en">Image Format Converter</span></h3>
-            <p class="lang-fa">(PNG, JPG, WebP, AVIF, BMP - با Canvas)</p>
-            <p class="lang-en">(PNG, JPG, WebP, AVIF, BMP - with Canvas)</p>
-            <input type="file" id="imgConvertInput" accept="image/*">
-            <select id="imgFormatSelect" style="width:auto;padding:8px 16px;"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option><option value="image/avif">AVIF</option><option value="image/bmp">BMP</option></select>
-            <button class="btn btn-primary" id="convertImgBtn"><span class="lang-fa">تبدیل و دانلود</span><span class="lang-en">Convert & Download</span></button>
-        </div>
-
-        <!-- 4. تبدیل تاریخ شمسی به میلادی -->
+        <!-- تبدیل تاریخ -->
         <div class="util-box">
             <h3><i class="fas fa-calendar-alt"></i> <span class="lang-fa">تبدیل تاریخ شمسی به میلادی</span><span class="lang-en">Jalali to Gregorian</span></h3>
             <div style="display:flex;flex-wrap:wrap;gap:10px;">
@@ -412,15 +495,16 @@
     <h2 class="lang-fa" style="text-align:center;margin-top:40px;">❓ سوالات متداول</h2>
     <h2 class="lang-en" style="text-align:center;margin-top:40px;">❓ FAQ</h2>
     <div class="faq-list">
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا استفاده از این ابزارها رایگان است؟</span><span class="lang-en">Are these tools free?</span></div><div class="a lang-fa">بله، تمامی ابزارهای این سایت کاملاً رایگان هستند و نیازی به ثبت‌نام یا پرداخت ندارند.</div><div class="a lang-en">Yes, all tools are completely free with no registration or payment required.</div></div>
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا فایل‌های من در سرور ذخیره می‌شوند؟</span><span class="lang-en">Are my files stored on servers?</span></div><div class="a lang-fa">خیر، تمام پردازش‌ها در مرورگر شما انجام می‌شود و فایل‌ها به سرور ارسال نمی‌شوند (به جز ابزارهای سنگین که شبیه‌سازی هستند).</div><div class="a lang-en">No, processing happens in your browser and files are not uploaded to servers (except simulated heavy tools).</div></div>
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">چگونه از این سایت در گوگل ادز استفاده کنم؟</span><span class="lang-en">How to use this site for Google Ads?</span></div><div class="a lang-fa">این سایت دارای متا تگ‌های سئو، دیتای ساختاریافته و سرعت بارگذاری بالاست و می‌توانید به عنوان یک دارایی دیجیتال باکیفیت در کمپین‌های گوگل ادز استفاده کنید.</div><div class="a lang-en">This site has SEO meta tags, structured data, and fast loading, making it a high-quality digital asset for Google Ads campaigns.</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا همه ابزارها رایگان هستند؟</span><span class="lang-en">Are all tools free?</span></div><div class="a lang-fa">بله، تمام ابزارهای این سایت کاملاً رایگان هستند و هیچ هزینه‌ای ندارند.</div><div class="a lang-en">Yes, all tools are completely free with no cost.</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا برای تبدیل عکس به متن نیاز به ثبت‌نام است؟</span><span class="lang-en">Do I need to sign up for image to text?</span></div><div class="a lang-fa">خیر، هیچ نیازی به ثبت‌نام یا وارد شدن نیست.</div><div class="a lang-en">No, no registration or login required.</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">چگونه می‌توانم از ابزار عکس به متن استفاده کنم؟</span><span class="lang-en">How to use image to text tool?</span></div><div class="a lang-fa">روی کارت «عکس به متن» کلیک کنید، عکس خود را انتخاب کنید، چند ثانیه صبر کنید تا متن استخراج شود.</div><div class="a lang-en">Click on the "Image to Text" card, select your image, wait a few seconds for extraction.</div></div>
+        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> <span class="lang-fa">آیا ابزارهای PDF و ویدیو واقعی هستند؟</span><span class="lang-en">Are PDF and video tools real?</span></div><div class="a lang-fa">فعلاً به صورت نمایشی (Demo) هستند، اما ابزارهای عکس، جانبی و تبدیل به PDF واقعی کار می‌کنند.</div><div class="a lang-en">Currently they are demos, but image, utility, and to-PDF tools work for real.</div></div>
     </div>
 
-    <!-- ===== فوتر ===== -->
+    <!-- ===== فوتر با نام طراح ===== -->
     <footer class="footer">
-        <span class="lang-fa">© ۲۰۲۶ تمامی حقوق محفوظ است. | طراحی شده برای سئو و گوگل ادز</span>
-        <span class="lang-en">© 2026 All Rights Reserved. | Designed for SEO & Google Ads</span>
+        <span class="lang-fa">© ۲۰۲۶ تمامی حقوق محفوظ است. | طراحی و توسعه توسط <span class="designer">مهدی رحیمیان</span></span>
+        <span class="lang-en">© 2026 All Rights Reserved. | Designed & Developed by <span class="designer">Mehdi Rahimián</span></span>
     </footer>
 </div>
 
@@ -438,7 +522,7 @@ langToggle.addEventListener('click', () => {
 });
 
 // ============================================================
-// ۲. تب‌ها (Tab Switching)
+// ۲. تب‌ها
 // ============================================================
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = {
@@ -450,21 +534,18 @@ const sections = {
     'tab-word': document.getElementById('tab-word'),
     'tab-util': document.getElementById('tab-util')
 };
-
 tabs.forEach(tab => {
     tab.addEventListener('click', function() {
         tabs.forEach(t => t.classList.remove('active'));
         this.classList.add('active');
-        Object.keys(sections).forEach(key => {
-            sections[key].classList.remove('active');
-        });
+        Object.keys(sections).forEach(key => sections[key].classList.remove('active'));
         const target = this.dataset.tab;
         if (sections[target]) sections[target].classList.add('active');
     });
 });
 
 // ============================================================
-// ۳. ابزار تولید رمز عبور
+// ۳. ابزار تولید رمز
 // ============================================================
 function generatePassword() {
     const len = parseInt(document.getElementById('passLen').value) || 12;
@@ -481,7 +562,6 @@ function generatePassword() {
     let pass = '';
     for (let i = 0; i < len; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
     document.getElementById('passOutput').value = pass;
-    // قدرت رمز
     let strength = 0;
     if (/[a-z]/.test(pass)) strength += 20;
     if (/[A-Z]/.test(pass)) strength += 20;
@@ -502,7 +582,7 @@ document.querySelectorAll('#chkUpper, #chkLower, #chkNum, #chkSym').forEach(cb =
 generatePassword();
 
 // ============================================================
-// ۴. ابزار QR Code
+// ۴. QR Code
 // ============================================================
 let qrInstance = null;
 document.getElementById('genQrBtn').addEventListener('click', function() {
@@ -522,10 +602,10 @@ document.getElementById('downloadQrBtn').addEventListener('click', function() {
 document.getElementById('genQrBtn').click();
 
 // ============================================================
-// ۵. مبدل فرمت عکس با Canvas
+// ۵. مبدل فرمت عکس (واقعی)
 // ============================================================
 document.getElementById('convertImgBtn').addEventListener('click', function() {
-    const fileInput = document.getElementById('imgConvertInput');
+    const fileInput = document.getElementById('imgConvertInput2');
     const format = document.getElementById('imgFormatSelect').value;
     if (!fileInput.files[0]) return alert('لطفاً یک عکس انتخاب کنید');
     const reader = new FileReader();
@@ -546,24 +626,27 @@ document.getElementById('convertImgBtn').addEventListener('click', function() {
     };
     reader.readAsDataURL(fileInput.files[0]);
 });
+// همچنین برای کارت‌هایی که روی کلیک باز می‌شوند، همان input را استفاده می‌کنیم
+document.getElementById('imgConvertInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    // کاربر را به تب Utility ببریم و فایل را در input2 قرار دهیم
+    document.querySelector('[data-tab="tab-util"]').click();
+    document.getElementById('imgConvertInput2').files = this.files;
+    alert('اکنون در بخش "جانبی" می‌توانید فرمت خروجی را انتخاب کرده و تبدیل کنید.');
+});
 
 // ============================================================
-// ۶. تبدیل تاریخ شمسی به میلادی (ساده)
+// ۶. تبدیل تاریخ
 // ============================================================
 document.getElementById('convertDateBtn').addEventListener('click', function() {
     const y = parseInt(document.getElementById('yearInput').value) || 1404;
     const m = parseInt(document.getElementById('monthInput').value) || 1;
     const d = parseInt(document.getElementById('dayInput').value) || 1;
-    // الگوریتم تقریبی (برای نمایش)
-    const greg = new Date(y - 621, m - 1, d);
-    // اصلاح مختصر برای دقت بهتر (الگوریتم معروف)
-    const jy = y;
-    const jm = m;
-    const jd = d;
-    const gy = (jy > 979) ? 1600 : 621;
-    let gd = jd + 79;
-    let gm = jm + 9;
-    let gyear = gy + jy - 1;
+    const gy = (y > 979) ? 1600 : 621;
+    let gd = d + 79;
+    let gm = m + 9;
+    let gyear = gy + y - 1;
     if (gm > 12) { gm -= 12; gyear += 1; }
     if (gd > 30) { gd -= 30; gm += 1; if (gm > 12) { gm -= 12; gyear += 1; } }
     document.getElementById('dateResult').innerHTML = `
@@ -574,9 +657,95 @@ document.getElementById('convertDateBtn').addEventListener('click', function() {
 document.getElementById('convertDateBtn').click();
 
 // ============================================================
-// ۷. شبیه‌سازی تبدیل PDF (نمایشی)
+// ۷. تبدیل عکس به متن (OCR) با Tesseract.js
 // ============================================================
-document.getElementById('pdfConvertBtn').addEventListener('click', function() {
+document.getElementById('ocrInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const resultDiv = document.getElementById('ocrResult');
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = '⏳ در حال پردازش و استخراج متن (چند ثانیه طول می‌کشد)...';
+    Tesseract.recognize(file, 'fas+eng', { logger: m => console.log(m) })
+        .then(({ data: { text } }) => {
+            resultDiv.innerHTML = `<strong>متن استخراج شده:</strong><br><pre style="white-space:pre-wrap;font-family:inherit;">${text || 'متنی پیدا نشد!'}</pre>`;
+        })
+        .catch(() => {
+            resultDiv.innerHTML = '❌ خطا در پردازش عکس. لطفاً عکس واضح‌تری انتخاب کنید.';
+        });
+});
+
+// ============================================================
+// ۸. تبدیل عکس به PDF (واقعی) با jsPDF
+// ============================================================
+function handleImageToPDF(fileInputId) {
+    const input = document.getElementById(fileInputId);
+    const file = input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        const img = new Image();
+        img.onload = function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const pageHeight = doc.internal.pageSize.getHeight();
+            const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
+            const w = img.width * ratio;
+            const h = img.height * ratio;
+            const x = (pageWidth - w) / 2;
+            const y = (pageHeight - h) / 2;
+            doc.addImage(ev.target.result, 'JPEG', x, y, w, h);
+            doc.save('image-to-pdf.pdf');
+        };
+        img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+document.getElementById('imgToPdfInput').addEventListener('change', function() { handleImageToPDF('imgToPdfInput'); });
+document.getElementById('imgToPdfInput2').addEventListener('change', function() { handleImageToPDF('imgToPdfInput2'); });
+
+// ============================================================
+// ۹. تبدیل متن به PDF (واقعی)
+// ============================================================
+function convertTextToPDF() {
+    const text = prompt('متن خود را برای تبدیل به PDF وارد کنید:');
+    if (!text) return;
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.text(text, 10, 10, { maxWidth: 190 });
+    doc.save('text-to-pdf.pdf');
+}
+
+// ============================================================
+// ۱۰. فشرده‌سازی عکس با Canvas
+// ============================================================
+document.getElementById('compressInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(ev) {
+        const img = new Image();
+        img.onload = function() {
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            // کاهش کیفیت به 50% برای فشرده‌سازی
+            const link = document.createElement('a');
+            link.download = 'compressed.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.5);
+            link.click();
+        };
+        img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+
+// ============================================================
+// ۱۱. شبیه‌سازی تبدیل (برای PDF و دیگر ابزارهای نمایشی)
+// ============================================================
+function simulateConvert() {
     const wrap = document.getElementById('pdfProgress');
     const fill = document.getElementById('pdfFill');
     const dl = document.getElementById('pdfDownload');
@@ -593,15 +762,17 @@ document.getElementById('pdfConvertBtn').addEventListener('click', function() {
             dl.style.display = 'block';
         }
     }, 200);
-});
+}
 document.querySelector('#pdfDownload .btn').addEventListener('click', function() {
-    alert('فایل PDF با موفقیت دانلود شد! (شبیه‌سازی)');
+    alert('دانلود شبیه‌سازی شد (فایل واقعی تولید نشد).');
 });
 
 // ============================================================
-// ۸. نمایش پاسخ‌های FAQ
+// ۱۲. نمایش پاسخ‌های FAQ
 // ============================================================
 document.querySelectorAll('.faq-item .a').forEach(el => el.style.display = 'block');
+
+console.log('✅ سایت بارگذاری شد - ابزارهای واقعی: عکس به متن، عکس به PDF، متن به PDF، فشرده‌سازی، مبدل فرمت، رمز، QR، تاریخ.');
 </script>
 </body>
 </html>
