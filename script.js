@@ -28,6 +28,21 @@
     { id: "video2gif",   icon: "🎬", seoKey: "seo_vid_title",     descKey: "tool_vid_desc" }
   ];
 
+  /* ===== Toast ===== */
+  function showToast(message, type = 'success') {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    requestAnimationFrame(() => toast.style.opacity = '1');
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  }
+
   /* ===== i18n =========================================================== */
 
   async function loadTranslations() {
@@ -76,6 +91,7 @@
     currentLang = lang;
     localStorage.setItem("lang", currentLang);
     applyTranslations();
+    showToast(t('lang_switched') || 'زبان تغییر کرد', 'info');
   }
 
   /* ===== Theme ========================================================== */
@@ -91,6 +107,19 @@
     const next = current === "dark" ? "light" : "dark";
     localStorage.setItem("theme", next);
     applyTheme(next);
+    showToast(next === 'dark' ? 'تم تاریک فعال شد' : 'تم روشن فعال شد', 'info');
+  }
+
+  function setAutoTheme() {
+    const hour = new Date().getHours();
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = (hour >= 19 || hour < 6) ? 'dark' : 'light';
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      applyTheme(saved);
+    } else {
+      applyTheme(prefersDark ? 'dark' : theme);
+    }
   }
 
   /* ===== Navigation ===================================================== */
@@ -111,6 +140,8 @@
     nav.classList.remove("open");
     toggle.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
+    // Save last tool
+    localStorage.setItem('lastTool', toolId);
   }
 
   function updateSEO(toolId) {
@@ -140,7 +171,7 @@
       card.className = "home-card";
       card.setAttribute("data-tool", tool.id);
       card.innerHTML =
-        '<div class="hc-icon">' + tool.icon + "</div>" +
+        '<span class="hc-icon">' + tool.icon + "</span>" +
         '<div class="hc-title">' + t("nav_" + tool.id) + "</div>" +
         '<div class="hc-desc">' + t(tool.descKey) + "</div>";
       card.addEventListener("click", function () { showTool(tool.id); });
@@ -842,6 +873,14 @@
 
   /* ===== 8. OCR (Tesseract.js via CDN) ================================== */
 
+  function cleanPersianOCR(text) {
+    // حذف کاراکترهای غیرفارسی (به جز اعداد و علائم نگارشی)
+    let cleaned = text.replace(/[^\u0600-\u06FF\uFB8A\u067E\u0686\u0698\u06AF\u200C\s\n\d،؛؟.!?]/g, ' ');
+    // اصلاح فاصله‌های اضافی
+    cleaned = cleaned.replace(/\s+/g, ' ').trim();
+    return cleaned;
+  }
+
   function initOCR() {
     const dz = document.getElementById("ocrDropzone");
     const fileInput = document.getElementById("ocrFile");
@@ -868,7 +907,6 @@
     preview.appendChild(img);
 
     // Load Tesseract.js from CDN (cdnjs)
-    // Source: https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js
     if (typeof Tesseract === "undefined") {
       const script = document.createElement("script");
       script.src = "https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js";
@@ -883,10 +921,43 @@
   function doOCR(file) {
     const spinner = document.getElementById("ocrSpinner");
     const result = document.getElementById("ocrResult");
-    Tesseract.recognize(file, "eng")
-      .then(function (res) { result.value = res.data.text.trim(); })
-      .catch(function (e) { result.value = "Error: " + e.message; })
-      .finally(function () { spinner.classList.add("hidden"); });
+    const progress = document.createElement("div");
+    progress.id = "ocrProgress";
+    progress.style.cssText = "width:100%; height:4px; background:#e2e8f0; border-radius:4px; margin:8px 0; overflow:hidden;";
+    const bar = document.createElement("div");
+    bar.style.cssText = "height:100%; width:0%; background:linear-gradient(90deg, #2563eb, #06b6d4); transition:width 0.3s;";
+    progress.appendChild(bar);
+    result.parentNode.insertBefore(progress, result);
+
+    Tesseract.recognize(
+      file,
+      'fas',
+      {
+        logger: (m) => {
+          if (m.status === 'recognizing text') {
+            const pct = Math.round(m.progress * 100);
+            bar.style.width = pct + '%';
+          }
+        },
+        tessedit_pageseg_mode: '6',
+        tessedit_char_whitelist: 'ابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی‌ءآأؤئ',
+        tessedit_ocr_engine_mode: '3'
+      }
+    )
+    .then((res) => {
+      const raw = res.data.text;
+      const cleaned = cleanPersianOCR(raw);
+      result.value = cleaned;
+      showToast('متن با موفقیت استخراج شد', 'success');
+    })
+    .catch((e) => {
+      result.value = "خطا: " + e.message;
+      showToast('خطا در OCR: ' + e.message, 'error');
+    })
+    .finally(() => {
+      spinner.classList.add("hidden");
+      progress.remove();
+    });
   }
 
   /* ===== 9. Image Format Converter (Canvas API) ========================= */
@@ -908,7 +979,7 @@
     });
 
     document.getElementById("imgConvBtn").addEventListener("click", function () {
-      if (!currentFile) { alert(t("err_no_file")); return; }
+      if (!currentFile) { showToast(t("err_no_file"), 'error'); return; }
       const format = document.getElementById("imgConvFormat").value;
       const result = document.getElementById("imgConvResult");
       result.innerHTML = "";
@@ -929,6 +1000,7 @@
           dl.textContent = t("download");
           dl.addEventListener("click", function () { downloadBlob(blob, "converted." + ext); });
           result.appendChild(dl);
+          showToast('تصویر با موفقیت تبدیل شد', 'success');
         }, format);
       };
       img.src = URL.createObjectURL(currentFile);
@@ -975,7 +1047,6 @@
       result.innerHTML = "";
 
       // Load PDF.js from CDN (cdnjs)
-      // Source: https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs
       if (!window.pdfjsLib) {
         const script = document.createElement("script");
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
@@ -1017,8 +1088,8 @@
                 });
               }));
             }
-            Promise.all(pagesPromises).then(function () { spinner.classList.add("hidden"); });
-          }).catch(function (err) { spinner.classList.add("hidden"); result.innerHTML = "Error: " + err.message; });
+            Promise.all(pagesPromises).then(function () { spinner.classList.add("hidden"); showToast('PDF با موفقیت تبدیل شد', 'success'); });
+          }).catch(function (err) { spinner.classList.add("hidden"); result.innerHTML = "Error: " + err.message; showToast('خطا در تبدیل PDF', 'error'); });
         };
         reader.readAsArrayBuffer(pdfFile);
       }
@@ -1044,9 +1115,7 @@
     }, true);
 
     document.getElementById("img2pdfBtn").addEventListener("click", function () {
-      if (!img2pdfFiles.length) { alert(t("err_no_file")); return; }
-      // Load jsPDF from CDN
-      // Source: https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js
+      if (!img2pdfFiles.length) { showToast(t("err_no_file"), 'error'); return; }
       if (!window.jspdf) {
         const script = document.createElement("script");
         script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
@@ -1074,6 +1143,7 @@
             processed++;
             if (processed === img2pdfFiles.length) {
               pdf.save("converted.pdf");
+              showToast('PDF با موفقیت ساخته شد', 'success');
             }
           };
           img.src = e.target.result;
@@ -1106,7 +1176,8 @@
         else if (to === "XML") result = jsonToXml(data);
         else if (to === "YAML") result = jsonToYaml(data, 0);
         output.value = result;
-      } catch (e) { output.value = "Error: " + e.message; }
+        showToast('داده با موفقیت تبدیل شد', 'success');
+      } catch (e) { output.value = "Error: " + e.message; showToast('خطا در تبدیل داده', 'error'); }
     });
 
     document.getElementById("dataDownload").addEventListener("click", function () {
@@ -1224,19 +1295,17 @@
     setupDropzone(dz, fileInput, function (file) { heicFile = file; });
 
     document.getElementById("heicBtn").addEventListener("click", function () {
-      if (!heicFile) { alert(t("err_no_file")); return; }
+      if (!heicFile) { showToast(t("err_no_file"), 'error'); return; }
       const format = document.getElementById("heicFormat").value;
       const spinner = document.getElementById("heicSpinner");
       spinner.classList.remove("hidden");
       preview.innerHTML = "";
 
-      // Load heic2any from CDN
-      // Source: https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js
       if (!window.heic2any) {
         const script = document.createElement("script");
         script.src = "https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js";
         script.onload = doConvert;
-        script.onerror = function () { spinner.classList.add("hidden"); alert("Error loading HEIC library."); };
+        script.onerror = function () { spinner.classList.add("hidden"); showToast('خطا در بارگذاری کتابخانه HEIC', 'error'); };
         document.head.appendChild(script);
       } else { doConvert(); }
 
@@ -1252,8 +1321,9 @@
             dl.className = "btn-secondary"; dl.textContent = t("download");
             dl.addEventListener("click", function () { downloadBlob(blob, "converted." + ext); });
             preview.appendChild(dl);
+            showToast('HEIC با موفقیت تبدیل شد', 'success');
           })
-          .catch(function (e) { alert("Error: " + e.message); })
+          .catch(function (e) { showToast('خطا: ' + e.message, 'error'); })
           .finally(function () { spinner.classList.add("hidden"); });
       }
     });
@@ -1270,7 +1340,7 @@
     setupDropzone(dz, fileInput, function (file) { videoFile = file; });
 
     document.getElementById("vidBtn").addEventListener("click", function () {
-      if (!videoFile) { alert(t("err_no_file")); return; }
+      if (!videoFile) { showToast(t("err_no_file"), 'error'); return; }
       const spinner = document.getElementById("vidSpinner");
       spinner.classList.remove("hidden");
       result.innerHTML = "";
@@ -1312,8 +1382,6 @@
 
       function buildGIF(frames, w, h, fpsVal) {
         if (!frames.length) { spinner.classList.add("hidden"); return; }
-        // Use GIF.js from CDN
-        // Source: https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js
         if (!window.GIF) {
           const script = document.createElement("script");
           script.src = "https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js";
@@ -1334,6 +1402,7 @@
             dl.addEventListener("click", function () { downloadBlob(blob, "converted.gif"); });
             result.appendChild(dl);
             spinner.classList.add("hidden");
+            showToast('ویدیو با موفقیت به GIF تبدیل شد', 'success');
           });
           gif.render();
         }
@@ -1379,12 +1448,27 @@
     setTimeout(function () { btn.textContent = orig; btn.classList.remove("copied"); }, 1500);
   }
 
+  /* ===== Back to top ==================================================== */
+
+  function initBackToTop() {
+    const btn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 400) {
+        btn.classList.add("show");
+      } else {
+        btn.classList.remove("show");
+      }
+    });
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   /* ===== Init =========================================================== */
 
   async function init() {
     // Theme
-    const savedTheme = localStorage.getItem("theme") || "light";
-    applyTheme(savedTheme);
+    setAutoTheme();
 
     // Translations
     await loadTranslations();
@@ -1414,9 +1498,6 @@
       menuToggle.setAttribute("aria-expanded", String(open));
     });
 
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
     // Init all tools
     initCalculator();
     initDateConverter();
@@ -1431,9 +1512,15 @@
     initDataConverter();
     initHEIC();
     initVideo2GIF();
+    initBackToTop();
 
-    // Show home
-    showTool("home");
+    // Show last tool or home
+    const last = localStorage.getItem('lastTool');
+    if (last && document.getElementById('section-' + last)) {
+      showTool(last);
+    } else {
+      showTool("home");
+    }
   }
 
   if (document.readyState === "loading") {
