@@ -7,10 +7,10 @@
   --text: #0f172a;
   --text-muted: #475569;
   --border: #e2e8f0;
-  --primary: #1e3a8a;        /* آبی تیره */
+  --primary: #1e3a8a;
   --primary-hover: #1e40af;
   --primary-light: #dbeafe;
-  --accent: #d4af37;         /* طلایی */
+  --accent: #d4af37;
   --success: #16a34a;
   --warning: #d97706;
   --error: #dc2626;
@@ -223,7 +223,10 @@ main { flex: 1; max-width: 1280px; margin: 0 auto; width: 100%; padding: 24px 16
 .stat span:last-child { font-size: 0.8rem; color: var(--text-muted); }
 
 /* ===== QR ===== */
-#qrCanvas { display: block; margin: 20px auto; border: 8px solid #fff; border-radius: 8px; max-width: 100%; }
+#qrCanvas {
+  display: block; margin: 20px auto; border: 8px solid #fff; border-radius: 8px; max-width: 100%;
+  background: #fff;
+}
 [data-theme="dark"] #qrCanvas { border-color: var(--bg-card); }
 
 /* ===== Dropzone ===== */
@@ -274,7 +277,7 @@ main { flex: 1; max-width: 1280px; margin: 0 auto; width: 100%; padding: 24px 16
   box-shadow: var(--shadow-lg);
   transition: all 0.3s;
   opacity: 0; transform: translateY(10px);
-  display: none; /* توسط اسکریپت نمایش داده می‌شود */
+  display: none;
 }
 #backToTop.show {
   opacity: 1; transform: translateY(0);
