@@ -1,348 +1,378 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Tools - ابزارهای هوشمند آنلاین</title>
-    <meta name="description" content="Free online tools: OCR, Image Converter, PDF Tools, Password Generator, Calculator, QR Code Generator">
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Smart Tools",
-        "applicationCategory": "UtilityApplication",
-        "operatingSystem": "All",
-        "offers": {"@type": "Offer", "price": "0"},
-        "featureList": ["OCR","Image Converter","PDF Tools","Password Generator","Calculator","QR Code","Date Converter","Unit Converter"]
-    }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-lang-key="seo_home_title">ابزارک‌های هوشمند | ابزارهای آنلاین رایگان</title>
+  <meta name="description" data-lang-key="seo_home_desc" content="مجموعه ۱۳ ابزار آنلاین رایگان: ماشین‌حساب، مبدل تاریخ، ساخت QR، OCR، تبدیل عکس و PDF. کاملاً دو زبانه و بدون نیاز به نصب." />
+  <meta name="keywords" content="ابزار آنلاین, ماشین حساب, مبدل تاریخ, QR کد, OCR, تبدیل عکس, تبدیل PDF, free online tools, calculator, date converter" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Smart Tools" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" data-lang-key="seo_home_title" content="ابزارک‌های هوشمند" />
+  <meta property="og:description" data-lang-key="seo_home_desc" content="مجموعه ابزارهای آنلاین رایگان" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Smart Tools",
+    "alternateName": "ابزارک‌های هوشمند",
+    "description": "Free online tools collection: calculator, date converter, QR generator, OCR, image and PDF converters.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Standard Calculator","Jalali-Gregorian Date Converter","Strong Password Generator",
+      "Length and Weight Unit Converter","Character and Word Counter","QR Code Generator",
+      "Number to Persian Words","Image to Text OCR","Image Format Converter",
+      "PDF to Image and Image to PDF","CSV JSON XML YAML Converter","HEIC Image Converter",
+      "Video to GIF Converter"
+    ]
+  }
+  </script>
+  <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
 </head>
-<body class="light-mode">
-
-<header id="siteHeader">
-    <div class="header-container">
-        <div class="logo" id="logoBtn">
-            <span class="logo-icon">⚡</span>
-            <span class="logo-text" data-i18n="logo">Smart Tools</span>
+<body>
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" data-tool="home" aria-label="Home">
+        <span class="logo-icon">⚙️</span>
+        <span class="logo-text" data-lang-key="site_title">ابزارک‌های هوشمند</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-item active" data-tool="home" data-lang-key="nav_home">خانه</button>
+        <button class="nav-item" data-tool="calculator" data-lang-key="nav_calculator">ماشین‌حساب</button>
+        <button class="nav-item" data-tool="date" data-lang-key="nav_date_converter">مبدل تاریخ</button>
+        <button class="nav-item" data-tool="password" data-lang-key="nav_password">رمز عبور</button>
+        <button class="nav-item" data-tool="units" data-lang-key="nav_units">مبدل واحدها</button>
+        <button class="nav-item" data-tool="counter" data-lang-key="nav_counter">شمارشگر متن</button>
+        <button class="nav-item" data-tool="qr" data-lang-key="nav_qr">ساخت QR</button>
+        <button class="nav-item" data-tool="n2w" data-lang-key="nav_number2word">عدد به حروف</button>
+        <button class="nav-item" data-tool="ocr" data-lang-key="nav_ocr">عکس به متن</button>
+        <button class="nav-item" data-tool="imgconvert" data-lang-key="nav_imgconvert">تبدیل عکس</button>
+        <button class="nav-item" data-tool="pdf" data-lang-key="nav_pdf">تبدیل PDF</button>
+        <button class="nav-item" data-tool="data" data-lang-key="nav_dataconvert">تبدیل داده</button>
+        <button class="nav-item" data-tool="heic" data-lang-key="nav_heic">تبدیل HEIC</button>
+        <button class="nav-item" data-tool="video2gif" data-lang-key="nav_video2gif">ویدیو به GIF</button>
+      </nav>
+      <div class="header-controls">
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="fa" data-lang-key="lang_fa">فارسی</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en" data-lang-key="lang_en">English</button>
         </div>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
-        <nav id="mainNav">
-            <button class="nav-btn active" data-tool="home" data-i18n="nav_home">Home</button>
-            <button class="nav-btn" data-tool="ocr" data-i18n="nav_ocr">OCR</button>
-            <button class="nav-btn" data-tool="image-converter" data-i18n="nav_img">Images</button>
-            <button class="nav-btn" data-tool="pdf-converter" data-i18n="nav_pdf">PDF</button>
-            <button class="nav-btn" data-tool="password" data-i18n="nav_pass">Password</button>
-            <button class="nav-btn" data-tool="calculator" data-i18n="nav_calc">Calculator</button>
-            <button class="nav-btn" data-tool="qr-generator" data-i18n="nav_qr">QR Code</button>
-            <button class="nav-btn" data-tool="date-converter" data-i18n="nav_date">Date</button>
-            <button class="nav-btn" data-tool="unit-converter" data-i18n="nav_unit">Units</button>
-            <button class="nav-btn" data-tool="char-counter" data-i18n="nav_char">Counter</button>
-            <button class="nav-btn" data-tool="number-to-words" data-i18n="nav_num">Numbers</button>
-        </nav>
-        <div class="header-actions">
-            <button class="lang-toggle" id="langToggle"><span>🌐</span><span class="lang-text">EN</span></button>
-            <button class="theme-toggle" id="themeToggle"><span class="theme-icon">🌙</span></button>
-        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Theme" data-lang-key="theme_toggle">🌙</button>
+      </div>
     </div>
-</header>
+  </header>
 
-<main id="mainContent">
+  <main id="main-content">
 
     <!-- HOME -->
-    <section id="home" class="tool-section active">
-        <div class="container">
-            <h1 class="hero-title" data-i18n="hero_title">Free Online Tools Platform</h1>
-            <p class="hero-desc" data-i18n="hero_desc">All tools run 100% in your browser. No data is sent to any server.</p>
-            <div class="tools-grid">
-                <div class="tool-card" data-tool="ocr"><div class="card-icon">📄</div><h2 data-i18n="t_ocr">Image to Text (OCR)</h2><p data-i18n="t_ocr_d">Extract text from images using AI-powered OCR.</p></div>
-                <div class="tool-card" data-tool="image-converter"><div class="card-icon">🖼️</div><h2 data-i18n="t_img">Image Converter</h2><p data-i18n="t_img_d">Convert JPG, PNG, WebP, BMP formats instantly.</p></div>
-                <div class="tool-card" data-tool="pdf-converter"><div class="card-icon">📑</div><h2 data-i18n="t_pdf">PDF Tools</h2><p data-i18n="t_pdf_d">PDF to image, image to PDF, text extraction.</p></div>
-                <div class="tool-card" data-tool="password"><div class="card-icon">🔐</div><h2 data-i18n="t_pass">Password Generator</h2><p data-i18n="t_pass_d">Create strong secure passwords with strength meter.</p></div>
-                <div class="tool-card" data-tool="calculator"><div class="card-icon">🧮</div><h2 data-i18n="t_calc">Calculator</h2><p data-i18n="t_calc_d">Standard calculator with history and percentage.</p></div>
-                <div class="tool-card" data-tool="qr-generator"><div class="card-icon">📱</div><h2 data-i18n="t_qr">QR Code Generator</h2><p data-i18n="t_qr_d">Generate QR codes from text or URLs. Download as PNG.</p></div>
-                <div class="tool-card" data-tool="date-converter"><div class="card-icon">📅</div><h2 data-i18n="t_date">Date Converter</h2><p data-i18n="t_date_d">Convert Jalali (Persian) to Gregorian and vice versa.</p></div>
-                <div class="tool-card" data-tool="unit-converter"><div class="card-icon">📐</div><h2 data-i18n="t_unit">Unit Converter</h2><p data-i18n="t_unit_d">Convert length and weight units instantly.</p></div>
-                <div class="tool-card" data-tool="char-counter"><div class="card-icon">📝</div><h2 data-i18n="t_char">Character Counter</h2><p data-i18n="t_char_d">Count characters, words, sentences, paragraphs live.</p></div>
-                <div class="tool-card" data-tool="number-to-words"><div class="card-icon">🔢</div><h2 data-i18n="t_num">Number to Words</h2><p data-i18n="t_num_d">Convert numbers to Persian/English words.</p></div>
-            </div>
-        </div>
+    <section class="tool-section active" id="section-home">
+      <div class="home-hero">
+        <h1 data-lang-key="home_title">به ابزارک‌های هوشمند خوش آمدید</h1>
+        <p class="home-desc" data-lang-key="home_desc">مجموعه‌ای از ۱۳ ابزار آنلاین رایگان...</p>
+        <p class="home-hint" data-lang-key="home_explore">ابزارها را از منوی بالا انتخاب کنید.</p>
+        <div class="home-grid" id="homeGrid"></div>
+      </div>
     </section>
 
-    <!-- OCR -->
-    <section id="ocr" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="ocr_title">📄 Image to Text (OCR)</h1>
-            <div class="card">
-                <div class="upload-area" id="ocrUploadArea">
-                    <input type="file" id="ocrFileInput" accept="image/*" hidden>
-                    <div class="upload-prompt"><span class="upload-icon">📤</span><p data-i18n="ocr_drop">Click or drag image here</p></div>
-                    <img id="ocrPreview" style="display:none;max-width:100%;max-height:300px;margin-top:1rem;border-radius:8px;" alt="preview">
-                </div>
-                <div class="options-row">
-                    <select id="ocrLang">
-                        <option value="eng">English</option>
-                        <option value="fas">فارسی (Persian)</option>
-                        <option value="ara">العربية (Arabic)</option>
-                    </select>
-                    <button class="btn-primary" id="ocrStartBtn" data-i18n="ocr_start">Start OCR</button>
-                </div>
-                <div id="ocrProgress" style="display:none"><div class="progress-bar"><div class="progress-fill" id="ocrProgressFill"></div></div><p id="ocrProgressText"></p></div>
-                <div id="ocrResult" style="display:none">
-                    <h3 data-i18n="ocr_result">Result:</h3>
-                    <textarea id="ocrOutput" rows="8" readonly></textarea>
-                    <div class="btn-row">
-                        <button class="btn-secondary" id="ocrCopyBtn" data-i18n="copy">Copy</button>
-                        <button class="btn-secondary" id="ocrDlBtn" data-i18n="download_txt">Download TXT</button>
-                    </div>
-                </div>
-            </div>
+    <!-- 1. CALCULATOR -->
+    <section class="tool-section" id="section-calculator">
+      <div class="card">
+        <h1 data-lang-key="nav_calculator">ماشین‌حساب</h1>
+        <p class="tool-desc" data-lang-key="tool_calc_desc"></p>
+        <div class="calc-history" id="calcHistory" data-lang-key="calc_history">تاریخچه عملیات</div>
+        <div class="calc-display" id="calcDisplay">0</div>
+        <div class="calc-buttons" id="calcButtons">
+          <button class="calc-btn fn" data-action="clear">C</button>
+          <button class="calc-btn fn" data-action="percent">%</button>
+          <button class="calc-btn fn" data-action="back">⌫</button>
+          <button class="calc-btn op" data-op="/">÷</button>
+          <button class="calc-btn num" data-num="7">7</button>
+          <button class="calc-btn num" data-num="8">8</button>
+          <button class="calc-btn num" data-num="9">9</button>
+          <button class="calc-btn op" data-op="*">×</button>
+          <button class="calc-btn num" data-num="4">4</button>
+          <button class="calc-btn num" data-num="5">5</button>
+          <button class="calc-btn num" data-num="6">6</button>
+          <button class="calc-btn op" data-op="-">−</button>
+          <button class="calc-btn num" data-num="1">1</button>
+          <button class="calc-btn num" data-num="2">2</button>
+          <button class="calc-btn num" data-num="3">3</button>
+          <button class="calc-btn op" data-op="+">+</button>
+          <button class="calc-btn num zero" data-num="0">0</button>
+          <button class="calc-btn num" data-action="dot">.</button>
+          <button class="calc-btn eq" data-action="equals">=</button>
         </div>
+      </div>
     </section>
 
-    <!-- IMAGE CONVERTER -->
-    <section id="image-converter" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="img_title">🖼️ Image Format Converter</h1>
-            <div class="card">
-                <div class="upload-area" id="imgUploadArea">
-                    <input type="file" id="imgFileInput" accept="image/*" multiple hidden>
-                    <div class="upload-prompt"><span class="upload-icon">📤</span><p data-i18n="img_drop">Click or drag images here</p></div>
-                    <div id="imgPreviewGrid" class="preview-grid"></div>
-                </div>
-                <div class="options-row">
-                    <select id="imgOutFormat">
-                        <option value="image/png">PNG</option>
-                        <option value="image/jpeg">JPG</option>
-                        <option value="image/webp">WebP</option>
-                        <option value="image/bmp">BMP</option>
-                    </select>
-                    <label><span data-i18n="quality">Quality:</span> <span id="imgQualVal">90</span>%</label>
-                    <input type="range" id="imgQuality" min="10" max="100" value="90">
-                    <button class="btn-primary" id="imgConvertBtn" data-i18n="convert_all">Convert All</button>
-                </div>
-                <div id="imgResults"></div>
+    <!-- 2. DATE CONVERTER -->
+    <section class="tool-section" id="section-date">
+      <div class="card">
+        <h1 data-lang-key="nav_date_converter">مبدل تاریخ</h1>
+        <p class="tool-desc" data-lang-key="tool_date_desc"></p>
+        <div class="date-panels">
+          <div class="date-panel">
+            <h2 data-lang-key="date_solar">تاریخ شمسی</h2>
+            <div class="date-inputs">
+              <input type="number" id="jYear" data-lang-key="date_year" placeholder="سال" min="1" max="9999" />
+              <select id="jMonth"></select>
+              <input type="number" id="jDay" placeholder="روز" min="1" max="31" />
             </div>
+            <button class="btn-primary" id="jToG" data-lang-key="date_to_gregorian">شمسی به میلادی</button>
+          </div>
+          <div class="date-panel">
+            <h2 data-lang-key="date_gregorian">تاریخ میلادی</h2>
+            <div class="date-inputs">
+              <input type="number" id="gYear" placeholder="Year" min="1" max="9999" />
+              <select id="gMonth"></select>
+              <input type="number" id="gDay" placeholder="Day" min="1" max="31" />
+            </div>
+            <button class="btn-primary" id="gToJ" data-lang-key="date_to_solar">میلادی به شمسی</button>
+          </div>
         </div>
+        <div class="result-box" id="dateResult"></div>
+      </div>
     </section>
 
-    <!-- PDF CONVERTER -->
-    <section id="pdf-converter" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="pdf_title">📑 PDF Tools</h1>
-            <div class="card">
-                <div class="tab-bar">
-                    <button class="tab-btn active" data-tab="img2pdf" data-i18n="tab_img2pdf">Image → PDF</button>
-                    <button class="tab-btn" data-tab="pdf2img" data-i18n="tab_pdf2img">PDF → Image</button>
-                </div>
-                <div class="tab-panel active" id="panel-img2pdf">
-                    <div class="upload-area" id="img2pdfUploadArea">
-                        <input type="file" id="img2pdfInput" accept="image/*" multiple hidden>
-                        <div class="upload-prompt"><span class="upload-icon">📤</span><p data-i18n="img2pdf_drop">Select images to combine into PDF</p></div>
-                    </div>
-                    <button class="btn-primary" id="img2pdfBtn" data-i18n="create_pdf">Create PDF</button>
-                </div>
-                <div class="tab-panel" id="panel-pdf2img">
-                    <div class="upload-area" id="pdf2imgUploadArea">
-                        <input type="file" id="pdf2imgInput" accept=".pdf" hidden>
-                        <div class="upload-prompt"><span class="upload-icon">📤</span><p data-i18n="pdf2img_drop">Select a PDF file</p></div>
-                    </div>
-                    <button class="btn-primary" id="pdf2imgBtn" data-i18n="convert_to_img">Convert to Images</button>
-                    <div id="pdf2imgResults"></div>
-                </div>
-            </div>
+    <!-- 3. PASSWORD GENERATOR -->
+    <section class="tool-section" id="section-password">
+      <div class="card">
+        <h1 data-lang-key="nav_password">رمز عبور</h1>
+        <p class="tool-desc" data-lang-key="tool_pwd_desc"></p>
+        <div class="pwd-output-row">
+          <input type="text" id="pwdOutput" readonly />
+          <button class="btn-icon" id="pwdCopy" data-lang-key="copy">کپی</button>
         </div>
+        <div class="pwd-controls">
+          <label><span data-lang-key="pwd_length">طول: </span><span id="pwdLenVal">12</span></label>
+          <input type="range" id="pwdLen" min="8" max="32" value="12" />
+          <label><input type="checkbox" id="pwdUpper" checked /> <span data-lang-key="pwd_uppercase"></span></label>
+          <label><input type="checkbox" id="pwdLower" checked /> <span data-lang-key="pwd_lowercase"></span></label>
+          <label><input type="checkbox" id="pwdNum" checked /> <span data-lang-key="pwd_numbers"></span></label>
+          <label><input type="checkbox" id="pwdSym" /> <span data-lang-key="pwd_symbols"></span></label>
+        </div>
+        <div class="pwd-strength-wrap">
+          <span data-lang-key="pwd_strength">قدرت</span>
+          <div class="pwd-bar"><div class="pwd-bar-fill" id="pwdBar"></div></div>
+          <span id="pwdStrengthText"></span>
+        </div>
+        <button class="btn-primary" id="pwdGen" data-lang-key="generate">تولید</button>
+      </div>
     </section>
 
-    <!-- PASSWORD -->
-    <section id="password" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="pass_title">🔐 Password Generator</h1>
-            <div class="card">
-                <div class="pass-output">
-                    <input type="text" id="passDisplay" readonly>
-                    <button class="btn-icon" id="passCopyBtn">📋</button>
-                </div>
-                <div class="strength-meter"><div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div><span id="strengthText">-</span></div>
-                <div class="pass-options">
-                    <label><span data-i18n="length">Length:</span> <span id="passLenVal">16</span></label>
-                    <input type="range" id="passLen" min="8" max="64" value="16">
-                    <div class="check-grid">
-                        <label><input type="checkbox" id="chkUpper" checked> A-Z</label>
-                        <label><input type="checkbox" id="chkLower" checked> a-z</label>
-                        <label><input type="checkbox" id="chkNums" checked> 0-9</label>
-                        <label><input type="checkbox" id="chkSyms" checked> !@#$</label>
-                    </div>
-                    <button class="btn-primary" id="passGenBtn" data-i18n="generate">🔄 Generate</button>
-                </div>
-            </div>
+    <!-- 4. UNIT CONVERTER -->
+    <section class="tool-section" id="section-units">
+      <div class="card">
+        <h1 data-lang-key="nav_units">مبدل واحدها</h1>
+        <p class="tool-desc" data-lang-key="tool_units_desc"></p>
+        <div class="unit-tabs">
+          <button class="unit-tab active" data-utab="length" data-lang-key="units_length">طول</button>
+          <button class="unit-tab" data-utab="weight" data-lang-key="units_weight">وزن</button>
         </div>
+        <div class="unit-row">
+          <div class="unit-field">
+            <label data-lang-key="units_from">از</label>
+            <input type="number" id="unitInput" placeholder="0" step="any" />
+            <select id="unitFrom"></select>
+          </div>
+          <div class="unit-arrow">⇄</div>
+          <div class="unit-field">
+            <label data-lang-key="units_to">به</label>
+            <input type="number" id="unitOutput" readonly />
+            <select id="unitTo"></select>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- CALCULATOR -->
-    <section id="calculator" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="calc_title">🧮 Calculator</h1>
-            <div class="card calc-card">
-                <div class="calc-display"><div class="calc-history" id="calcHistory"></div><div class="calc-current" id="calcDisplay">0</div></div>
-                <div class="calc-grid">
-                    <button class="c-btn op" data-action="clear">C</button>
-                    <button class="c-btn op" data-action="percent">%</button>
-                    <button class="c-btn op" data-action="delete">⌫</button>
-                    <button class="c-btn op" data-action="op" data-val="/">÷</button>
-                    <button class="c-btn" data-val="7">7</button>
-                    <button class="c-btn" data-val="8">8</button>
-                    <button class="c-btn" data-val="9">9</button>
-                    <button class="c-btn op" data-action="op" data-val="*">×</button>
-                    <button class="c-btn" data-val="4">4</button>
-                    <button class="c-btn" data-val="5">5</button>
-                    <button class="c-btn" data-val="6">6</button>
-                    <button class="c-btn op" data-action="op" data-val="-">−</button>
-                    <button class="c-btn" data-val="1">1</button>
-                    <button class="c-btn" data-val="2">2</button>
-                    <button class="c-btn" data-val="3">3</button>
-                    <button class="c-btn op" data-action="op" data-val="+">+</button>
-                    <button class="c-btn zero" data-val="0">0</button>
-                    <button class="c-btn" data-val=".">.</button>
-                    <button class="c-btn eq" data-action="equals">=</button>
-                </div>
-            </div>
+    <!-- 5. TEXT COUNTER -->
+    <section class="tool-section" id="section-counter">
+      <div class="card">
+        <h1 data-lang-key="nav_counter">شمارشگر متن</h1>
+        <p class="tool-desc" data-lang-key="tool_counter_desc"></p>
+        <textarea id="counterText" rows="8" placeholder="..."></textarea>
+        <div class="counter-stats">
+          <div class="stat"><span id="statChars">0</span><span data-lang-key="counter_chars"></span></div>
+          <div class="stat"><span id="statCharsNs">0</span><span data-lang-key="counter_chars_nospace"></span></div>
+          <div class="stat"><span id="statWords">0</span><span data-lang-key="counter_words"></span></div>
+          <div class="stat"><span id="statSentences">0</span><span data-lang-key="counter_sentences"></span></div>
+          <div class="stat"><span id="statParagraphs">0</span><span data-lang-key="counter_paragraphs"></span></div>
         </div>
+      </div>
     </section>
 
-    <!-- QR GENERATOR -->
-    <section id="qr-generator" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="qr_title">📱 QR Code Generator</h1>
-            <div class="card">
-                <div class="options-row">
-                    <input type="text" id="qrInput" placeholder="https://example.com or any text...">
-                    <button class="btn-primary" id="qrGenBtn" data-i18n="qr_gen">Generate QR</button>
-                </div>
-                <div class="qr-output"><canvas id="qrCanvas" width="256" height="256"></canvas></div>
-                <button class="btn-secondary" id="qrDlBtn" style="display:none" data-i18n="qr_dl">⬇️ Download PNG</button>
-            </div>
-        </div>
+    <!-- 6. QR GENERATOR -->
+    <section class="tool-section" id="section-qr">
+      <div class="card">
+        <h1 data-lang-key="nav_qr">ساخت QR</h1>
+        <p class="tool-desc" data-lang-key="tool_qr_desc"></p>
+        <input type="text" id="qrInput" data-lang-key="qr_input" />
+        <button class="btn-primary" id="qrGen" data-lang-key="qr_generate">تولید QR</button>
+        <canvas id="qrCanvas" width="256" height="256"></canvas>
+        <button class="btn-secondary" id="qrDownload" data-lang-key="qr_download">دانلود</button>
+      </div>
     </section>
 
-    <!-- DATE CONVERTER -->
-    <section id="date-converter" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="date_title">📅 Date Converter (Jalali ↔ Gregorian)</h1>
-            <div class="card">
-                <div class="conv-grid">
-                    <div class="conv-box">
-                        <h3 data-i18n="j2g">Jalali → Gregorian</h3>
-                        <div class="date-inputs">
-                            <input type="number" id="jy" value="1405" placeholder="Year">
-                            <select id="jm"><option value="1">فروردین</option><option value="2">اردیبهشت</option><option value="3">خرداد</option><option value="4">تیر</option><option value="5">مرداد</option><option value="6">شهریور</option><option value="7">مهر</option><option value="8">آبان</option><option value="9">آذر</option><option value="10">دی</option><option value="11">بهمن</option><option value="12">اسفند</option></select>
-                            <input type="number" id="jd" value="16" placeholder="Day">
-                        </div>
-                        <button class="btn-primary" id="j2gBtn" data-i18n="convert">Convert</button>
-                        <div class="result-box" id="j2gResult"></div>
-                    </div>
-                    <div class="conv-box">
-                        <h3 data-i18n="g2j">Gregorian → Jalali</h3>
-                        <div class="date-inputs">
-                            <input type="number" id="gy" value="2026" placeholder="Year">
-                            <select id="gm"><option value="1">January</option><option value="2">February</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">August</option><option value="9">September</option><option value="10">October</option><option value="11">November</option><option value="12">December</option></select>
-                            <input type="number" id="gd" value="7" placeholder="Day">
-                        </div>
-                        <button class="btn-primary" id="g2jBtn" data-i18n="convert">Convert</button>
-                        <div class="result-box" id="g2jResult"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 7. NUMBER TO WORDS -->
+    <section class="tool-section" id="section-n2w">
+      <div class="card">
+        <h1 data-lang-key="nav_number2word">عدد به حروف</h1>
+        <p class="tool-desc" data-lang-key="tool_n2w_desc"></p>
+        <input type="number" id="n2wInput" data-lang-key="n2w_input" />
+        <div class="result-box" id="n2wResult"></div>
+      </div>
     </section>
 
-    <!-- UNIT CONVERTER -->
-    <section id="unit-converter" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="unit_title">📐 Unit Converter</h1>
-            <div class="card">
-                <div class="tab-bar">
-                    <button class="tab-btn active" data-tab="length" data-i18n="tab_length">Length</button>
-                    <button class="tab-btn" data-tab="weight" data-i18n="tab_weight">Weight</button>
-                </div>
-                <div class="tab-panel active" id="panel-length">
-                    <div class="conv-row">
-                        <input type="number" id="lenInput" value="1">
-                        <select id="lenFrom"><option value="m">Meter</option><option value="cm">Centimeter</option><option value="km">Kilometer</option><option value="ft">Foot</option><option value="in">Inch</option><option value="mi">Mile</option></select>
-                        <span class="conv-arrow">⇄</span>
-                        <input type="text" id="lenOutput" readonly>
-                        <select id="lenTo"><option value="ft">Foot</option><option value="m">Meter</option><option value="cm">Centimeter</option><option value="km">Kilometer</option><option value="in">Inch</option><option value="mi">Mile</option></select>
-                    </div>
-                </div>
-                <div class="tab-panel" id="panel-weight">
-                    <div class="conv-row">
-                        <input type="number" id="wgtInput" value="1">
-                        <select id="wgtFrom"><option value="kg">Kilogram</option><option value="g">Gram</option><option value="lb">Pound</option><option value="oz">Ounce</option></select>
-                        <span class="conv-arrow">⇄</span>
-                        <input type="text" id="wgtOutput" readonly>
-                        <select id="wgtTo"><option value="lb">Pound</option><option value="kg">Kilogram</option><option value="g">Gram</option><option value="oz">Ounce</option></select>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 8. OCR -->
+    <section class="tool-section" id="section-ocr">
+      <div class="card">
+        <h1 data-lang-key="nav_ocr">عکس به متن</h1>
+        <p class="tool-desc" data-lang-key="tool_ocr_desc"></p>
+        <p class="warn-note" data-lang-key="ocr_warning"></p>
+        <div class="dropzone" id="ocrDropzone" data-lang-key="upload_file"></div>
+        <input type="file" id="ocrFile" accept="image/jpeg,image/png,image/webp" hidden />
+        <div class="spinner hidden" id="ocrSpinner"></div>
+        <div class="preview-wrap" id="ocrPreview"></div>
+        <textarea id="ocrResult" rows="6" readonly></textarea>
+        <button class="btn-icon" id="ocrCopy" data-lang-key="copy">کپی</button>
+      </div>
     </section>
 
-    <!-- CHAR COUNTER -->
-    <section id="char-counter" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="char_title">📝 Character & Word Counter</h1>
-            <div class="card">
-                <textarea id="charText" rows="8" placeholder="Type or paste your text here..."></textarea>
-                <div class="counter-grid">
-                    <div class="counter-box"><span class="c-val" id="cChars">0</span><span class="c-lbl" data-i18n="chars">Characters</span></div>
-                    <div class="counter-box"><span class="c-val" id="cCharsNS">0</span><span class="c-lbl" data-i18n="chars_ns">No Spaces</span></div>
-                    <div class="counter-box"><span class="c-val" id="cWords">0</span><span class="c-lbl" data-i18n="words">Words</span></div>
-                    <div class="counter-box"><span class="c-val" id="cSentences">0</span><span class="c-lbl" data-i18n="sentences">Sentences</span></div>
-                    <div class="counter-box"><span class="c-val" id="cParas">0</span><span class="c-lbl" data-i18n="paras">Paragraphs</span></div>
-                    <div class="counter-box"><span class="c-val" id="cReadTime">0</span><span class="c-lbl" data-i18n="read_time">Min Read</span></div>
-                </div>
-            </div>
+    <!-- 9. IMAGE CONVERTER -->
+    <section class="tool-section" id="section-imgconvert">
+      <div class="card">
+        <h1 data-lang-key="nav_imgconvert">تبدیل فرمت عکس</h1>
+        <p class="tool-desc" data-lang-key="tool_imgconv_desc"></p>
+        <div class="dropzone" id="imgConvDropzone" data-lang-key="upload_file"></div>
+        <input type="file" id="imgConvFile" accept="image/*" hidden />
+        <div class="preview-wrap" id="imgConvPreview"></div>
+        <div class="inline-row">
+          <label data-lang-key="imgconv_target">فرمت مقصد</label>
+          <select id="imgConvFormat">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPG</option>
+            <option value="image/webp">WebP</option>
+            <option value="image/bmp">BMP</option>
+          </select>
+          <button class="btn-primary" id="imgConvBtn" data-lang-key="convert">تبدیل</button>
         </div>
+        <div class="preview-wrap" id="imgConvResult"></div>
+      </div>
     </section>
 
-    <!-- NUMBER TO WORDS -->
-    <section id="number-to-words" class="tool-section">
-        <div class="container">
-            <h1 data-i18n="num_title">🔢 Number to Words</h1>
-            <div class="card">
-                <div class="options-row">
-                    <input type="text" id="numInput" placeholder="1254" maxlength="12">
-                    <button class="btn-primary" id="numConvertBtn" data-i18n="convert">Convert</button>
-                </div>
-                <div class="result-box" id="numResult"></div>
-            </div>
+    <!-- 10. PDF TOOLS -->
+    <section class="tool-section" id="section-pdf">
+      <div class="card">
+        <h1 data-lang-key="nav_pdf">تبدیل PDF</h1>
+        <p class="tool-desc" data-lang-key="tool_pdf_desc"></p>
+        <div class="unit-tabs">
+          <button class="unit-tab active" data-ptab="pdf2img" data-lang-key="pdf_to_img">PDF به عکس</button>
+          <button class="unit-tab" data-ptab="img2pdf" data-lang-key="img_to_pdf">عکس به PDF</button>
         </div>
+        <div class="pdf-panel" id="pdfPanel-pdf2img">
+          <div class="dropzone" id="pdfDropzone" data-lang-key="pdf_upload"></div>
+          <input type="file" id="pdfFile" accept="application/pdf" hidden />
+          <div class="spinner hidden" id="pdfSpinner"></div>
+          <div class="inline-row">
+            <label data-lang-key="pdf_format">فرمت</label>
+            <select id="pdfImgFormat"><option value="png">PNG</option><option value="jpeg">JPG</option></select>
+          </div>
+          <div class="preview-wrap" id="pdfResult"></div>
+        </div>
+        <div class="pdf-panel hidden" id="pdfPanel-img2pdf">
+          <div class="dropzone" id="img2pdfDropzone" data-lang-key="pdf_img_upload"></div>
+          <input type="file" id="img2pdfFile" accept="image/*" multiple hidden />
+          <div class="preview-wrap" id="img2pdfPreview"></div>
+          <button class="btn-primary" id="img2pdfBtn" data-lang-key="convert">تبدیل</button>
+        </div>
+      </div>
     </section>
 
-</main>
-
-<footer>
-    <div class="footer-container">
-        <div class="footer-links">
-            <a href="#" id="aboutLink" data-i18n="f_about">About</a>
-            <a href="#" id="contactLink" data-i18n="f_contact">Contact</a>
-            <a href="#" id="privacyLink" data-i18n="f_privacy">Privacy</a>
+    <!-- 11. DATA CONVERTER -->
+    <section class="tool-section" id="section-data">
+      <div class="card">
+        <h1 data-lang-key="nav_dataconvert">تبدیل داده</h1>
+        <p class="tool-desc" data-lang-key="tool_data_desc"></p>
+        <div class="inline-row">
+          <label data-lang-key="data_from">ورودی</label>
+          <select id="dataFrom"><option>JSON</option><option>CSV</option><option>XML</option><option>YAML</option></select>
+          <label data-lang-key="data_to">خروجی</label>
+          <select id="dataTo"><option>CSV</option><option>JSON</option><option>XML</option><option>YAML</option></select>
         </div>
-        <p>© 2026 Smart Tools</p>
+        <textarea id="dataInput" rows="6" data-lang-key="data_input" placeholder='{...}'></textarea>
+        <button class="btn-primary" id="dataConvert" data-lang-key="convert">تبدیل</button>
+        <textarea id="dataOutput" rows="6" readonly></textarea>
+        <button class="btn-icon" id="dataDownload" data-lang-key="download">دانلود</button>
+      </div>
+    </section>
+
+    <!-- 12. HEIC CONVERTER -->
+    <section class="tool-section" id="section-heic">
+      <div class="card">
+        <h1 data-lang-key="nav_heic">تبدیل HEIC</h1>
+        <p class="tool-desc" data-lang-key="tool_heic_desc"></p>
+        <div class="dropzone" id="heicDropzone" data-lang-key="heic_upload"></div>
+        <input type="file" id="heicFile" accept="image/heic,image/heif,.heic,.heif" hidden />
+        <div class="spinner hidden" id="heicSpinner"></div>
+        <div class="inline-row">
+          <label data-lang-key="imgconv_target">فرمت</label>
+          <select id="heicFormat"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select>
+          <button class="btn-primary" id="heicBtn" data-lang-key="convert">تبدیل</button>
+        </div>
+        <div class="preview-wrap" id="heicResult"></div>
+      </div>
+    </section>
+
+    <!-- 13. VIDEO TO GIF -->
+    <section class="tool-section" id="section-video2gif">
+      <div class="card">
+        <h1 data-lang-key="nav_video2gif">ویدیو به GIF</h1>
+        <p class="tool-desc" data-lang-key="tool_vid_desc"></p>
+        <div class="dropzone" id="vidDropzone" data-lang-key="vid_upload"></div>
+        <input type="file" id="vidFile" accept="video/mp4,video/webm" hidden />
+        <div class="spinner hidden" id="vidSpinner"></div>
+        <div class="inline-row">
+          <label data-lang-key="vid_start">شروع (ث)</label>
+          <input type="number" id="vidStart" value="0" min="0" step="0.5" style="width:80px" />
+          <label data-lang-key="vid_duration">مدت (ث)</label>
+          <input type="number" id="vidDuration" value="3" min="0.5" step="0.5" style="width:80px" />
+          <label data-lang-key="vid_fps">FPS</label>
+          <input type="number" id="vidFps" value="10" min="1" max="30" style="width:70px" />
+        </div>
+        <button class="btn-primary" id="vidBtn" data-lang-key="vid_convert">تبدیل</button>
+        <div class="preview-wrap" id="vidResult"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⚙️</span>
+        <span data-lang-key="site_title">ابزارک‌های هوشمند</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#" data-lang-key="footer_about">درباره ما</a>
+        <a href="#" data-lang-key="footer_contact">تماس با ما</a>
+        <a href="#" data-lang-key="footer_privacy">حریم خصوصی</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> <span data-lang-key="site_title"></span> — <span data-lang-key="footer_rights"></span></p>
+      <p class="footer-made" data-lang-key="footer_made_with"></p>
     </div>
-</footer>
+  </footer>
 
-<!-- QR Code Library - REAL working implementation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
-<!-- Tesseract.js for OCR -->
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-<!-- jsPDF for creating PDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- PDF.js for reading PDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
