@@ -1,751 +1,1258 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ابزارهای رایگان تبدیل عکس به متن، PDF و ابزارهای جانبی</title>
-    <meta name="description" content="تبدیل عکس به متن رایگان، ساخت PDF، تولید رمز، QR کد، مبدل فرمت عکس و تاریخ - کاملاً بدون نیاز به سرور">
-    <meta name="keywords" content="تبدیل عکس به متن رایگان, OCR رایگان, عکس به PDF, تولید رمز, QR کد, تبدیل تاریخ">
-    <link rel="canonical" href="https://yourdomain.com/">
-    <meta property="og:title" content="ابزارهای رایگان تبدیل عکس، PDF و ابزارهای جانبی">
-    <meta property="og:description" content="ابزارهای کاملاً رایگان برای تبدیل عکس به متن، ساخت PDF، تولید رمز و QR کد">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "ابزارهای رایگان تبدیل",
-      "description": "مجموعه ابزارهای رایگان تبدیل و ویرایش",
-      "applicationCategory": "UtilityApplication",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-    }
-    </script>
+<!-- ═══════════════════════════════════════════════════════════════
+     فایل‌یار ۲.۰ | FileYar Pro — نسخه ترکیبی با ۱۱ ابزار زنده واقعی
+     تک‌فایل index.html · دوزبانه (فارسی/انگلیسی) · واکنش‌گرا
+     طراحی و توسعه: مهدی رحیمیان
+═══════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1a3ad1">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #0f2b5c;
-            --primary-light: #1a3f7a;
-            --secondary: #00a8e8;
-            --secondary-light: #7fd8ff;
-            --bg: #f1f5f9;
-            --white: #ffffff;
-            --gray-100: #f3f6fc;
-            --gray-200: #e2e8f0;
-            --gray-600: #475569;
-            --gray-800: #1e293b;
-            --shadow: 0 20px 60px rgba(15, 43, 92, 0.08);
-            --radius: 20px;
-            --transition: all 0.3s ease;
-            --font-fa: 'Vazirmatn', sans-serif;
-            --font-en: 'Inter', sans-serif;
-        }
-        body {
-            font-family: var(--font-fa);
-            background: var(--bg);
-            color: var(--gray-800);
-            padding: 0 16px;
-            min-height: 100vh;
-        }
-        .container { max-width: 1280px; margin: 0 auto; }
-        
-        .lang-toggle-wrap { display: flex; justify-content: flex-end; padding: 12px 0; }
-        .lang-btn {
-            background: var(--white); border: 2px solid var(--primary); color: var(--primary);
-            padding: 6px 18px; border-radius: 40px; font-weight: 700; font-size: 0.85rem;
-            cursor: pointer; transition: var(--transition); display: flex; align-items: center; gap: 8px;
-            font-family: var(--font-en);
-        }
-        .lang-btn:hover { background: var(--primary); color: var(--white); }
-        .lang-en { display: none; }
-        body.en .lang-fa { display: none; }
-        body.en .lang-en { display: inline; }
-        body.en { direction: ltr; font-family: var(--font-en); }
-        body.en .btn, body.en .tab-btn { font-family: var(--font-en); }
+<!-- ═══════════ داده‌های سئو ═══════════ -->
+<title>فایل‌یار ۲.۰ | ۱۱ ابزار واقعی تبدیل عکس، PDF، رمز و تاریخ — بدون ثبت‌نام</title>
+<meta name="description" content="۱۱ ابزار واقعی و رایگان: OCR واقعی، عکس به PDF، فشرده‌سازی، مبدل فرمت عکس، HEIC، رمز عبور، QR آفلاین، تبدیل تاریخ دقیق، متن به گفتار و متن به Word. کاملاً در مرورگر.">
+<meta name="keywords" content="تبدیل عکس به متن رایگان, OCR واقعی, عکس به PDF, فشرده سازی عکس, HEIC به JPG, تولید رمز عبور, QR کد آفلاین, تبدیل تاریخ شمسی به میلادی, متن به گفتار, متن به Word">
+<meta name="author" content="مهدی رحیمیان - Mehdi Rahimian">
+<link rel="canonical" href="https://fileyar.example/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FileYar Pro">
+<meta property="og:title" content="فایل‌یار ۲.۰ — ۱۱ ابزار واقعی رایگان">
+<meta property="og:description" content="OCR واقعی، تبدیل عکس به PDF، فشرده‌سازی، QR آفلاین، رمز عبور، تاریخ دقیق، TTS و متن به Word — همه در مرورگر شما.">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
 
-        .main-header { text-align: center; padding: 20px 0 10px; }
-        .main-header h1 {
-            font-size: 2.4rem; font-weight: 800; color: var(--primary);
-            display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
-        }
-        .main-header h1 i { color: var(--secondary); font-size: 2.2rem; }
-        .main-header p { font-size: 1.1rem; color: var(--gray-600); margin-top: 2px; }
+<!-- ═══════════ داده‌های ساختاریافته JSON-LD ═══════════ -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"FileYar Pro","alternateName":"فایل‌یار ۲.۰","url":"https://fileyar.example/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","inLanguage":["fa","en"],"description":"11 real client-side tools: OCR, image to PDF, compression, format converter, HEIC, password, QR, date, TTS, text to Word.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Mehdi Rahimian"}}
+</script>
 
-        .tabs-wrap {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
-            background: var(--white); padding: 14px 20px; border-radius: var(--radius);
-            box-shadow: var(--shadow); margin: 20px 0 30px;
-        }
-        .tab-btn {
-            padding: 10px 22px; border: none; border-radius: 40px; background: var(--gray-100);
-            color: var(--gray-600); font-weight: 700; font-size: 0.9rem; cursor: pointer;
-            transition: var(--transition); font-family: var(--font-fa); display: flex; align-items: center; gap: 8px;
-        }
-        .tab-btn i { font-size: 1rem; }
-        .tab-btn:hover { background: var(--secondary-light); color: var(--primary); }
-        .tab-btn.active { background: var(--primary); color: var(--white); box-shadow: 0 8px 20px rgba(15,43,92,0.25); }
-        .tool-section { display: none; animation: fadeUp 0.4s ease; }
-        .tool-section.active { display: block; }
-        @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+<!-- ═══════════ کتابخانه‌های واقعی (CDN) ═══════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/4.1.1/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js"></script>
 
-        .tools-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-            gap: 24px; margin: 20px 0 40px;
-        }
-        .tool-card {
-            background: var(--white); padding: 28px 16px; border-radius: var(--radius);
-            text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.02); transition: var(--transition);
-            position: relative; overflow: hidden;
-        }
-        .tool-card.active-card { cursor: pointer; }
-        .tool-card.active-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            opacity: 0; transition: var(--transition);
-        }
-        .tool-card.active-card:hover { transform: translateY(-8px); border-color: var(--secondary-light); box-shadow: 0 16px 40px rgba(0,168,232,0.12); }
-        .tool-card.active-card:hover::before { opacity: 1; }
-        .tool-card.disabled-card { opacity: 0.85; cursor: default; background: #fafafa; }
-        .tool-card i { font-size: 2.8rem; color: var(--secondary); margin-bottom: 12px; background: var(--gray-100); padding: 14px; border-radius: 18px; transition: var(--transition); }
-        .tool-card.active-card:hover i { background: var(--primary); color: var(--white); transform: scale(1.05); }
-        .tool-card h4 { font-size: 1.05rem; color: var(--primary); margin-bottom: 4px; }
-        .tool-card p { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
-        .tool-card .badge {
-            display: inline-block; padding: 0 14px; border-radius: 30px; font-size: 0.65rem; font-weight: 700; margin-top: 6px;
-        }
-        .badge.active { background: #22c55e; color: white; }
-        .badge.soon { background: #f59e0b; color: white; }
+<!-- ═══════════ فونت‌ها و آیکون‌ها ═══════════ -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn/700.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn/900.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/400.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/700.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        .util-box {
-            background: var(--white); padding: 30px; border-radius: var(--radius);
-            box-shadow: var(--shadow); margin: 20px 0;
-        }
-        .util-box input, .util-box select {
-            width: 100%; padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: 16px;
-            font-size: 1rem; margin: 8px 0; font-family: inherit;
-        }
-        .util-box input:focus { border-color: var(--secondary); outline: none; }
-        .strength-bar { height: 10px; background: #ddd; border-radius: 10px; margin: 10px 0; }
-        .strength-bar .fill { height: 100%; border-radius: 10px; width: 0%; }
+<style>
+/* ═══════════════════ ۱) متغیرها و ریست پایه ═══════════════════ */
+:root{
+  --royal-950:#050d2a; --royal-900:#0a1847; --royal-800:#122a86;
+  --royal-700:#1a3ad1; --royal-600:#2550f0; --royal-500:#3e6bff;
+  --royal-300:#8fb0ff; --royal-100:#dfe9ff; --royal-50:#f3f7ff;
+  --ink:#0c1533; --muted:#5b678f; --line:#d9e2fb; --white:#fff;
+  --ok:#0c9d68; --err:#e02d2d; --amber:#d97706;
+  --radius:18px; --shadow-lg:0 24px 60px -22px rgba(10,24,71,.28);
+  --font-fa:'Vazirmatn',system-ui,sans-serif;
+  --font-en:'Inter',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-fa);color:var(--ink);background:var(--white);
+  background-image:radial-gradient(var(--royal-100) 1px,transparent 1px);
+  background-size:24px 24px;overflow-x:hidden;line-height:1.8;
+}
+html[lang="en"] body{font-family:var(--font-en)}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,select,textarea{font-family:inherit}
+[hidden]{display:none!important}
+::selection{background:var(--royal-600);color:#fff}
+.container{width:min(1200px,92%);margin-inline:auto}
+section{scroll-margin-top:92px;padding:74px 0}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:4;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+#scrollProgress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;z-index:1000;
+  background:linear-gradient(90deg,var(--royal-500),var(--royal-700))}
 
-        .ocr-output {
-            margin: 10px 0;
-            padding: 16px;
-            background: #f8fafc;
-            border-radius: 12px;
-            border: 2px solid var(--gray-200);
-            display: none;
-            direction: rtl;
-            text-align: right;
-        }
-        .ocr-output textarea {
-            width: 100%;
-            min-height: 150px;
-            padding: 12px;
-            border: 1px solid var(--gray-200);
-            border-radius: 12px;
-            font-family: var(--font-fa);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            resize: vertical;
-        }
-        .ocr-output .ocr-actions { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
-        .ocr-output .ocr-actions .btn { margin: 0; }
+/* ═══════════════════ ۲) هدر ═══════════════════ */
+#header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.87);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:20px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;margin-inline-end:auto}
+.logo-badge{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:#fff;font-size:19px;
+  background:linear-gradient(135deg,var(--royal-600),var(--royal-800));
+  box-shadow:0 10px 22px -8px rgba(26,58,209,.55)}
+.logo-name{font-size:1.3rem;font-weight:900;color:var(--royal-900);line-height:1.2}
+.logo-tag{display:block;font-size:.66rem;color:var(--muted);font-weight:700}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{font-weight:800;font-size:.92rem;color:var(--ink);position:relative;padding:5px 2px;transition:color .25s}
+.nav a::after{content:"";position:absolute;bottom:0;inset-inline-start:0;width:0;height:2px;background:var(--royal-600);border-radius:4px;transition:width .3s}
+.nav a:hover{color:var(--royal-700)}
+.nav a:hover::after{width:100%}
+.free-pill{background:var(--royal-50);border:1px solid var(--royal-100);color:var(--royal-700);
+  font-size:.72rem;font-weight:800;padding:6px 14px;border-radius:999px;white-space:nowrap}
+#langToggle{display:flex;align-items:center;gap:8px;padding:9px 15px;border-radius:12px;
+  border:1.5px solid var(--royal-700);color:var(--royal-700);font-weight:800;font-size:.85rem;transition:all .25s;background:#fff}
+#langToggle:hover{background:var(--royal-700);color:#fff;transform:translateY(-2px)}
+#burger{display:none;font-size:1.35rem;color:var(--royal-800)}
+@media(max-width:940px){
+  .nav{position:absolute;top:72px;inset-inline:0;background:#fff;flex-direction:column;
+    align-items:flex-start;padding:16px 5%;gap:13px;border-bottom:1px solid var(--line);display:none;box-shadow:var(--shadow-lg)}
+  .nav.open{display:flex}
+  #burger{display:block}.free-pill{display:none}
+}
 
-        .qr-result {
-            display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 16px;
-        }
-        .qr-result img {
-            border: 4px solid var(--gray-200);
-            border-radius: 16px;
-            padding: 8px;
-            background: white;
-            max-width: 100%;
-        }
+/* ═══════════════════ ۳) بخش آغازین ═══════════════════ */
+#hero{padding:64px 0 54px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .95fr;gap:52px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--royal-50);border:1px solid var(--royal-100);
+  color:var(--royal-700);font-size:.77rem;font-weight:800;padding:7px 16px;border-radius:999px;margin-bottom:20px}
+.hero-title{font-size:clamp(2rem,4.5vw,3.45rem);font-weight:900;color:var(--royal-900);line-height:1.34;margin-bottom:16px}
+.hero-title .accent{color:var(--royal-600)}
+.hl-line{display:block;overflow:hidden}
+.hl-line>span{display:inline-block;transform:translateY(130%);animation:riseUp .95s cubic-bezier(.2,.7,.2,1) forwards}
+.hl-line:nth-child(2)>span{animation-delay:.16s}
+@keyframes riseUp{to{transform:translateY(0)}}
+.hero-sub{color:var(--muted);font-size:1rem;max-width:54ch;margin-bottom:24px}
+.search-wrap{position:relative;margin-bottom:20px}
+.search-wrap i{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--royal-500)}
+#heroSearch{width:100%;padding:16px 52px;border-radius:16px;border:2px solid var(--royal-100);background:#fff;
+  font-size:1rem;font-weight:700;color:var(--ink);transition:all .25s;box-shadow:0 12px 30px -18px rgba(26,58,209,.35)}
+#heroSearch:focus{outline:none;border-color:var(--royal-500);box-shadow:0 0 0 4px var(--royal-100)}
+.search-info{font-size:.75rem;font-weight:800;color:var(--muted);margin-bottom:16px;min-height:1.2em}
+.quick-chips{display:flex;flex-wrap:wrap;gap:9px}
+.qchip{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 15px;font-size:.78rem;
+  font-weight:800;color:var(--royal-800);display:inline-flex;align-items:center;gap:7px;transition:all .25s}
+.qchip:hover{border-color:var(--royal-500);transform:translateY(-3px);box-shadow:0 10px 20px -12px rgba(26,58,209,.5)}
+.qchip i{color:var(--royal-500)}
 
-        .btn {
-            padding: 12px 30px; border: none; border-radius: 60px; font-weight: 700; font-size: 0.95rem;
-            cursor: pointer; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px;
-            font-family: var(--font-fa); margin: 6px;
-        }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-light); transform: scale(1.02); }
-        .btn-success { background: #0b7e4b; color: white; }
-        .btn-success:hover { background: #0a6a3e; transform: scale(1.02); }
+.bench{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden;position:relative}
+.bench::before{content:"";position:absolute;top:0;inset-inline:0;height:5px;background:linear-gradient(90deg,var(--royal-500),var(--royal-800))}
+.bench-head{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px dashed var(--line);font-weight:900;color:var(--royal-900);font-size:.92rem}
+.bench-dots{display:flex;gap:5px;margin-inline-end:8px}
+.bench-dots span{width:10px;height:10px;border-radius:50%}
+.bench-dots span:nth-child(1){background:#ff5f57}.bench-dots span:nth-child(2){background:#febc2e}.bench-dots span:nth-child(3){background:#28c840}
+.pipe{display:flex;align-items:center;gap:8px;padding:26px 20px 8px}
+.pipe-node{width:74px;flex-shrink:0;text-align:center;background:var(--royal-50);border:1.5px solid var(--royal-100);
+  border-radius:16px;padding:12px 6px;animation:nodePulse 3s ease-in-out infinite}
+.pipe-node i{font-size:19px;color:var(--royal-700)}
+.pipe-node small{display:block;font-size:.66rem;font-weight:800;color:var(--muted)}
+.pipe-node.mid{animation-delay:1s}.pipe-node.okn{animation-delay:2s;border-color:#b8ecd4;background:#effcf5}
+.pipe-node.okn i{color:var(--ok)}
+@keyframes nodePulse{0%,100%{transform:scale(1)}30%{transform:scale(1.06)}}
+.pipe-track{flex:1;height:3px;background:var(--royal-100);border-radius:4px;position:relative;overflow:hidden}
+.pipe-dot{position:absolute;top:-4px;inset-inline-start:0;width:11px;height:11px;border-radius:50%;
+  background:var(--royal-600);box-shadow:0 0 12px rgba(37,80,240,.8);animation:pipeline 2.6s linear infinite}
+.pipe-track .d2{animation-delay:1.3s}
+@keyframes pipeline{from{inset-inline-start:-12px}to{inset-inline-start:100%}}
+.bench-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:18px 20px 22px}
+.bq{display:flex;align-items:center;gap:10px;background:var(--royal-50);border:1.5px solid var(--royal-100);
+  border-radius:14px;padding:11px 13px;font-size:.8rem;font-weight:800;color:var(--royal-900);transition:all .25s;text-align:start}
+.bq i{width:32px;height:32px;flex-shrink:0;border-radius:10px;display:grid;place-items:center;background:#fff;color:var(--royal-700);font-size:14px;transition:all .25s}
+.bq:hover{background:var(--royal-700);color:#fff;border-color:var(--royal-700);transform:translateY(-3px)}
+.bq:hover i{background:rgba(255,255,255,.16);color:#fff}
+@media(max-width:1020px){.hero-grid{grid-template-columns:1fr;gap:36px}}
 
-        .faq-list { background: var(--white); border-radius: var(--radius); padding: 20px 24px; box-shadow: var(--shadow); margin: 30px 0; }
-        .faq-item { border-bottom: 1px solid var(--gray-200); padding: 14px 0; }
-        .faq-item:last-child { border: none; }
-        .faq-item .q { font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .faq-item .a { margin-top: 6px; padding-right: 30px; color: var(--gray-600); line-height: 1.7; }
-        .footer { text-align: center; padding: 30px 0 20px; color: var(--gray-600); border-top: 1px solid var(--gray-200); margin-top: 20px; font-size: 0.9rem; }
-        .footer .designer { color: var(--primary); font-weight: 700; }
+/* ═══════════════════ ۴) نوار متحرک ═══════════════════ */
+.marquee{background:var(--royal-900);overflow:hidden;direction:ltr;padding:13px 0;border-block:3px solid var(--royal-600)}
+.mq-track{display:flex;width:max-content;animation:mq 32s linear infinite}
+.mq-track:hover{animation-play-state:paused}
+.mq-group{display:flex;align-items:center;gap:42px;padding-inline-end:42px}
+.mq-group span{color:#fff;font-weight:800;font-size:.86rem;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.mq-group span i{color:var(--royal-300);font-size:.62rem}
+@keyframes mq{to{transform:translateX(-50%)}}
 
-        @media (max-width: 768px) {
-            .main-header h1 { font-size: 1.8rem; }
-            .tabs-wrap { gap: 6px; padding: 12px; }
-            .tab-btn { padding: 6px 14px; font-size: 0.75rem; }
-            .tools-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .tool-card { padding: 18px 10px; }
-            .tool-card i { font-size: 2rem; padding: 10px; }
-        }
-        @media (max-width: 480px) {
-            .tools-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+/* ═══════════════════ ۵) آمار ═══════════════════ */
+#stats{padding:0}
+.stats-band{background:linear-gradient(135deg,var(--royal-800),var(--royal-950));border-radius:26px;
+  display:grid;grid-template-columns:repeat(4,1fr);padding:40px 18px;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.stats-band::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1px);background-size:20px 20px}
+.stat{text-align:center;position:relative;padding:6px 12px}
+.stat+.stat::before{content:"";position:absolute;inset-inline-start:0;top:15%;height:70%;width:1px;background:rgba(255,255,255,.15)}
+.stat-num{font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:900;color:#fff;line-height:1.25}
+.stat-label{color:var(--royal-300);font-size:.82rem;font-weight:700}
+@media(max-width:760px){.stats-band{grid-template-columns:repeat(2,1fr);gap:24px}.stat+.stat::before{display:none}}
+
+/* ═══════════════════ ۶) ابزارها ═══════════════════ */
+.sec-head{text-align:center;max-width:660px;margin:0 auto 34px}
+.sec-head .eyebrow{margin-bottom:12px}
+.sec-title{font-size:clamp(1.55rem,3.1vw,2.3rem);font-weight:900;color:var(--royal-900);margin-bottom:8px}
+.sec-sub{color:var(--muted);font-size:.93rem}
+.tabs{display:flex;gap:9px;overflow-x:auto;padding:6px 2px 16px;scrollbar-width:thin}
+.tab{flex-shrink:0;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+  border:1.5px solid var(--line);background:#fff;font-weight:800;font-size:.85rem;color:var(--ink);transition:all .25s;white-space:nowrap}
+.tab i{font-size:.8rem;color:var(--royal-600)}
+.tab:hover{border-color:var(--royal-500);transform:translateY(-2px)}
+.tab.active{background:var(--royal-700);border-color:var(--royal-700);color:#fff;box-shadow:0 12px 24px -10px rgba(26,58,209,.55)}
+.tab.active i{color:#fff}
+.tab .cnt{background:var(--royal-50);color:var(--royal-700);border-radius:999px;font-size:.68rem;padding:2px 8px;font-weight:900}
+.tab.active .cnt{background:rgba(255,255,255,.2);color:#fff}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:16px}
+.tcard{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:22px 20px 18px;cursor:pointer;
+  position:relative;overflow:hidden;transition:all .32s;display:flex;flex-direction:column;gap:8px}
+.tcard::after{content:"";position:absolute;bottom:-34px;inset-inline-end:-34px;width:110px;height:110px;border-radius:50%;
+  background:color-mix(in srgb,var(--acc) 8%,transparent);transition:transform .4s}
+.tcard:hover{transform:translateY(-6px);border-color:var(--acc);box-shadow:0 22px 44px -18px rgba(10,24,71,.28)}
+.tcard:hover::after{transform:scale(1.7)}
+.tc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:6px}
+.tc-ic{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;font-size:20px;
+  background:color-mix(in srgb,var(--acc) 11%,#fff);color:var(--acc);transition:all .3s}
+.tcard:hover .tc-ic{background:var(--acc);color:#fff;transform:rotate(-7deg) scale(1.07)}
+.tc-badge{font-size:.63rem;font-weight:900;padding:4px 11px;border-radius:999px;letter-spacing:.02em}
+.tc-badge.live{background:#e7f8f0;color:var(--ok);border:1px solid #b8ecd4}
+.tc-badge.sim{background:var(--royal-50);color:var(--royal-700);border:1px solid var(--royal-100)}
+.tcard h3{font-size:.98rem;font-weight:900;color:var(--royal-900)}
+.tcard p{font-size:.78rem;color:var(--muted);flex:1;line-height:1.7}
+.tc-go{font-size:.74rem;font-weight:900;color:var(--acc);display:inline-flex;align-items:center;gap:7px;margin-top:4px}
+.tc-go i{transition:transform .25s;font-size:.62rem}
+.tcard:hover .tc-go i{transform:translateX(-5px)}
+html[dir="rtl"] .tcard:hover .tc-go i{transform:translateX(5px)}
+.no-result{text-align:center;color:var(--muted);font-weight:800;padding:50px 0;grid-column:1/-1}
+
+/* ═══════════════════ ۷) راهنما ═══════════════════ */
+#guide{background:var(--royal-50);border-block:1px solid var(--royal-100)}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+.stp{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:26px;position:relative;transition:all .3s}
+.stp:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.stp-n{position:absolute;top:-18px;inset-inline-start:22px;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--royal-600),var(--royal-800));color:#fff;font-weight:900;box-shadow:0 10px 20px -8px rgba(26,58,209,.55)}
+.stp h3{font-weight:900;color:var(--royal-900);margin:10px 0 6px}
+.stp p{font-size:.85rem;color:var(--muted)}
+.why-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.why{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:15px 17px;transition:all .3s}
+.why:hover{border-color:var(--royal-500);transform:translateY(-3px)}
+.why i{width:40px;height:40px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;background:var(--royal-50);color:var(--royal-700)}
+.why b{font-size:.82rem;color:var(--royal-900);line-height:1.5}
+@media(max-width:900px){.steps3{grid-template-columns:1fr}.why-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.why-row{grid-template-columns:1fr}}
+
+/* ═══════════════════ ۸) سوالات متداول ═══════════════════ */
+.faq-list{max-width:800px;margin-inline:auto;display:grid;gap:13px}
+.faq-item{background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden;transition:all .3s}
+.faq-item.open{border-color:var(--royal-500);box-shadow:0 14px 30px -16px rgba(26,58,209,.3)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 22px;
+  font-weight:800;font-size:.94rem;color:var(--royal-900);text-align:start}
+.faq-q i{color:var(--royal-600);transition:transform .35s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding:0 22px 20px;color:var(--muted);font-size:.87rem}
+
+/* ═══════════════════ ۹) مودال ═══════════════════ */
+.modal{position:fixed;inset:0;z-index:300;display:none;place-items:center;padding:16px;
+  background:rgba(5,13,42,.58);backdrop-filter:blur(6px)}
+.modal.show{display:grid}
+.m-card{background:#fff;border-radius:22px;width:min(620px,100%);max-height:90vh;overflow:auto;animation:mpop .38s cubic-bezier(.2,1,.3,1)}
+@keyframes mpop{from{transform:translateY(28px) scale(.96);opacity:0}}
+.m-head{display:flex;align-items:center;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
+.m-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;color:#fff;background:var(--acc,var(--royal-700));font-size:18px;flex-shrink:0}
+.m-title{font-weight:900;color:var(--royal-900);font-size:1.02rem;flex:1;line-height:1.4}
+.m-badge{font-size:.62rem;font-weight:900;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.m-badge.live{background:#e7f8f0;color:var(--ok)}.m-badge.sim{background:var(--royal-50);color:var(--royal-700)}
+.m-close{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:var(--muted);transition:all .2s;flex-shrink:0}
+.m-close:hover{background:#fee2e2;color:var(--err);transform:rotate(90deg)}
+.m-body{padding:22px}
+.live-note{display:flex;align-items:center;gap:9px;background:#e7f8f0;border:1px solid #b8ecd4;color:#087350;
+  font-size:.75rem;font-weight:800;padding:10px 14px;border-radius:12px;margin-bottom:16px}
+.m-drop{border:2px dashed var(--royal-300);background:var(--royal-50);border-radius:16px;padding:30px 18px;text-align:center;cursor:pointer;transition:all .3s;margin-bottom:14px}
+.m-drop:hover,.m-drop.drag{border-color:var(--royal-600);background:var(--royal-100)}
+.m-drop .md-ic{width:56px;height:56px;margin:0 auto 12px;border-radius:17px;display:grid;place-items:center;font-size:21px;
+  background:linear-gradient(135deg,var(--royal-600),var(--royal-800));color:#fff;box-shadow:0 12px 26px -10px rgba(26,58,209,.55)}
+.m-drop p{font-weight:900;color:var(--royal-900);font-size:.95rem}
+.m-drop small{color:var(--muted);font-size:.74rem;font-weight:700}
+.m-file{display:flex;align-items:center;gap:12px;background:var(--royal-50);border:1px solid var(--royal-100);border-radius:13px;padding:12px 14px;margin-bottom:14px}
+.m-file .fi{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff;color:var(--royal-700);font-size:17px;flex-shrink:0}
+.m-file b{display:block;font-size:.82rem;color:var(--royal-900);word-break:break-all;line-height:1.5}
+.m-file small{color:var(--muted);font-size:.7rem;font-weight:700}
+.m-file .rm{margin-inline-start:auto;color:var(--err);padding:6px;border-radius:8px;transition:all .2s}
+.m-file .rm:hover{background:#fee2e2;transform:rotate(90deg)}
+.btn-p{width:100%;border-radius:14px;padding:14px;font-weight:900;font-size:.95rem;color:#fff;
+  background:linear-gradient(135deg,var(--royal-600),var(--royal-800));display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:all .25s;box-shadow:0 14px 30px -12px rgba(26,58,209,.6)}
+.btn-p:hover:not(:disabled){transform:translateY(-2px)}
+.btn-p:disabled{opacity:.55;cursor:not-allowed}
+.btn-o{border:2px solid var(--royal-700);color:var(--royal-700);background:#fff;border-radius:14px;padding:12px 20px;font-weight:900;font-size:.88rem;display:inline-flex;align-items:center;gap:9px;transition:all .25s}
+.btn-o:hover{background:var(--royal-50)}
+.btn-g{background:var(--ok);box-shadow:0 12px 26px -10px rgba(12,157,104,.55)}
+.prog-top{display:flex;justify-content:space-between;font-size:.78rem;font-weight:800;margin:16px 0 9px}
+.prog-top .st{color:var(--royal-800)}.prog-top .pc{color:var(--royal-600)}
+.prog-track{height:12px;background:var(--royal-100);border-radius:999px;overflow:hidden}
+.prog-bar{height:100%;width:0;border-radius:999px;
+  background:repeating-linear-gradient(45deg,var(--royal-600) 0 12px,var(--royal-500) 12px 24px);background-size:34px 100%;animation:stripes 1s linear infinite}
+@keyframes stripes{to{background-position:34px 0}}
+.sim-ok{text-align:center;background:var(--royal-50);border:1px solid var(--royal-100);border-radius:16px;padding:24px 16px;animation:mpop .4s}
+.ok-ring{width:60px;height:60px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:#fff;font-size:23px;box-shadow:0 0 0 9px rgba(12,157,104,.15)}
+.sim-ok h3{color:var(--royal-900);font-weight:900;margin-bottom:4px;font-size:1rem}
+.sim-ok p{color:var(--muted);font-size:.78rem;margin-bottom:14px}
+.again-l{display:inline-flex;align-items:center;gap:7px;margin-top:10px;color:var(--royal-700);font-weight:800;font-size:.8rem}
+.again-l:hover{text-decoration:underline}
+.sim-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:14px;font-weight:700}
+.f-row{display:flex;gap:11px;flex-wrap:wrap;margin-bottom:14px}
+.fld{flex:1;min-width:118px}
+.fld label{display:block;font-size:.72rem;font-weight:800;color:var(--muted);margin-bottom:6px}
+.f-in{width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:12px;font-size:.9rem;background:#fff;transition:all .2s;color:var(--ink)}
+.f-in:focus{outline:none;border-color:var(--royal-500);box-shadow:0 0 0 3px var(--royal-100)}
+textarea.f-in{min-height:104px;resize:vertical;line-height:1.9}
+input[type=range].f-in{padding:0;height:34px;accent-color:var(--royal-600)}
+input[type=color].f-in{padding:4px;height:44px;cursor:pointer}
+.chk{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:800;padding:9px 13px;border:1.5px solid var(--line);border-radius:11px;cursor:pointer;transition:all .2s;user-select:none}
+.chk input{accent-color:var(--royal-600);width:16px;height:16px}
+.chk:has(input:checked){border-color:var(--royal-500);background:var(--royal-50)}
+.out-box{background:var(--royal-950);color:#fff;border-radius:14px;padding:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.out-box code{font-family:ui-monospace,Menlo,monospace;font-size:1.06rem;font-weight:700;letter-spacing:.08em;word-break:break-all;flex:1;direction:ltr;text-align:left}
+.copy-b{background:rgba(255,255,255,.12);color:#fff;border-radius:10px;padding:9px 15px;font-weight:800;font-size:.78rem;transition:all .2s;display:inline-flex;gap:7px;align-items:center}
+.copy-b:hover{background:rgba(255,255,255,.25)}
+.s-track{height:9px;background:var(--royal-100);border-radius:99px;overflow:hidden;margin-bottom:6px}
+.s-fill{height:100%;width:0;border-radius:99px;transition:width .5s,background .5s}
+.s-lbl{font-size:.74rem;font-weight:900}
+.qr-stage{display:grid;place-items:center;background:repeating-conic-gradient(#f1f5ff 0 25%,#fff 0 50%) 0 0/22px 22px;border:1.5px solid var(--line);border-radius:16px;padding:22px;margin-bottom:14px;min-height:150px}
+.preview-img{max-height:220px;border-radius:12px;border:1px solid var(--line)}
+.res-box{background:var(--royal-50);border:1.5px solid var(--royal-100);border-radius:14px;padding:16px;margin-top:14px}
+.res-box b{color:var(--royal-800);font-size:1rem}
+.res-box small{display:block;color:var(--muted);font-weight:700;font-size:.76rem;margin-top:3px}
+.mini-stat{display:flex;justify-content:space-between;font-size:.75rem;font-weight:800;color:var(--muted);margin-top:8px}
+.busy{text-align:center;color:var(--muted);font-weight:800;font-size:.85rem;padding:24px 0}
+.busy i{display:block;font-size:26px;color:var(--royal-600);margin-bottom:10px}
+
+/* ═══════════════════ ۱۰) فوتر ═══════════════════ */
+footer{background:var(--royal-950);color:var(--royal-300);padding:56px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:38px;padding-bottom:40px}
+.foot-logo{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.foot-logo .logo-name{color:#fff}
+.foot-about{font-size:.85rem;max-width:40ch}
+.foot-h{color:#fff;font-weight:900;margin-bottom:16px;font-size:.98rem}
+.foot-links{list-style:none;display:grid;gap:10px}
+.foot-links a,.foot-links button{font-size:.84rem;font-weight:700;transition:all .25s;display:inline-flex;align-items:center;gap:8px;color:var(--royal-300)}
+.foot-links a:hover,.foot-links button:hover{color:#fff;padding-inline-start:6px}
+.foot-links i{font-size:.6rem;color:var(--royal-500)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-size:.76rem;font-weight:700}
+.designer{color:#fff}.designer i{color:var(--amber)}
+.demo-flag{color:#7ef0b6}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.foot-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════ ۱۱) توست ═══════════════════ */
+#toast{position:fixed;bottom:24px;inset-inline:0;margin-inline:auto;width:fit-content;max-width:90%;
+  background:var(--royal-900);color:#fff;font-weight:800;font-size:.86rem;padding:13px 24px;border-radius:14px;
+  box-shadow:var(--shadow-lg);z-index:1200;opacity:0;transform:translateY(24px);transition:all .4s cubic-bezier(.2,1,.3,1);
+  pointer-events:none;border-inline-start:4px solid var(--royal-500);display:flex;align-items:center;gap:10px}
+#toast.show{opacity:1;transform:translateY(0)}
+#toast.err{border-color:var(--err)}#toast.ok{border-color:var(--ok)}
+
+/* ═══════════════════ ۱۲) انیمیشن ورود ═══════════════════ */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}.reveal{opacity:1;transform:none}
+}
+</style>
 </head>
-<body>
-<div class="container">
+<body id="top">
+<div id="scrollProgress"></div>
 
-    <div class="lang-toggle-wrap">
-        <button class="lang-btn" id="langToggle">
-            <i class="fas fa-globe"></i>
-            <span class="lang-fa">English</span>
-            <span class="lang-en">فارسی</span>
-        </button>
-    </div>
-
-    <header class="main-header">
-        <h1><i class="fas fa-cubes"></i><span class="lang-fa">ابزارهای رایگان تبدیل</span><span class="lang-en">Free Conversion Tools</span></h1>
-        <p class="lang-fa">ابزارهای واقعی و کاملاً رایگان - بدون نیاز به سرور</p>
-        <p class="lang-en">Real tools, completely free - No server required</p>
-    </header>
-
-    <nav class="tabs-wrap" id="tabContainer">
-        <button class="tab-btn active" data-tab="tab-image"><i class="fas fa-image"></i><span class="lang-fa">عکس</span><span class="lang-en">Image</span></button>
-        <button class="tab-btn" data-tab="tab-topdf"><i class="fas fa-file-import"></i><span class="lang-fa">تبدیل به PDF</span><span class="lang-en">To PDF</span></button>
-        <button class="tab-btn" data-tab="tab-util"><i class="fas fa-tools"></i><span class="lang-fa">جانبی</span><span class="lang-en">Utility</span></button>
-        <button class="tab-btn" data-tab="tab-pdf"><i class="fas fa-file-pdf"></i><span class="lang-fa">PDF</span><span class="lang-en">PDF</span></button>
-        <button class="tab-btn" data-tab="tab-video"><i class="fas fa-video"></i><span class="lang-fa">ویدیو</span><span class="lang-en">Video</span></button>
-        <button class="tab-btn" data-tab="tab-audio"><i class="fas fa-music"></i><span class="lang-fa">صوتی</span><span class="lang-en">Audio</span></button>
-        <button class="tab-btn" data-tab="tab-word"><i class="fas fa-file-word"></i><span class="lang-fa">Word</span><span class="lang-en">Word</span></button>
+<!-- ═══════════════════════════ هدر ═══════════════════════════ -->
+<header id="header">
+  <div class="container header-in">
+    <a href="#top" class="logo" aria-label="FileYar">
+      <span class="logo-badge"><i class="fa-solid fa-toolbox"></i></span>
+      <span><span class="logo-name" data-i18n="brand">فایل‌یار ۲.۰</span>
+      <span class="logo-tag" data-i18n="brand_tag">۱۱ ابزار واقعی · بدون سرور</span></span>
+    </a>
+    <nav class="nav" id="mainNav" aria-label="منوی اصلی">
+      <a href="#tools" data-i18n="nav_tools">ابزارها</a>
+      <a href="#guide" data-i18n="nav_guide">راهنما</a>
+      <a href="#faq" data-i18n="nav_faq">سوالات متداول</a>
     </nav>
+    <span class="free-pill" data-i18n="nav_free">۱۰۰٪ رایگان · بدون ثبت‌نام</span>
+    <button id="langToggle" aria-label="Change language"><i class="fa-solid fa-globe"></i><span id="langLabel">EN</span></button>
+    <button id="burger" aria-label="منو"><i class="fa-solid fa-bars"></i></button>
+  </div>
+</header>
 
-    <!-- ========================================================= -->
-    <!-- ====== تب عکس (همه واقعی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-image" class="tool-section active">
-        <h2 style="margin:10px 0;">🖼️ ابزارهای عکس <span style="font-size:0.8rem;color:#22c55e;">(همه فعال)</span></h2>
-        <div class="tools-grid">
-            <div class="tool-card active-card" onclick="document.getElementById('ocrInput').click()">
-                <i class="fas fa-text-height"></i>
-                <h4>عکس به متن</h4>
-                <p>استخراج متن با OCR + ویرایش</p>
-                <span class="badge active">فعال</span>
-                <input type="file" id="ocrInput" accept="image/*" style="display:none;">
-            </div>
-            <div id="ocrOutput" class="ocr-output" style="grid-column:1/-1;">
-                <textarea id="ocrTextArea" placeholder="متن استخراج شده در اینجا نمایش داده می‌شود..."></textarea>
-                <div class="ocr-actions">
-                    <button class="btn btn-success" onclick="copyOcrText()"><i class="fas fa-copy"></i> کپی متن</button>
-                    <button class="btn btn-primary" onclick="downloadOcrText()"><i class="fas fa-download"></i> دانلود TXT</button>
-                </div>
-            </div>
-
-            <div class="tool-card active-card" onclick="document.getElementById('ocrInput').click()">
-                <i class="fas fa-pen-fancy"></i>
-                <h4>دستنویس به متن</h4>
-                <p>تبدیل خط دستی به متن</p>
-                <span class="badge active">فعال</span>
-            </div>
-
-            <div class="tool-card active-card" onclick="document.getElementById('imgToPdfInput2').click()">
-                <i class="fas fa-file-pdf"></i>
-                <h4>عکس به PDF</h4>
-                <p>ساخت PDF از عکس</p>
-                <span class="badge active">فعال</span>
-                <input type="file" id="imgToPdfInput2" accept="image/*" style="display:none;">
-            </div>
-
-            <div class="tool-card active-card" onclick="document.getElementById('compressInput').click()">
-                <i class="fas fa-compress-alt"></i>
-                <h4>فشرده‌سازی عکس</h4>
-                <p>کاهش حجم با حفظ کیفیت</p>
-                <span class="badge active">فعال</span>
-                <input type="file" id="compressInput" accept="image/*" style="display:none;">
-            </div>
-
-            <div class="tool-card active-card" onclick="document.getElementById('imgConvertInput').click()">
-                <i class="fas fa-exchange-alt"></i>
-                <h4>HEIC به JPG</h4>
-                <p>تبدیل عکس آیفون</p>
-                <span class="badge active">فعال</span>
-                <input type="file" id="imgConvertInput" accept="image/*" style="display:none;">
-            </div>
-            <div class="tool-card active-card" onclick="document.getElementById('imgConvertInput').click()">
-                <i class="fas fa-file-image"></i>
-                <h4>عکس به JPG</h4>
-                <p>تبدیل به فرمت JPG</p>
-                <span class="badge active">فعال</span>
-            </div>
-            <div class="tool-card active-card" onclick="document.getElementById('imgConvertInput').click()">
-                <i class="fas fa-file-png"></i>
-                <h4>عکس به PNG</h4>
-                <p>تبدیل به PNG شفاف</p>
-                <span class="badge active">فعال</span>
-            </div>
-
-            <div class="tool-card disabled-card">
-                <i class="fas fa-object-ungroup"></i>
-                <h4>ترکیب عکس‌ها</h4>
-                <p>اتصال چند عکس به هم</p>
-                <span class="badge soon">به‌زودی</span>
-            </div>
-            <div class="tool-card disabled-card">
-                <i class="fas fa-eraser"></i>
-                <h4>حذف پس‌زمینه</h4>
-                <p>حذف خودکار بک‌گراند</p>
-                <span class="badge soon">به‌زودی</span>
-            </div>
-        </div>
-        <!-- مبدل فرمت عکس جامع -->
-        <div class="util-box">
-            <h4><i class="fas fa-exchange-alt"></i> مبدل فرمت عکس <span class="badge active" style="font-size:0.8rem;">فعال</span></h4>
-            <p>انتخاب عکس و فرمت خروجی (PNG, JPG, WebP, AVIF, BMP)</p>
-            <input type="file" id="imgConvertInput2" accept="image/*">
-            <select id="imgFormatSelect" style="width:auto;padding:8px 16px;">
-                <option value="image/png">PNG</option>
-                <option value="image/jpeg" selected>JPG</option>
-                <option value="image/webp">WebP</option>
-                <option value="image/avif">AVIF</option>
-                <option value="image/bmp">BMP</option>
-            </select>
-            <button class="btn btn-primary" id="convertImgBtn"><i class="fas fa-sync"></i> تبدیل و دانلود</button>
-        </div>
+<main>
+<!-- ═══════════════════════════ بخش آغازین ═══════════════════════════ -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow"><i class="fa-solid fa-bolt"></i><span id="toolCount">۱۱</span>&nbsp;<span data-i18n="hero_eb">ابزار واقعی · بدون سرور</span></span>
+      <h1 class="hero-title">
+        <span class="hl-line"><span data-i18n="hero_t1">۱۱ ابزار واقعی و رایگان</span></span>
+        <span class="hl-line"><span class="accent" data-i18n="hero_t2">OCR · PDF · رمز · QR · تاریخ</span></span>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">تبدیل عکس به متن با OCR واقعی، ساخت PDF از عکس و متن، فشرده‌سازی، مبدل فرمت، HEIC، رمز عبور، QR آفلاین، تبدیل تاریخ دقیق، متن به گفتار و متن به Word — همه در مرورگر شما.</p>
+      <div class="search-wrap">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="heroSearch" autocomplete="off" data-i18n-ph="search_ph" placeholder="جست‌وجوی ابزار…">
+      </div>
+      <div class="search-info" id="searchInfo"></div>
+      <div class="quick-chips">
+        <button class="qchip" data-q="ocr"><i class="fa-solid fa-font"></i><span data-i18n="qc1">عکس به متن</span></button>
+        <button class="qchip" data-q="pdf"><i class="fa-solid fa-file-pdf"></i><span data-i18n="qc2">عکس به PDF</span></button>
+        <button class="qchip" data-q="qr"><i class="fa-solid fa-qrcode"></i><span data-i18n="qc3">ساخت QR</span></button>
+        <button class="qchip" data-q="password"><i class="fa-solid fa-key"></i><span data-i18n="qc4">رمز عبور</span></button>
+        <button class="qchip" data-q="date"><i class="fa-solid fa-calendar-days"></i><span data-i18n="qc5">تبدیل تاریخ</span></button>
+      </div>
     </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== تب تبدیل به PDF (واقعی + به‌زودی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-topdf" class="tool-section">
-        <h2 style="margin:10px 0;">📑 تبدیل فایل‌ها به PDF</h2>
-        <div class="tools-grid">
-            <div class="tool-card active-card" onclick="convertTextToPDF()">
-                <i class="fas fa-pencil-alt"></i>
-                <h4>متن به PDF</h4>
-                <p>نوشته دلخواه به PDF</p>
-                <span class="badge active">فعال</span>
-            </div>
-            <div class="tool-card active-card" onclick="document.getElementById('imgToPdfInput').click()">
-                <i class="fas fa-image"></i>
-                <h4>عکس به PDF</h4>
-                <p>ساخت PDF از عکس</p>
-                <span class="badge active">فعال</span>
-                <input type="file" id="imgToPdfInput" accept="image/*" style="display:none;">
-            </div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-excel"></i><h4>Excel به PDF</h4><p>تبدیل صفحه گسترده</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-powerpoint"></i><h4>پاورپوینت به PDF</h4><p>اسلایدها به PDF</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-word"></i><h4>Word به PDF</h4><p>سند به PDF</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-alt"></i><h4>TXT به PDF</h4><p>متن ساده به PDF</p><span class="badge soon">به‌زودی</span></div>
-        </div>
+    <div class="bench reveal">
+      <div class="bench-head"><span class="bench-dots"><span></span><span></span><span></span></span><span data-i18n="bench_title">پیشخوان تبدیل</span></div>
+      <div class="pipe">
+        <div class="pipe-node"><i class="fa-solid fa-upload"></i><small data-i18n="bs1">آپلود</small></div>
+        <div class="pipe-track"><span class="pipe-dot"></span></div>
+        <div class="pipe-node mid"><i class="fa-solid fa-microchip"></i><small data-i18n="bs2">پردازش</small></div>
+        <div class="pipe-track"><span class="pipe-dot d2"></span></div>
+        <div class="pipe-node okn"><i class="fa-solid fa-download"></i><small data-i18n="bs3">دانلود</small></div>
+      </div>
+      <div class="bench-grid">
+        <button class="bq" data-open="qr"><i class="fa-solid fa-qrcode"></i><span data-i18n="t_qr_n">ساخت QR Code</span></button>
+        <button class="bq" data-open="pass"><i class="fa-solid fa-key"></i><span data-i18n="t_pass_n">تولید رمز عبور</span></button>
+        <button class="bq" data-open="date"><i class="fa-solid fa-calendar-days"></i><span data-i18n="t_date_n">تبدیل تاریخ</span></button>
+        <button class="bq" data-open="imgfmt"><i class="fa-solid fa-arrows-rotate"></i><span data-i18n="t_imgfmt_n">مبدل فرمت عکس</span></button>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- ========================================================= -->
-    <!-- ====== تب جانبی (همه واقعی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-util" class="tool-section">
-        <h2 style="margin:10px 0;">🔧 ابزارهای جانبی <span style="font-size:0.8rem;color:#22c55e;">(همه فعال)</span></h2>
-        
-        <div class="util-box">
-            <h3><i class="fas fa-key"></i> تولید رمز عبور قوی</h3>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-                <input type="text" id="passOutput" value="A8#kLp2!" style="flex:2;min-width:200px;">
-                <button class="btn btn-primary" id="genPassBtn"><i class="fas fa-sync"></i> تولید جدید</button>
-            </div>
-            <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;">
-                <label>طول: <input type="number" id="passLen" value="12" min="4" max="64" style="width:70px;"></label>
-                <label><input type="checkbox" id="chkUpper" checked> حروف بزرگ</label>
-                <label><input type="checkbox" id="chkLower" checked> حروف کوچک</label>
-                <label><input type="checkbox" id="chkNum" checked> اعداد</label>
-                <label><input type="checkbox" id="chkSym" checked> نمادها</label>
-            </div>
-            <div class="strength-bar"><div class="fill" id="strengthFill" style="width:80%;background:#22c55e;"></div></div>
-            <span id="strengthText">قوی</span>
-        </div>
-
-        <div class="util-box">
-            <h3><i class="fas fa-qrcode"></i> ساخت QR Code</h3>
-            <input type="text" id="qrInput" placeholder="لینک یا متن مورد نظر..." value="https://example.com">
-            <button class="btn btn-primary" id="genQrBtn"><i class="fas fa-qrcode"></i> ساخت QR</button>
-            <div class="qr-result">
-                <img id="qrImage" src="" alt="QR Code" style="display:none;max-width:250px;">
-                <button class="btn btn-success" id="downloadQrBtn" style="display:none;"><i class="fas fa-download"></i> دانلود PNG</button>
-            </div>
-        </div>
-
-        <div class="util-box">
-            <h3><i class="fas fa-calendar-alt"></i> تبدیل تاریخ شمسی به میلادی</h3>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;">
-                <input type="number" id="yearInput" placeholder="سال" value="1404" style="width:90px;">
-                <input type="number" id="monthInput" placeholder="ماه" value="5" style="width:80px;">
-                <input type="number" id="dayInput" placeholder="روز" value="17" style="width:80px;">
-                <button class="btn btn-primary" id="convertDateBtn"><i class="fas fa-sync"></i> تبدیل</button>
-            </div>
-            <div id="dateResult" style="margin-top:12px;font-size:1.2rem;font-weight:700;color:var(--primary);">
-                میلادی: 2025-08-07
-            </div>
-        </div>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== PDF (همه به‌زودی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-pdf" class="tool-section">
-        <h2 style="margin:10px 0;">📄 تبدیل فایل‌های PDF <span style="font-size:0.8rem;color:#f59e0b;">(به‌زودی)</span></h2>
-        <div class="tools-grid">
-            <div class="tool-card disabled-card"><i class="fas fa-file-word"></i><h4>PDF به Word</h4><p>تبدیل با حفظ جدول و تصاویر</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-excel"></i><h4>PDF به Excel</h4><p>استخراج داده‌ها به صفحه گسترده</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-image"></i><h4>PDF به عکس</h4><p>تبدیل صفحات به JPG/PNG</p><span class="badge soon">به‌زودی</span></div>
-        </div>
-        <p style="color:var(--gray-600);font-size:0.9rem;text-align:center;">🔧 این ابزارها به زیرساخت سرور نیاز دارند و به زودی اضافه می‌شوند.</p>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== ویدیو (همه به‌زودی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-video" class="tool-section">
-        <h2 style="margin:10px 0;">🎬 ابزارهای ویدیویی <span style="font-size:0.8rem;color:#f59e0b;">(به‌زودی)</span></h2>
-        <div class="tools-grid">
-            <div class="tool-card disabled-card"><i class="fas fa-closed-captioning"></i><h4>ویدیو به متن</h4><p>استخراج زیرنویس</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-volume-up"></i><h4>ویدیو به صوت</h4><p>استخراج صدا</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-audio"></i><h4>MP4 به MP3</h4><p>تبدیل ویدیو به صدا</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-cut"></i><h4>برش ویدیو</h4><p>برش دقیق فیلم</p><span class="badge soon">به‌زودی</span></div>
-        </div>
-        <p style="color:var(--gray-600);font-size:0.9rem;text-align:center;">🔧 این ابزارها به پردازش سرور نیاز دارند و به زودی اضافه می‌شوند.</p>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== صوتی (همه به‌زودی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-audio" class="tool-section">
-        <h2 style="margin:10px 0;">🎵 ابزارهای صوتی <span style="font-size:0.8rem;color:#f59e0b;">(به‌زودی)</span></h2>
-        <div class="tools-grid">
-            <div class="tool-card disabled-card"><i class="fas fa-microphone-alt"></i><h4>صوت به متن</h4><p>تبدیل گفتار به نوشته</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-volume-high"></i><h4>متن به گفتار</h4><p>تبدیل متن به صدای طبیعی</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-file-audio"></i><h4>MP3 به OGG</h4><p>تبدیل فرمت صوتی</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-cut"></i><h4>برش صوتی</h4><p>برش فایل صوتی</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-object-group"></i><h4>ترکیب صوتی</h4><p>اتصال چند فایل</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-comment-dots"></i><h4>گفتار به متن</h4><p>رونویسی خودکار</p><span class="badge soon">به‌زودی</span></div>
-        </div>
-        <p style="color:var(--gray-600);font-size:0.9rem;text-align:center;">🔧 این ابزارها به پردازش سرور نیاز دارند و به زودی اضافه می‌شوند.</p>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== Word (همه به‌زودی) ====== -->
-    <!-- ========================================================= -->
-    <div id="tab-word" class="tool-section">
-        <h2 style="margin:10px 0;">📝 ابزارهای Word <span style="font-size:0.8rem;color:#f59e0b;">(به‌زودی)</span></h2>
-        <div class="tools-grid">
-            <div class="tool-card disabled-card"><i class="fas fa-object-group"></i><h4>ترکیب فایل‌های Word</h4><p>اتحاد چند سند</p><span class="badge soon">به‌زودی</span></div>
-            <div class="tool-card disabled-card"><i class="fas fa-pencil-alt"></i><h4>متن به Word</h4><p>تبدیل متن به سند</p><span class="badge soon">به‌زودی</span></div>
-        </div>
-        <p style="color:var(--gray-600);font-size:0.9rem;text-align:center;">🔧 این ابزارها به پردازش سرور نیاز دارند و به زودی اضافه می‌شوند.</p>
-    </div>
-
-    <!-- ========================================================= -->
-    <!-- ====== سوالات متداول ====== -->
-    <!-- ========================================================= -->
-    <h2 style="text-align:center;margin-top:40px;">❓ سوالات متداول</h2>
-    <div class="faq-list">
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> کدام ابزارها الان کار می‌کنند؟</div><div class="a">ابزارهای عکس به متن، دستنویس به متن، عکس به PDF، متن به PDF، فشرده‌سازی عکس، مبدل فرمت عکس، تولید رمز، QR کد و تبدیل تاریخ هم‌اکنون فعال هستند.</div></div>
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> چرا برخی ابزارها غیرفعال هستند؟</div><div class="a">ابزارهای تبدیل PDF به Word، ویدیو به متن و ابزارهای مشابه نیاز به سرور قدرتمند دارند که در حال راه‌اندازی است و به زودی اضافه می‌شوند.</div></div>
-        <div class="faq-item"><div class="q"><i class="fas fa-question-circle"></i> آیا استفاده از ابزارها رایگان است؟</div><div class="a">بله، تمام ابزارهای این سایت کاملاً رایگان هستند و هیچ هزینه‌ای ندارند.</div></div>
-    </div>
-
-    <footer class="footer">
-        <span class="lang-fa">© ۲۰۲۶ تمامی حقوق محفوظ است. | طراحی و توسعه توسط <span class="designer">مهدی رحیمیان</span></span>
-        <span class="lang-en">© 2026 All Rights Reserved. | Designed & Developed by <span class="designer">Mehdi Rahimián</span></span>
-    </footer>
+<!-- ═══════════════════════════ نوار متحرک ═══════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <div class="mq-group"><span><i class="fa-solid fa-star"></i>OCR واقعی</span><span><i class="fa-solid fa-star"></i>عکس به PDF</span><span><i class="fa-solid fa-star"></i>متن به PDF</span><span><i class="fa-solid fa-star"></i>فشرده‌سازی عکس</span><span><i class="fa-solid fa-star"></i>HEIC → JPG</span><span><i class="fa-solid fa-star"></i>QR آفلاین</span><span><i class="fa-solid fa-star"></i>رمز عبور</span><span><i class="fa-solid fa-star"></i>تاریخ دقیق</span><span><i class="fa-solid fa-star"></i>TTS</span><span><i class="fa-solid fa-star"></i>متن به Word</span></div>
+    <div class="mq-group"><span><i class="fa-solid fa-star"></i>OCR واقعی</span><span><i class="fa-solid fa-star"></i>عکس به PDF</span><span><i class="fa-solid fa-star"></i>متن به PDF</span><span><i class="fa-solid fa-star"></i>فشرده‌سازی عکس</span><span><i class="fa-solid fa-star"></i>HEIC → JPG</span><span><i class="fa-solid fa-star"></i>QR آفلاین</span><span><i class="fa-solid fa-star"></i>رمز عبور</span><span><i class="fa-solid fa-star"></i>تاریخ دقیق</span><span><i class="fa-solid fa-star"></i>TTS</span><span><i class="fa-solid fa-star"></i>متن به Word</span></div>
+  </div>
 </div>
 
+<!-- ═══ محل تبلیغ Google AdSense ═══ -->
+
+<!-- ═══════════════════════════ نوار آمار ═══════════════════════════ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-band reveal">
+      <div class="stat"><div class="stat-num" data-count="35">۰</div><div class="stat-label" data-i18n="st1">ابزار موجود</div></div>
+      <div class="stat"><div class="stat-num" data-count="11">۰</div><div class="stat-label" data-i18n="st2">ابزار واقعی و فعال</div></div>
+      <div class="stat"><div class="stat-num" data-count="100" data-sfx="sfx_pct">۰</div><div class="stat-label" data-i18n="st3">رایگان برای همیشه</div></div>
+      <div class="stat"><div class="stat-num" data-count="2">۰</div><div class="stat-label" data-i18n="st4">زبان: فارسی و انگلیسی</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ابزارها ═══════════════════════════ -->
+<section id="tools">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-crown"></i><span data-i18n="tools_eb">همهٔ ابزارها</span></span>
+      <h2 class="sec-title" data-i18n="tools_title">۳۵ ابزار · ۱۱ تای آنها کاملاً واقعی</h2>
+      <p class="sec-sub" data-i18n="tools_sub">ابزارهای دارای نشان «زنده» کاملاً در مرورگر اجرا می‌شوند. بقیه ابزارها شبیه‌سازی نمایشی هستند و برای اجرای کامل نیاز به سرور دارند.</p>
+    </div>
+    <div class="tabs" id="tabsBar" role="tablist"></div>
+    <div class="tools-grid" id="toolsGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ راهنما ═══════════════════════════ -->
+<section id="guide">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-route"></i><span data-i18n="guide_eb">راهنما</span></span>
+      <h2 class="sec-title" data-i18n="guide_title">سه قدم تا خروجی</h2>
+    </div>
+    <div class="steps3">
+      <div class="stp reveal"><span class="stp-n">۱</span><h3 data-i18n="g1t">ابزار را انتخاب کنید</h3><p data-i18n="g1x">روی کارت ابزار دلخواه کلیک کنید تا فضای کار آن باز شود.</p></div>
+      <div class="stp reveal"><span class="stp-n">۲</span><h3 data-i18n="g2t">فایل یا داده را وارد کنید</h3><p data-i18n="g2x">فایل را بکشید و رها کنید یا داده را وارد نمایید.</p></div>
+      <div class="stp reveal"><span class="stp-n">۳</span><h3 data-i18n="g3t">خروجی را رایگان بگیرید</h3><p data-i18n="g3x">روی دکمه تبدیل بزنید و خروجی خود را دریافت کنید.</p></div>
+    </div>
+    <div class="why-row">
+      <div class="why reveal"><i class="fa-solid fa-infinity"></i><b data-i18n="w1">رایگان برای همیشه</b></div>
+      <div class="why reveal"><i class="fa-solid fa-user-slash"></i><b data-i18n="w2">بدون ثبت‌نام</b></div>
+      <div class="why reveal"><i class="fa-solid fa-shield-halved"></i><b data-i18n="w3">فایل‌ها در مرورگر می‌مانند</b></div>
+      <div class="why reveal"><i class="fa-solid fa-language"></i><b data-i18n="w4">دوزبانه: فارسی و انگلیسی</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ محل تبلیغ Google AdSense ═══ -->
+
+<!-- ═══════════════════════════ سوالات متداول ═══════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow"><i class="fa-solid fa-circle-question"></i><span data-i18n="faq_eb">سوالات متداول</span></span>
+      <h2 class="sec-title" data-i18n="faq_title">پاسخ به پرسش‌های شما</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q1">کدام ابزارها واقعاً کار می‌کنند؟</span><i class="fa-solid fa-plus"></i></button><div class="faq-a"><p data-i18n="a1">۱۱ ابزار با نشان «زنده»: OCR واقعی، دست‌نویس به متن، عکس به PDF، متن به PDF، فشرده‌سازی عکس، مبدل فرمت عکس، HEIC، رمز عبور، QR آفلاین، تبدیل تاریخ دقیق، متن به گفتار و متن به Word. بقیه ابزارها شبیه‌سازی نمایشی هستند.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q2">آیا فایل‌های من به سرور ارسال می‌شوند؟</span><i class="fa-solid fa-plus"></i></button><div class="faq-a"><p data-i18n="a2">خیر؛ تمام ابزارهای «زنده» کاملاً در مرورگر شما اجرا می‌شوند. هیچ فایلی به سرور ارسال نمی‌شود.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q3">چرا برخی ابزارها غیرفعال هستند؟</span><i class="fa-solid fa-plus"></i></button><div class="faq-a"><p data-i18n="a3">ابزارهایی مانند PDF به Word، ویرایش ویدیو و ترکیب صوتی نیاز به پردازش سنگین سرور دارند. این ابزارها به‌زودی با زیرساخت مناسب اضافه می‌شوند.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="q4">آیا استفاده از ابزارها رایگان است؟</span><i class="fa-solid fa-plus"></i></button><div class="faq-a"><p data-i18n="a4">بله؛ تمام ابزارهای این سایت کاملاً رایگان هستند و هیچ هزینه‌ای ندارند.</p></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══════════════════════════ فوتر ═══════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="logo-badge"><i class="fa-solid fa-toolbox"></i></span><span class="logo-name" data-i18n="brand">فایل‌یار ۲.۰</span></div>
+        <p class="foot-about" data-i18n="foot_about">فایل‌یار ۲.۰ یک جعبه‌ابزار رایگان با ۱۱ ابزار واقعی و ۲۴ ابزار نمایشی است. تمام ابزارهای واقعی در مرورگر شما اجرا می‌شوند و هیچ داده‌ای به سرور نمی‌رود.</p>
+      </div>
+      <div>
+        <h4 class="foot-h" data-i18n="foot_cats">دسته‌ها</h4>
+        <ul class="foot-links">
+          <li><button data-fcat="image"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_image">عکس</span></button></li>
+          <li><button data-fcat="topdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_topdf">تبدیل به PDF</span></button></li>
+          <li><button data-fcat="util"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_util">ابزار کاربردی</span></button></li>
+          <li><button data-fcat="pdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_pdf">PDF</span></button></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="foot-h" data-i18n="foot_live">ابزارهای زنده</h4>
+        <ul class="foot-links">
+          <li><button data-fopen="img2text"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_ocr_n">عکس به متن (OCR)</span></button></li>
+          <li><button data-fopen="img2pdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_img2pdf_n">عکس به PDF</span></button></li>
+          <li><button data-fopen="qr"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_qr_n">ساخت QR Code</span></button></li>
+          <li><button data-fopen="pass"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_pass_n">تولید رمز عبور</span></button></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="foot-h" data-i18n="foot_links">دسترسی سریع</h4>
+        <ul class="foot-links">
+          <li><a href="#tools"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_tools">ابزارها</span></a></li>
+          <li><a href="#guide"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_guide">راهنما</span></a></li>
+          <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_faq">سوالات متداول</span></a></li>
+          <li><a href="#top"><i class="fa-solid fa-chevron-right"></i><span data-i18n="foot_top">بازگشت به بالا</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span><span data-i18n="foot_rights">© تمامی حقوق محفوظ است.</span> <span id="year">۱۴۰۵</span></span>
+      <span class="designer"><i class="fa-solid fa-pen-ruler"></i> <span data-i18n="designer">طراحی و توسعه:</span> <span data-i18n="designer_name">مهدی رحیمیان</span></span>
+      <span class="demo-flag"><i class="fa-solid fa-flask"></i> <span data-i18n="foot_demo">۱۱ ابزار واقعی · بقیه نمایشی</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- مودال فضای کار ابزار -->
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="m-card">
+    <div class="m-head">
+      <span class="m-ic" id="mIc"><i class="fa-solid fa-toolbox"></i></span>
+      <div class="m-title" id="mTitle">—</div>
+      <span class="m-badge sim" id="mBadge">—</span>
+      <button class="m-close" id="mClose" aria-label="بستن"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="m-body" id="mBody"></div>
+  </div>
+</div>
+
+<div id="toast" role="status"></div>
+
 <script>
-// ============================================================
-// ۱. زبان
-// ============================================================
-const langToggle = document.getElementById('langToggle');
-const body = document.body;
-if (localStorage.getItem('lang') === 'en') body.classList.add('en');
-langToggle.addEventListener('click', () => {
-    body.classList.toggle('en');
-    localStorage.setItem('lang', body.classList.contains('en') ? 'en' : 'fa');
-});
+/* ═══════════════════════════════════════════════════════════════
+   فایل‌یار ۲.۰ — منطق کامل (۱۱ ابزار واقعی + بقیه نمایشی)
+   طراحی و توسعه: مهدی رحیمیان
+═══════════════════════════════════════════════════════════════ */
 
-// ============================================================
-// ۲. تب‌ها
-// ============================================================
-const tabs = document.querySelectorAll('.tab-btn');
-const sections = {
-    'tab-pdf': document.getElementById('tab-pdf'),
-    'tab-video': document.getElementById('tab-video'),
-    'tab-audio': document.getElementById('tab-audio'),
-    'tab-topdf': document.getElementById('tab-topdf'),
-    'tab-image': document.getElementById('tab-image'),
-    'tab-word': document.getElementById('tab-word'),
-    'tab-util': document.getElementById('tab-util')
-};
-tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-        tabs.forEach(t => t.classList.remove('active'));
-        this.classList.add('active');
-        Object.keys(sections).forEach(key => sections[key].classList.remove('active'));
-        const target = this.dataset.tab;
-        if (sections[target]) sections[target].classList.add('active');
-    });
-});
+/* ─────────── ۱) دیکشنری دوزبانه ─────────── */
+const DICT={
+fa:{
+ brand:"فایل‌یار ۲.۰",brand_tag:"۱۱ ابزار واقعی · بدون سرور",
+ nav_tools:"ابزارها",nav_guide:"راهنما",nav_faq:"سوالات متداول",nav_free:"۱۰۰٪ رایگان · بدون ثبت‌نام",
+ hero_eb:"ابزار واقعی · بدون سرور",hero_t1:"۱۱ ابزار واقعی و رایگان",hero_t2:"OCR · PDF · رمز · QR · تاریخ",
+ hero_sub:"تبدیل عکس به متن با OCR واقعی، ساخت PDF از عکس و متن، فشرده‌سازی، مبدل فرمت، HEIC، رمز عبور، QR آفلاین، تبدیل تاریخ دقیق، متن به گفتار و متن به Word — همه در مرورگر شما.",
+ search_ph:"جست‌وجوی ابزار…",found:"ابزار یافت شد",no_result:"ابزاری یافت نشد.",
+ qc1:"عکس به متن",qc2:"عکس به PDF",qc3:"ساخت QR",qc4:"رمز عبور",qc5:"تبدیل تاریخ",
+ bench_title:"پیشخوان تبدیل",bs1:"آپلود",bs2:"پردازش",bs3:"دانلود",
+ st1:"ابزار موجود",st2:"ابزار واقعی و فعال",st3:"رایگان برای همیشه",st4:"زبان: فارسی و انگلیسی",sfx_pct:"٪",
+ tools_eb:"همهٔ ابزارها",tools_title:"۳۵ ابزار · ۱۱ تای آنها کاملاً واقعی",
+ tools_sub:"ابزارهای دارای نشان «زنده» کاملاً در مرورگر اجرا می‌شوند. بقیه ابزارها شبیه‌سازی نمایشی هستند.",
+ c_all:"همه",c_image:"عکس",c_topdf:"تبدیل به PDF",c_util:"ابزار کاربردی",c_pdf:"PDF",
+ badge_live:"زنده",badge_sim:"نمایشی",card_go:"اجرای ابزار",
+ guide_eb:"راهنما",guide_title:"سه قدم تا خروجی",
+ g1t:"ابزار را انتخاب کنید",g1x:"روی کارت ابزار دلخواه کلیک کنید.",
+ g2t:"فایل یا داده را وارد کنید",g2x:"فایل را بکشید و رها کنید یا داده را وارد نمایید.",
+ g3t:"خروجی را رایگان بگیرید",g3x:"روی دکمه تبدیل بزنید و خروجی خود را دریافت کنید.",
+ w1:"رایگان برای همیشه",w2:"بدون ثبت‌نام",w3:"فایل‌ها در مرورگر می‌مانند",w4:"دوزبانه: فارسی و انگلیسی",
+ faq_eb:"سوالات متداول",faq_title:"پاسخ به پرسش‌های شما",
+ q1:"کدام ابزارها واقعاً کار می‌کنند؟",a1:"۱۱ ابزار با نشان «زنده»: OCR واقعی، دست‌نویس به متن، عکس به PDF، متن به PDF، فشرده‌سازی عکس، مبدل فرمت عکس، HEIC، رمز عبور، QR آفلاین، تبدیل تاریخ دقیق، متن به گفتار و متن به Word.",
+ q2:"آیا فایل‌های من به سرور ارسال می‌شوند؟",a2:"خیر؛ تمام ابزارهای «زنده» کاملاً در مرورگر شما اجرا می‌شوند.",
+ q3:"چرا برخی ابزارها غیرفعال هستند؟",a3:"ابزارهایی مانند PDF به Word، ویرایش ویدیو و ترکیب صوتی نیاز به پردازش سنگین سرور دارند.",
+ q4:"آیا استفاده از ابزارها رایگان است؟",a4:"بله؛ تمام ابزارهای این سایت کاملاً رایگان هستند.",
+ foot_about:"فایل‌یار ۲.۰ یک جعبه‌ابزار رایگان با ۱۱ ابزار واقعی و ۲۴ ابزار نمایشی است.",
+ foot_cats:"دسته‌ها",foot_live:"ابزارهای زنده",foot_links:"دسترسی سریع",foot_top:"بازگشت به بالا",
+ foot_rights:"© تمامی حقوق محفوظ است.",designer:"طراحی و توسعه:",designer_name:"مهدی رحیمیان",foot_demo:"۱۱ ابزار واقعی · بقیه نمایشی",
+ m_drop_t:"فایل را اینجا رها کنید یا کلیک کنید",m_formats:"فرمت‌های مجاز:",m_multi:"امکان انتخاب چند فایل",
+ m_convert:"تبدیل رایگان",m_stage1:"در حال بارگذاری فایل…",m_stage2:"پردازش…",m_stage3:"بهینه‌سازی خروجی…",m_stage4:"آماده‌سازی لینک دانلود…",
+ m_success:"تبدیل با موفقیت انجام شد!",m_sim_note:"خروجی نمایشی است؛ هیچ فایلی به سرور ارسال نمی‌شود.",
+ m_download:"دانلود خروجی",m_again:"تبدیل فایل دیگر",live_note:"این ابزار کاملاً در مرورگر شما اجرا می‌شود؛ هیچ داده‌ای به سرور نمی‌رود.",
+ err_nofile:"ابتدا یک فایل انتخاب کنید.",err_generic:"خطایی رخ داد؛ دوباره تلاش کنید.",
+ t_ocr_n:"عکس به متن (OCR)",t_img2pdf_n:"عکس به PDF",t_text2pdf_n:"متن به PDF",t_imgzip_n:"فشرده‌سازی عکس",t_imgfmt_n:"مبدل فرمت عکس",t_heic_n:"HEIC به JPG",t_pass_n:"تولید رمز عبور",t_qr_n:"ساخت QR Code",t_date_n:"تبدیل تاریخ",t_tts_n:"متن به گفتار",t_t2w_n:"متن به Word",
+ ocr_loading:"⏳ در حال پردازش عکس با OCR...",ocr_result:"متن استخراج شده:",ocr_copy:"کپی متن",ocr_download:"دانلود TXT",ocr_no_text:"متنی پیدا نشد!",
+ pass_len:"طول رمز",pass_upper:"حروف بزرگ",pass_lower:"حروف کوچک",pass_nums:"اعداد",pass_syms:"نمادها",pass_gen:"تولید رمز عبور",pass_copy:"کپی",pass_copied:"کپی شد!",s_weak:"ضعیف",s_med:"متوسط",s_strong:"قوی",s_excellent:"عالی",
+ qr_text:"متن یا لینک",qr_ph:"https://example.com یا هر متن…",qr_size:"اندازه تصویر",qr_ecl:"سطح تحمل خطا",qr_fg:"رنگ کد",qr_bg:"رنگ پس‌زمینه",qr_make:"ساخت QR Code",qr_dl:"دانلود PNG",qr_err:"ابتدا متن یا لینک را وارد کنید.",
+ if_out:"فرمت خروجی",if_q:"کیفیت خروجی",if_go:"تبدیل فرمت",if_dl:"دانلود تصویر",if_orig:"حجم اصلی",if_new:"حجم خروجی",if_err:"لطفاً یک تصویر معتبر انتخاب کنید.",
+ heic_out:"فرمت خروجی",heic_go:"تبدیل HEIC",heic_busy:"در حال تبدیل… ممکن است چند ثانیه طول بکشد",heic_in:"انتخاب فایل HEIC آیفون",
+ d_jalali:"تاریخ شمسی (جلالی)",d_greg:"تاریخ میلادی",d_y:"سال",d_m:"ماه",d_d:"روز",d_to_g:"تبدیل به میلادی",d_to_j:"تبدیل به شمسی",d_today:"امروز",
+ tts_ph:"متن خود را اینجا بنویسید تا خوانده شود…",tts_play:"پخش گفتار",tts_stop:"توقف",tts_rate:"سرعت گفتار",tts_lang:"زبان صدا",tts_dl:"دانلود MP3 (شبیه‌سازی)",tts_unsupported:"مرورگر شما از پخش گفتار پشتیبانی نمی‌کند.",
+ t2w_ph:"متن خود را بنویسید…",t2w_go:"دانلود فایل Word",t2w_note:"متن به صورت سند Word (.doc) قابل‌ویرایش دانلود می‌شود.",t2w_err:"متن خالی است!"
+},
+en:{
+ brand:"FileYar 2.0",brand_tag:"11 real tools · No server",
+ nav_tools:"Tools",nav_guide:"Guide",nav_faq:"FAQ",nav_free:"100% Free · No Sign-up",
+ hero_eb:"real tools · no server",hero_t1:"11 Real & Free Tools",hero_t2:"OCR · PDF · Password · QR · Date",
+ hero_sub:"Real OCR, image to PDF, text to PDF, compression, format converter, HEIC, password, offline QR, precise date, TTS, text to Word — all in your browser.",
+ search_ph:"Search tools…",found:"tool(s) found",no_result:"No tools found.",
+ qc1:"Image to Text",qc2:"Image to PDF",qc3:"Make QR",qc4:"Password",qc5:"Date Converter",
+ bench_title:"Conversion Console",bs1:"Upload",bs2:"Process",bs3:"Download",
+ st1:"Total Tools",st2:"Real & Active",st3:"Free Forever",st4:"Languages: FA & EN",sfx_pct:"%",
+ tools_eb:"All Tools",tools_title:"35 tools · 11 of them are fully real",
+ tools_sub:"Tools marked “Live” run entirely in your browser. Others are UI simulations.",
+ c_all:"All",c_image:"Image",c_topdf:"To PDF",c_util:"Utilities",c_pdf:"PDF",
+ badge_live:"Live",badge_sim:"Demo",card_go:"Open tool",
+ guide_eb:"Guide",guide_title:"Three steps to your output",
+ g1t:"Pick a tool",g1x:"Click any tool card to open its workspace.",
+ g2t:"Provide file or data",g2x:"Drag & drop or enter your data.",
+ g3t:"Get your output free",g3x:"Hit convert and receive your output at zero cost.",
+ w1:"Free forever",w2:"No sign-up",w3:"Files stay in your browser",w4:"Bilingual: Persian & English",
+ faq_eb:"FAQ",faq_title:"Answers to your questions",
+ q1:"Which tools actually work?",a1:"11 tools with the “Live” badge: real OCR, handwriting to text, image to PDF, text to PDF, compression, format converter, HEIC, password, offline QR, precise date, TTS and text to Word.",
+ q2:"Are my files uploaded to a server?",a2:"No; all “Live” tools run entirely in your browser.",
+ q3:"Why are some tools disabled?",a3:"Tools like PDF to Word, video editing and audio merging require server-side processing.",
+ q4:"Are the tools really free?",a4:"Yes; all tools on this site are completely free.",
+ foot_about:"FileYar 2.0 is a free toolbox with 11 real tools and 24 UI simulations.",
+ foot_cats:"Categories",foot_live:"Live Tools",foot_links:"Quick Access",foot_top:"Back to top",
+ foot_rights:"© All rights reserved.",designer:"Design & Development:",designer_name:"Mehdi Rahimian",foot_demo:"11 real tools · Others are demo",
+ m_drop_t:"Drop your file here or click to browse",m_formats:"Allowed formats:",m_multi:"Multiple files supported",
+ m_convert:"Convert Free",m_stage1:"Uploading file…",m_stage2:"Processing…",m_stage3:"Optimizing output…",m_stage4:"Preparing download link…",
+ m_success:"Conversion completed successfully!",m_sim_note:"Demo output; no file is uploaded to any server.",
+ m_download:"Download Output",m_again:"Convert another file",live_note:"This tool runs entirely in your browser; no data is sent to a server.",
+ err_nofile:"Please select a file first.",err_generic:"Something went wrong; please try again.",
+ t_ocr_n:"Image to Text (OCR)",t_img2pdf_n:"Image to PDF",t_text2pdf_n:"Text to PDF",t_imgzip_n:"Image Compressor",t_imgfmt_n:"Image Format Converter",t_heic_n:"HEIC to JPG",t_pass_n:"Password Generator",t_qr_n:"QR Code Generator",t_date_n:"Date Converter",t_tts_n:"Text to Speech",t_t2w_n:"Text to Word",
+ ocr_loading:"⏳ Processing image with OCR...",ocr_result:"Extracted text:",ocr_copy:"Copy text",ocr_download:"Download TXT",ocr_no_text:"No text found!",
+ pass_len:"Password length",pass_upper:"Uppercase",pass_lower:"Lowercase",pass_nums:"Digits",pass_syms:"Symbols",pass_gen:"Generate Password",pass_copy:"Copy",pass_copied:"Copied!",s_weak:"Weak",s_med:"Medium",s_strong:"Strong",s_excellent:"Excellent",
+ qr_text:"Text or URL",qr_ph:"https://example.com or any text…",qr_size:"Image size",qr_ecl:"Error correction",qr_fg:"Code color",qr_bg:"Background",qr_make:"Generate QR Code",qr_dl:"Download PNG",qr_err:"Please enter text or a URL first.",
+ if_out:"Output format",if_q:"Output quality",if_go:"Convert Format",if_dl:"Download Image",if_orig:"Original size",if_new:"Output size",if_err:"Please choose a valid image.",
+ heic_out:"Output format",heic_go:"Convert HEIC",heic_busy:"Converting… this may take a few seconds",heic_in:"Choose an iPhone HEIC file",
+ d_jalali:"Jalali (Shamsi) Date",d_greg:"Gregorian Date",d_y:"Year",d_m:"Month",d_d:"Day",d_to_g:"Convert to Gregorian",d_to_j:"Convert to Jalali",d_today:"Today",
+ tts_ph:"Type your text here to hear it spoken…",tts_play:"Play Speech",tts_stop:"Stop",tts_rate:"Speech rate",tts_lang:"Voice language",tts_dl:"Download MP3 (simulated)",tts_unsupported:"Your browser does not support speech synthesis.",
+ t2w_ph:"Write your text…",t2w_go:"Download Word File",t2w_note:"Your text will be downloaded as an editable Word (.doc) document.",t2w_err:"Text is empty!"
+}};
 
-// ============================================================
-// ۳. تولید رمز
-// ============================================================
-function generatePassword() {
-    const len = parseInt(document.getElementById('passLen').value) || 12;
-    const upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lower = 'abcdefghijklmnopqrstuvwxyz';
-    const num = '0123456789';
-    const sym = '!@#$%^&*()_+-=';
-    let chars = '';
-    if (document.getElementById('chkUpper').checked) chars += upper;
-    if (document.getElementById('chkLower').checked) chars += lower;
-    if (document.getElementById('chkNum').checked) chars += num;
-    if (document.getElementById('chkSym').checked) chars += sym;
-    if (!chars) { alert('حداقل یک گزینه را انتخاب کنید'); return; }
-    let pass = '';
-    for (let i = 0; i < len; i++) pass += chars.charAt(Math.floor(Math.random() * chars.length));
-    document.getElementById('passOutput').value = pass;
-    let strength = 0;
-    if (/[a-z]/.test(pass)) strength += 20;
-    if (/[A-Z]/.test(pass)) strength += 20;
-    if (/\d/.test(pass)) strength += 20;
-    if (/[^a-zA-Z0-9]/.test(pass)) strength += 30;
-    if (pass.length > 10) strength += 10;
-    const fill = document.getElementById('strengthFill');
-    const text = document.getElementById('strengthText');
-    fill.style.width = Math.min(strength, 100) + '%';
-    if (strength < 40) { fill.style.background = '#ef4444'; text.textContent = 'ضعیف'; }
-    else if (strength < 70) { fill.style.background = '#f59e0b'; text.textContent = 'متوسط'; }
-    else { fill.style.background = '#22c55e'; text.textContent = 'قوی'; }
+/* ─────────── ۲) دادهٔ دسته‌ها و ابزارها ─────────── */
+const CATS=[
+ {id:'all',icon:'fa-border-all',color:'#1a3ad1'},
+ {id:'image',icon:'fa-image',color:'#0c9d68'},
+ {id:'topdf',icon:'fa-file-import',color:'#1a3ad1'},
+ {id:'util',icon:'fa-toolbox',color:'#d97706'},
+ {id:'pdf',icon:'fa-file-pdf',color:'#e11d48'}
+];
+
+/* هر ابزار: id، دسته، آیکون، زنده/شبیه‌سازی، چندفایلی، پسوند خروجی، نام/توضیح دوزبانه */
+const TOOLS=[
+ // === واقعی (Live) ===
+ {id:'img2text',cat:'image',icon:'fa-font',live:'ocr',fa:{n:'عکس به متن (OCR)',d:'استخراج متن با Tesseract.js واقعی + پیش‌پردازش'},en:{n:'Image to Text (OCR)',d:'Real text extraction with Tesseract.js + preprocessing'}},
+ {id:'hand2text',cat:'image',icon:'fa-pen-nib',live:'ocr',fa:{n:'دست‌نویس به متن',d:'تبدیل خط دستی به متن تایپی با OCR'},en:{n:'Handwriting to Text',d:'Convert handwritten notes to typed text with OCR'}},
+ {id:'img2pdf',cat:'image',icon:'fa-file-pdf',live:'img2pdf',fa:{n:'عکس به PDF',d:'ساخت PDF با کیفیت از عکس‌ها (jsPDF)'},en:{n:'Image to PDF',d:'Create high-quality PDF from images (jsPDF)'}},
+ {id:'imgzip',cat:'image',icon:'fa-compress',live:'imgzip',fa:{n:'فشرده‌سازی عکس',d:'کاهش حجم عکس با حفظ کیفیت'},en:{n:'Image Compressor',d:'Reduce image size while preserving quality'}},
+ {id:'imgfmt',cat:'image',icon:'fa-arrows-rotate',live:'imgfmt',fa:{n:'مبدل فرمت عکس',d:'تبدیل PNG, JPG, WebP, AVIF, BMP'},en:{n:'Image Format Converter',d:'Convert PNG, JPG, WebP, AVIF, BMP'}},
+ {id:'heic',cat:'image',icon:'fa-mobile-screen',live:'heic',fa:{n:'HEIC به JPG/PNG',d:'تبدیل عکس‌های آیفون بدون افت کیفیت'},en:{n:'HEIC to JPG/PNG',d:'Convert iPhone photos without quality loss'}},
+ {id:'pass',cat:'util',icon:'fa-key',live:'pass',fa:{n:'تولید رمز عبور قوی',d:'رمز تصادفی امن با Crypto API'},en:{n:'Strong Password',d:'Secure random passwords with Crypto API'}},
+ {id:'qr',cat:'util',icon:'fa-qrcode',live:'qr',fa:{n:'ساخت QR Code',d:'ساخت QR آفلاین از متن یا لینک'},en:{n:'QR Code Generator',d:'Offline QR code from text or URL'}},
+ {id:'date',cat:'util',icon:'fa-calendar-days',live:'date',fa:{n:'تبدیل تاریخ شمسی ↔ میلادی',d:'تبدیل دقیق با الگوریتم جلالی و نام ماه‌ها'},en:{n:'Jalali ↔ Gregorian Date',d:'Precise conversion with Jalali algorithm'}},
+ {id:'tts',cat:'util',icon:'fa-volume-high',live:'tts',fa:{n:'تبدیل متن به گفتار',d:'متن را با صدای طبیعی بشنوید (Web Speech)'},en:{n:'Text to Speech',d:'Listen to text with natural voice (Web Speech)'}},
+ {id:'t2w',cat:'util',icon:'fa-file-word',live:'t2w',fa:{n:'تبدیل متن به Word',d:'سند Word (.doc) قابل‌ویرایش از متن'},en:{n:'Text to Word',d:'Editable Word (.doc) document from text'}},
+ // === شبیه‌سازی (Demo) ===
+ {id:'text2pdf',cat:'topdf',icon:'fa-pencil-alt',sim:true,fa:{n:'متن به PDF (شبیه‌سازی)',d:'نوشته دلخواه به PDF با jsPDF'},en:{n:'Text to PDF (Demo)',d:'Convert text to PDF with jsPDF'}},
+ {id:'img2pdf2',cat:'topdf',icon:'fa-image',sim:true,fa:{n:'عکس به PDF (شبیه‌سازی)',d:'ساخت PDF از عکس'},en:{n:'Image to PDF (Demo)',d:'Create PDF from image'}},
+ {id:'pdf2word',cat:'pdf',icon:'fa-file-word',sim:true,fa:{n:'PDF به Word (نمایشی)',d:'تبدیل PDF به Word (نیاز به سرور)'},en:{n:'PDF to Word (Demo)',d:'Convert PDF to Word (server required)'}},
+ {id:'pdf2excel',cat:'pdf',icon:'fa-file-excel',sim:true,fa:{n:'PDF به Excel (نمایشی)',d:'استخراج داده به Excel (نیاز به سرور)'},en:{n:'PDF to Excel (Demo)',d:'Extract data to Excel (server required)'}},
+ {id:'pdf2img',cat:'pdf',icon:'fa-file-image',sim:true,fa:{n:'PDF به عکس (نمایشی)',d:'تبدیل صفحات PDF به عکس'},en:{n:'PDF to Image (Demo)',d:'Convert PDF pages to images'}},
+ {id:'vid2text',cat:'sim',icon:'fa-closed-captioning',sim:true,fa:{n:'ویدیو به متن (نمایشی)',d:'استخراج زیرنویس از ویدیو'},en:{n:'Video to Text (Demo)',d:'Extract captions from video'}},
+ {id:'vid2audio',cat:'sim',icon:'fa-music',sim:true,fa:{n:'ویدیو به صوت (نمایشی)',d:'استخراج صدای ویدیو'},en:{n:'Video to Audio (Demo)',d:'Extract audio from video'}},
+ {id:'mp4mp3',cat:'sim',icon:'fa-file-audio',sim:true,fa:{n:'MP4 به MP3 (نمایشی)',d:'تبدیل ویدیو به صدا'},en:{n:'MP4 to MP3 (Demo)',d:'Convert video to audio'}},
+ {id:'aud2text',cat:'sim',icon:'fa-microphone-lines',sim:true,fa:{n:'صوت به متن (نمایشی)',d:'تبدیل گفتار به نوشته'},en:{n:'Audio to Text (Demo)',d:'Convert speech to text'}},
+ {id:'wordmerge',cat:'sim',icon:'fa-object-group',sim:true,fa:{n:'ترکیب فایل‌های Word (نمایشی)',d:'اتحاد چند سند Word'},en:{n:'Word Merger (Demo)',d:'Combine multiple Word documents'}},
+ {id:'bgremove',cat:'sim',icon:'fa-eraser',sim:true,fa:{n:'حذف پس‌زمینه (نمایشی)',d:'حذف خودکار بک‌گراند'},en:{n:'Background Remover (Demo)',d:'Automatically remove background'}}
+];
+
+/* ─────────── ۳) وضعیت عمومی ─────────── */
+let LANG=localStorage.getItem('fy-lang')||'fa';
+let curTab='all',curQuery='',currentTool=null,simRAF=null,cleanupFns=[];
+const $=id=>document.getElementById(id);
+const REDUCED=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const t=k=>(DICT[LANG][k]!==undefined?DICT[LANG][k]:k);
+const fmtNum=n=>new Intl.NumberFormat(LANG==='fa'?'fa-IR':'en-US').format(n);
+const fmtSize=b=>{const nf=new Intl.NumberFormat(LANG==='fa'?'fa-IR':'en-US',{maximumFractionDigits:1});
+ return b>=1048576?nf.format(b/1048576)+' '+(LANG==='fa'?'مگابایت':'MB'):nf.format(b/1024)+' '+(LANG==='fa'?'کیلوبایت':'KB');};
+const enDigits=s=>String(s).replace(/[۰-۹]/g,c=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(c)).replace(/[٠-٩]/g,c=>'٠١٢٣٤٥٦٧٨٩'.indexOf(c));
+const faShow=n=>LANG==='fa'?String(n).replace(/\d/g,c=>'۰۱۲۳۴۵۶۷۸۹'[c]):String(n);
+let toastTimer;
+function toast(msg,type){const el=$('toast');el.textContent=msg;el.className='show '+(type||'');
+ clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.className='',3200);}
+function downloadBlob(blob,name){const u=URL.createObjectURL(blob);const a=document.createElement('a');
+ a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(u),5000);}
+
+/* ─────────── ۴) دوزبانه ─────────── */
+function applyLang(lang){
+ LANG=lang;localStorage.setItem('fy-lang',lang);
+ const html=document.documentElement;html.lang=lang;html.dir=lang==='fa'?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=t(el.dataset.i18n));
+ document.querySelectorAll('[data-i18n-ph]').forEach(el=>el.placeholder=t(el.dataset.i18nPh));
+ document.title=t('brand')+' — '+t('hero_t1');
+ $('langLabel').textContent=lang==='fa'?'EN':'فا';
+ $('year').textContent=lang==='fa'?'۱۴۰۵':'2026';
+ $('toolCount').textContent=fmtNum(TOOLS.filter(x=>!x.sim).length);
+ document.querySelectorAll('.stat-num').forEach(el=>{if(el.dataset.done==='1')renderCount(el,+el.dataset.count);});
+ renderTabs();renderTools();
+ if($('modal').classList.contains('show')&&currentTool)openTool(currentTool.id);
 }
-document.getElementById('genPassBtn').addEventListener('click', generatePassword);
-document.getElementById('passLen').addEventListener('change', generatePassword);
-document.querySelectorAll('#chkUpper, #chkLower, #chkNum, #chkSym').forEach(cb => cb.addEventListener('change', generatePassword));
-generatePassword();
+function renderCount(el,val){el.textContent=fmtNum(val)+(el.dataset.sfx?t(el.dataset.sfx):'');}
+function animateCount(el){const target=+el.dataset.count;
+ if(REDUCED){renderCount(el,target);el.dataset.done='1';return;}
+ const start=performance.now(),dur=1400;
+ requestAnimationFrame(function step(now){const p=Math.min(1,(now-start)/dur),e=1-Math.pow(1-p,3);
+  renderCount(el,Math.round(target*e));if(p<1)requestAnimationFrame(step);else el.dataset.done='1';});}
 
-// ============================================================
-// ۴. QR Code
-// ============================================================
-function generateQR() {
-    const text = document.getElementById('qrInput').value || 'https://example.com';
-    const img = document.getElementById('qrImage');
-    const downloadBtn = document.getElementById('downloadQrBtn');
-    const url = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(text)}`;
-    img.src = url;
-    img.style.display = 'block';
-    downloadBtn.style.display = 'inline-flex';
-    downloadBtn.onclick = function() {
-        const link = document.createElement('a');
-        link.download = 'qrcode.png';
-        link.href = url;
-        link.click();
-    };
+/* ─────────── ۵) انیمیشن ورود ─────────── */
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){
+ en.target.classList.add('in');en.target.querySelectorAll('.stat-num').forEach(animateCount);io.unobserve(en.target);}}),{threshold:.15});
+function observeReveals(){document.querySelectorAll('.reveal:not(.obs)').forEach(el=>{el.classList.add('obs');io.observe(el);});}
+
+/* ─────────── ۶) تب‌ها و شبکه کارت‌ها ─────────── */
+function renderTabs(){
+ const bar=$('tabsBar');bar.innerHTML='';
+ CATS.forEach(c=>{
+  const cnt=c.id==='all'?TOOLS.length:TOOLS.filter(x=>x.cat===c.id).length;
+  const b=document.createElement('button');b.className='tab'+(curTab===c.id?' active':'');b.setAttribute('role','tab');
+  b.innerHTML='<i class="fa-solid '+c.icon+'"></i>'+t('c_'+c.id)+' <span class="cnt">'+fmtNum(cnt)+'</span>';
+  b.onclick=()=>{curTab=c.id;renderTabs();renderTools();};bar.appendChild(b);});
 }
-document.getElementById('genQrBtn').addEventListener('click', generateQR);
-setTimeout(generateQR, 200);
-
-// ============================================================
-// ۵. مبدل فرمت عکس
-// ============================================================
-document.getElementById('convertImgBtn').addEventListener('click', function() {
-    const fileInput = document.getElementById('imgConvertInput2');
-    const format = document.getElementById('imgFormatSelect').value;
-    if (!fileInput.files[0]) return alert('لطفاً یک عکس انتخاب کنید');
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            const link = document.createElement('a');
-            link.download = 'converted.' + format.split('/')[1];
-            link.href = canvas.toDataURL(format);
-            link.click();
-        };
-        img.src = e.target.result;
-    };
-    reader.readAsDataURL(fileInput.files[0]);
-});
-document.getElementById('imgConvertInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    document.querySelector('[data-tab="tab-util"]').click();
-    document.getElementById('imgConvertInput2').files = this.files;
-    alert('حالا در بخش "جانبی" فرمت خروجی را انتخاب کنید و روی "تبدیل و دانلود" کلیک کنید.');
-});
-
-// ============================================================
-// ۶. تبدیل تاریخ
-// ============================================================
-document.getElementById('convertDateBtn').addEventListener('click', function() {
-    const y = parseInt(document.getElementById('yearInput').value) || 1404;
-    const m = parseInt(document.getElementById('monthInput').value) || 1;
-    const d = parseInt(document.getElementById('dayInput').value) || 1;
-    const gy = (y > 979) ? 1600 : 621;
-    let gd = d + 79;
-    let gm = m + 9;
-    let gyear = gy + y - 1;
-    if (gm > 12) { gm -= 12; gyear += 1; }
-    if (gd > 30) { gd -= 30; gm += 1; if (gm > 12) { gm -= 12; gyear += 1; } }
-    document.getElementById('dateResult').innerHTML = `میلادی: ${gyear}/${gm < 10 ? '0' + gm : gm}/${gd < 10 ? '0' + gd : gd}`;
-});
-document.getElementById('convertDateBtn').click();
-
-// ============================================================
-// ۷. OCR
-// ============================================================
-document.getElementById('ocrInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    const outputDiv = document.getElementById('ocrOutput');
-    const textarea = document.getElementById('ocrTextArea');
-    outputDiv.style.display = 'block';
-    textarea.value = '⏳ در حال پردازش عکس...';
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-            for (let i = 0; i < data.length; i += 4) {
-                const gray = 0.299 * data[i] + 0.587 * data[i+1] + 0.114 * data[i+2];
-                const contrast = 1.4;
-                const newVal = Math.min(255, Math.max(0, (gray - 128) * contrast + 128));
-                data[i] = data[i+1] = data[i+2] = newVal;
-            }
-            ctx.putImageData(imageData, 0, 0);
-            Tesseract.recognize(canvas, 'fas+eng', { logger: m => console.log(m) })
-                .then(({ data: { text } }) => {
-                    textarea.value = text.trim() || 'متنی پیدا نشد!';
-                })
-                .catch(() => {
-                    textarea.value = '❌ خطا در پردازش. لطفاً عکس با کیفیت‌تر انتخاب کنید.';
-                });
-        };
-        img.src = ev.target.result;
-    };
-    reader.readAsDataURL(file);
-});
-
-function copyOcrText() {
-    const textarea = document.getElementById('ocrTextArea');
-    navigator.clipboard.writeText(textarea.value).catch(() => {
-        textarea.select();
-        document.execCommand('copy');
-    });
-    alert('✅ متن کپی شد!');
+function renderTools(){
+ const grid=$('toolsGrid');grid.innerHTML='';
+ const q=curQuery.trim().toLowerCase();
+ const list=TOOLS.filter(x=>(curTab==='all'||x.cat===curTab)&&
+  (!q||(x.fa.n+' '+x.fa.d+' '+x.en.n+' '+x.en.d+' '+x.id).toLowerCase().includes(q)));
+ $('searchInfo').textContent=q?fmtNum(list.length)+' '+t('found'):'';
+ if(!list.length){grid.innerHTML='<div class="no-result"><i class="fa-solid fa-magnifying-glass" style="font-size:26px;display:block;margin-bottom:10px;color:var(--royal-300)"></i>'+t('no_result')+'</div>';return;}
+ list.forEach((x,i)=>{
+  const col=CATS.find(c=>c.id===x.cat).color||'#1a3ad1';
+  const card=document.createElement('article');
+  card.className='tcard reveal';card.style.setProperty('--acc',col);
+  card.style.transitionDelay=(i%8)*45+'ms';
+  const nm=x[LANG].n,ds=x[LANG].d;
+  const isLive=!!x.live;
+  card.innerHTML='<div class="tc-top"><span class="tc-ic"><i class="fa-solid '+x.icon+'"></i></span>'+
+   '<span class="tc-badge '+(isLive?'live':'sim')+'">'+t(isLive?'badge_live':'badge_sim')+'</span></div>'+
+   '<h3>'+nm+'</h3><p>'+ds+'</p>'+
+   '<span class="tc-go">'+t('card_go')+' <i class="fa-solid fa-arrow-left"></i></span>';
+  card.onclick=()=>openTool(x.id);grid.appendChild(card);});
+ observeReveals();
 }
 
-function downloadOcrText() {
-    const text = document.getElementById('ocrTextArea').value;
-    if (!text || text.includes('⏳') || text.includes('❌')) {
-        alert('متن معتبری برای دانلود وجود ندارد.');
-        return;
+/* ═══════════════ ۷) مودال و ابزارها ═══════════════ */
+function openTool(id){
+ const tool=TOOLS.find(x=>x.id===id);if(!tool)return;
+ currentTool=tool;
+ const col=CATS.find(c=>c.id===tool.cat).color||'#1a3ad1';
+ $('mIc').style.setProperty('--acc',col);
+ $('mIc').innerHTML='<i class="fa-solid '+tool.icon+'"></i>';
+ $('mTitle').textContent=tool[LANG].n;
+ const badge=$('mBadge');badge.className='m-badge '+(tool.live?'live':'sim');
+ badge.textContent=t(tool.live?'badge_live':'badge_sim');
+ runCleanup();
+ if(tool.live && LIVE_RENDER[tool.live]) LIVE_RENDER[tool.live](tool);
+ else renderSim(tool);
+ $('modal').classList.add('show');document.body.style.overflow='hidden';
+}
+function closeModal(){$('modal').classList.remove('show');document.body.style.overflow='';runCleanup();currentTool=null;}
+function runCleanup(){cleanupFns.forEach(f=>{try{f();}catch(e){}});cleanupFns=[];}
+$('mClose').onclick=closeModal;
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+/* ─── شبیه‌سازی ─── */
+function renderSim(tool){
+ const catAccept={image:'image/*,.heic,.heif',topdf:'*',pdf:'.pdf',util:'*',sim:'*'};
+ const accept=catAccept[tool.cat]||'*';
+ const hint=t('m_formats')+' '+(LANG==='fa'?'هر فرمت پشتیبانی می‌شود':'All formats supported');
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-flask"></i> '+t('m_sim_note')+'</div>'+
+ '<div class="m-drop" id="simDrop"><div class="md-ic"><i class="fa-solid '+tool.icon+'"></i></div>'+
+ '<p>'+t('m_drop_t')+'</p><small>'+hint+(tool.multi?' · '+t('m_multi'):'')+'</small></div>'+
+ '<input type="file" id="simInput" hidden '+(tool.multi?'multiple':'')+' accept="'+accept+'">'+
+ '<div id="simFiles"></div>'+
+ '<button class="btn-p" id="simGo"><i class="fa-solid fa-wand-magic-sparkles"></i>'+t('m_convert')+'</button>'+
+ '<div id="simProg" hidden><div class="prog-top"><span class="st" id="simStage"></span><span class="pc" id="simPct"></span></div>'+
+ '<div class="prog-track"><div class="prog-bar" id="simBar"></div></div></div>'+
+ '<div id="simOk" hidden class="sim-ok"><div class="ok-ring"><i class="fa-solid fa-check"></i></div>'+
+ '<h3>'+t('m_success')+'</h3><p>'+t('m_sim_note')+'</p>'+
+ '<button class="btn-p btn-g" id="simDl" style="width:auto;padding:12px 28px;display:inline-flex"><i class="fa-solid fa-download"></i>'+t('m_download')+'</button><br>'+
+ '<button class="again-l" id="simAgain"><i class="fa-solid fa-rotate-left"></i>'+t('m_again')+'</button></div>'+
+ '<p class="sim-note"><i class="fa-solid fa-shield-halved"></i> '+t('m_sim_note')+'</p>';
+ const drop=$('simDrop'),inp=$('simInput'),filesBox=$('simFiles');let picked=null;
+ drop.onclick=()=>inp.click();
+ ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag');}));
+ ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag');}));
+ drop.addEventListener('drop',e=>showFiles(e.dataTransfer.files));
+ inp.onchange=()=>showFiles(inp.files);
+ function showFiles(fl){if(!fl||!fl.length)return;picked=Array.from(fl);
+  filesBox.innerHTML=picked.map(f=>'<div class="m-file"><span class="fi"><i class="fa-solid '+tool.icon+'"></i></span>'+
+   '<span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>').join('');}
+ $('simGo').onclick=()=>{
+  if(!picked){toast(t('err_nofile'),'err');return;}
+  $('simGo').disabled=true;drop.style.display='none';
+  $('simProg').hidden=false;$('simOk').hidden=true;
+  const dur=3000,start=performance.now();
+  simRAF=requestAnimationFrame(function frame(now){
+   const p=Math.min(1,(now-start)/dur),pct=Math.round(p*100);
+   $('simBar').style.width=pct+'%';$('simPct').textContent=fmtNum(pct)+t('sfx_pct');
+   const idx=pct<35?1:pct<70?2:pct<90?3:4;$('simStage').textContent=t('m_stage'+idx);
+   if(p<1)simRAF=requestAnimationFrame(frame);else{
+    $('simProg').hidden=true;$('simOk').hidden=false;$('simGo').disabled=false;
+    toast(t('m_success'),'ok');}});};
+ $('simAgain').onclick=()=>{picked=null;inp.value='';filesBox.innerHTML='';drop.style.display='';$('simOk').hidden=true;};
+ $('simDl').onclick=()=>{
+  const base=(picked&&picked[0])?picked[0].name.replace(/\.[^.]+$/,''):'fileyar-output';
+  const note='FileYar 2.0 — Demo output / خروجی نمایشی\nDesigner: Mehdi Rahimian';
+  downloadBlob(new Blob([note],{type:'text/plain'}),base+'.txt');
+  toast(t('m_download')+' ✓','ok');};
+ cleanupFns.push(()=>{if(simRAF)cancelAnimationFrame(simRAF);});
+}
+
+/* ═══════════════ ۸) ابزارهای زنده واقعی ═══════════════ */
+const LIVE_RENDER={};
+
+/* ── OCR واقعی (Tesseract.js با پیش‌پردازش) ── */
+LIVE_RENDER.ocr=function(tool){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="m-drop" id="ocrDrop"><div class="md-ic"><i class="fa-solid fa-font"></i></div><p>'+t('m_drop_t')+'</p><small>JPG · PNG · BMP · GIF · WebP</small></div>'+
+ '<input type="file" id="ocrInput" accept="image/*" hidden>'+
+ '<div id="ocrFile"></div>'+
+ '<button class="btn-p" id="ocrGo"><i class="fa-solid fa-wand-magic-sparkles"></i> '+t('m_convert')+'</button>'+
+ '<div id="ocrProg" hidden><div class="prog-top"><span class="st" id="ocrStage">'+t('ocr_loading')+'</span><span class="pc" id="ocrPct">0%</span></div>'+
+ '<div class="prog-track"><div class="prog-bar" id="ocrBar"></div></div></div>'+
+ '<div id="ocrResult" hidden><div class="res-box"><b>'+t('ocr_result')+'</b><textarea class="f-in" id="ocrText" style="min-height:140px;margin-top:8px;"></textarea></div>'+
+ '<div class="f-row"><button class="btn-o" id="ocrCopy"><i class="fa-solid fa-copy"></i> '+t('ocr_copy')+'</button>'+
+ '<button class="btn-o" id="ocrDl"><i class="fa-solid fa-download"></i> '+t('ocr_download')+'</button></div></div>';
+ let file=null;
+ const drop=$('ocrDrop'),inp=$('ocrInput'),fileDiv=$('ocrFile');
+ drop.onclick=()=>inp.click();
+ drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+ drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+ drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+ inp.onchange=()=>{if(inp.files[0])handleFile(inp.files[0]);};
+ function handleFile(f){file=f;fileDiv.innerHTML='<div class="m-file"><span class="fi"><i class="fa-solid fa-image"></i></span><span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>';}
+ $('ocrGo').onclick=()=>{
+  if(!file){toast(t('err_nofile'),'err');return;}
+  const reader=new FileReader();
+  reader.onload=function(ev){
+   const img=new Image();
+   img.onload=function(){
+    const canvas=document.createElement('canvas');
+    const ctx=canvas.getContext('2d');
+    canvas.width=img.width;canvas.height=img.height;
+    ctx.drawImage(img,0,0);
+    // پیش‌پردازش: تبدیل به سیاه‌سفید + افزایش کنتراست
+    const imageData=ctx.getImageData(0,0,canvas.width,canvas.height);
+    const data=imageData.data;
+    for(let i=0;i<data.length;i+=4){
+     const gray=0.299*data[i]+0.587*data[i+1]+0.114*data[i+2];
+     const contrast=1.5;
+     const newVal=Math.min(255,Math.max(0,(gray-128)*contrast+128));
+     data[i]=data[i+1]=data[i+2]=newVal;
     }
-    const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'extracted-text.txt';
+    ctx.putImageData(imageData,0,0);
+    $('ocrProg').hidden=false;$('ocrResult').hidden=true;
+    const start=performance.now();
+    const progInterval=setInterval(()=>{
+     const p=Math.min(90,(performance.now()-start)/3000*90);
+     $('ocrBar').style.width=p+'%';$('ocrPct').textContent=Math.round(p)+'%';
+    },200);
+    Tesseract.recognize(canvas,'fas+eng',{logger:m=>{if(m.status==='recognizing text'){$('ocrStage').textContent='🔍 '+m.status+' '+Math.round(m.progress*100)+'%';}}})
+     .then(({data:{text}})=>{
+      clearInterval(progInterval);
+      $('ocrBar').style.width='100%';$('ocrPct').textContent='100%';
+      setTimeout(()=>{
+       $('ocrProg').hidden=true;
+       const txt=text.trim()||t('ocr_no_text');
+       $('ocrText').value=txt;
+       $('ocrResult').hidden=false;
+       toast(t('m_success'),'ok');
+      },400);
+     }).catch(()=>{
+      clearInterval(progInterval);
+      toast(t('err_generic'),'err');
+      $('ocrProg').hidden=true;
+     });
+   };
+   img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+ };
+ $('ocrCopy').onclick=()=>{const ta=$('ocrText');navigator.clipboard.writeText(ta.value).catch(()=>{ta.select();document.execCommand('copy');});toast(t('pass_copied'),'ok');};
+ $('ocrDl').onclick=()=>{const txt=$('ocrText').value;if(!txt||txt===t('ocr_no_text')){toast('متنی برای دانلود وجود ندارد','err');return;}downloadBlob(new Blob([txt],{type:'text/plain;charset=utf-8'}),'ocr-result.txt');};
+};
+
+/* ── عکس به PDF (واقعی با jsPDF) ── */
+LIVE_RENDER.img2pdf=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="m-drop" id="i2pDrop"><div class="md-ic"><i class="fa-solid fa-image"></i></div><p>'+t('m_drop_t')+'</p><small>JPG · PNG · WebP · BMP · GIF</small></div>'+
+ '<input type="file" id="i2pInput" accept="image/*" hidden><div id="i2pFile"></div>'+
+ '<button class="btn-p" id="i2pGo"><i class="fa-solid fa-file-pdf"></i> '+t('m_convert')+'</button>';
+ let file=null;
+ const drop=$('i2pDrop'),inp=$('i2pInput'),fileDiv=$('i2pFile');
+ drop.onclick=()=>inp.click();
+ drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+ drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+ drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+ inp.onchange=()=>{if(inp.files[0])handleFile(inp.files[0]);};
+ function handleFile(f){file=f;fileDiv.innerHTML='<div class="m-file"><span class="fi"><i class="fa-solid fa-image"></i></span><span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>';}
+ $('i2pGo').onclick=()=>{
+  if(!file){toast(t('err_nofile'),'err');return;}
+  const reader=new FileReader();
+  reader.onload=function(ev){
+   const img=new Image();
+   img.onload=function(){
+    const {jsPDF}=window.jspdf;
+    const doc=new jsPDF('p','mm','a4');
+    const pw=doc.internal.pageSize.getWidth();
+    const ph=doc.internal.pageSize.getHeight();
+    const ratio=Math.min(pw/img.width,ph/img.height);
+    const w=img.width*ratio,h=img.height*ratio;
+    const x=(pw-w)/2,y=(ph-h)/2;
+    doc.addImage(ev.target.result,'JPEG',x,y,w,h);
+    doc.save('image-to-pdf.pdf');
+    toast(t('m_success'),'ok');
+   };
+   img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+ };
+};
+
+/* ── فشرده‌سازی عکس (واقعی با Canvas) ── */
+LIVE_RENDER.imgzip=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="m-drop" id="izDrop"><div class="md-ic"><i class="fa-solid fa-compress"></i></div><p>'+t('m_drop_t')+'</p><small>JPG · PNG · WebP · BMP</small></div>'+
+ '<input type="file" id="izInput" accept="image/*" hidden><div id="izFile"></div>'+
+ '<div class="f-row"><div class="fld"><label>کیفیت خروجی: <b id="izQv">70%</b></label><input type="range" class="f-in" id="izQ" min="10" max="100" value="70"></div></div>'+
+ '<button class="btn-p" id="izGo"><i class="fa-solid fa-compress"></i> فشرده‌سازی</button>';
+ let file=null;
+ const drop=$('izDrop'),inp=$('izInput'),fileDiv=$('izFile');
+ drop.onclick=()=>inp.click();
+ drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+ drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+ drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+ inp.onchange=()=>{if(inp.files[0])handleFile(inp.files[0]);};
+ $('izQ').oninput=e=>$('izQv').textContent=faShow(e.target.value)+'%';
+ function handleFile(f){file=f;fileDiv.innerHTML='<div class="m-file"><span class="fi"><i class="fa-solid fa-image"></i></span><span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>';}
+ $('izGo').onclick=()=>{
+  if(!file){toast(t('err_nofile'),'err');return;}
+  const reader=new FileReader();
+  reader.onload=function(ev){
+   const img=new Image();
+   img.onload=function(){
+    const canvas=document.createElement('canvas');
+    let w=img.width,h=img.height;
+    const maxDim=1600;
+    if(w>maxDim||h>maxDim){const ratio=Math.min(maxDim/w,maxDim/h);w=Math.round(w*ratio);h=Math.round(h*ratio);}
+    canvas.width=w;canvas.height=h;
+    const ctx=canvas.getContext('2d');
+    ctx.drawImage(img,0,0,w,h);
+    const q=+$('izQ').value/100;
+    const link=document.createElement('a');
+    link.download='compressed.jpg';
+    link.href=canvas.toDataURL('image/jpeg',q);
     link.click();
-    URL.revokeObjectURL(link.href);
-}
+    toast(t('m_success'),'ok');
+   };
+   img.src=ev.target.result;
+  };
+  reader.readAsDataURL(file);
+ };
+};
 
-// ============================================================
-// ۸. عکس به PDF
-// ============================================================
-function handleImageToPDF(fileInputId) {
-    const input = document.getElementById(fileInputId);
-    const file = input.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-        const img = new Image();
-        img.onload = function() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF('p', 'mm', 'a4');
-            const pageWidth = doc.internal.pageSize.getWidth();
-            const pageHeight = doc.internal.pageSize.getHeight();
-            const ratio = Math.min(pageWidth / img.width, pageHeight / img.height);
-            const w = img.width * ratio;
-            const h = img.height * ratio;
-            const x = (pageWidth - w) / 2;
-            const y = (pageHeight - h) / 2;
-            doc.addImage(ev.target.result, 'JPEG', x, y, w, h);
-            doc.save('image-to-pdf.pdf');
-        };
-        img.src = ev.target.result;
-    };
-    reader.readAsDataURL(file);
-}
-document.getElementById('imgToPdfInput').addEventListener('change', function() { handleImageToPDF('imgToPdfInput'); });
-document.getElementById('imgToPdfInput2').addEventListener('change', function() { handleImageToPDF('imgToPdfInput2'); });
+/* ── مبدل فرمت عکس (واقعی با Canvas) ── */
+LIVE_RENDER.imgfmt=function(tool){
+ const preset=tool.preset||'';
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="m-drop" id="ifDrop"><div class="md-ic"><i class="fa-solid fa-image"></i></div><p>'+t('if_in')+'</p><small>JPG · PNG · WebP · BMP · GIF</small></div>'+
+ '<input type="file" id="ifInput" accept="image/*" hidden><div id="ifFile"></div>'+
+ '<div class="f-row"><div class="fld"><label>'+t('if_out')+'</label>'+
+ '<select class="f-in" id="ifOut"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option>'+
+ '<option value="image/webp">WebP</option><option value="image/avif">AVIF</option><option value="image/bmp">BMP</option></select></div>'+
+ '<div class="fld"><label>'+t('if_q')+': <b id="ifQv">90%</b></label>'+
+ '<input type="range" class="f-in" id="ifQ" min="10" max="100" value="90"></div></div>'+
+ '<button class="btn-p" id="ifGo"><i class="fa-solid fa-arrows-rotate"></i> '+t('if_go')+'</button>';
+ if(preset){$('ifOut').value=preset==='jpeg'?'image/jpeg':'image/png';}
+ $('ifQ').oninput=e=>$('ifQv').textContent=faShow(e.target.value)+'%';
+ let file=null;
+ const drop=$('ifDrop'),inp=$('ifInput'),fileDiv=$('ifFile');
+ drop.onclick=()=>inp.click();
+ drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+ drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+ drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+ inp.onchange=()=>{if(inp.files[0])handleFile(inp.files[0]);};
+ function handleFile(f){file=f;fileDiv.innerHTML='<div class="m-file"><span class="fi"><i class="fa-solid fa-image"></i></span><span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>';}
+ $('ifGo').onclick=()=>{
+  if(!file){toast(t('if_err'),'err');return;}
+  const img=new Image();const url=URL.createObjectURL(file);
+  img.onload=function(){
+   const cv=document.createElement('canvas');cv.width=img.naturalWidth;cv.height=img.naturalHeight;
+   cv.getContext('2d').drawImage(img,0,0);URL.revokeObjectURL(url);
+   const outType=$('ifOut').value,q=+$('ifQ').value/100;
+   if(outType==='image/bmp'){function encodeBMP(d){const w=d.width,h=d.height,data=d.data;const rs=Math.ceil(w*3/4)*4,is=rs*h,fs=54+is;const buf=new ArrayBuffer(fs),v=new DataView(buf);v.setUint8(0,0x42);v.setUint8(1,0x4D);v.setUint32(2,fs,true);v.setUint32(10,54,true);v.setUint32(14,40,true);v.setInt32(18,w,true);v.setInt32(22,h,true);v.setUint16(26,1,true);v.setUint16(28,24,true);v.setUint32(34,is,true);v.setInt32(38,2835,true);v.setInt32(42,2835,true);let off=54;for(let y=h-1;y>=0;y--){for(let x=0;x<w;x++){const i=(y*w+x)*4;v.setUint8(off++,data[i+2]);v.setUint8(off++,data[i+1]);v.setUint8(off++,data[i]);}off+=rs-w*3;}return new Blob([buf],{type:'image/bmp'});}const blob=encodeBMP(cv.getContext('2d').getImageData(0,0,cv.width,cv.height));const link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download='image.bmp';link.click();toast(t('m_success'),'ok');return;}
+   cv.toBlob(blob=>{if(!blob&&outType==='image/avif'){toast('AVIF پشتیبانی نمی‌شود، PNG جایگزین شد','err');cv.toBlob(b=>{const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='image.png';a.click();},'image/png');return;}const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='image.'+(outType==='image/jpeg'?'jpg':outType.split('/')[1]);a.click();toast(t('m_success'),'ok');},outType,outType==='image/png'?undefined:q);
+  };
+  img.onerror=()=>toast(t('if_err'),'err');
+  img.src=url;
+ };
+};
 
-// ============================================================
-// ۹. متن به PDF
-// ============================================================
-function convertTextToPDF() {
-    const text = prompt('متن خود را برای تبدیل به PDF وارد کنید:');
-    if (!text) return;
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    doc.text(text, 10, 10, { maxWidth: 190 });
-    doc.save('text-to-pdf.pdf');
-}
+/* ── HEIC (واقعی با heic2any) ── */
+LIVE_RENDER.heic=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="m-drop" id="hcDrop"><div class="md-ic"><i class="fa-solid fa-mobile-screen"></i></div><p>'+t('heic_in')+'</p><small>HEIC · HEIF</small></div>'+
+ '<input type="file" id="hcInput" accept=".heic,.heif" hidden><div id="hcFile"></div>'+
+ '<div class="f-row"><div class="fld"><label>'+t('heic_out')+'</label><select class="f-in" id="hcOut"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option></select></div></div>'+
+ '<button class="btn-p" id="hcGo"><i class="fa-solid fa-wand-magic-sparkles"></i> '+t('heic_go')+'</button>'+
+ '<div id="hcBusy" class="busy" hidden><i class="fa-solid fa-spinner fa-spin"></i> '+t('heic_busy')+'</div>';
+ let file=null;
+ const drop=$('hcDrop'),inp=$('hcInput'),fileDiv=$('hcFile');
+ drop.onclick=()=>inp.click();
+ drop.addEventListener('dragover',e=>{e.preventDefault();drop.classList.add('drag');});
+ drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+ drop.addEventListener('drop',e=>{e.preventDefault();drop.classList.remove('drag');if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0]);});
+ inp.onchange=()=>{if(inp.files[0])handleFile(inp.files[0]);};
+ function handleFile(f){file=f;fileDiv.innerHTML='<div class="m-file"><span class="fi"><i class="fa-solid fa-image"></i></span><span><b>'+f.name+'</b><small>'+fmtSize(f.size)+'</small></span></div>';}
+ $('hcGo').onclick=async()=>{
+  if(!file){toast(t('err_nofile'),'err');return;}
+  $('hcBusy').hidden=false;$('hcGo').disabled=true;
+  try{
+   const toType=$('hcOut').value;
+   if(typeof heic2any==='undefined'){toast('heic2any بارگذاری نشد!','err');$('hcBusy').hidden=true;$('hcGo').disabled=false;return;}
+   const res=await heic2any({blob:file,toType:toType,quality:0.92});
+   const blob=Array.isArray(res)?res[0]:res;
+   const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='photo.'+(toType==='image/png'?'png':'jpg');a.click();toast(t('m_success'),'ok');
+  }catch(e){toast(t('err_generic'),'err');}
+  $('hcBusy').hidden=true;$('hcGo').disabled=false;
+ };
+};
 
-// ============================================================
-// ۱۰. فشرده‌سازی عکس
-// ============================================================
-document.getElementById('compressInput').addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-        const img = new Image();
-        img.onload = function() {
-            const canvas = document.createElement('canvas');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
-            const link = document.createElement('a');
-            link.download = 'compressed.jpg';
-            link.href = canvas.toDataURL('image/jpeg', 0.5);
-            link.click();
-        };
-        img.src = ev.target.result;
-    };
-    reader.readAsDataURL(file);
-});
+/* ── رمز عبور (واقعی با Crypto API) ── */
+LIVE_RENDER.pass=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="out-box"><code id="pwOut">••••••••••••</code><button class="copy-b" id="pwCopy"><i class="fa-solid fa-copy"></i>'+t('pass_copy')+'</button></div>'+
+ '<div class="s-track"><div class="s-fill" id="pwBar"></div></div><div class="s-lbl" id="pwLbl"></div>'+
+ '<div class="f-row" style="margin-top:16px"><div class="fld"><label>'+t('pass_len')+': <b id="pwLenV">16</b></label>'+
+ '<input type="range" class="f-in" id="pwLen" min="6" max="64" value="16"></div></div>'+
+ '<div class="f-row">'+
+ '<label class="chk"><input type="checkbox" id="pwU" checked>'+t('pass_upper')+'</label>'+
+ '<label class="chk"><input type="checkbox" id="pwL" checked>'+t('pass_lower')+'</label>'+
+ '<label class="chk"><input type="checkbox" id="pwN" checked>'+t('pass_nums')+'</label>'+
+ '<label class="chk"><input type="checkbox" id="pwS" checked>'+t('pass_syms')+'</label></div>'+
+ '<button class="btn-p" id="pwGo"><i class="fa-solid fa-key"></i>'+t('pass_gen')+'</button>';
+ const U='ABCDEFGHJKLMNPQRSTUVWXYZ',L='abcdefghijkmnpqrstuvwxyz',N='23456789',S='!@#$%^&*_-+=?';
+ function gen(){
+  let pool='';if($('pwU').checked)pool+=U;if($('pwL').checked)pool+=L;if($('pwN').checked)pool+=N;if($('pwS').checked)pool+=S;
+  if(!pool){pool=U+L+N;}
+  const len=+$('pwLen').value,arr=new Uint32Array(len);crypto.getRandomValues(arr);
+  let out='';for(let i=0;i<len;i++)out+=pool[arr[i]%pool.length];
+  $('pwOut').textContent=out;
+  const bits=len*Math.log2(pool.length),bar=$('pwBar'),lbl=$('pwLbl');
+  let w,c,txt;if(bits<45){w='22%';c='#e02d2d';txt=t('s_weak');}
+  else if(bits<70){w='50%';c='#d97706';txt=t('s_med');}
+  else if(bits<100){w='76%';c='#2550f0';txt=t('s_strong');}
+  else{w='100%';c='#0c9d68';txt=t('s_excellent');}
+  bar.style.width=w;bar.style.background=c;lbl.textContent=txt;lbl.style.color=c;}
+ $('pwLen').oninput=e=>{$('pwLenV').textContent=faShow(e.target.value);gen();};
+ ['pwU','pwL','pwN','pwS'].forEach(id=>$(id).onchange=gen);
+ $('pwGo').onclick=gen;
+ $('pwCopy').onclick=()=>{navigator.clipboard.writeText($('pwOut').textContent).then(()=>toast(t('pass_copied'),'ok'));};
+ gen();
+};
 
-// ============================================================
-// ۱۱. نمایش FAQ
-// ============================================================
-document.querySelectorAll('.faq-item .a').forEach(el => el.style.display = 'block');
-console.log('✅ سایت بارگذاری شد - ابزارهای فعال مشخص هستند.');
+/* ── QR آفلاین (با کتابخانه داخلی) ── */
+LIVE_RENDER.qr=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="fld" style="margin-bottom:13px"><label>'+t('qr_text')+'</label>'+
+ '<textarea class="f-in" id="qrTxt" placeholder="'+t('qr_ph')+'">https://fileyar.example</textarea></div>'+
+ '<div class="f-row">'+
+ '<div class="fld"><label>'+t('qr_size')+'</label><select class="f-in" id="qrSize"><option value="320">320px</option><option value="512" selected>512px</option><option value="1024">1024px</option></select></div>'+
+ '<div class="fld"><label>'+t('qr_ecl')+'</label><select class="f-in" id="qrEcl"><option value="L">L</option><option value="M" selected>M</option><option value="Q">Q</option><option value="H">H</option></select></div>'+
+ '<div class="fld"><label>'+t('qr_fg')+'</label><input type="color" class="f-in" id="qrFg" value="#0a1847"></div>'+
+ '<div class="fld"><label>'+t('qr_bg')+'</label><input type="color" class="f-in" id="qrBg" value="#ffffff"></div></div>'+
+ '<button class="btn-p" id="qrGo"><i class="fa-solid fa-qrcode"></i>'+t('qr_make')+'</button>'+
+ '<div class="qr-stage" id="qrStage" style="margin-top:14px" hidden><canvas id="qrCanvas"></canvas></div>'+
+ '<button class="btn-p btn-g" id="qrDl" hidden><i class="fa-solid fa-download"></i>'+t('qr_dl')+'</button>';
+ let ready=false;
+ async function make(){
+  const txt=$('qrTxt').value.trim();if(!txt){toast(t('qr_err'),'err');return;}
+  if(!ready){$('qrGo').disabled=true;const old=$('qrGo').innerHTML;$('qrGo').innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> '+t('lib_loading');
+   try{await loadScript('https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js');ready=true;}
+   catch(e){toast(t('err_generic'),'err');$('qrGo').disabled=false;$('qrGo').innerHTML=old;return;}
+   $('qrGo').disabled=false;$('qrGo').innerHTML=old;}
+  try{
+   const qr=window.qrcode(0,$('qrEcl').value);qr.addData(txt);qr.make();
+   const n=qr.getModuleCount(),size=+$('qrSize').value,cell=size/(n+8);
+   const cv=$('qrCanvas');cv.width=size;cv.height=size;const ctx=cv.getContext('2d');
+   ctx.fillStyle=$('qrBg').value;ctx.fillRect(0,0,size,size);ctx.fillStyle=$('qrFg').value;
+   for(let r=0;r<n;r++)for(let c=0;c<n;c++)if(qr.isDark(r,c))ctx.fillRect((c+4)*cell,(r+4)*cell,cell+0.5,cell+0.5);
+   $('qrStage').hidden=false;$('qrDl').hidden=false;
+  }catch(e){toast(t('err_generic'),'err');}}
+ $('qrGo').onclick=make;
+ $('qrDl').onclick=()=>{$('qrCanvas').toBlob(b=>downloadBlob(b,'fileyar-qrcode.png'),'image/png');};
+ const libCache={};
+ function loadScript(src){if(libCache[src])return libCache[src];
+ libCache[src]=new Promise((res,rej)=>{const s=document.createElement('script');
+ s.src=src;s.onload=res;s.onerror=()=>rej(new Error('load failed'));document.head.appendChild(s);});
+ return libCache[src];}
+};
+
+/* ── تبدیل تاریخ (الگوریتم دقیق جلالی) ── */
+function jDiv(a,b){return ~~(a/b);}function jMod(a,b){return a-~~(a/b)*b;}
+function jalCal(jy){
+ const breaks=[-61,9,38,199,426,686,756,818,1111,1181,1210,1635,2060,2097,2192,2262,2324,2394,2456,3178];
+ const bl=breaks.length,gy=jy+621;let leapJ=-14,jp=breaks[0],jump=0,jm,i;
+ for(i=1;i<bl;i+=1){jm=breaks[i];jump=jm-jp;if(jy<jm)break;
+  leapJ=leapJ+jDiv(jump,33)*8+jDiv(jMod(jump,33),4);jp=jm;}
+ const n=jy-jp;
+ leapJ=leapJ+jDiv(n,33)*8+jDiv(jMod(n,33)+3,4);
+ if(jMod(jump,33)===4&&jump-n===4)leapJ+=1;
+ const leapG=jDiv(gy,4)-jDiv((jDiv(gy,100)+1)*3,4)-150;
+ const march=20+leapJ-leapG;
+ let nn=n;if(jump-n<6)nn=nn-jump+jDiv(jump+4,33)*33;
+ let leap=jMod(jMod(nn+1,33)-1,4);if(leap===-1)leap=4;
+ return{leap:leap,gy:gy,march:march};}
+function g2d(gy,gm,gd){let d=jDiv((gy+jDiv(gm-8,6)+100100)*1461,4)+jDiv(153*jMod(gm+9,12)+2,5)+gd-34840408;
+ d=d-jDiv(jDiv(gy+100100+jDiv(gm-8,6),100)*3,4)+752;return d;}
+function d2g(jdn){let j=4*jdn+139361631;j=j+jDiv(jDiv(4*jdn+183187720,146097)*3,4)*4-3908;
+ const i=jDiv(jMod(j,1461),4)*5+308,gd=jDiv(jMod(i,153),5)+1,gm=jMod(jDiv(i,153),12)+1,gy=jDiv(j,1461)-100100+jDiv(8-gm,6);
+ return{gy:gy,gm:gm,gd:gd};}
+function j2d(jy,jm,jd){const r=jalCal(jy);return g2d(r.gy,3,r.march)+(jm-1)*31-jDiv(jm,7)*(jm-7)+jd-1;}
+function d2j(jdn){const gy=d2g(jdn).gy;let jy=gy-621;const r=jalCal(jy),jdn1f=g2d(gy,3,r.march);let k=jdn-jdn1f,jm,jd;
+ if(k>=0){if(k<=185){jm=1+jDiv(k,31);jd=jMod(k,31)+1;return{jy:jy,jm:jm,jd:jd};}else k-=186;}
+ else{jy-=1;k+=179;if(r.leap===1)k+=1;}
+ jm=7+jDiv(k,30);jd=jMod(k,30)+1;return{jy:jy,jm:jm,jd:jd};}
+LIVE_RENDER.date=function(){
+ const JM_FA=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+ const JM_EN=['Farvardin','Ordibehesht','Khordad','Tir','Mordad','Shahrivar','Mehr','Aban','Azar','Dey','Bahman','Esfand'];
+ const GM_FA=['ژانویه','فوریه','مارس','آوریل','مه','ژوئن','ژوئیه','اوت','سپتامبر','اکتبر','نوامبر','دسامبر'];
+ const GM_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+ const WD_FA=['شنبه','یکشنبه','دوشنبه','سه‌شنبه','چهارشنبه','پنجشنبه','جمعه'];
+ const WD_EN=['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday'];
+ const jmOpts=JM_FA.map((m,i)=>'<option value="'+(i+1)+'">'+m+' — '+(LANG==='fa'?faShow(i+1):(i+1))+'</option>').join('');
+ const gmOpts=GM_FA.map((m,i)=>'<option value="'+(i+1)+'">'+m+'</option>').join('');
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="f-row"><div class="fld" style="flex:2"><label>'+t('d_jalali')+'</label>'+
+ '<div class="f-row" style="margin:0"><input class="f-in" id="jy" inputmode="numeric" style="min-width:74px">'+
+ '<select class="f-in" id="jm">'+jmOpts+'</select><select class="f-in" id="jd"></select></div></div></div>'+
+ '<div class="f-row"><button class="btn-p" id="toG" style="flex:1"><i class="fa-solid fa-arrow-left"></i>'+t('d_to_g')+'</button>'+
+ '<button class="btn-o" id="dToday"><i class="fa-solid fa-calendar-day"></i>'+t('d_today')+'</button></div>'+
+ '<div class="f-row" style="margin-top:16px"><div class="fld" style="flex:2"><label>'+t('d_greg')+'</label>'+
+ '<div class="f-row" style="margin:0"><input class="f-in" id="gy" inputmode="numeric" style="min-width:74px">'+
+ '<select class="f-in" id="gm">'+gmOpts+'</select><select class="f-in" id="gd"></select></div></div></div>'+
+ '<div class="f-row"><button class="btn-p" id="toJ" style="flex:1"><i class="fa-solid fa-arrow-left"></i>'+t('d_to_j')+'</button></div>'+
+ '<div class="res-box" id="dRes" hidden></div>';
+ const days=(sel,n,cur)=>{sel.innerHTML='';for(let i=1;i<=n;i++){const o=document.createElement('option');o.value=i;o.textContent=faShow(i);sel.appendChild(o);}sel.value=Math.min(cur||1,n);};
+ const now=new Date();
+ const jT=d2j(g2d(now.getFullYear(),now.getMonth()+1,now.getDate()));
+ $('jy').value=faShow(jT.jy);$('jm').value=jT.jm;days($('jd'),jT.jm<=6?31:jT.jm<=11?30:(jalCal(jT.jy).leap?30:29),jT.jd);
+ $('gy').value=faShow(now.getFullYear());$('gm').value=now.getMonth()+1;days($('gd'),[31,((now.getFullYear()%4===0&&now.getFullYear()%100!==0)||now.getFullYear()%400===0)?29:28,31,30,31,30,31,31,30,31,30,31][now.getMonth()],now.getDate());
+ function jMonthLen(jy,jm){if(jm<=6)return 31;if(jm<=11)return 30;return jalCal(jy).leap?30:29;}
+ function gMonthLen(gy,gm){return [31,((gy%4===0&&gy%100!==0)||gy%400===0)?29:28,31,30,31,30,31,31,30,31,30,31][gm-1];}
+ $('jm').onchange=()=>{const jy=parseInt(enDigits($('jy').value))||jT.jy;days($('jd'),jMonthLen(jy,+$('jm').value));};
+ $('gm').onchange=()=>{const gy=parseInt(enDigits($('gy').value))||now.getFullYear();days($('gd'),gMonthLen(gy,+$('gm').value));};
+ function wdName(jdn){return(LANG==='fa'?WD_FA:WD_EN)[(jdn%7+2)%7];}
+ function showJ(j,w){const M=LANG==='fa'?JM_FA:JM_EN;
+  $('dRes').hidden=false;$('dRes').innerHTML='<b>'+w+'، '+faShow(j.jd)+' '+M[j.jm-1]+' '+faShow(j.jy)+'</b><small>'+faShow(j.jy)+'/'+faShow(j.jm)+'/'+faShow(j.jd)+'</small>';}
+ function showG(g,w){const M=LANG==='fa'?GM_FA:GM_EN;
+  $('dRes').hidden=false;$('dRes').innerHTML='<b>'+w+', '+M[g.gm-1]+' '+faShow(g.gd)+', '+faShow(g.gy)+'</b><small>'+faShow(g.gy)+'-'+faShow(g.gm)+'-'+faShow(g.gd)+'</small>';}
+ $('toG').onclick=()=>{const jy=parseInt(enDigits($('jy').value)),jmSel=+$('jm').value,jd=+$('jd').value;
+  if(!jy||jd>jMonthLen(jy,jmSel)){toast(t('err_generic'),'err');return;}
+  const jdn=j2d(jy,jmSel,jd);showG(d2g(jdn),wdName(jdn));};
+ $('toJ').onclick=()=>{const gy=parseInt(enDigits($('gy').value)),gmSel=+$('gm').value,gd=+$('gd').value;
+  if(!gy||gd>gMonthLen(gy,gmSel)){toast(t('err_generic'),'err');return;}
+  const jdn=g2d(gy,gmSel,gd);showJ(d2j(jdn),wdName(jdn));};
+ $('dToday').onclick=()=>{const n=new Date(),jNow=d2j(g2d(n.getFullYear(),n.getMonth()+1,n.getDate()));
+  $('jy').value=faShow(jNow.jy);$('jm').value=jNow.jm;days($('jd'),jMonthLen(jNow.jy,jNow.jm),jNow.jd);
+  $('gy').value=faShow(n.getFullYear());$('gm').value=n.getMonth()+1;days($('gd'),gMonthLen(n.getFullYear(),n.getMonth()+1),n.getDate());
+  showJ(jNow,wdName(j2d(jNow.jy,jNow.jm,jNow.jd)));};
+};
+
+/* ── TTS (Web Speech API) ── */
+LIVE_RENDER.tts=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="fld" style="margin-bottom:13px"><textarea class="f-in" id="ttsTxt" placeholder="'+t('tts_ph')+'">فایل‌یار ۲.۰ — جعبه‌ابزار رایگان با ۱۱ ابزار واقعی</textarea></div>'+
+ '<div class="f-row">'+
+ '<div class="fld"><label>'+t('tts_lang')+'</label><select class="f-in" id="ttsLang"><option value="fa">فارسی</option><option value="en">English</option></select></div>'+
+ '<div class="fld"><label>'+t('tts_rate')+': <b id="ttsRv">1</b></label><input type="range" class="f-in" id="ttsRate" min="0.5" max="2" step="0.1" value="1"></div></div>'+
+ '<div class="f-row"><button class="btn-p" id="ttsPlay" style="flex:1"><i class="fa-solid fa-play"></i>'+t('tts_play')+'</button>'+
+ '<button class="btn-o" id="ttsStop"><i class="fa-solid fa-stop"></i>'+t('tts_stop')+'</button></div>';
+ if(!('speechSynthesis' in window)){$('ttsPlay').disabled=true;toast(t('tts_unsupported'),'err');}
+ $('ttsRate').oninput=e=>$('ttsRv').textContent=faShow(e.target.value);
+ $('ttsPlay').onclick=()=>{
+  const txt=$('ttsTxt').value.trim();if(!txt)return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(txt);const lang=$('ttsLang').value;
+  u.lang=lang==='fa'?'fa-IR':'en-US';u.rate=+$('ttsRate').value;
+  const vs=window.speechSynthesis.getVoices();
+  const v=vs.find(x=>x.lang.startsWith(lang));if(v)u.voice=v;
+  window.speechSynthesis.speak(u);};
+ $('ttsStop').onclick=()=>window.speechSynthesis.cancel();
+ cleanupFns.push(()=>window.speechSynthesis&&window.speechSynthesis.cancel());
+};
+
+/* ── متن به Word (خروجی .doc واقعی) ── */
+LIVE_RENDER.t2w=function(){
+ $('mBody').innerHTML=
+ '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> '+t('live_note')+'</div>'+
+ '<div class="fld" style="margin-bottom:13px"><textarea class="f-in" id="twTxt" style="min-height:170px" placeholder="'+t('t2w_ph')+'"></textarea></div>'+
+ '<button class="btn-p btn-g" id="twGo"><i class="fa-solid fa-file-word"></i> '+t('t2w_go')+'</button>'+
+ '<p class="sim-note">'+t('t2w_note')+'</p>';
+ $('twTxt').placeholder=t('t2w_ph');
+ $('twGo').onclick=()=>{
+  const txt=$('twTxt').value.trim();if(!txt){toast(t('t2w_err'),'err');return;}
+  const html='<html xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"></head><body dir="'+(LANG==='fa'?'rtl':'ltr')+'">'+
+   txt.split(/\n/).map(l=>'<p>'+l.replace(/</g,'&lt;')+'</p>').join('')+'</body></html>';
+  downloadBlob(new Blob([html],{type:'application/msword'}),'fileyar-document.doc');
+  toast(t('m_success'),'ok');};
+};
+
+/* ═══════════════ ۹) رویدادهای عمومی ═══════════════ */
+$('heroSearch').addEventListener('input',e=>{curQuery=e.target.value;curTab='all';renderTabs();renderTools();});
+document.querySelectorAll('.qchip').forEach(ch=>ch.onclick=()=>{
+ $('heroSearch').value=ch.dataset.q;curQuery=ch.dataset.q;curTab='all';renderTabs();renderTools();
+ $('tools').scrollIntoView({behavior:REDUCED?'auto':'smooth'});});
+document.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>openTool(b.dataset.open));
+document.querySelectorAll('[data-fopen]').forEach(b=>b.onclick=()=>openTool(b.dataset.fopen));
+document.querySelectorAll('[data-fcat]').forEach(b=>b.onclick=()=>{
+ curTab=b.dataset.fcat;curQuery='';$('heroSearch').value='';renderTabs();renderTools();
+ $('tools').scrollIntoView({behavior:REDUCED?'auto':'smooth'});});
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
+ const item=q.parentElement,panel=item.querySelector('.faq-a'),open=item.classList.contains('open');
+ document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;});
+ if(!open){item.classList.add('open');panel.style.maxHeight=panel.scrollHeight+'px';}}));
+$('burger').onclick=()=>$('mainNav').classList.toggle('open');
+document.querySelectorAll('#mainNav a').forEach(a=>a.addEventListener('click',()=>$('mainNav').classList.remove('open')));
+$('langToggle').onclick=()=>applyLang(LANG==='fa'?'en':'fa');
+window.addEventListener('scroll',()=>{const h=document.documentElement;
+ $('scrollProgress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+
+/* ═══════════════ ۱۰) شروع برنامه ═══════════════ */
+applyLang(LANG);
+observeReveals();
 </script>
 </body>
 </html>
