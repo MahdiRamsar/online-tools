@@ -7,12 +7,22 @@
   <meta name="description" data-lang-key="seo_home_desc" content="مجموعه ۱۳ ابزار آنلاین رایگان: ماشین‌حساب، مبدل تاریخ، ساخت QR، OCR، تبدیل عکس و PDF. کاملاً دو زبانه و بدون نیاز به نصب." />
   <meta name="keywords" content="ابزار آنلاین, ماشین حساب, مبدل تاریخ, QR کد, OCR, تبدیل عکس, تبدیل PDF, free online tools, calculator, date converter" />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="Smart Tools" />
+  <meta name="author" content="مهدی رحیمیان" />
   <meta property="og:type" content="website" />
   <meta property="og:title" data-lang-key="seo_home_title" content="ابزارک‌های هوشمند" />
   <meta property="og:description" data-lang-key="seo_home_desc" content="مجموعه ابزارهای آنلاین رایگان" />
+  <meta property="og:image" content="https://mahdiramsar.github.io/online-tools/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://mahdiramsar.github.io/online-tools/og-image.png" />
+
+  <!-- فونت‌های جدید -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,18 +33,13 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Standard Calculator","Jalali-Gregorian Date Converter","Strong Password Generator",
-      "Length and Weight Unit Converter","Character and Word Counter","QR Code Generator",
-      "Number to Persian Words","Image to Text OCR","Image Format Converter",
-      "PDF to Image and Image to PDF","CSV JSON XML YAML Converter","HEIC Image Converter",
-      "Video to GIF Converter"
-    ]
+    "author": {
+      "@type": "Person",
+      "name": "مهدی رحیمیان",
+      "url": "https://github.com/mahdiramsar"
+    }
   }
   </script>
-  <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
 </head>
 <body>
   <header id="site-header">
@@ -47,20 +52,33 @@
         <span></span><span></span><span></span>
       </button>
       <nav class="main-nav" id="mainNav">
-        <button class="nav-item active" data-tool="home" data-lang-key="nav_home">خانه</button>
-        <button class="nav-item" data-tool="calculator" data-lang-key="nav_calculator">ماشین‌حساب</button>
-        <button class="nav-item" data-tool="date" data-lang-key="nav_date_converter">مبدل تاریخ</button>
-        <button class="nav-item" data-tool="password" data-lang-key="nav_password">رمز عبور</button>
-        <button class="nav-item" data-tool="units" data-lang-key="nav_units">مبدل واحدها</button>
-        <button class="nav-item" data-tool="counter" data-lang-key="nav_counter">شمارشگر متن</button>
-        <button class="nav-item" data-tool="qr" data-lang-key="nav_qr">ساخت QR</button>
-        <button class="nav-item" data-tool="n2w" data-lang-key="nav_number2word">عدد به حروف</button>
-        <button class="nav-item" data-tool="ocr" data-lang-key="nav_ocr">عکس به متن</button>
-        <button class="nav-item" data-tool="imgconvert" data-lang-key="nav_imgconvert">تبدیل عکس</button>
-        <button class="nav-item" data-tool="pdf" data-lang-key="nav_pdf">تبدیل PDF</button>
-        <button class="nav-item" data-tool="data" data-lang-key="nav_dataconvert">تبدیل داده</button>
-        <button class="nav-item" data-tool="heic" data-lang-key="nav_heic">تبدیل HEIC</button>
-        <button class="nav-item" data-tool="video2gif" data-lang-key="nav_video2gif">ویدیو به GIF</button>
+        <!-- گروه‌بندی منو -->
+        <div class="nav-group">
+          <span class="nav-group-label">🏠 عمومی</span>
+          <button class="nav-item active" data-tool="home" data-lang-key="nav_home">خانه</button>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">📐 تبدیل‌ها</span>
+          <button class="nav-item" data-tool="calculator" data-lang-key="nav_calculator">ماشین‌حساب</button>
+          <button class="nav-item" data-tool="date" data-lang-key="nav_date_converter">مبدل تاریخ</button>
+          <button class="nav-item" data-tool="units" data-lang-key="nav_units">مبدل واحد</button>
+          <button class="nav-item" data-tool="data" data-lang-key="nav_dataconvert">مبدل داده</button>
+          <button class="nav-item" data-tool="n2w" data-lang-key="nav_number2word">عدد به حروف</button>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">🖼️ تصویر و ویدیو</span>
+          <button class="nav-item" data-tool="imgconvert" data-lang-key="nav_imgconvert">تبدیل عکس</button>
+          <button class="nav-item" data-tool="heic" data-lang-key="nav_heic">HEIC</button>
+          <button class="nav-item" data-tool="ocr" data-lang-key="nav_ocr">OCR</button>
+          <button class="nav-item" data-tool="qr" data-lang-key="nav_qr">QR</button>
+          <button class="nav-item" data-tool="video2gif" data-lang-key="nav_video2gif">ویدیو به GIF</button>
+          <button class="nav-item" data-tool="pdf" data-lang-key="nav_pdf">PDF</button>
+        </div>
+        <div class="nav-group">
+          <span class="nav-group-label">📝 متنی</span>
+          <button class="nav-item" data-tool="counter" data-lang-key="nav_counter">شمارشگر</button>
+          <button class="nav-item" data-tool="password" data-lang-key="nav_password">رمزساز</button>
+        </div>
       </nav>
       <div class="header-controls">
         <div class="lang-switcher">
@@ -74,7 +92,6 @@
   </header>
 
   <main id="main-content">
-
     <!-- HOME -->
     <section class="tool-section active" id="section-home">
       <div class="home-hero">
@@ -237,7 +254,7 @@
     <!-- 8. OCR -->
     <section class="tool-section" id="section-ocr">
       <div class="card">
-        <h1 data-lang-key="nav_ocr">عکس به متن</h1>
+        <h1 data-lang-key="nav_ocr">عکس به متن (OCR)</h1>
         <p class="tool-desc" data-lang-key="tool_ocr_desc"></p>
         <p class="warn-note" data-lang-key="ocr_warning"></p>
         <div class="dropzone" id="ocrDropzone" data-lang-key="upload_file"></div>
@@ -354,24 +371,29 @@
         <div class="preview-wrap" id="vidResult"></div>
       </div>
     </section>
-
   </main>
 
   <footer id="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-icon">⚙️</span>
-        <span data-lang-key="site_title">ابزارک‌های هوشمند</span>
+      <div class="footer-links">
+        <a href="/about.html" data-lang-key="footer_about">درباره ما</a>
+        <a href="/contact.html" data-lang-key="footer_contact">تماس با ما</a>
+        <a href="/privacy.html" data-lang-key="footer_privacy">حریم خصوصی</a>
+        <a href="/terms.html" data-lang-key="footer_terms">قوانین استفاده</a>
       </div>
-      <nav class="footer-nav">
-        <a href="#" data-lang-key="footer_about">درباره ما</a>
-        <a href="#" data-lang-key="footer_contact">تماس با ما</a>
-        <a href="#" data-lang-key="footer_privacy">حریم خصوصی</a>
-      </nav>
-      <p class="footer-copy">© <span id="year"></span> <span data-lang-key="site_title"></span> — <span data-lang-key="footer_rights"></span></p>
-      <p class="footer-made" data-lang-key="footer_made_with"></p>
+      <p class="footer-copy">
+        <span data-lang-key="footer_rights">تمامی حقوق برای</span>
+        <strong>مهدی رحیمیان</strong>
+        <span data-lang-key="footer_reserved">محفوظ است.</span>
+        <br>
+        <span data-lang-key="footer_design">طراحی و توسعه توسط</span>
+        <a href="https://github.com/mahdiramsar" target="_blank">مهدی رحیمیان</a>
+      </p>
     </div>
   </footer>
+
+  <!-- دکمه بازگشت به بالا -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>
