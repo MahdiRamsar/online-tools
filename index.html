@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>" />
 
+  <!-- کتابخانه QR Code استاندارد -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -234,10 +237,10 @@
       <div class="card">
         <h1 data-lang-key="nav_qr">ساخت QR</h1>
         <p class="tool-desc" data-lang-key="tool_qr_desc"></p>
-        <input type="text" id="qrInput" data-lang-key="qr_input" />
+        <input type="text" id="qrInput" data-lang-key="qr_input" placeholder="متن یا لینک را وارد کنید" />
         <button class="btn-primary" id="qrGen" data-lang-key="qr_generate">تولید QR</button>
         <canvas id="qrCanvas" width="256" height="256"></canvas>
-        <button class="btn-secondary" id="qrDownload" data-lang-key="qr_download">دانلود</button>
+        <button class="btn-secondary" id="qrDownload" data-lang-key="qr_download">دانلود QR (PNG)</button>
       </div>
     </section>
 
@@ -246,7 +249,7 @@
       <div class="card">
         <h1 data-lang-key="nav_number2word">عدد به حروف</h1>
         <p class="tool-desc" data-lang-key="tool_n2w_desc"></p>
-        <input type="number" id="n2wInput" data-lang-key="n2w_input" />
+        <input type="number" id="n2wInput" data-lang-key="n2w_input" placeholder="عدد را وارد کنید" />
         <div class="result-box" id="n2wResult"></div>
       </div>
     </section>
