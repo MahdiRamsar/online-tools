@@ -1,0 +1,477 @@
+// ===== START OF FILE: index.html =====
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ابزارک‌های هوشمند - مجموعه ابزارهای آنلاین رایگان</title>
+    <meta name="description" content="مجموعه‌ای کامل از ابزارهای آنلاین رایگان شامل ماشین‌حساب، مبدل تاریخ شمسی به میلادی، تولید رمز عبور قوی، مبدل واحد، شمارشگر کلمات، تولید QR Code و تبدیل اعداد به حروف فارسی.">
+    <meta name="keywords" content="ابزار آنلاین رایگان, ماشین حساب آنلاین, مبدل تاریخ شمسی, تولید رمز عبور, مبدل واحد طول و وزن, شمارشگر کلمات, QR Code ساز, اعداد به حروف فارسی">
+    <meta name="author" content="ابزارک‌های هوشمند">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="ابزارک‌های هوشمند">
+    <meta property="og:description" content="مجموعه‌ای کامل از ابزارهای آنلاین رایگان - اجرای ۱۰۰٪ در مرورگر">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ابزارک‌های هوشمند",
+        "description": "مجموعه‌ای کامل از ابزارهای آنلاین رایگان که مستقیماً در مرورگر اجرا می‌شوند",
+        "url": "https://yourusername.github.io/smart-tools/",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "IRR"
+        },
+        "featureList": [
+            "ماشین‌حساب استاندارد آنلاین",
+            "مبدل تاریخ شمسی به میلادی و بالعکس",
+            "تولیدکننده رمز عبور قوی",
+            "مبدل واحدهای طول و وزن",
+            "شمارشگر کاراکتر و کلمات",
+            "تولیدکننده QR Code",
+            "تبدیل اعداد به حروف فارسی"
+        ]
+    }
+    </script>
+</head>
+<body class="light-mode">
+
+    <!-- Header -->
+    <header id="siteHeader">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">🛠️</span>
+                <span class="logo-text">ابزارک‌های هوشمند</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger" aria-label="منوی اصلی">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <nav id="mainNav" role="navigation">
+                <button class="nav-btn active" data-tool="home">خانه</button>
+                <button class="nav-btn" data-tool="calculator">ماشین‌حساب</button>
+                <button class="nav-btn" data-tool="date-converter">مبدل تاریخ</button>
+                <button class="nav-btn" data-tool="password-generator">تولید رمز</button>
+                <button class="nav-btn" data-tool="unit-converter">مبدل واحد</button>
+                <button class="nav-btn" data-tool="char-counter">شمارشگر</button>
+                <button class="nav-btn" data-tool="qr-generator">QR Code</button>
+                <button class="nav-btn" data-tool="number-to-words">اعداد به حروف</button>
+            </nav>
+
+            <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="mainContent">
+
+        <!-- Home Section -->
+        <section id="home" class="tool-section active" role="main">
+            <div class="container">
+                <h1 class="hero-title">به ابزارک‌های هوشمند خوش آمدید</h1>
+                <p class="hero-desc">مجموعه‌ای کامل از ابزارهای آنلاین رایگان که مستقیماً در مرورگر شما اجرا می‌شوند. بدون نیاز به ثبت‌نام، بدون تبلیغات مزاحم، و بدون ارسال هیچ‌گونه اطلاعات شخصی شما به سرورهای خارجی. تمام محاسبات روی دستگاه شما انجام می‌شود.</p>
+                <div class="tools-grid">
+                    <div class="tool-card" data-tool="calculator">
+                        <div class="card-icon">🧮</div>
+                        <h2>ماشین‌حساب استاندارد</h2>
+                        <p>یک ماشین‌حساب ساده و سریع برای انجام چهار عمل اصلی، محاسبه‌ی درصد و کار با اعداد اعشاری. با تاریخچه‌ی عملیات برای پیگیری محاسبات قبلی.</p>
+                    </div>
+                    <div class="tool-card" data-tool="date-converter">
+                        <div class="card-icon">📅</div>
+                        <h2>مبدل تاریخ شمسی/میلادی</h2>
+                        <p>تبدیل آسان تاریخ‌های شمسی (جلالی) به میلادی و بالعکس با الگوریتم دقیق و نمایش نام کامل ماه‌ها. مناسب برای تبدیل تاریخ تولد و رویدادها.</p>
+                    </div>
+                    <div class="tool-card" data-tool="password-generator">
+                        <div class="card-icon">🔐</div>
+                        <h2>تولیدکننده رمز عبور قوی</h2>
+                        <p>ایجاد رمزهای عبور امن و تصادفی با تنظیم طول و نوع کاراکترها. دارای نشانگر قدرت رمز و قابلیت کپی فوری در کلیپ‌بورد.</p>
+                    </div>
+                    <div class="tool-card" data-tool="unit-converter">
+                        <div class="card-icon">📐</div>
+                        <h2>مبدل واحدهای طول و وزن</h2>
+                        <p>تبدیل سریع واحدهای اندازه‌گیری شامل متر به فوت، کیلومتر به مایل، کیلوگرم به پوند و سایر واحدها با دقت بالا و نمایش لحظه‌ای نتایج.</p>
+                    </div>
+                    <div class="tool-card" data-tool="char-counter">
+                        <div class="card-icon">📝</div>
+                        <h2>شمارشگر کاراکتر و کلمات</h2>
+                        <p>شمارش لحظه‌ای تعداد کاراکترها، کلمات، جملات و پاراگراف‌های متن شما. ابزار مناسب برای نویسندگان، دانشجویان و تولیدکنندگان محتوا.</p>
+                    </div>
+                    <div class="tool-card" data-tool="qr-generator">
+                        <div class="card-icon">📱</div>
+                        <h2>مولد QR Code</h2>
+                        <p>تولید کد QR از متن یا لینک دلخواه شما با قابلیت دانلود به صورت تصویر PNG. مناسب برای اشتراک‌گذاری سریع اطلاعات و لینک‌ها.</p>
+                    </div>
+                    <div class="tool-card" data-tool="number-to-words">
+                        <div class="card-icon">🔢</div>
+                        <h2>تبدیل اعداد به حروف فارسی</h2>
+                        <p>تبدیل اعداد ریاضی به معادل حروفی آن‌ها در زبان فارسی. مناسب برای چک‌نویسی، قراردادهای رسمی و اسناد مالی با دقت بالا.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section id="calculator" class="tool-section">
+            <div class="container">
+                <h1>🧮 ماشین‌حساب استاندارد</h1>
+                <h2>انجام محاسبات ساده و سریع</h2>
+                <div class="card">
+                    <div class="calc-display">
+                        <div class="calc-history" id="calcHistory"></div>
+                        <div class="calc-current" id="calcDisplay">0</div>
+                    </div>
+                    <div class="calc-buttons">
+                        <button class="calc-btn btn-clear" data-action="clear">C</button>
+                        <button class="calc-btn btn-operator" data-action="percent">٪</button>
+                        <button class="calc-btn btn-delete" data-action="delete">⌫</button>
+                        <button class="calc-btn btn-operator" data-action="operator" data-value="/">÷</button>
+                        
+                        <button class="calc-btn btn-number" data-value="7">۷</button>
+                        <button class="calc-btn btn-number" data-value="8">۸</button>
+                        <button class="calc-btn btn-number" data-value="9">۹</button>
+                        <button class="calc-btn btn-operator" data-action="operator" data-value="*">×</button>
+                        
+                        <button class="calc-btn btn-number" data-value="4">۴</button>
+                        <button class="calc-btn btn-number" data-value="5">۵</button>
+                        <button class="calc-btn btn-number" data-value="6">۶</button>
+                        <button class="calc-btn btn-operator" data-action="operator" data-value="-">−</button>
+                        
+                        <button class="calc-btn btn-number" data-value="1">۱</button>
+                        <button class="calc-btn btn-number" data-value="2">۲</button>
+                        <button class="calc-btn btn-number" data-value="3">۳</button>
+                        <button class="calc-btn btn-operator" data-action="operator" data-value="+">+</button>
+                        
+                        <button class="calc-btn btn-zero" data-value="0">۰</button>
+                        <button class="calc-btn btn-decimal" data-value=".">.</button>
+                        <button class="calc-btn btn-equals" data-action="equals">=</button>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این ماشین‌حساب استاندارد برای انجام چهار عمل اصلی ریاضی (جمع، تفریق، ضرب و تقسیم) طراحی شده است. همچنین از عملگر درصد برای محاسبات درصدی پشتیبانی می‌کند. تاریخچه‌ی عملیات در بالای نمایشگر قابل مشاهده است و می‌توانید از دکمه‌ی پاک‌کردن (C) برای شروع محاسبه‌ی جدید استفاده کنید. تمام محاسبات به صورت محلی در مرورگر شما انجام می‌شود.</p>
+            </div>
+        </section>
+
+        <!-- Date Converter Section -->
+        <section id="date-converter" class="tool-section">
+            <div class="container">
+                <h1>📅 مبدل تاریخ شمسی به میلادی (و بالعکس)</h1>
+                <h2>تبدیل دقیق تاریخ‌ها</h2>
+                <div class="card">
+                    <div class="converter-grid">
+                        <!-- Jalali to Gregorian -->
+                        <div class="converter-box">
+                            <h3>شمسی به میلادی</h3>
+                            <div class="date-inputs">
+                                <div class="input-group">
+                                    <label for="jy-input">سال (شمسی):</label>
+                                    <input type="number" id="jy-input" min="1" max="3178" placeholder="۱۴۰۵" value="1405">
+                                </div>
+                                <div class="input-group">
+                                    <label for="jm-input">ماه:</label>
+                                    <select id="jm-input">
+                                        <option value="1">فروردین</option>
+                                        <option value="2">اردیبهشت</option>
+                                        <option value="3">خرداد</option>
+                                        <option value="4">تیر</option>
+                                        <option value="5">مرداد</option>
+                                        <option value="6">شهریور</option>
+                                        <option value="7">مهر</option>
+                                        <option value="8">آبان</option>
+                                        <option value="9">آذر</option>
+                                        <option value="10">دی</option>
+                                        <option value="11">بهمن</option>
+                                        <option value="12">اسفند</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="jd-input">روز:</label>
+                                    <input type="number" id="jd-input" min="1" max="31" placeholder="۱۶" value="16">
+                                </div>
+                            </div>
+                            <button class="btn-primary" id="jToGBtn">تبدیل به میلادی</button>
+                            <div class="result-box" id="jToGResult">نتیجه در اینجا نمایش داده می‌شود...</div>
+                        </div>
+
+                        <!-- Gregorian to Jalali -->
+                        <div class="converter-box">
+                            <h3>میلادی به شمسی</h3>
+                            <div class="date-inputs">
+                                <div class="input-group">
+                                    <label for="gy-input">سال (میلادی):</label>
+                                    <input type="number" id="gy-input" min="1" max="3178" placeholder="2026" value="2026">
+                                </div>
+                                <div class="input-group">
+                                    <label for="gm-input">ماه:</label>
+                                    <select id="gm-input">
+                                        <option value="1">January</option>
+                                        <option value="2">February</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">August</option>
+                                        <option value="9">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="gd-input">روز:</label>
+                                    <input type="number" id="gd-input" min="1" max="31" placeholder="7" value="7">
+                                </div>
+                            </div>
+                            <button class="btn-primary" id="gToJBtn">تبدیل به شمسی</button>
+                            <div class="result-box" id="gToJResult">نتیجه در اینجا نمایش داده می‌شود...</div>
+                        </div>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این ابزار با استفاده از الگوریتم دقیق «مبنا» تاریخ‌های شمسی (جلالی) را به میلادی و بالعکس تبدیل می‌کند. الگوریتم به کار رفته کاملاً مطابق با استاندارد تقویم رسمی ایران است و سال‌های کبیسه را به درستی محاسبه می‌کند. نام ماه‌ها به صورت کامل و دقیق نمایش داده می‌شود. مناسب برای تبدیل تاریخ تولد، رویدادهای تاریخی و محاسبات زمانی بین دو تقویم.</p>
+            </div>
+        </section>
+
+        <!-- Password Generator Section -->
+        <section id="password-generator" class="tool-section">
+            <div class="container">
+                <h1>🔐 تولیدکننده رمز عبور قوی</h1>
+                <h2>ایجاد رمزهای امن و تصادفی</h2>
+                <div class="card">
+                    <div class="password-output">
+                        <input type="text" id="passwordDisplay" readonly placeholder="رمز عبور اینجا نمایش داده می‌شود...">
+                        <button class="btn-icon" id="copyPassword" title="کپی رمز">📋</button>
+                    </div>
+                    
+                    <div class="strength-meter">
+                        <label>قدرت رمز عبور:</label>
+                        <div class="strength-bar-container">
+                            <div class="strength-bar" id="strengthBar"></div>
+                        </div>
+                        <span class="strength-text" id="strengthText">-</span>
+                    </div>
+
+                    <div class="password-options">
+                        <div class="slider-group">
+                            <label for="passLength">طول رمز: <span id="lengthValue">16</span> کاراکتر</label>
+                            <input type="range" id="passLength" min="8" max="32" value="16">
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incUppercase" checked>
+                                <span>حروف بزرگ (A-Z)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incLowercase" checked>
+                                <span>حروف کوچک (a-z)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incNumbers" checked>
+                                <span>اعداد (0-9)</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incSymbols" checked>
+                                <span>علائم ویژه (!@#$%...)</span>
+                            </label>
+                        </div>
+
+                        <button class="btn-primary btn-generate" id="generatePassword">🔄 تولید رمز عبور</button>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این ابزار رمزهای عبور قوی و کاملاً تصادفی تولید می‌کند. شما می‌توانید طول رمز و نوع کاراکترهای استفاده شده را مشخص کنید. نشانگر قدرت رمز به شما کمک می‌کند تا از امنیت رمز عبور خود اطمینان حاصل کنید. رمزهای تولید شده هرگز ارسال یا ذخیره نمی‌شوند و فقط روی دستگاه شما ایجاد می‌شوند. با دکمه‌ی کپی می‌توانید رمز را به سرعت در کلیپ‌بورد کپی کنید.</p>
+            </div>
+        </section>
+
+        <!-- Unit Converter Section -->
+        <section id="unit-converter" class="tool-section">
+            <div class="container">
+                <h1>📐 مبدل واحدهای طول و وزن</h1>
+                <h2>تبدیل سریع و دقیق واحدها</h2>
+                <div class="card">
+                    <div class="unit-tabs">
+                        <button class="unit-tab active" data-tab="length">واحدهای طول</button>
+                        <button class="unit-tab" data-tab="weight">واحدهای وزن</button>
+                    </div>
+
+                    <!-- Length Converter -->
+                    <div class="unit-panel active" id="length-panel">
+                        <div class="converter-row">
+                            <div class="convert-box">
+                                <label for="lengthInput">مقدار ورودی:</label>
+                                <input type="number" id="lengthInput" placeholder="عدد را وارد کنید" value="1">
+                                <select id="lengthFrom">
+                                    <option value="m">متر (m)</option>
+                                    <option value="cm">سانتی‌متر (cm)</option>
+                                    <option value="km">کیلومتر (km)</option>
+                                    <option value="ft">فوت (ft)</option>
+                                    <option value="in">اینچ (in)</option>
+                                    <option value="mi">مایل (mi)</option>
+                                </select>
+                            </div>
+                            <div class="convert-arrow">⇄</div>
+                            <div class="convert-box">
+                                <label for="lengthOutput">نتیجه:</label>
+                                <input type="text" id="lengthOutput" readonly value="0">
+                                <select id="lengthTo">
+                                    <option value="ft">فوت (ft)</option>
+                                    <option value="m">متر (m)</option>
+                                    <option value="cm">سانتی‌متر (cm)</option>
+                                    <option value="km">کیلومتر (km)</option>
+                                    <option value="in">اینچ (in)</option>
+                                    <option value="mi">مایل (mi)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Weight Converter -->
+                    <div class="unit-panel" id="weight-panel">
+                        <div class="converter-row">
+                            <div class="convert-box">
+                                <label for="weightInput">مقدار ورودی:</label>
+                                <input type="number" id="weightInput" placeholder="عدد را وارد کنید" value="1">
+                                <select id="weightFrom">
+                                    <option value="kg">کیلوگرم (kg)</option>
+                                    <option value="g">گرم (g)</option>
+                                    <option value="lb">پوند (lb)</option>
+                                    <option value="oz">اونس (oz)</option>
+                                </select>
+                            </div>
+                            <div class="convert-arrow">⇄</div>
+                            <div class="convert-box">
+                                <label for="weightOutput">نتیجه:</label>
+                                <input type="text" id="weightOutput" readonly value="0">
+                                <select id="weightTo">
+                                    <option value="lb">پوند (lb)</option>
+                                    <option value="kg">کیلوگرم (kg)</option>
+                                    <option value="g">گرم (g)</option>
+                                    <option value="oz">اونس (oz)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این مبدل واحدها تبدیل سریع و دقیق واحدهای طول (متر، سانتی‌متر، کیلومتر، فوت، اینچ، مایل) و وزن (کیلوگرم، گرم، پوند، اونس) را انجام می‌دهد. نتایج به صورت لحظه‌ای و با دقت سه رقم اعشار نمایش داده می‌شوند. شما می‌توانید بین هر واحد دلخواه تبدیل انجام دهید. مناسب برای استفاده‌ی روزمره، مهندسی، ورزش و آشپزی.</p>
+            </div>
+        </section>
+
+        <!-- Character Counter Section -->
+        <section id="char-counter" class="tool-section">
+            <div class="container">
+                <h1>📝 شمارشگر کاراکتر و کلمات</h1>
+                <h2>آنالیز متن به صورت لحظه‌ای</h2>
+                <div class="card">
+                    <textarea id="textContent" placeholder="متن خود را اینجا بنویسید یا کپی کنید..."></textarea>
+                    <div class="counter-grid">
+                        <div class="counter-box">
+                            <span class="counter-value" id="charCount">0</span>
+                            <span class="counter-label">کاراکتر (با فاصله)</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-value" id="charNoSpace">0</span>
+                            <span class="counter-label">کاراکتر (بدون فاصله)</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-value" id="wordCount">0</span>
+                            <span class="counter-label">کلمات</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-value" id="sentenceCount">0</span>
+                            <span class="counter-label">جملات</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-value" id="paragraphCount">0</span>
+                            <span class="counter-label">پاراگراف‌ها</span>
+                        </div>
+                        <div class="counter-box">
+                            <span class="counter-value" id="readTime">0</span>
+                            <span class="counter-label">زمان خواندن (دقیقه)</span>
+                        </div>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این شمارشگر متن به صورت لحظه‌ای تعداد کاراکترها (با و بدون فاصله)، کلمات، جملات و پاراگراف‌های متن شما را محاسبه می‌کند. همچنین زمان تقریبی خواندن متن را نیز تخمین می‌زند. این ابزار برای نویسندگان، دانشجویان، تولیدکنندگان محتوا و کسانی که محدودیت کاراکتر در شبکه‌های اجتماعی دارند بسیار مفید است. آنالیز به صورت زنده و بدون نیاز به کلیک روی دکمه انجام می‌شود.</p>
+            </div>
+        </section>
+
+        <!-- QR Generator Section -->
+        <section id="qr-generator" class="tool-section">
+            <div class="container">
+                <h1>📱 مولد QR Code</h1>
+                <h2>ایجاد کد QR از متن یا لینک</h2>
+                <div class="card">
+                    <div class="qr-input-group">
+                        <label for="qrText">متن یا لینک:</label>
+                        <input type="text" id="qrText" placeholder="لینک یا متن خود را وارد کنید...">
+                        <button class="btn-primary" id="generateQR">تولید QR Code</button>
+                    </div>
+                    <div class="qr-output" id="qrOutput">
+                        <canvas id="qrCanvas"></canvas>
+                    </div>
+                    <button class="btn-secondary" id="downloadQR" style="display:none;">⬇️ دانلود QR به صورت PNG</button>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این ابزار QR Code را از هر متن یا لینکی که وارد کنید تولید می‌کند. می‌توانید QR Code تولید شده را به صورت تصویر PNG دانلود کنید. QR Codeها برای اشتراک‌گذاری سریع لینک‌ها، اطلاعات تماس، آدرس وب‌سایت‌ها و هر نوع متن دیگر بسیار مناسب هستند. تمام پردازش‌ها محلی انجام می‌شود و هیچ اطلاعاتی به سرور ارسال نمی‌شود.</p>
+            </div>
+        </section>
+
+        <!-- Number to Words Section -->
+        <section id="number-to-words" class="tool-section">
+            <div class="container">
+                <h1>🔢 تبدیل اعداد به حروف فارسی</h1>
+                <h2>نوشتن اعداد به صورت کامل</h2>
+                <div class="card">
+                    <div class="number-input-group">
+                        <label for="numberInput">عدد مورد نظر (حداکثر ۱۲ رقم):</label>
+                        <input type="text" id="numberInput" placeholder="مثال: 1254" maxlength="12">
+                        <button class="btn-primary" id="convertNumber">تبدیل به حروف</button>
+                    </div>
+                    <div class="number-result" id="numberResult">
+                        <p>نتیجه در اینجا نمایش داده می‌شود...</p>
+                    </div>
+                </div>
+                <h3>درباره این ابزار</h3>
+                <p class="tool-desc">این ابزار اعداد ریاضی را به معادل حروفی آن‌ها در زبان فارسی تبدیل می‌کند. مناسب برای نوشتن چک، قراردادها، اسناد مالی و هر جایی که نیاز به نوشتن عدد به صورت حروفی دارید. این ابزار تا اعداد ۱۲ رقمی (تا ۹۹۹ میلیارد) را پشتیبانی می‌کند و تمام قواعد زبان فارسی را رعایت می‌کند. تبدیل به صورت لحظه‌ای و دقیق انجام می‌شود.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="siteFooter">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#" id="aboutLink">درباره ما</a>
+                <a href="#" id="contactLink">تماس با ما</a>
+                <a href="#" id="privacyLink">حریم خصوصی</a>
+            </div>
+            <p class="footer-copyright">© ۱۴۰۵ ابزارک‌های هوشمند - تمامی حقوق محفوظ است. | طراحی و توسعه با ❤️</p>
+        </div>
+    </footer>
+
+    <!-- QR Code Library (Inline Minified - based on qrcode-generator by Kazuhiko Arase) -->
+    <script>
+    // ===== QR Code Generator Library (Minified & Inline) =====
+    var qrcode=function(){var r=function(r,t){var e=r,n=1,o=i;if(1<=e&&e<=40)for(var a=1;a<=40;a++)if(l(a,e)<=t){n=a;o=e;break}var f=n,u=o,s=null,c=null,d=null,h=[],p=null,v=null,g=null,y=[],m=null,b=null,w=null,x=null,E=0,S=[],k=0,T=0;function M(){var r=f,t=o;return 4*t+17}function C(r){A(0,0),A(M()-7,0),A(0,M()-7),O(),I(),L(r,k),2<=f&&D()}function A(r,t){for(var e=-1;e<=7;e++)if(!(r+e<=-1||M()<=r+e))for(var n=-1;n<=7;n++)t+n<=-1||M()<=t+n||(0<=e&&e<=6&&(0==n||6==n)||0<=n&&n<=6&&(0==e||6==e)||2<=e&&e<=4&&2<=n&&n<=4?w[r+e][t+n]=!0:w[r+e][t+n]=!1)}function O(){for(var r=8;r<M()-8;r++)null==w[r][6]&&(w[r][6]=r%2==0);for(r=8;r<M()-8;r++)null==w[6][r]&&(w[6][r]=r%2==0)}function I(){var r=f;n.getPatternPosition(r);for(var t=0;t<n.length;t++)for(var e=n[t],o=-2;o<=2;o++)for(var a=-2;a<=2;a++)-2==o||2==o||-2==a||2==a||0==o&&0==a?w[e+o][e+a]=!0:w[e+o][e+a]=!1}function D(){var r=h.getRSBlocks(f,k);s=function(r,t){for(var e=0,n=0;n<r.length;n++)e+=r[n].dataCount;return e}(r);c=new _(s);for(var e=0;e<y.length;e++){var o=y[e];c.put(o.getMode(),4),c.put(o.getLength(),a.getLengthInBits(o.getMode(),f)),o.write(c)}var i=c.getLengthInBits();if(c.getLengthInBits()>8*s)throw"code length overflow. ("+c.getLengthInBits()+">"+8*s+")";for(c.getLengthInBits()+4<=8*s&&c.put(0,4);c.getLengthInBits()%8!=0;)c.putBit(!1);for(;;){if(c.getLengthInBits()>=8*s)break;if(c.put(236,8),c.getLengthInBits()>=8*s)break;c.put(17,8)}var u=function(r,t){for(var e=0,n=0,o=0,a=new Array(t.length),f=new Array(t.length),u=0;u<t.length;u++){var s=t[u].dataCount,c=t[u].totalCount-s;n=Math.max(n,s),o=Math.max(o,c),a[u]=new Array(s);for(var d=0;d<a[u].length;d++)a[u][d]=255&r.getBuffer()[d+e];e+=s;var h=q.getErrorCorrectPolynomial(c),p=new P(a[u],h.getLength()-1).mod(h);f[u]=new Array(h.getLength()-1);for(d=0;d<f[u].length;d++){var v=d+p.getLength()-f[u].length;f[u][d]=v>=0?p.get(v):0}}for(var g=0,u=0;u<t.length;u++)g+=t[u].totalCount;var y=new Array(g),m=0;for(d=0;d<n;d++)for(u=0;u<t.length;u++)d<a[u].length&&(y[m++]=a[u][d]);for(d=0;d<o;d++)for(u=0;u<t.length;u++)d<f[u].length&&(y[m++]=f[u][d]);return y}(c,r);b=function(r,t,e){for(var n=r,o=t,a=e,i=[],u=0,s=0;s<n;s++)for(var c=a.getRSBlocks(s,u),d=0;d<c.length;d++){var h=c[d].totalCount;i.push(h)}return i.length}(f,k,t);var E=new B(w,M());E.addData(u),g=E.mapData(b,T)}function L(r,t){var e=-1,n=M()-1,o=7,a=0,f=q.getRSBlocks(r,t),i=c,u=M()-1;for(g=i;u>0;){for(6==u&&(u-=1);;){for(var s=0;s<2;s++)if(null==w[n][u-s]){var d=!1;a<g.length&&(d=1==(g[a]>>>o&1));var h=p.applyMask(r,n,u-s);h&&(d=!d),w[n][u-s]=d,-1==--o&&(a++,o=7)}if((n+=e)<0||M()<=n){n-=e,e=-e;break}}u-=2}}this.addData=function(r){var t=new N(r);y.push(t),k+=t.getLength()},this.make=function(){C(!1)},this.getModuleCount=function(){return M()},this.isDark=function(r,t){if(r<0||M()<=r||t<0||M()<=t)throw r+","+t;return w[r][t]},this.createImgTag=function(r,t){r=r||2;t="undefined"==typeof t?4*r:t;var e=M()*r+t,n=this.createASCII(r,t);return'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+e+" "+e+'">'+n+"</svg>"},this.createASCII=function(r,t){r=r||2;t="undefined"==typeof t?4*r:t;for(var e="",n=0;n<M();n++){e+="\n";for(var o=0;o<M();o++)e+=this.isDark(n,o)?"##":"  "}return e},this.createTableTag=function(r,t){r=r||2;t="undefined"==typeof t?4*r:t;for(var e="",n='<table style="border:0;border-collapse:collapse;"><tbody>',o=0;o<M();o++){n+="<tr>";for(var a=0;a<M();a++)n+='<td style="border:0;border-collapse:collapse;padding:0;margin:0;width:'+r+"px;height:"+r+"px;background-color:"+(this.isDark(o,a)?"#000":"#fff")+'"></td>';n+="</tr>"}return n+="</tbody></table>"},this.renderTo2dContext=function(r,t){t=t||2;for(var e=M(),n=0;n<e;n++)for(var o=0;o<e;o++){var a=this.isDark(n,o);r.fillStyle=a?"#000":"#fff";r.fillRect(o*t,n*t,t,t)}};var B=function(r,t){var e=r,n=t,o=r.length;this.getBrightness=function(r,t){var e=Math.max(0,r-1),n=Math.min(o,r+1),a=Math.max(0,t-1),i=Math.min(o,t+1),u=0;for(var s=e;s<=n;s++)for(var c=a;c<=i;c++)o[s]&&o[s][c]&&(u+=o[s][c]?0:1);return u};var a=new Array(o);for(var f=0;f<o;f++){a[f]=new Array(o);for(var u=0;u<o;u++)a[f][u]=r[f][u]}this.data=a,this.size=o,this.addData=function(r){this.data=r},this.mapData=function(r,t){for(var e=this.size-1,n=0,o=0,a=0,f=r.length;a<f;a++)for(var u=r[a],s=0;s<8;s++){var c=7-s,d=1==(u>>>c&1);if(n>=this.size||e<0)continue;null!=this.data[n][e]||(this.data[n][e]=d),e--,o++,0==o&&(n++,e=this.size-1,o=0,e>=0||(n++,e=this.size-1,n>=this.size&&(n=0,e=this.size-1)))}if(1==t)for(var h=0;h<this.size;h++)for(var p=0;p<this.size;p++)null!=this.data[h][p]&&(this.data[h][p]=!this.data[h][p])}};r.ErrorCorrectLevel={L:1,M:0,Q:3,H:2};var P=function(r,t){var e=0,n=0,o=r;this.get=function(r){return e[r]};this.getLength=function(){return e.length};this.multiply=function(r){for(var t=new Array(e.length+r.getLength()-1),n=0;n<e.length;n++)for(var o=0;o<r.getLength();o++)t[n+o]^=i.gexp(i.glog(e[n])+i.glog(r.get(o)));return new P(t)};this.mod=function(r){if(e.length-r.getLength()<0)return this;for(var t=i.glog(e[0])-i.glog(r.get(0)),n=new Array(e.length),o=0;o<e.length;o++)n[o]=e[o];for(o=0;o<r.getLength();o++)n[o]^=i.gexp(i.glog(r.get(o))+t);return new P(n).mod(r)};for(var a=0;a<r.length;a++)e[a]=r[a];var f=new Array(t.length);for(a=0;a<t.length;a++)f[a]=t[a];n=f.length;var u=new P(n);for(a=0;a<n;a++)u.get(a)?e[a]=i.gexp(i.glog(e[a])-i.glog(f[0])):e[a]=0;var s=new Array(e.length);for(a=0;a<e.length;a++)s[a]=a<n?e[a]:0};var q={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:1335,G18:7973,G15_MASK:21522,getBCHTypeInfo:function(r){for(var t=r<<10;q.getBCHDigit(t)-q.getBCHDigit(q.G15)>=0;)t^=q.G15<<q.getBCHDigit(t)-q.getBCHDigit(q.G15);return(r<<10|t)^q.G15_MASK},getBCHTypeNumber:function(r){for(var t=r<<12;q.getBCHDigit(t)-q.getBCHDigit(q.G18)>=0;)t^=q.G18<<q.getBCHDigit(t)-q.getBCHDigit(q.G18);return r<<12|t},getBCHDigit:function(r){for(var t=0;0!=r;)t++,r>>>=1;return t},getPatternPosition:function(r){return q.PATTERN_POSITION_TABLE[r-1]},getMask:function(r,t,e){switch(r){case 0:return(t+e)%2==0;case 1:return t%2==0;case 2:return e%3==0;case 3:return(t+e)%3==0;case 4:return(Math.floor(t/2)+Math.floor(e/3))%2==0;case 5:return t*e%2+t*e%3==0;case 6:return(t*e%2+t*e%3)%2==0;case 7:return(t*e%3+(t+e)%2)%2==0;default:throw"bad maskPattern:"+r}},getErrorCorrectPolynomial:function(r){for(var t=new P([1]),e=0;e<r;e++)t=t.multiply(new P([1,i.gexp(e)]));return t},getLengthInBits:function(r,t){if(1<=t&&t<10)switch(r){case 1:return 10;case 2:return 9;case 4:return 8;case 8:return 8;default:throw"mode:"+r}else if(t<27)switch(r){case 1:return 12;case 2:return 11;case 4:return 16;case 8:return 10;default:throw"mode:"+r}else{if(!(t<41))throw"type:"+t;switch(r){case 1:return 14;case 2:return 13;case 4:return 16;case 8:return 12;default:throw"mode:"+r}}},getLostPoint:function(r){for(var t=r.getModuleCount(),e=0,n=0;n<t;n++)for(var o=0;o<t;o++){for(var a=0,f=r.isDark(n,o),i=-1;i<=1;i++)if(!(n+i<0||t<=n+i))for(var u=-1;u<=1;u++)o+u<0||t<=o+u||0==i&&0==u||f==r.isDark(n+i,o+u)&&a++;a>5&&(e+=3+a-5)}for(n=0;n<t-1;n++)for(o=0;o<t-1;o++){var s=0;r.isDark(n,o)&&s++,r.isDark(n+1,o)&&s++,r.isDark(n,o+1)&&s++,r.isDark(n+1,o+1)&&s++,0!=s&&4!=s||(e+=3)}for(n=0;n<t;n++)for(o=0;o<t-6;o++)r.isDark(n,o)&&!r.isDark(n,o+1)&&r.isDark(n,o+2)&&r.isDark(n,o+3)&&r.isDark(n,o+4)&&!r.isDark(n,o+5)&&r.isDark(n,o+6)&&(e+=40);for(o=0;o<t;o++)for(n=0;n<t-6;n++)r.isDark(n,o)&&!r.isDark(n+1,o)&&r.isDark(n+2,o)&&r.isDark(n+3,o)&&r.isDark(n+4,o)&&!r.isDark(n+5,o)&&r.isDark(n+6,o)&&(e+=40);for(var c=0,o=0;o<t;o++)for(n=0;n<t;n++)r.isDark(n,o)&&c++;return e+=10*(Math.abs(100*c/t/t-50)/5)},getRSBlocks:function(r,t){var e=function(r,t){switch(t){case"TH":return r<=10?[[1,7,1]]:r<=20?[[1,10,1]]:r<=30?[[1,13,1]]:r<=40?[[1,17,1]]:null;case"L":case 1:return r<=10?[[1,26,19]]:r<=20?[[1,44,34]]:r<=30?[[2,35,27]]:r<=40?[[2,43,33]]:null;case"M":case 0:return r<=10?[[1,26,16]]:r<=20?[[1,44,28]]:r<=30?[[2,35,22]]:r<=40?[[2,43,27]]:null;case"Q":case 3:return r<=10?[[1,26,13]]:r<=20?[[1,44,22]]:r<=30?[[2,35,17]]:r<=40?[[2,43,21]]:null;case"H":case 2:return r<=10?[[1,26,9]]:r<=20?[[1,44,16]]:r<=30?[[2,35,13]]:r<=40?[[2,43,15]]:null;default:return null}}(r,t);if(null==e)throw"bad rs block @ typeNumber:"+r+"/errorCorrectLevel:"+t;for(var n=e.length,o=[],a=0;a<n;a++)for(var f=e[a][0],u=e[a][1],s=e[a][2],c=0;c<f;c++)o.push({totalCount:u,dataCount:s});return o}};var N=function(r){var t=r;this.getMode=function(){return 4};this.getLength=function(){return t.length};this.write=function(r){for(var e=t.length,n=0;n<e;n++)r.put(t.charCodeAt(n),8)}};var _=function(r){var t=r,e=[],n=0;this.getBuffer=function(){return e};this.get=function(r){var t=Math.floor(r/8);return 1==(e[t]>>>7-r%8&1)};this.put=function(r,t){for(var e=0;e<t;e++)this.putBit(1==(r>>>t-e-1&1))};this.getLengthInBits=function(){return n};this.putBit=function(r){var t=Math.floor(n/8);e.length<=t&&e.push(0),r&&(e[t]|=128>>>n%8),n++}};var i={glog:function(r){if(r<1)throw"glog("+r+")";return i.LOG_TABLE[r]},gexp:function(r){for(;r<0;)r+=255;for(;r>=256;)r-=255;return i.EXP_TABLE[r]},EXP_TABLE:new Array(256),LOG_TABLE:new Array(256)};for(var u=0;u<8;u++)i.EXP_TABLE[u]=1<<u;for(u=8;u<256;u++)i.EXP_TABLE[u]=i.EXP_TABLE[u-4]^i.EXP_TABLE[u-5]^i.EXP_TABLE[u-6]^i.EXP_TABLE[u-8];for(u=0;u<255;u++)i.LOG_TABLE[i.EXP_TABLE[u]]=u;function l(r,t){var e=0,n=1;switch(t){case"L":case 1:e=7;break;case"M":case 0:e=15;break;case"Q":case 3:e=25;break;case"H":case 2:e=30;break;default:return 0}var o=0;switch(t){case"TH":o=r<=10?17:r<=20?32:r<=30?53:r<=40?78:0;break;case 1:case"L":o=r<=10?19:r<=20?34:r<=30?55:r<=40?80:0;break;case 0:case"M":o=r<=10?16:r<=20?28:r<=30?44:r<=40?64:0;break;case 3:case"Q":o=r<=10?13:r<=20?22:r<=30?34:r<=40?48:0;break;case 2:case"H":o=r<=10?9:r<=20?16:r<=30?26:r<=40?36:0;break;default:return 0}return o}return r}();
+    </script>
+
+    <!-- Main Application Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+// ===== END OF FILE: index.html =====
