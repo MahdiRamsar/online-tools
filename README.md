@@ -44,6 +44,6 @@ A comprehensive **multi-language** (English/Persian) web application featuring a
 
 ### GitHub Pages
 ```bash
-git clone https://github.com/yourusername/smart-tools.git
+git clone https://github.com/mahdiramsar/smart-tools.git
 cd smart-tools
 # Enable GitHub Pages in Settings > Pages
