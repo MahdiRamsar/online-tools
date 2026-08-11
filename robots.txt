@@ -1,3 +1,131 @@
+# ============================================================
+#  robots.txt — ابزارفایل ۲.۰ (ToolsFile)
+#  تنظیمات بهینه برای خزنده‌های موتورهای جستجو
+#  آخرین بروزرسانی: ۲۰۲۶-۰۸-۱۱
+# ============================================================
+
+# ========== ۱) قوانین کلی برای همهٔ ربات‌ها ==========
 User-agent: *
 Allow: /
+
+# ========== ۲) محدودیت‌های دسترسی ==========
+# مسدودسازی پوشه‌های سیستمی و موقت (در صورت وجود)
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /config/
+
+# مسدودسازی فایل‌های سیستمی
+Disallow: /*.env$
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.sql$
+Disallow: /*.gz$
+Disallow: /*.zip$
+Disallow: /*.tar$
+
+# مسدودسازی صفحات با پارامترهای تکراری (برای جلوگیری از محتوای تکراری)
+Disallow: /*?lang=*
+Disallow: /*?tool=*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?source=*
+
+# مسدودسازی مسیرهای API (اگر وجود داشته باشند)
+Disallow: /api/
+Disallow: /wp-json/
+Disallow: /rest/
+
+# مسدودسازی فایل‌های موقت و کش
+Disallow: /*.tmp$
+Disallow: /*.swp$
+Disallow: /*.swo$
+
+# ========== ۳) قوانین اختصاصی برای خزنده‌های خاص ==========
+
+# گوگل (بازدید بیشتر، ایندکس کامل)
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# بینگ (بازدید متوسط)
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# یاهو / اسلرپ
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+# داک‌داک‌گو
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 2
+
+# بیدو (چینی)
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 5
+
+# یاندکس (روسی)
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# ========== ۴) خزنده‌های مضر ==========
+# مسدودسازی کامل ربات‌های هرزنامه و مخرب
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+User-agent: exabot
+Disallow: /
+
+User-agent: spbot
+Disallow: /
+
+User-agent: YandexImages
+Disallow: /
+
+User-agent: YandexVideo
+Disallow: /
+
+# ========== ۵) مدت زمان بازدید مجدد ==========
+# پیشنهاد به ربات‌ها برای بازدید مجدد (بر حسب ثانیه)
+# (در صورت پشتیبانی توسط خزنده)
+Crawl-delay: 2
+
+# ========== ۶) مسیر Sitemap ==========
 Sitemap: https://toolsfile.ir/sitemap.xml
+
+# ========== ۷) دستورالعمل‌های تکمیلی ==========
+# اجازهٔ ایندکس کردن تصاویر
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# عدم نمایش لینک‌های دنباله‌دار در نتایج
+# (این دستور برای برخی خزنده‌ها معتبر است)
+# Noarchive: برای جلوگیری از ذخیرهٔ نسخهٔ کش
+# Nosnippet: برای جلوگیری از نمایش قطعه
+# Notranslate: برای جلوگیری از ترجمهٔ خودکار
