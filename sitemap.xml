@@ -76,22 +76,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://toolsfile.ir/en/tools/img2pdf/"/>
   </url>
 
-  <!-- 3. removebg -->
+  <!-- 3. remove-bg (اصلاح‌شده) -->
   <url>
-    <loc>https://toolsfile.ir/fa/tools/removebg/</loc>
+    <loc>https://toolsfile.ir/fa/tools/remove-bg/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://toolsfile.ir/fa/tools/removebg/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://toolsfile.ir/en/tools/removebg/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://toolsfile.ir/fa/tools/remove-bg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolsfile.ir/en/tools/remove-bg/"/>
   </url>
   <url>
-    <loc>https://toolsfile.ir/en/tools/removebg/</loc>
+    <loc>https://toolsfile.ir/en/tools/remove-bg/</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://toolsfile.ir/fa/tools/removebg/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://toolsfile.ir/en/tools/removebg/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://toolsfile.ir/fa/tools/remove-bg/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://toolsfile.ir/en/tools/remove-bg/"/>
   </url>
 
   <!-- 4. qr -->
