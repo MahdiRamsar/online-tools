@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="مهدی رحیمیان - Mehdi Rahimian">
+  <meta name="theme-color" content="#1a3ad1">
+  
+  <title>صفحه پیدا نشد | ابزارفایل ۲.۰</title>
+  <meta name="description" content="صفحه مورد نظر شما در ابزارفایل ۲.۰ پیدا نشد. لطفاً به صفحه اصلی بازگردید یا از ابزارهای ما استفاده کنید.">
+  
+  <!-- فاویکون -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%231a3ad1'/%3E%3Cpath d='M20 44V20h6v10h14v6H26v8z' fill='white'/%3E%3C/svg%3E">
+  
+  <!-- فونت‌ها -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Vazirmatn:wght@400;600;700;900&display=swap" rel="stylesheet">
+  </noscript>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
+  
+  <style>
+    /* ===== CSS (هماهنگ با سایت اصلی) ===== */
+    :root {
+      --royal-950: #050d2a;
+      --royal-900: #0a1847;
+      --royal-800: #122a86;
+      --royal-700: #1a3ad1;
+      --royal-600: #2270f0;
+      --royal-500: #3e6bff;
+      --royal-300: #8fb0ff;
+      --royal-100: #dfe9ff;
+      --royal-50: #f3f7ff;
+      --ink: #0c1533;
+      --muted: #5b678f;
+      --line: #d9e2fb;
+      --white: #fff;
+      --ok: #0c9d68;
+      --amber: #d97706;
+      --shadow: 0 12px 40px -16px rgba(10, 24, 71, 0.15);
+      --radius: 20px;
+      --font-fa: 'Vazirmatn', system-ui, sans-serif;
+      --font-en: 'Inter', system-ui, sans-serif;
+      --bg-body: var(--white);
+      --bg-card: var(--white);
+      --text-body: var(--ink);
+      --border-light: var(--line);
+      --shadow-card: var(--shadow);
+    }
+    
+    [data-theme="dark"] {
+      --royal-950: #0b142e;
+      --royal-900: #1a2a5e;
+      --royal-800: #2a4a9e;
+      --royal-700: #4a7aff;
+      --royal-600: #5a8aff;
+      --royal-500: #7aa4ff;
+      --royal-300: #b8ceff;
+      --royal-100: #1e2a4a;
+      --royal-50: #141e3a;
+      --ink: #e8edff;
+      --muted: #9aa8c8;
+      --line: #2a3a6a;
+      --white: #0b142e;
+      --bg-body: #0b142e;
+      --bg-card: #141e3a;
+      --text-body: #e8edff;
+      --border-light: #2a3a6a;
+      --shadow-card: 0 12px 40px -16px rgba(0, 0, 0, 0.6);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-fa);
+      color: var(--text-body);
+      background: var(--bg-body);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    html[lang="en"] body { font-family: var(--font-en); }
+    
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 48px 36px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      position: relative;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--royal-500), var(--royal-800));
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    
+    .error-icon {
+      font-size: 4.5rem;
+      color: var(--royal-600);
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--royal-900);
+      margin-bottom: 8px;
+    }
+    .sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--royal-700);
+      color: #fff;
+      box-shadow: 0 8px 24px -10px rgba(26, 58, 209, 0.3);
+    }
+    .btn-primary:hover {
+      background: var(--royal-800);
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--royal-700);
+      border: 1.5px solid var(--royal-700);
+    }
+    .btn-secondary:hover {
+      background: var(--royal-50);
+      transform: translateY(-2px);
+    }
+    
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      inset-inline-end: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1.5px solid var(--royal-700);
+      background: var(--bg-card);
+      color: var(--royal-700);
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+      z-index: 100;
+      box-shadow: var(--shadow-card);
+    }
+    .theme-toggle:hover {
+      background: var(--royal-700);
+      color: #fff;
+      transform: scale(1.05);
+    }
+    
+    /* ریسپانسیو */
+    @media (max-width: 500px) {
+      .container { padding: 32px 20px; }
+      h1 { font-size: 1.6rem; }
+      .error-icon { font-size: 3rem; }
+      .btns { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+    
+    /* کپی رایت کوچک */
+    .copy {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- دکمه تغییر تم -->
+  <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم (روز/شب)" role="switch" aria-checked="false">
+    <i class="fa-regular fa-moon"></i>
+  </button>
+
+  <div class="container">
+    <div class="error-icon">🔍</div>
+    <h1>صفحه پیدا نشد!</h1>
+    <p class="sub">متأسفیم، صفحه‌ای که به دنبال آن هستید وجود ندارد.</p>
+    <p class="desc">
+      ممکن است آدرس را اشتباه وارد کرده باشید یا صفحه حذف شده باشد. 
+      به خانه بازگردید یا از ابزارهای ما استفاده کنید.
+    </p>
+    <div class="btns">
+      <a href="/fa/" class="btn-primary"><i class="fa-solid fa-house"></i> صفحه اصلی</a>
+      <a href="/fa/#tools" class="btn-secondary"><i class="fa-solid fa-toolbox"></i> ابزارها</a>
+    </div>
+    <div class="copy">© ابزارفایل ۲.۰ — تمامی حقوق محفوظ است.</div>
+  </div>
+
+  <script>
+    // ====== تم دارک/روشن ======
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        btn.innerHTML = theme === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
+        btn.setAttribute('aria-checked', theme === 'dark');
+        btn.addEventListener('click', function() {
+          const current = document.documentElement.getAttribute('data-theme');
+          const next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('theme', next);
+          this.innerHTML = next === 'dark' ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
+          this.setAttribute('aria-checked', next === 'dark');
+        });
+      }
+    })();
+
+    // ====== ریدایرکت هوشمند برای /blog/ ======
+    (function() {
+      // اگر مسیر دقیقاً /blog/ یا /blog باشد، به blog.html هدایت کن
+      const path = window.location.pathname;
+      if (path === '/blog/' || path === '/blog') {
+        window.location.replace('/blog.html');
+      }
+      // در غیر این صورت، صفحه ۴۰۴ نمایش داده می‌شود (همین صفحه)
+    })();
+  </script>
+
+</body>
+</html>
