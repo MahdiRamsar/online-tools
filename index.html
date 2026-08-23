@@ -1607,7 +1607,8 @@ footer {
     <nav class="nav" id="mainNav">
   <a href="#tools" data-i18n="nav_tools">ابزارها</a>
   <a href="#favorites" data-i18n="nav_fav">علاقه‌مندی‌ها</a>
-  <a href="/blog/" data-i18n="nav_blog">راهنمای ابزارها</a>   <!-- ← لینک جدید -->
+  <!-- تغییر: لینک blog به #guide تغییر داده شد تا گوگل آن را دنبال نکند -->
+  <a href="#guide" data-i18n="nav_blog">راهنمای ابزارها</a>
   <a href="#guide" data-i18n="nav_guide">راهنما</a>
   <a href="#faq" data-i18n="nav_faq">سوالات متداول</a>
 </nav>
@@ -1726,18 +1727,23 @@ footer {
 </section>
 </main>
 
-<!-- ═══════════════════════════ فوتر ═══════════════════════════ -->
+<!-- ═══════════════════════════ فوتر (اصلاح شده) ═══════════════════════════ -->
 <footer>
   <div class="container">
     <div class="foot-grid">
       <div><div class="foot-logo"><span class="logo-badge"><i class="fa-solid fa-toolbox"></i></span><span class="logo-name">ابزارفایل ۲.۰</span></div><p class="foot-about" data-i18n="foot_about">ابزارفایل ۲.۰ با ۲۰ ابزار فعال و رایگان. تمام ابزارها در مرورگر شما اجرا می‌شوند و هیچ داده‌ای به سرور نمی‌رود.</p></div>
       <div><h4 class="foot-h" data-i18n="foot_cats">دسته‌ها</h4><ul class="foot-links"><li><button data-fcat="image"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_image">عکس</span></button></li><li><button data-fcat="topdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_topdf">تبدیل به PDF</span></button></li><li><button data-fcat="util"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_util">کاربردی</span></button></li><li><button data-fcat="pdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_pdf">PDF</span></button></li><li><button data-fcat="finance"><i class="fa-solid fa-chevron-right"></i><span data-i18n="c_finance">مالی</span></button></li></ul></div>
-      <div><h4 class="foot-h" data-i18n="foot_live">ابزارهای محبوب</h4><ul class="foot-links"><li><button data-fopen="ocr"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_ocr_n">OCR</span></button></li><li><button data-fopen="img2pdf"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_img2pdf_n">عکس به PDF</span></button></li><li><button data-fopen="removebg"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_removebg_n">حذف پس‌زمینه</span></button></li><li><button data-fopen="qr"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_qr_n">QR</span></button></li></ul></div>
+      <div><h4 class="foot-h" data-i18n="foot_live">ابزارهای محبوب</h4><ul class="foot-links">
+        <!-- تغییر: دکمه‌ها به لینک‌های واقعی تبدیل شدند -->
+        <li><a href="/fa/tools/ocr/"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_ocr_n">OCR</span></a></li>
+        <li><a href="/fa/tools/img2pdf/"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_img2pdf_n">عکس به PDF</span></a></li>
+        <li><a href="/fa/tools/removebg/"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_removebg_n">حذف پس‌زمینه</span></a></li>
+        <li><a href="/fa/tools/qr/"><i class="fa-solid fa-chevron-right"></i><span data-i18n="t_qr_n">QR</span></a></li>
+      </ul></div>
       <div><h4 class="foot-h" data-i18n="foot_links">دسترسی سریع</h4><ul class="foot-links">
         <li><a href="#tools"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_tools">ابزارها</span></a></li>
         <li><a href="#favorites"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_fav">علاقه‌مندی‌ها</span></a></li>
         <li><a href="#guide"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_guide">راهنما</span></a></li>
-      <li><a href="/blog/"><i class="fa-solid fa-chevron-right"></i>راهنمای ابزارها</a></li>
         <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i><span data-i18n="nav_faq">سوالات</span></a></li>
         <li><a href="#top"><i class="fa-solid fa-chevron-right"></i><span data-i18n="foot_top">بالا</span></a></li>
       </ul></div>
@@ -1898,7 +1904,7 @@ function toggleTheme() {
 }
 document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 
-// ─── مدیریت زبان و سئوی داینامیک ───
+// ─── مدیریت زبان و سئوی داینامیک (اصلاح شده) ───
 const SEO_BASE = {
   fa: {
     homeTitle: 'ابزارفایل ۲.۰ | ابزارهای آنلاین رایگان PDF، عکس، OCR و متن',
@@ -1949,8 +1955,15 @@ function getPageState() {
   return { u, lang, toolId };
 }
 
+// ===== تابع اصلاح شده برای جلوگیری از /fa/ در صفحه اصلی =====
 function cleanSeoUrl(origin, lang, toolId='') {
-  if (toolId) return origin + '/' + lang + '/tools/' + encodeURIComponent(toolId) + '/';
+  // تغییر: اگر زبان فارسی و بدون ابزار باشد، ریشه دامنه را برگردان (نه /fa/)
+  if (lang === 'fa' && !toolId) {
+    return origin + '/';
+  }
+  if (toolId) {
+    return origin + '/' + lang + '/tools/' + encodeURIComponent(toolId) + '/';
+  }
   return origin + '/' + lang + '/';
 }
 
@@ -2107,31 +2120,40 @@ function renderFavorites() {
     const tool = TOOLS.find(x => x.id === slug);
     if (!tool) return;
     const col = CATS.find(c => c.id === tool.cat).color || '#1a3ad1';
-    const card = document.createElement('article');
+    const card = document.createElement('a');
+    card.href = (LANG === 'fa' ? '/fa/tools/' : '/en/tools/') + tool.id + '/';
     card.className = 'tcard reveal';
     card.style.setProperty('--acc', col);
+    card.style.display = 'block';
+    card.style.textDecoration = 'none';
+    card.style.color = 'inherit';
+    card.onclick = function(e) {
+      e.preventDefault();
+      if (e.target.closest('.fav-btn')) return;
+      openTool(tool.id);
+    };
     const nm = tool[LANG].n,
       ds = tool[LANG].d;
     card.innerHTML = '<div class="tc-top"><span class="tc-ic"><i class="fa-solid ' + tool.icon + '"></i></span>' +
       '<span class="tc-badge live">' + t('badge_live') + '</span>' +
       '<button class="fav-btn" data-slug="' + tool.id + '" style="background:none;border:none;cursor:pointer;font-size:1.1rem;color:var(--err);" title="' + t('fav_remove') + '">❤️</button></div>' +
       '<h3>' + nm + '</h3><p>' + ds + '</p><span class="tc-go">' + t('card_go') + ' <i class="fa-solid fa-arrow-left"></i></span>';
-    card.onclick = (e) => { if (e.target.closest('.fav-btn')) return;
-      openTool(tool.id); };
     container.appendChild(card);
   });
   document.querySelectorAll('.fav-btn').forEach(btn => {
-    btn.onclick = (e) => { e.stopPropagation();
-      const slug = btn.dataset.slug;
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      const slug = this.dataset.slug;
       toggleFavorite(slug);
       renderFavorites();
       renderTools();
-      toast(t('fav_removed'), 'ok'); };
+      toast(t('fav_removed'), 'ok');
+    };
   });
   observeReveals();
 }
 
-/* ─────────── ۴) دسته‌ها و ابزارها (۲۷ابزار) ─────────── */
+/* ─────────── ۴) دسته‌ها و ابزارها ─────────── */
 const CATS = [
   { id: 'all', icon: 'fa-border-all', color: '#1a3ad1' },
   { id: 'image', icon: 'fa-image', color: '#0c9d68' },
@@ -2142,7 +2164,7 @@ const CATS = [
 ];
 
 const TOOLS = [
-  // ─── عکس (Image) — ۷ واقعی ───
+  // عکس (Image) — ۷ واقعی
   { id: 'ocr', cat: 'image', icon: 'fa-font', live: 'ocr', fa: { n: 'عکس به متن (OCR)', d: 'استخراج متن از تصاویر با Tesseract.js اصلاح‌شده' }, en: { n: 'Image to Text (OCR)', d: 'Extract text from images with Tesseract.js' } },
   { id: 'hand2text', cat: 'image', icon: 'fa-pen-nib', live: 'ocr', fa: { n: 'دست‌نویس به متن', d: 'تبدیل خط دستی به متن تایپی' }, en: { n: 'Handwriting to Text', d: 'Convert handwriting to typed text' } },
   { id: 'img2pdf', cat: 'image', icon: 'fa-file-pdf', live: 'img2pdf', fa: { n: 'عکس به PDF', d: 'ساخت PDF با کیفیت از عکس‌ها' }, en: { n: 'Image to PDF', d: 'Create high-quality PDF from images' } },
@@ -2150,13 +2172,13 @@ const TOOLS = [
   { id: 'imgfmt', cat: 'image', icon: 'fa-arrows-rotate', live: 'imgfmt', fa: { n: 'مبدل فرمت عکس', d: 'تبدیل PNG, JPG, WebP, AVIF, BMP' }, en: { n: 'Image Format Converter', d: 'Convert PNG, JPG, WebP, AVIF, BMP' } },
   { id: 'heic', cat: 'image', icon: 'fa-mobile-screen', live: 'heic', fa: { n: 'HEIC به JPG/PNG', d: 'تبدیل عکس‌های آیفون بدون افت کیفیت' }, en: { n: 'HEIC to JPG/PNG', d: 'Convert iPhone photos without quality loss' } },
   { id: 'removebg', cat: 'image', icon: 'fa-eraser', live: 'removebg', fa: { n: 'حذف پس‌زمینه عکس', d: 'حذف خودکار پس‌زمینه تصویر' }, en: { n: 'Background Remover', d: 'Remove image background automatically' } },
-  // ─── تبدیل به PDF (To PDF) — ۵ به‌زودی ───
+  // تبدیل به PDF (To PDF) — ۵ به‌زودی
   { id: 'text2pdf', cat: 'topdf', icon: 'fa-pencil-alt', soon: true, fa: { n: 'متن به PDF (به‌زودی)', d: 'تبدیل متن به PDF' }, en: { n: 'Text to PDF (Soon)', d: 'Convert text to PDF' } },
   { id: 'xls2pdf', cat: 'topdf', icon: 'fa-file-excel', soon: true, fa: { n: 'Excel به PDF (به‌زودی)', d: 'تبدیل صفحه گسترده' }, en: { n: 'Excel to PDF (Soon)', d: 'Convert spreadsheet' } },
   { id: 'ppt2pdf', cat: 'topdf', icon: 'fa-file-powerpoint', soon: true, fa: { n: 'پاورپوینت به PDF (به‌زودی)', d: 'تبدیل اسلایدها' }, en: { n: 'PowerPoint to PDF (Soon)', d: 'Convert slides' } },
   { id: 'doc2pdf', cat: 'topdf', icon: 'fa-file-word', soon: true, fa: { n: 'Word به PDF (به‌زودی)', d: 'تبدیل سند Word' }, en: { n: 'Word to PDF (Soon)', d: 'Convert Word document' } },
   { id: 'txt2pdf', cat: 'topdf', icon: 'fa-file-alt', soon: true, fa: { n: 'TXT به PDF (به‌زودی)', d: 'تبدیل متن ساده' }, en: { n: 'TXT to PDF (Soon)', d: 'Convert plain text' } },
-  // ─── کاربردی (Utility) — ۷ واقعی ───
+  // کاربردی (Utility) — ۷ واقعی
   { id: 'pass', cat: 'util', icon: 'fa-key', live: 'pass', fa: { n: 'تولید رمز عبور', d: 'رمز امن با Crypto API' }, en: { n: 'Password Generator', d: 'Secure password with Crypto API' } },
   { id: 'qr', cat: 'util', icon: 'fa-qrcode', live: 'qr', fa: { n: 'ساخت QR Code', d: 'QR آفلاین' }, en: { n: 'QR Code Generator', d: 'Offline QR code' } },
   { id: 'date', cat: 'util', icon: 'fa-calendar-days', live: 'date', fa: { n: 'تبدیل تاریخ', d: 'شمسی ↔ میلادی دقیق' }, en: { n: 'Date Converter', d: 'Jalali ↔ Gregorian' } },
@@ -2164,10 +2186,10 @@ const TOOLS = [
   { id: 't2w', cat: 'util', icon: 'fa-file-word', live: 't2w', fa: { n: 'متن به Word', d: 'سند .doc قابل‌ویرایش' }, en: { n: 'Text to Word', d: 'Editable .doc' } },
   { id: 'pdf2text', cat: 'util', icon: 'fa-file-alt', live: 'pdf2text', fa: { n: 'PDF به متن', d: 'استخراج متن از PDF با PDF.js' }, en: { n: 'PDF to Text', d: 'Extract text from PDF with PDF.js' } },
   { id: 'pdf2image', cat: 'util', icon: 'fa-file-image', live: 'pdf2image', fa: { n: 'PDF به عکس', d: 'تبدیل صفحات PDF به تصویر با کیفیت بالا' }, en: { n: 'PDF to Image', d: 'Convert PDF pages to high-quality images' } },
-  // ─── PDF — ۳ به‌زودی ───
+  // PDF — ۳ به‌زودی
   { id: 'pdf2word', cat: 'pdf', icon: 'fa-file-word', soon: true, fa: { n: 'PDF به Word (به‌زودی)', d: 'تبدیل با حفظ جدول' }, en: { n: 'PDF to Word (Soon)', d: 'Convert with tables' } },
   { id: 'pdf2excel', cat: 'pdf', icon: 'fa-file-excel', soon: true, fa: { n: 'PDF به Excel (به‌زودی)', d: 'استخراج داده' }, en: { n: 'PDF to Excel (Soon)', d: 'Extract data' } },
-  // ─── مالی (Finance) — ۶ واقعی ───
+  // مالی (Finance) — ۶ واقعی
   { id: 'finance', cat: 'finance', icon: 'fa-coins', live: 'finance', fa: { n: 'محاسبه وام و سپرده', d: 'محاسبه اقساط وام و سود سپرده' }, en: { n: 'Loan & Deposit', d: 'Calculate loan installments and deposit interest' } },
   { id: 'realestate', cat: 'finance', icon: 'fa-building', live: 'realestate', fa: { n: 'تبدیل رهن و اجاره', d: 'محاسبه و تبدیل رهن به اجاره' }, en: { n: 'Deposit to Rent', d: 'Calculate and convert deposit to rent' } },
   { id: 'eidi', cat: 'finance', icon: 'fa-gift', live: 'eidi', fa: { n: 'محاسبه عیدی و سنوات', d: 'محاسبه عیدی و سنوات طبق قانون کار' }, en: { n: 'Eidi & Sanavat', d: 'Calculate Eidi and severance pay' } },
@@ -2202,10 +2224,19 @@ function renderTools() {
   if (!list.length) { grid.innerHTML = '<div class="no-result"><i class="fa-solid fa-magnifying-glass" style="font-size:26px;display:block;margin-bottom:10px;color:var(--royal-300)"></i>' + t('no_result') + '</div>'; return; }
   list.forEach((x, i) => {
     const col = CATS.find(c => c.id === x.cat).color || '#1a3ad1';
-    const card = document.createElement('article');
+    const card = document.createElement('a');
+    card.href = (LANG === 'fa' ? '/fa/tools/' : '/en/tools/') + x.id + '/';
     card.className = 'tcard reveal';
     card.style.setProperty('--acc', col);
     card.style.transitionDelay = (i % 8) * 45 + 'ms';
+    card.style.display = 'block';
+    card.style.textDecoration = 'none';
+    card.style.color = 'inherit';
+    card.onclick = function(e) {
+      e.preventDefault();
+      if (e.target.closest('.fav-btn')) return;
+      openTool(x.id);
+    };
     const nm = x[LANG].n,
       ds = x[LANG].d;
     const isLive = !!x.live;
@@ -2217,18 +2248,18 @@ function renderTools() {
       '<span class="tc-badge ' + (isLive ? 'live' : 'soon') + '">' + t(isLive ? 'badge_live' : 'badge_soon') + '</span>' +
       '<button class="fav-btn" data-slug="' + x.id + '" style="background:none;border:none;cursor:pointer;font-size:1.2rem;transition:transform .2s;" title="' + favTitle + '">' + favIcon + '</button></div>' +
       '<h3>' + nm + '</h3><p>' + ds + '</p><span class="tc-go">' + t('card_go') + ' <i class="fa-solid fa-arrow-left"></i></span>';
-    card.onclick = (e) => { if (e.target.closest('.fav-btn')) return;
-      openTool(x.id); };
     grid.appendChild(card);
   });
   document.querySelectorAll('.fav-btn').forEach(btn => {
-    btn.onclick = (e) => { e.stopPropagation();
-      const slug = btn.dataset.slug;
+    btn.onclick = function(e) {
+      e.stopPropagation();
+      const slug = this.dataset.slug;
       const nowFav = toggleFavorite(slug);
-      btn.textContent = nowFav ? '❤️' : '🤍';
-      btn.title = nowFav ? t('fav_remove') : t('fav_add');
+      this.textContent = nowFav ? '❤️' : '🤍';
+      this.title = nowFav ? t('fav_remove') : t('fav_add');
       toast(nowFav ? t('fav_added') : t('fav_removed'), 'ok');
-      renderFavorites(); };
+      renderFavorites();
+    };
   });
   observeReveals();
 }
@@ -2255,7 +2286,6 @@ function openTool(id) {
   }
   document.getElementById('modal').classList.add('show');
   document.body.style.overflow = 'hidden';
-  // به‌روزرسانی سئو و مسیر
   navigateState(LANG, tool.id);
   updateSEO();
 }
@@ -2264,7 +2294,6 @@ function closeModal() {
   document.body.style.overflow = '';
   runCleanup();
   currentTool = null;
-  // بازگشت به حالت عادی سئو
   navigateState(LANG, '');
   updateSEO();
 }
@@ -2279,7 +2308,6 @@ function renderSoon(tool) {
 }
 
 /* ═══════════════════ ۷) ابزارهای زنده ────────────────────────────────── */
-const LIVE_RENDER = {};
 
 // ====== OCR فارسی ======
 LIVE_RENDER.ocr = function() {
@@ -3077,8 +3105,8 @@ LIVE_RENDER.pdf2text = function() {
 LIVE_RENDER.pdf2image = function() {
   document.getElementById('mBody').innerHTML =
     '<div class="live-note"><i class="fa-solid fa-shield-halved"></i> ' + t('live_note') + '</div>' +
-    '<div class="m-drop" id="pdfDrop"><div class="md-ic"><i class="fa-solid fa-file-pdf"></i></div><p>فایل PDF را اینجا رها کنید یا کلیک کنید</p><small>PDF (حداکثر ۵۰ مگابایت)</small></div>' +
-    '<input type="file" id="pdfInput" accept=".pdf" hidden><div id="pdfFile"></div>' +
+    '<div class="m-drop" id="pdfDrop"><div class="md-ic"><i class="fa-solid fa-file-pdf"></i></div><p>فایل‌های PDF را اینجا رها کنید یا کلیک کنید (چند فایل مجاز)</p><small>PDF (حداکثر ۵۰ مگابایت هر فایل)</small></div>' +
+    '<input type="file" id="pdfInput" accept=".pdf" multiple hidden><div id="pdfFileList"></div>' +
     '<div class="f-row"><div class="fld"><label>کیفیت خروجی:</label><select class="f-in" id="pdfQuality"><option value="1.5">خیلی بالا (300 DPI)</option><option value="1" selected>بالا (200 DPI)</option><option value="0.7">متوسط (150 DPI)</option></select></div>' +
     '<div class="fld"><label>فرمت خروجی:</label><select class="f-in" id="pdfFormat"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option></select></div></div>' +
     '<button class="btn-p" id="pdfGo"><i class="fa-solid fa-file-image"></i> تبدیل به عکس</button>' +
@@ -3086,10 +3114,10 @@ LIVE_RENDER.pdf2image = function() {
     '<div class="prog-track"><div class="prog-bar" id="pdfBar"></div></div></div>' +
     '<div id="pdfResult" hidden></div>';
 
-  let file = null;
+  let files = [];
   const drop = document.getElementById('pdfDrop'),
     inp = document.getElementById('pdfInput'),
-    fileDiv = document.getElementById('pdfFile');
+    fileListDiv = document.getElementById('pdfFileList');
 
   drop.onclick = () => inp.click();
   drop.addEventListener('dragover', e => { e.preventDefault();
@@ -3098,13 +3126,15 @@ LIVE_RENDER.pdf2image = function() {
   drop.addEventListener('drop', e => {
     e.preventDefault();
     drop.classList.remove('drag');
-    if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+    if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files);
   });
-  inp.onchange = () => { if (inp.files[0]) handleFile(inp.files[0]); };
+  inp.onchange = () => { if (inp.files.length) handleFiles(inp.files); };
 
-  function handleFile(f) {
-    file = f;
-    fileDiv.innerHTML = '<div class="m-file"><span class="fi"><i class="fa-solid fa-file-pdf"></i></span><span><b>' + f.name + '</b><small>' + fmtSize(f.size) + '</small></span></div>';
+  function handleFiles(fileList) {
+    files = Array.from(fileList);
+    fileListDiv.innerHTML = files.map(f =>
+      '<div class="m-file"><span class="fi"><i class="fa-solid fa-file-pdf"></i></span><span><b>' + f.name + '</b><small>' + fmtSize(f.size) + '</small></span></div>'
+    ).join('');
   }
 
   if (typeof pdfjsLib !== 'undefined' && pdfjsLib.GlobalWorkerOptions) {
@@ -3112,121 +3142,116 @@ LIVE_RENDER.pdf2image = function() {
   }
 
   document.getElementById('pdfGo').onclick = function() {
-    if (!file) { toast('لطفاً یک فایل PDF انتخاب کنید.', 'err'); return; }
+    if (files.length === 0) { toast('لطفاً حداقل یک فایل PDF انتخاب کنید.', 'err'); return; }
     if (typeof pdfjsLib === 'undefined') { toast('PDF.js بارگذاری نشد!', 'err'); return; }
 
-    const reader = new FileReader();
-    reader.onload = function(ev) {
-      const data = new Uint8Array(ev.target.result);
-      const quality = parseFloat(document.getElementById('pdfQuality').value);
-      const format = document.getElementById('pdfFormat').value;
+    const quality = parseFloat(document.getElementById('pdfQuality').value);
+    const format = document.getElementById('pdfFormat').value;
+    const ext = format === 'image/jpeg' ? 'jpg' : 'png';
 
-      document.getElementById('pdfProg').hidden = false;
-      document.getElementById('pdfResult').hidden = true;
-      document.getElementById('pdfGo').disabled = true;
+    document.getElementById('pdfProg').hidden = false;
+    document.getElementById('pdfResult').hidden = true;
+    document.getElementById('pdfGo').disabled = true;
 
-      const loadingTask = pdfjsLib.getDocument({ data: data });
-      loadingTask.promise.then(function(pdf) {
-        const totalPages = pdf.numPages;
-        let pageNum = 1;
-        const images = [];
-        const scale = quality * 1.2;
+    const zip = new JSZip();
+    let totalImages = 0;
+    let processed = 0;
 
-        function renderNextPage() {
-          if (pageNum > totalPages) {
-            finish(images);
-            return;
-          }
-          const pct = Math.round((pageNum - 1) / totalPages * 100);
-          document.getElementById('pdfBar').style.width = Math.min(pct, 90) + '%';
-          document.getElementById('pdfPct').textContent = pct + '%';
-          document.getElementById('pdfStage').textContent = 'در حال رندر صفحه ' + pageNum + ' از ' + totalPages;
+    function processNextFile(index) {
+      if (index >= files.length) {
+        finishZip();
+        return;
+      }
+      const file = files[index];
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const data = new Uint8Array(ev.target.result);
+        const loadingTask = pdfjsLib.getDocument({ data: data });
+        loadingTask.promise.then(function(pdf) {
+          const totalPages = pdf.numPages;
+          const scale = quality * 1.2;
+          let pageNum = 1;
 
-          pdf.getPage(pageNum).then(function(page) {
-            const viewport = page.getViewport({ scale: scale });
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            canvas.width = viewport.width;
-            canvas.height = viewport.height;
+          function renderPage() {
+            if (pageNum > totalPages) {
+              processNextFile(index + 1);
+              return;
+            }
+            const pct = Math.round(((processed + (pageNum - 1) / totalPages) / files.length) * 100);
+            document.getElementById('pdfBar').style.width = Math.min(pct, 90) + '%';
+            document.getElementById('pdfPct').textContent = pct + '%';
+            document.getElementById('pdfStage').textContent = 'در حال رندر ' + file.name + ' صفحه ' + pageNum + ' از ' + totalPages;
 
-            const renderContext = {
-              canvasContext: context,
-              viewport: viewport
-            };
-            page.render(renderContext).promise.then(function() {
-              images.push({
-                dataUrl: canvas.toDataURL(format),
-                page: pageNum,
-                width: canvas.width,
-                height: canvas.height
+            pdf.getPage(pageNum).then(function(page) {
+              const viewport = page.getViewport({ scale: scale });
+              const canvas = document.createElement('canvas');
+              const context = canvas.getContext('2d');
+              canvas.width = viewport.width;
+              canvas.height = viewport.height;
+
+              const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+              };
+              page.render(renderContext).promise.then(function() {
+                canvas.toBlob(function(blob) {
+                  const fileName = file.name.replace(/\.pdf$/i, '') + '_page_' + pageNum + '.' + ext;
+                  zip.file(fileName, blob);
+                  pageNum++;
+                  renderPage();
+                }, format);
               });
-              pageNum++;
-              renderNextPage();
+            }).catch(function(err) {
+              toast('خطا در رندر صفحه ' + pageNum + ' از ' + file.name, 'err');
+              processNextFile(index + 1);
             });
-          }).catch(function(err) {
-            toast('خطا در رندر صفحه ' + pageNum, 'err');
-            document.getElementById('pdfGo').disabled = false;
-            document.getElementById('pdfProg').hidden = true;
-          });
-        }
-        renderNextPage();
-      }).catch(function(err) {
-        toast('خطا در باز کردن PDF: ' + err.message, 'err');
-        document.getElementById('pdfGo').disabled = false;
-        document.getElementById('pdfProg').hidden = true;
-      });
-    };
-    reader.readAsArrayBuffer(file);
+          }
+          renderPage();
+        }).catch(function(err) {
+          toast('خطا در باز کردن ' + file.name + ': ' + err.message, 'err');
+          processNextFile(index + 1);
+        });
+      };
+      reader.readAsArrayBuffer(file);
+    }
 
-    function finish(images) {
+    function finishZip() {
       document.getElementById('pdfBar').style.width = '100%';
       document.getElementById('pdfPct').textContent = '100%';
-      document.getElementById('pdfStage').textContent = 'تمام شد!';
+      document.getElementById('pdfStage').textContent = 'در حال آماده‌سازی دانلود...';
 
-      setTimeout(function() {
+      zip.generateAsync({ type: 'blob' }).then(function(content) {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(content);
+        a.download = 'pdf-pages.zip';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+        toast('✅ دانلود پوشه فشرده شروع شد!', 'ok');
         document.getElementById('pdfProg').hidden = true;
         document.getElementById('pdfGo').disabled = false;
+      }).catch(function(err) {
+        toast('خطا در ساخت فایل زیپ: ' + err.message, 'err');
+        document.getElementById('pdfProg').hidden = true;
+        document.getElementById('pdfGo').disabled = false;
+      });
+    }
 
-        const resultDiv = document.getElementById('pdfResult');
-        resultDiv.hidden = false;
-        resultDiv.innerHTML = '<h3 style="margin-bottom:12px;">' + images.length + ' صفحه تبدیل شد</h3><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:16px;">';
-
-        images.forEach(function(img, i) {
-          const div = document.createElement('div');
-          div.style.cssText = 'background:var(--bg-card);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:center;padding:6px;';
-          div.innerHTML =
-            '<img src="' + img.dataUrl + '" style="width:100%;height:auto;max-height:150px;object-fit:contain;border-radius:4px;">' +
-            '<div style="font-size:.7rem;padding:4px;color:var(--muted);font-weight:700;">صفحه ' + (i + 1) + '</div>' +
-            '<button class="btn-o" style="padding:4px 12px;font-size:.7rem;margin:2px;" onclick="downloadImage(\'' + img.dataUrl + '\',\'page-' + (i + 1) + '.jpg\')"><i class="fa-solid fa-download"></i> دانلود</button>';
-          resultDiv.appendChild(div);
-        });
-
-        const downloadAllBtn = document.createElement('button');
-        downloadAllBtn.className = 'btn-p btn-g';
-        downloadAllBtn.style.cssText = 'margin-top:12px;';
-        downloadAllBtn.innerHTML = '<i class="fa-solid fa-download"></i> دانلود همه';
-        downloadAllBtn.onclick = function() {
-          images.forEach(function(img, i) {
-            const a = document.createElement('a');
-            a.href = img.dataUrl;
-            a.download = 'page-' + (i + 1) + '.jpg';
-            a.click();
-          });
-          toast('دانلود همه شروع شد!', 'ok');
-        };
-        resultDiv.appendChild(downloadAllBtn);
-
-        toast('✅ تبدیل با موفقیت انجام شد!', 'ok');
-      }, 400);
+    if (typeof JSZip === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+      script.onload = function() {
+        processNextFile(0);
+      };
+      script.onerror = function() {
+        toast('خطا در بارگذاری JSZip', 'err');
+        document.getElementById('pdfGo').disabled = false;
+        document.getElementById('pdfProg').hidden = true;
+      };
+      document.head.appendChild(script);
+    } else {
+      processNextFile(0);
     }
   };
-};
-
-window.downloadImage = function(dataUrl, filename) {
-  const a = document.createElement('a');
-  a.href = dataUrl;
-  a.download = filename;
-  a.click();
 };
 
 // ====== حذف پس‌زمینه عکس ======
@@ -3296,7 +3321,6 @@ LIVE_RENDER.removebg = function() {
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imageData.data;
 
-        // تشخیص رنگ پس‌زمینه از گوشه‌ها
         const bgColor = getBackgroundColor(data, canvas.width, canvas.height);
         const threshold = 40;
 
@@ -3312,7 +3336,6 @@ LIVE_RENDER.removebg = function() {
 
         ctx.putImageData(imageData, 0, 0);
 
-        // اضافه کردن پس‌زمینه جدید
         const newBg = document.getElementById('rbBgColor').value;
         const finalCanvas = document.createElement('canvas');
         finalCanvas.width = canvas.width;
@@ -3411,7 +3434,6 @@ document.querySelectorAll('.qchip').forEach(ch => ch.onclick = () => { document.
   renderTools();
   document.getElementById('tools').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' }); });
 document.querySelectorAll('[data-open]').forEach(b => b.onclick = () => openTool(b.dataset.open));
-document.querySelectorAll('[data-fopen]').forEach(b => b.onclick = () => openTool(b.dataset.fopen));
 document.querySelectorAll('[data-fcat]').forEach(b => b.onclick = () => { curTab = b.dataset.fcat;
   curQuery = '';
   document.getElementById('heroSearch').value = '';
@@ -3481,19 +3503,26 @@ window.addEventListener('popstate', () => {
 });
 
 /* ═══════════════════ ۱۰) شروع برنامه ────────────────────────────────── */
-// اعمال تم ذخیره‌شده
 applyTheme(THEME);
-// اعمال زبان و به‌روزرسانی سئو
 const initState = getPageState();
 if (initState.lang) LANG = initState.lang;
 applyLang(LANG);
-// اگر ابزاری در URL وجود دارد، آن را باز کن
+
+// ===== حذف پارامترهای اضافی از URL (رفع مشکل ?lang=fa) =====
+const currentUrl = new URL(window.location.href);
+if (currentUrl.searchParams.has('lang')) {
+  currentUrl.searchParams.delete('lang');
+  window.history.replaceState({}, '', currentUrl.pathname + currentUrl.hash);
+}
+
 if (initState.toolId) {
   setTimeout(() => openTool(initState.toolId), 50);
 }
 observeReveals();
+
+// توجه: تمام LIVE_RENDERها به‌طور کامل در بالا تعریف شده‌اند.
 </script>
-<<noscript>
+<noscript>
   <nav aria-label="ToolsFile tools" style="padding:20px;text-align:center;background:var(--royal-50);border-radius:16px;margin:20px 0;">
     <p style="font-weight:700;margin-bottom:10px;">🔧 تمام ابزارها:</p>
     <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
